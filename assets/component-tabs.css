@@ -1,0 +1,56 @@
+.tabs-container ul {
+  list-style: none;
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-container > [role='tablist'] {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.tabs-container > [role='tablist'] > [role='tab'] {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 1rem;
+  background-position: center center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  line-height: 2rem;
+}
+
+.tabs-container > [role='tablist'] > [role='tab']:is([aria-selected='true']) {
+  background-color: var(--gradient-base-background-2);
+}
+
+.tabs-container > [role='tablist'] > [role='tab']:hover:is([aria-selected='false']) {
+  background-color: var(--gradient-base-background-2);
+}
+
+.tabs-container > [role='tablist'] > [role='tab']:hover:is([aria-selected='false']) {
+  cursor: pointer;
+}
+
+.tabs-container > [role='tabpanel'] {
+  padding: 1.5 0rem;
+}
+
+@media screen and (max-width: 750px) {
+  .tabs-container > [role='tablist'] {
+    justify-content: flex-start;
+  }
+
+  .tabs-container > [role='tablist'] > [role='tab'] {
+    min-width: 150px;
+  }
+}

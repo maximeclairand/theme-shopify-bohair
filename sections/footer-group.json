@@ -1,0 +1,125 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "multicolumn_gxGn4U": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_AEEFnt": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "Livraison <strong>offerte</strong> !",
+            "text": "<p>Livraison gratuite avec mondial relay et à partir de 45€ d’achat en France Métropolitaine avec colissimo. </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_XcDHmY": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "Conseils personnalisés",
+            "text": "<p>Notre équipe vous répond dans un délai de 24h par e-mail ou sur Instagram</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UFLeHP": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "Satisfait ou remboursé",
+            "text": "<p>Votre compagnon n’est pas satisfait ? On vous rembourse !</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["column_AEEFnt", "column_XcDHmY", "column_UFLeHP"],
+      "settings": {
+        "css_class": "",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "sixth",
+        "image_width_custom": 30,
+        "image_position": "left",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "list_color_scheme": "",
+        "card_color_scheme": "",
+        "card_show_body_font": false,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_N7UF6x": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true,
+            "icon_stars": "",
+            "review_paragraph": "<strong>4.8/5</strong> +10 000 clients ravis"
+          }
+        },
+        "footer-0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Menu principal",
+            "menu": "footer-menu-principal"
+          }
+        },
+        "footer-1": {
+          "type": "link_list",
+          "settings": { "heading": "Aide & Infos", "menu": "footer" }
+        },
+        "newsletter_7pBqn8": {
+          "type": "newsletter",
+          "settings": {
+            "title": "10% offert !",
+            "subtext": "Recevez immédiatement le code applicable sur votre première commande par e-mail !",
+            "legend": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_N7UF6x",
+        "footer-0",
+        "footer-1",
+        "newsletter_7pBqn8"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "show_visa": true,
+        "show_master": true,
+        "show_apple_pay": true,
+        "show_google_pay": true,
+        "show_paypal": true,
+        "show_american_express": false,
+        "show_diners_club": false,
+        "show_discover": false,
+        "show_shopify_pay": false,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": ["multicolumn_gxGn4U", "footer"]
+}

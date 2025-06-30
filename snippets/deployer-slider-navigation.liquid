@@ -1,0 +1,160 @@
+{% comment %}
+  Renders a slider navigation.
+
+  Accepts:
+  - id: {{ String }} ID of the component
+  - enable_slider_mobile: {Boolean} Enable mobile slider
+  - enable_slider_desktop: {Boolean} Enable desktop slider
+  - slider_slides: {Array} Slides
+  - enable_slider_autoplay: {Boolean} Enable autoplay
+  - enable_slider_autoplay_button: {Boolean} Enable autoplay button
+  - slider_navigation_mobile: {String} Navigation on mobile. Can be 'buttons_arrow', 'buttons_text', 'buttons_arrow_text', 'links_dots', 'links_numbers' or 'none'. Default is 'buttons_arrow'
+  - slider_navigation_desktop: {String} Navigation on desktop. Can be 'buttons_arrow', 'buttons_text', 'buttons_arrow_text', 'links_dots', 'links_numbers' or 'none'. Default is 'buttons_arrow'
+  - slider_button_style: {String} Style of the navigation buttons. Can be 'deployer-button', 'deployer-button deployer-button--secondary' or 'deployer-button deployer-button--tertiary'. Default is 'deployer-button'
+  - enable_slider_numbering_mobile: {Boolean} Enable numbering on mobile
+  - enable_slider_numbering_desktop: {Boolean} Enable numbering on desktop
+  - slider_numbering_text: {String} Text of the numbering (optional)
+
+  Usage:
+  {%- render 'deployer-slider-navigation', id: id, enable_slider_mobile: enable_slider_mobile, enable_slider_desktop: enable_slider_desktop -%}
+{% endcomment %}
+
+{%- liquid
+  assign enable_slider_autoplay_button = enable_slider_autoplay_button | default: block.settings.enable_slider_autoplay_button | default: section.settings.enable_slider_autoplay_button
+  assign slider_navigation_mobile = slider_navigation_mobile | default: block.settings.slider_navigation_mobile | default: section.settings.slider_navigation_mobile | default: 'buttons_arrow'
+  assign slider_navigation_desktop = slider_navigation_desktop | default: block.settings.slider_navigation_desktop | default: section.settings.slider_navigation_desktop | default: 'buttons_arrow'
+  assign slider_button_style = slider_button_style | default: block.settings.slider_button_style | default: section.settings.slider_button_style | default: 'deployer-button'
+  assign enable_slider_numbering_mobile = enable_slider_numbering_mobile | default: block.settings.enable_slider_numbering_mobile | default: section.settings.enable_slider_numbering_mobile
+  assign enable_slider_numbering_desktop = enable_slider_numbering_desktop | default: block.settings.enable_slider_numbering_desktop | default: section.settings.enable_slider_numbering_desktop
+  assign slider_numbering_text = slider_numbering_text | default: block.settings.slider_numbering_text | default: section.settings.slider_numbering_text
+  assign slider_navigation_attributes = ''
+
+  if slider_navigation_mobile contains 'buttons' and slider_navigation_desktop contains 'buttons'
+    assign slider_navigation_desktop = slider_navigation_mobile
+  endif
+  if slider_navigation_mobile contains 'links' and slider_navigation_desktop contains 'links'
+    assign slider_navigation_desktop = slider_navigation_mobile
+  endif
+
+  assign slider_navigation_attributes = slider_navigation_attributes | append: ' data-navigation-mobile="' | append: slider_navigation_mobile | append: '"'
+  assign slider_navigation_attributes = slider_navigation_attributes | append: ' data-navigation-desktop="' | append: slider_navigation_desktop | append: '"'
+  if enable_slider_numbering_mobile
+    assign slider_navigation_attributes = slider_navigation_attributes | append: ' data-numbering-mobile'
+  endif
+  if enable_slider_numbering_desktop
+    assign slider_navigation_attributes = slider_navigation_attributes | append: ' data-numbering-desktop'
+  endif
+
+  assign slider_button_style = slider_button_style | append: ' deployer-button--small'
+  assign slider_autoplay_button_style = slider_button_style | append: ' deployer-button--icon-only'
+  if slider_navigation_mobile == 'buttons_arrow' or slider_navigation_desktop == 'buttons_arrow'
+    assign slider_button_style = slider_button_style | append: ' deployer-button--icon-only'
+  endif
+
+  assign previous_button_text = 'deployer.slider.previous' | t
+  assign next_button_text = 'deployer.slider.next' | t
+  assign slider_numbering_text_of = 'deployer.slider.of' | t
+-%}
+
+{%- if enable_slider_mobile or enable_slider_desktop -%}
+  <deployer-slider-navigation
+    {{ slider_navigation_attributes }}
+  >
+    {%- capture slider_autoplay_button -%}
+        {%- if enable_slider_autoplay and enable_slider_autoplay_button -%}
+          <button
+            type="button"
+            class="{{ slider_autoplay_button_style }} deployer-slider-button deployer-slider-button--autoplay"
+            aria-label="{{ 'deployer.slider.pause' | t }}"
+            data-autoplay-button
+          >
+            <span class="svg-wrapper">
+              {{- 'icon-pause.svg' | inline_asset_content -}}
+            </span>
+            <span class="svg-wrapper">
+              {{- 'icon-play.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        {%- endif -%}
+      {%- endcapture -%}
+    {%- if slider_navigation_mobile contains 'buttons' or slider_navigation_desktop contains 'buttons' -%}
+      <div class="deployer-slider-buttons">
+        <button
+          type="button"
+          class="{{ slider_button_style }} deployer-slider-button deployer-slider-button--prev"
+          name="previous"
+          aria-label="{{ 'deployer.slider.previous_slide' | t }}"
+          aria-controls="Deployer-Slider-{{ id }}"
+        >
+          {%- if slider_navigation_mobile contains '_arrow' or slider_navigation_desktop contains '_arrow' -%}
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          {%- endif -%}
+          {%- if slider_navigation_mobile contains '_text' or slider_navigation_desktop contains '_text' -%}
+            <span class="deployer-button-text">{{ previous_button_text }}</span>
+          {%- endif -%}
+        </button>
+        {%- if enable_slider_numbering_mobile or enable_slider_numbering_desktop -%}
+          <div class="deployer-slider-counter">
+            {%- if slider_numbering_text != blank -%}
+              <span class="deployer-slider-counter--text">{{ slider_numbering_text }}&nbsp;</span>
+            {%- endif -%}
+            <span class="deployer-slider-counter--current" data-page-current>1</span>
+            <span aria-hidden="true">{{ slider_numbering_text_of }}</span>
+            <span class="deployer-slider-counter--total" data-page-total>{{ slider_slides.size }}</span>
+          </div>
+        {%- endif -%}
+        <button
+          type="button"
+          class="{{ slider_button_style }} deployer-slider-button deployer-slider-button--next"
+          name="next"
+          aria-label="{{ 'deployer.slider.next_slide' | t }}"
+          aria-controls="Deployer-Slider-{{ id }}"
+        >
+          {%- if slider_navigation_mobile contains '_text' or slider_navigation_desktop contains '_text' -%}
+            <span class="deployer-button-text">{{ next_button_text }}</span>
+          {%- endif -%}
+          {%- if slider_navigation_mobile contains '_arrow' or slider_navigation_desktop contains '_arrow' -%}
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          {%- endif -%}
+        </button>
+        {{ slider_autoplay_button }}
+      </div>
+    {%- endif -%}
+    {%- if slider_navigation_mobile contains 'links' or slider_navigation_desktop contains 'links' -%}
+      {%- if slider_navigation_mobile == 'links_dots' or slider_navigation_desktop == 'links_dots' -%}
+        <div class="deployer-slider-links deployer-slider-links--dots">
+          {%- for slide in slider_slides -%}
+            <button
+              class="deployer-slider-link"
+              aria-label="{{ forloop.index }} {{ slider_numbering_text_of }} {{ forloop.length }}"
+              aria-controls="Deployer-Slider-{{ id }}"
+              data-navigation-link
+            >
+              <span class="deployer-slider-dot"></span>
+            </button>
+          {%- endfor -%}
+          {{ slider_autoplay_button }}
+        </div>
+      {%- endif -%}
+      {%- if slider_navigation_mobile == 'links_numbers' or slider_navigation_desktop == 'links_numbers' -%}
+        <div class="deployer-slider-links deployer-slider-links--numbers">
+          {%- for slide in slider_slides -%}
+            <button
+              class="deployer-slider-link"
+              aria-label="{{ forloop.index }} {{ slider_numbering_text_of }} {{ forloop.length }}"
+              aria-controls="Deployer-Slider-{{ id }}"
+              data-navigation-link
+            >
+              {{- forloop.index -}}
+            </button>
+          {%- endfor -%}
+          {{ slider_autoplay_button }}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </deployer-slider-navigation>
+{%- endif -%}

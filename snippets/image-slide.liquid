@@ -1,0 +1,47 @@
+{% comment %}
+  Renders an image slide.
+
+  Accepts:
+  - id: {{ String }} ID of the component
+  - index: {{ Number }} Index of the slide
+  - slide: Can be a block, a product, a collection, a blog post, a page or whatever object you want to display in the slider.
+  - page_width: {Number} Page width
+
+  Usage:
+  {%- render 'image-slide', id: id, index: index, slide: slide, page_width: page_width -%}
+{% endcomment %}
+
+{%- liquid
+  assign image = slide.settings.image
+  assign url = slide.settings.url
+
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign fetch_priority = 'high'
+  endif
+-%}
+
+<div
+  class="image-slide"
+  data-id="Image-Slide-{{ id }}-{{ index }}"
+  {% if image != blank %}
+    style="--ratio-percent: {{ 1 | divided_by: image.aspect_ratio | times: 100 }}%;"
+  {% endif %}
+>
+  {%- if image != blank -%}
+    {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+    {%- capture sizes -%}
+          (min-width: {{ page_width }}px) {{ page_width | minus: 100 | divided_by: 2 }}px,
+          (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+      {%- endcapture -%}
+    {%- if url != blank -%}
+      <a href="{{ url }}" target="_blank">
+    {%- endif -%}
+    {{ image | image_url: width: 1500 | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority }}
+    {%- if url != blank -%}
+      </a>
+    {%- endif -%}
+  {%- else -%}
+    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+</div>

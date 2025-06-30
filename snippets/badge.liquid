@@ -1,0 +1,20 @@
+{% liquid
+  assign badge_text = block.settings.badge_text
+  assign badge_icon = block.settings.badge_icon
+  assign badge_icon_width = badge_icon_width | default: block.settings.badge_icon_width | default: 20
+%}
+
+{%- if badge_text != blank -%}
+  <div class="block__badge">
+    {%- if badge_icon != blank -%}
+      {%- assign badge_icon_width_asset = badge_icon_width | times: 4 -%}
+      <img
+        src="{{ badge_icon | image_url: width: badge_icon_width_asset, height: auto }}"
+        alt="{{ badge_text }}"
+        width="{{ badge_icon_width }}"
+        height="auto"
+      >
+    {%- endif -%}
+    <span>{{ badge_text }}</span>
+  </div>
+{%- endif -%}

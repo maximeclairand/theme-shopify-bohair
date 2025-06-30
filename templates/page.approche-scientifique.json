@@ -1,0 +1,723 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": { "padding_top": 28, "padding_bottom": 28 }
+    },
+    "image_banner_pPrbRc": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_TBaFmp": {
+          "type": "heading",
+          "settings": {
+            "heading": "LE DÉVELOPPEMENT DE NOS FORMULES",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": ["heading_TBaFmp"],
+      "settings": {
+        "image": "",
+        "round_top_corners": true,
+        "round_bottom_corners": true,
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "desktop_constrain_width": true,
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false,
+        "mobile_constrain_width": true
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Adorés<br/>des animaux</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cEfTBM": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Hautement <br/>concentré</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9AMdQr": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Sans ingrédients <br/>controversés</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RYWr73": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Composition <br/>Unique</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9JpMth": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Principes actifs <br/>Premium</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xXzGhb": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Formule <br/>Vétérinaire</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column1",
+        "column_cEfTBM",
+        "column_9AMdQr",
+        "column_RYWr73",
+        "column_9JpMth",
+        "column_xXzGhb"
+      ],
+      "custom_css": [],
+      "settings": {
+        "css_class": "multicolumn--reinsurances",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_width_custom": 30,
+        "image_position": "top",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "list_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "card_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "card_show_body_font": false,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_CHJR7K": {
+      "type": "image-with-text",
+      "blocks": {
+        "badge_LwTtem": {
+          "type": "badge",
+          "settings": {
+            "text": "<strong>Scientifiquement</strong> vérifiée",
+            "icon": "",
+            "color_scheme": ""
+          }
+        },
+        "heading_jmm3gJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Notre approche scientifique",
+            "heading_size": "h1"
+          }
+        },
+        "text_RkKGWm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Chez Weloca, nous offrons des formules de haute qualité grâce à une approche scientifique rigoureuse. Conçus avec des vétérinaires et nutritionnistes, nos produits répondent précisément aux besoins des chiens et chats. </p><p>Basés sur des recherches approfondies, nous sélectionnons des ingrédients sûrs et efficaces pour garantir leur bien-être.</p><p>Choisir Weloca, c’est adopter des solutions validées scientifiquement, pour apporter le bien-être au quotidien à votre chien ou chat. Faites confiance à notre expertise.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_jUWrcJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrez nos produits",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "badge_LwTtem",
+        "heading_jmm3gJ",
+        "text_RkKGWm",
+        "button_jUWrcJ"
+      ],
+      "settings": {
+        "image": "",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "desktop_image_width_custom": 40,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "image_background_position_x": 50,
+        "image_background_position_y": 50,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_tHGn6d": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_xfFp97": {
+          "type": "heading",
+          "settings": {
+            "heading": "Recommandé par les vétérinaires",
+            "heading_size": "h1"
+          }
+        },
+        "text_JzVUiy": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Nos formules sont toutes élaborées par une vétérinaire nutritionniste et une experte en compléments alimentaires qui s’appuient sur des études scientifiques pour sélectionner chaque ingrédient.</em></p>",
+            "text_style": "body"
+          }
+        },
+        "badge_crxgnW": {
+          "type": "badge",
+          "settings": {
+            "text": "<strong>Formule</strong> vétérinaire vérifiée",
+            "icon": "",
+            "color_scheme": "scheme-fcd49658-be08-414c-ae05-42c55aaae8c2"
+          }
+        }
+      },
+      "block_order": ["heading_xfFp97", "text_JzVUiy", "badge_crxgnW"],
+      "settings": {
+        "image": "",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "desktop_image_width_custom": 40,
+        "layout": "text_first",
+        "desktop_content_position": "bottom",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "image_background": "",
+        "image_background_position_x": 53,
+        "image_background_position_y": 100,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_NGqwg9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_c7nfjz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Optez pour nos produits !",
+            "heading_size": "h1"
+          }
+        },
+        "multicolumn_TyQF4F": {
+          "type": "multicolumn",
+          "settings": {
+            "image_width": "third",
+            "image_width_custom": 30,
+            "image_position": "top",
+            "image_ratio": "adapt",
+            "columns_desktop": 3,
+            "columns_mobile": "2",
+            "column_alignment": "center",
+            "image_1": "",
+            "title_1": "Une équipe d’expert",
+            "text_1": "<p>Avec des experts en nutrition animale, nous créons des formules scientifiques.</p>",
+            "image_2": "",
+            "title_2": "Une efficacité prouvée",
+            "text_2": "<p>Nos ingrédients sont sélectionnés d’après des études scientifiques.</p>",
+            "image_3": "",
+            "title_3": "Des dosages optimisés",
+            "text_3": "<p>Chaque ingrédient est justement dosé pour assurer son efficacité.</p>",
+            "image_4": "",
+            "title_4": "Transparence garantie",
+            "text_4": "<p>Nous garantissons 100% de transparence sur nos produits.</p>",
+            "image_5": "",
+            "title_5": "Sans ingrédient controversé",
+            "text_5": "<p>Des ingrédients sains, clairs et bons pour votre animal.</p>",
+            "image_6": "",
+            "title_6": "Un plaisir pour l’animal",
+            "text_6": "<p>Sous forme de bouchées savoureuses au poulet pour plus de plaisir.</p>",
+            "title_7": "",
+            "text_7": "",
+            "title_8": "",
+            "text_8": "",
+            "title_9": "",
+            "text_9": ""
+          }
+        }
+      },
+      "block_order": ["heading_c7nfjz", "multicolumn_TyQF4F"],
+      "settings": {
+        "image": "",
+        "height": "small",
+        "desktop_image_width": "small",
+        "desktop_image_width_custom": 40,
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "image_background_position_x": 50,
+        "image_background_position_y": 50,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_tabs_8fKwgQ": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "tab_HiGYYf": {
+          "type": "tab",
+          "settings": { "tab_title": "Abonnement", "tab_id": "abonnement" }
+        },
+        "tab_xHB8Be": {
+          "type": "tab",
+          "settings": { "tab_title": "Nos formules", "tab_id": "formules" }
+        },
+        "tab_a8gXHF": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Livraison & retours",
+            "tab_id": "livraison"
+          }
+        },
+        "tab_HpKNEC": {
+          "type": "tab",
+          "settings": { "tab_title": "Weloca", "tab_id": "weloca" }
+        },
+        "collapsible_row_aUzjkq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment fonctionne l'abonnement chez Weloca ?",
+            "icon": "none",
+            "row_content": "<p>L'abonnement est simple et flexible : choisissez la fréquence qui vous convient (mensuelle ou trimestrielle) et profitez de 10 % de réduction sur chaque commande.</p><p>Avec le système d'abonnement automatique, plus besoin de revenir sur le site pour valider vos commandes.</p><p>Sans engagement, l'abonnement peut être annulé à tout moment, en toute simplicité.</p><p>Vous avez également la possibilité de personnaliser votre abonnement en sélectionnant différents produits à des fréquences variées (par exemple, une livraison mensuelle pour la Formule Articulations et une livraison trimestrielle pour la Formule Anti-stress).</p>",
+            "page": "",
+            "tab_id": "abonnement"
+          }
+        },
+        "collapsible_row_Kbici3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les avantages de l'abonnement Weloca ?",
+            "icon": "none",
+            "row_content": "<p>En souscrivant à un abonnement, vous profitez de nombreux avantages :</p><p>10 % de réduction sur chaque commande,</p><p>Un service client prioritaire, avec une réponse garantie en moins de 5 heures,</p><p>Un accès anticipé de 24 heures à toutes les promotions avant leur publication au grand public.</p>",
+            "page": "",
+            "tab_id": "abonnement"
+          }
+        },
+        "collapsible_row_wLhPxC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Je souhaite résilier mon abonnement",
+            "icon": "none",
+            "row_content": "<p>Écrivez nous à weloca.club@gmail.com</p>",
+            "page": "",
+            "tab_id": "abonnement"
+          }
+        },
+        "collapsible_row_G8gmNt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "À partir de quel âge pouvons-nous donner les compléments Weloca ?",
+            "icon": "none",
+            "row_content": "<p>Nos compléments alimentaires conviennent à tous les chiens, tous les chats, tous les poids, tous les âges. Il est conseillé, néanmoins, de ne pas en donner à des chiens ou des chats de moins de 16 semaines.</p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_T74DKF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Au bout de combien de temps puis-je observer des résultats ?",
+            "icon": "none",
+            "row_content": "<p>En donnant des compléments alimentaires à votre chien ou votre chat, vous pouvez généralement constater des premiers légers résultats au bout d'un mois. Pour obtenir des résultats concrets sur le long terme il est recommandé de faire des cures de 3 mois. </p><p>Cependant, ce délai peut varier en fonction de plusieurs facteurs, comme les besoins spécifiques de votre animal, sa santé générale, et la raison pour laquelle vous administrez les compléments. Certains animaux peuvent montrer des effets plus rapidement, tandis que d'autres peuvent nécessiter un peu plus de temps pour que les bénéfices soient visibles. Pour des résultats optimaux, il est important de suivre les recommandations de dosage et de durée fournies et de consulter votre vétérinaire.</p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_UV8L8E": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "J'ai une question sur la composition",
+            "icon": "none",
+            "row_content": "<p>Vous avez une question sur la composition d'une formule ? Ecrivez nous à weloca.club@gmail.com</p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_LLNTYg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Est-ce qu'il peut y avoir des effets secondaires ?",
+            "icon": "none",
+            "row_content": "<p>Dans de rares cas, des troubles digestifs ou une diarrhée peuvent survenir. Si ces symptômes persistent, arrêtez l'administration de compléments alimentaires et consultez votre vétérinaire.</p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_xj8bCe": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Est-ce que je peux donner plusieurs compléments à mon chien ?",
+            "icon": "none",
+            "row_content": "<p>En général oui, mais nous vous recommandons quand même d'en discuter avec votre vétérinaie. </p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_DfPjpN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Où sont produits nos compléments alimentaires ?",
+            "icon": "none",
+            "row_content": "<p>Nos compléments alimentaires sont formulés en France et fabriqués en Belgique, juste à côté de chez nous !</p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_WDFaDp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Qui élabore nos formules ?",
+            "icon": "none",
+            "row_content": "<p>Nos formules sont élaborées par une vétérinaire nutritionniste et par une experte en compléments alimentaires.</p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_DVHWmP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Est-ce que je peux donner un complément alimentaire en continu à mon chien ou mon chat ?",
+            "icon": "none",
+            "row_content": "<p>Tant que vous suivez les dosages indiqués sur les sachets vous pouvez donner nos compléments alimentaires en continu à votre chien ou à votre chat. Néanmoins avant de décider de prolonger une cure nous vous recommandons d'en discuter directement avec votre vétérinaire. </p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_RyRpzW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Est-ce que nos formules conviennent à tous les chiens et tous les chats ?",
+            "icon": "none",
+            "row_content": "<p>Nos compléments alimentaires sont formulés pour convenir à tous les chiens ou à tous les chats en fonction de la formule. Néanmoins si votre chien ou votre chat a des allergies nous vous recommandons d'en discuter avec votre vétérinaire. </p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_YAzywP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pendant combien de temps dois-je donner un complément alimentaire à mon chien ?",
+            "icon": "none",
+            "row_content": "<p>Il est recommandé de faire des cures d'au moins 3 mois pour obtenir des résultats visibles sur le long terme. </p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_cj9gnP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Où dois-je conserver le complément alimentaire ?",
+            "icon": "none",
+            "row_content": "<p>Vous pouvez conserver les bouchées dans le sachet dans un endroit frais et sec. </p>",
+            "page": "",
+            "tab_id": "formules"
+          }
+        },
+        "collapsible_row_DA6kzx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment suivre ma commande ?",
+            "icon": "none",
+            "row_content": "<p>Vous pouvez suivre votre commande en allant sur ce lien. Vous pouvez également nous écrire à weloca.club@gmail.com</p>",
+            "page": "",
+            "tab_id": "livraison"
+          }
+        },
+        "collapsible_row_MhaWRL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment faire un retour ?",
+            "icon": "none",
+            "row_content": "<p>Pour faire une demande de retour, écrivez-nous à weloca.club@gmail.com. Vous avez 30 jours pour faire un retour à partir de la date de livraison de votre commande. Le sachet doit être renvoyé intact. Les frais de retour sont à votre charge. </p>",
+            "page": "",
+            "tab_id": "livraison"
+          }
+        },
+        "collapsible_row_NJrYeb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Je souhaite modifier ma commande",
+            "icon": "none",
+            "row_content": "<p>Si votre commande n'est pas encore expédiée, nous pouvons la modifier. Ecrivez nous à weloca.club@gmail.com</p>",
+            "page": "",
+            "tab_id": "livraison"
+          }
+        },
+        "collapsible_row_iVxWyB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Weloca, ça veut dire quoi ?",
+            "icon": "none",
+            "row_content": "<p>Weloca c'est la contraction de We love, we care. En français ça donnerait \"on les aime, on en prend soin\". </p>",
+            "page": "",
+            "tab_id": "weloca"
+          }
+        },
+        "collapsible_row_EmgChx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Notre équipe",
+            "icon": "none",
+            "row_content": "<p>Derrière Weloca se cachent Victoire et son chien Rosty. Pour en savoir plus, suivez leurs aventures sur le compte instagram we.loca !</p>",
+            "page": "",
+            "tab_id": "weloca"
+          }
+        },
+        "collapsible_row_tjinzw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Rencontrez la fondatrice",
+            "icon": "none",
+            "row_content": "<p>Je m’appelle Victoire, j’ai 34 ans et je viens du Havre en Normandie. J’ai travaillé pour une grande marque de croquettes et ensuite dans l’industrie des compléments alimentaires pour humain. À côté de cela, je partage ma vie avec un adorable teckel à poil dur nommé Rosty, qui a maintenant 4 ans. En voyant Rosty grandir et son système immunitaire être mis à rude épreuve, j’ai eu envie de créer Weloca pour qu’il puisse bénéficier de remèdes naturels pour le soulager. En fait, j’ai simplement voulu appliquer à Rosty ce que je fais pour moi-même : prendre soin de moi de l’intérieur grâce à des produits naturels. </p><p>Chez Weloca,  3 choses sont essentielles pour moi : le bien-être de nos animaux, créer des produits de qualité (efficaces, sains, naturels, respectant la réglementation tout en mettant la science au centre du développement) et être proche de vous (échanger, comprendre ce que vous recherchez, vos besoins, connaître vos animaux, partager vos expériences, vos réflexions ou tout simplement discuter). </p>",
+            "page": "",
+            "tab_id": "weloca"
+          }
+        },
+        "collapsible_row_Q6NGjt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Nous contacter",
+            "icon": "none",
+            "row_content": "<p>Vous pouvez nous contacter à l'adresse mail weloca.club@gmail.com ou sur instagram en message privé sur le comtpe we.loca !</p>",
+            "page": "",
+            "tab_id": "weloca"
+          }
+        }
+      },
+      "block_order": [
+        "tab_HiGYYf",
+        "tab_xHB8Be",
+        "tab_a8gXHF",
+        "tab_HpKNEC",
+        "collapsible_row_aUzjkq",
+        "collapsible_row_Kbici3",
+        "collapsible_row_wLhPxC",
+        "collapsible_row_G8gmNt",
+        "collapsible_row_T74DKF",
+        "collapsible_row_UV8L8E",
+        "collapsible_row_LLNTYg",
+        "collapsible_row_xj8bCe",
+        "collapsible_row_DfPjpN",
+        "collapsible_row_WDFaDp",
+        "collapsible_row_DVHWmP",
+        "collapsible_row_RyRpzW",
+        "collapsible_row_YAzywP",
+        "collapsible_row_cj9gnP",
+        "collapsible_row_DA6kzx",
+        "collapsible_row_MhaWRL",
+        "collapsible_row_NJrYeb",
+        "collapsible_row_iVxWyB",
+        "collapsible_row_EmgChx",
+        "collapsible_row_tjinzw",
+        "collapsible_row_Q6NGjt"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Questions fréquentes",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "additionnal_color_scheme": "",
+        "additional_title": "Besoin d’aide ?",
+        "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse <em>weloca.club@gmail.com</em>. Nous vous garantissons une réponse sous 48 heures.</p>",
+        "additional_button_text": "weloca.club@gmail.com",
+        "additional_button_subtitle": "",
+        "additional_button_icon": "",
+        "additional_button_url": "mailto:weloca.club@gmail.com",
+        "additional_button2_text": "@we.loca",
+        "additional_button2_subtitle": "",
+        "additional_button2_icon": "",
+        "additional_button2_url": "https://instagram.com/we.loca/",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "instagram_eyFpgD": {
+      "type": "instagram",
+      "blocks": {
+        "button_87nVhW": {
+          "type": "button",
+          "settings": {
+            "button_text": "@We.loca",
+            "button_link": "https://instagram.com/we.loca/",
+            "button_icon": "",
+            "button_style": "deployer-button deployer-button--tertiary"
+          }
+        },
+        "title_8ECfaD": {
+          "type": "title",
+          "settings": { "title": "Retrouvez-nous sur Instagram !" }
+        },
+        "text_DqzhtT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>"
+          }
+        },
+        "image_qU6rn4": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        },
+        "image_c37K4E": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        },
+        "image_8KNRAR": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        },
+        "image_KpwbGT": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        },
+        "image_7HHxca": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        },
+        "image_x3at9D": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        },
+        "image_kxjEmG": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        },
+        "image_m9tGUN": {
+          "type": "image",
+          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+        }
+      },
+      "block_order": [
+        "button_87nVhW",
+        "title_8ECfaD",
+        "text_DqzhtT",
+        "image_qU6rn4",
+        "image_c37K4E",
+        "image_8KNRAR",
+        "image_KpwbGT",
+        "image_7HHxca",
+        "image_x3at9D",
+        "image_kxjEmG",
+        "image_m9tGUN"
+      ],
+      "settings": {
+        "title": "",
+        "description": "",
+        "remove_grid_spaces": false,
+        "enable_slider_mobile": true,
+        "enable_slider_desktop": true,
+        "enable_slider_full_width_mobile": true,
+        "enable_slider_full_width_desktop": false,
+        "enable_slider_left_margin_mobile": true,
+        "enable_slider_left_margin_desktop": true,
+        "slider_columns_mobile": 1.4,
+        "slider_columns_desktop": 1,
+        "slider_step_mobile": 1,
+        "slider_step_desktop": 1,
+        "enable_slider_drag_mobile": false,
+        "enable_slider_free_scroll_mobile": false,
+        "enable_slider_drag_desktop": false,
+        "enable_slider_free_scroll_desktop": false,
+        "enable_slider_loop": true,
+        "enable_slider_autoplay": false,
+        "slider_autoplay_speed": 3,
+        "enable_slider_autoplay_button": false,
+        "enable_slider_scrollbar": false,
+        "slider_navigation_mobile": "none",
+        "slider_navigation_desktop": "none",
+        "slider_button_style": "deployer-button deployer-button--secondary",
+        "enable_slider_numbering_mobile": false,
+        "enable_slider_numbering_desktop": false,
+        "slider_numbering_text": "",
+        "slider_navigation_position_mobile": "top-center",
+        "slider_navigation_position_desktop": "top-right",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "deployer-button",
+        "page_width": 1500,
+        "content_horizontal_position_mobile": "column",
+        "content_horizontal_position_desktop": "row",
+        "content_vertical_position": "center",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "alignment_mobile": "left",
+        "alignment_desktop": "left",
+        "section_background_color": "#fffdf5",
+        "section_text_color": "#364c84"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_pPrbRc",
+    "multicolumn",
+    "image_with_text_CHJR7K",
+    "image_with_text_tHGn6d",
+    "image_with_text_NGqwg9",
+    "collapsible_tabs_8fKwgQ",
+    "instagram_eyFpgD"
+  ]
+}

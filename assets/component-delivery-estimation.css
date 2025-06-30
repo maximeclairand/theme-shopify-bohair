@@ -1,0 +1,23 @@
+delivery-estimation .delivery-estimation__delay-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: var(--deployer-p-small-font-size);
+}
+
+delivery-estimation span {
+  font-weight: bold;
+}
+
+delivery-estimation.delivery-estimation__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+delivery-estimation.delivery-estimation__container-with-availability {
+  justify-content: space-between;
+}

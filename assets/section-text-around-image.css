@@ -1,0 +1,169 @@
+.section.text-around-image {
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+
+.section.text-around-image .section__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--deployer-text-around-image-section-gap);
+}
+
+.section.text-around-image .section__page-width {
+  max-width: var(--page-width, 120rem);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section.text-around-image .section__header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--deployer-text-around-image-section-header-gap);
+}
+
+.section.text-around-image .section__header .section__title,
+.section.text-around-image .section__header .section__description > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.text-around-image__content--mobile {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: var(--deployer-text-around-image-section-content-row-gap);
+}
+
+.text-around-image__content--desktop {
+  display: none;
+}
+
+.text-around-image__media {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-around-image__media img {
+  object-fit: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: var(--deployer-text-around-image-media-border-radius);
+}
+
+.text-around-image__text-items {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: calc(var(--deployer-text-around-image-section-content-row-gap) / 2);
+  column-gap: var(--deployer-text-around-image-section-content-column-gap);
+}
+
+.text-around-image__text-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: var(--deployer-text-around-image-text-item-gap);
+}
+
+.text-around-image__text-items .text-around-image__text-item {
+  --total-gap-per-row: calc(
+    var(--deployer-text-around-image-section-content-column-gap) * (var(--items-per-row-mobile, 2) - 1)
+  );
+  width: calc((100% / var(--items-per-row-mobile, 2)) - (var(--total-gap-per-row) / var(--items-per-row-mobile, 2)));
+}
+
+.text-around-image__text-item-icon {
+  width: var(--icon-width, 24px);
+  max-width: 100%;
+}
+
+.text-around-image__text-item img,
+.text-around-image__text-item svg {
+  width: 100%;
+  height: auto;
+}
+
+.text-around-image__text-item-content {
+  max-width: 100%;
+}
+
+.text-around-image__text-item-title,
+.text-around-image__text-item-description > * {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.text-around-image__text-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 749px) {
+  .text-around-image__text-item > .text-around-image__text-item-icon {
+    display: none;
+  }
+
+  .text-around-image__text-item-content .text-around-image__text-item-icon {
+    width: calc(var(--icon-width, 24px) / 1.5);
+    display: flex;
+    align-items: center;
+  }
+
+  .text-around-image__text-item-description {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .section.text-around-image .section__page-width {
+    padding: 0 5rem;
+  }
+
+  .text-around-image__content--mobile {
+    display: none;
+  }
+
+  .text-around-image__content--desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: var(--deployer-text-around-image-section-content-column-gap);
+  }
+
+  .text-around-image__content--desktop-left,
+  .text-around-image__content--desktop-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--deployer-text-around-image-section-content-row-gap);
+    width: calc((100% - var(--image-width, 30%)) / 2);
+  }
+
+  .text-around-image__content--desktop-center {
+    width: var(--image-width, 30%);
+  }
+
+  .text-around-image__text-items {
+    row-gap: var(--deployer-text-around-image-section-content-row-gap);
+  }
+
+  .text-around-image__text-item-content {
+    max-width: 60%;
+  }
+
+  .text-around-image__text-item-content .text-around-image__text-item-icon {
+    display: none;
+  }
+}

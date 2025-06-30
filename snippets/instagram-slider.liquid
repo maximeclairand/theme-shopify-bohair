@@ -1,0 +1,260 @@
+{% comment %}
+  Renders a slider component.
+
+  Accepts:
+  - id: {{ String }} ID of the component
+  - page_width: {Number} Page width
+  - remove_grid_spaces: {Boolean} Remove grid spaces
+  - enable_slider_mobile: {Boolean} Enable mobile slider
+  - enable_slider_desktop: {Boolean} Enable desktop slider
+  - enable_slider_full_width_mobile: {Boolean} Enable full width slider on mobile
+  - enable_slider_full_width_desktop: {Boolean} Enable full width slider on desktop
+  - enable_slider_left_margin_mobile: {Boolean} Enable left margin if slider is full width on mobile
+  - enable_slider_left_margin_desktop: {Boolean} Enable left margin if slider is full width on desktop
+  - slider_columns_mobile: {Number} Number of columns on mobile
+  - slider_columns_desktop: {Number} Number of columns on desktop
+  - slider_step_mobile: {Number} Step number on mobile
+  - slider_step_desktop: {Number} Step number on desktop
+  - enable_slider_drag_mobile: {Boolean} Enable drag on mobile
+  - enable_slider_drag_desktop: {Boolean} Enable drag on desktop
+  - enable_slider_free_scroll_mobile: {Boolean} Enable free scroll on mobile
+  - enable_slider_free_scroll_desktop: {Boolean} Enable free scroll on desktop
+  - enable_slider_loop: {Boolean} Enable loop
+  - enable_slider_autoplay: {Boolean} Enable autoplay
+  - slider_autoplay_speed: {Number} Slider autoplay speed
+  - enable_slider_scrollbar: {Boolean} Enable scrollbar
+  - slider_navigation_position_mobile: {String} Navigation position on mobile
+  - slider_navigation_position_desktop: {String} Navigation position on desktop
+
+  Usage:
+  {%- render 'instagram-slider', id: section.id, page_width: page_width, enable_slider_mobile: enable_slider_mobile, enable_slider_desktop: enable_slider_desktop -%}
+{% endcomment %}
+
+{%- liquid
+  assign remove_grid_spaces = remove_grid_spaces | default: block.settings.remove_grid_spaces | default: section.settings.remove_grid_spaces
+  assign enable_slider_mobile = enable_slider_mobile | default: block.settings.enable_slider_mobile | default: section.settings.enable_slider_mobile
+  assign enable_slider_desktop = enable_slider_desktop | default: block.settings.enable_slider_desktop | default: section.settings.enable_slider_desktop
+  assign enable_slider_full_width_mobile = enable_slider_full_width_mobile | default: block.settings.enable_slider_full_width_mobile | default: section.settings.enable_slider_full_width_mobile
+  assign enable_slider_full_width_desktop = enable_slider_full_width_desktop | default: block.settings.enable_slider_full_width_desktop | default: section.settings.enable_slider_full_width_desktop
+  assign enable_slider_left_margin_mobile = enable_slider_left_margin_mobile | default: block.settings.enable_slider_left_margin_mobile | default: section.settings.enable_slider_left_margin_mobile
+  assign enable_slider_left_margin_desktop = enable_slider_left_margin_desktop | default: block.settings.enable_slider_left_margin_desktop | default: section.settings.enable_slider_left_margin_desktop
+  assign slider_columns_mobile = slider_columns_mobile | default: block.settings.slider_columns_mobile | default: section.settings.slider_columns_mobile
+  assign slider_columns_desktop = slider_columns_desktop | default: block.settings.slider_columns_desktop | default: section.settings.slider_columns_desktop
+  assign slider_step_mobile = slider_step_mobile | default: block.settings.slider_step_mobile | default: section.settings.slider_step_mobile | default: 1
+  assign slider_step_desktop = slider_step_desktop | default: block.settings.slider_columns_desktop | default: section.settings.slider_step_desktop | default: 1
+  assign enable_slider_drag_mobile = enable_slider_drag_mobile | default: block.settings.enable_slider_drag_mobile | default: section.settings.enable_slider_drag_mobile
+  assign enable_slider_drag_desktop = enable_slider_drag_desktop | default: block.settings.enable_slider_drag_desktop | default: section.settings.enable_slider_drag_desktop
+  assign enable_slider_free_scroll_mobile = enable_slider_free_scroll_mobile | default: block.settings.enable_slider_free_scroll_mobile | default: section.settings.enable_slider_free_scroll_mobile
+  assign enable_slider_free_scroll_desktop = enable_slider_free_scroll_desktop | default: block.settings.enable_slider_free_scroll_desktop | default: section.settings.enable_slider_free_scroll_desktop
+  assign enable_slider_loop = enable_slider_loop | default: block.settings.enable_slider_loop | default: section.settings.enable_slider_loop
+  assign enable_slider_autoplay = enable_slider_autoplay | default: block.settings.enable_slider_autoplay | default: section.settings.enable_slider_autoplay
+  assign slider_autoplay_speed = slider_autoplay_speed | default: block.settings.slider_autoplay_speed | default: section.settings.slider_autoplay_speed
+  assign enable_slider_scrollbar = enable_slider_scrollbar | default: block.settings.enable_slider_scrollbar | default: section.settings.enable_slider_scrollbar
+  assign slider_navigation_position_mobile = slider_navigation_position_mobile | default: block.settings.slider_navigation_position_mobile | default: section.settings.slider_navigation_position_mobile | default: 'bottom-center'
+  assign slider_navigation_position_desktop = slider_navigation_position_desktop | default: block.settings.slider_navigation_position_desktop | default: section.settings.slider_navigation_position_desktop | default: 'bottom-center'
+  assign slider_slides = section.blocks | where: 'type', 'image'
+  assign slider_component_attributes = ''
+  assign slider_attributes = 'data-slider'
+  assign grid_classes = 'deployer-grid'
+
+  assign slider_component_attributes = slider_component_attributes | append: ' data-navigation-position-mobile="' | append: slider_navigation_position_mobile | append: '"'
+  assign slider_component_attributes = slider_component_attributes | append: ' data-navigation-position-desktop="' | append: slider_navigation_position_desktop | append: '"'
+
+  if enable_slider_mobile
+    assign slider_attributes = slider_attributes | append: ' data-enable-mobile'
+  endif
+  if enable_slider_desktop
+    assign slider_attributes = slider_attributes | append: ' data-enable-desktop'
+  endif
+  if enable_slider_full_width_mobile
+    assign slider_attributes = slider_attributes | append: ' data-full-width-mobile'
+  endif
+  if enable_slider_full_width_desktop
+    assign slider_attributes = slider_attributes | append: ' data-full-width-desktop'
+  endif
+  if enable_slider_left_margin_mobile
+    assign slider_attributes = slider_attributes | append: ' data-left-margin-mobile'
+  endif
+  if enable_slider_left_margin_desktop
+    assign slider_attributes = slider_attributes | append: ' data-left-margin-desktop'
+  endif
+  if enable_slider_drag_mobile
+    assign slider_attributes = slider_attributes | append: ' data-drag-mobile'
+  endif
+  if enable_slider_drag_desktop
+    assign slider_attributes = slider_attributes | append: ' data-drag-desktop'
+  endif
+  if enable_slider_free_scroll_mobile
+    assign slider_attributes = slider_attributes | append: ' data-free-scroll-mobile'
+  endif
+  if enable_slider_free_scroll_desktop
+    assign slider_attributes = slider_attributes | append: ' data-free-scroll-desktop'
+  endif
+  if enable_slider_loop
+    assign slider_attributes = slider_attributes | append: ' data-loop'
+  endif
+  if enable_slider_autoplay
+    assign slider_attributes = slider_attributes | append: ' data-autoplay' | append: ' data-speed="' | append: slider_autoplay_speed | append: '"'
+  endif
+  if enable_slider_scrollbar
+    assign slider_attributes = slider_attributes | append: ' data-scrollbar'
+  endif
+
+  assign slider_columns_total = slider_columns_mobile | plus: slider_columns_desktop
+  assign slider_columns_tablet = slider_columns_total | divided_by: 2.0 | round: 1
+  assign columns_mobile = slider_columns_mobile | floor
+  assign columns_tablet = slider_columns_tablet | floor
+  assign columns_desktop = slider_columns_desktop | floor
+
+  assign slider_step_total = slider_step_mobile | plus: slider_step_desktop
+  assign slider_step_tablet = slider_step_total | divided_by: 2.0 | round: 1
+  assign slider_attributes = slider_attributes | append: ' data-step-mobile="' | append: slider_step_mobile | append: '"'
+  assign slider_attributes = slider_attributes | append: ' data-step-tablet="' | append: slider_step_tablet | append: '"'
+  assign slider_attributes = slider_attributes | append: ' data-step-desktop="' | append: slider_step_desktop | append: '"'
+
+  if remove_grid_spaces
+    assign grid_classes = grid_classes | append: ' deployer-grid--gapless'
+  endif
+
+  assign slider_slides_count = slider_slides.size
+  assign slider_slides_half = slider_slides_count | divided_by: 2.0 | ceil
+  assign slider_slides_half_minus_one = slider_slides_half | minus: 1
+-%}
+
+<deployer-slider-component
+  class="deployer-slider-component"
+  {{ slider_component_attributes }}
+>
+  {% assign slider_id = id | append: '-1' %}
+
+  <style>
+    .deployer-slider[data-id="{{ slider_id }}"] {
+      --slider-columns-mobile: {{ slider_columns_mobile }};
+      --slider-columns-tablet: {{ slider_columns_tablet }};
+      --slider-columns-desktop: {{ slider_columns_desktop }};
+    }
+
+    .deployer-grid[data-id="{{ slider_id }}"] {
+      --grid-columns-mobile: {{ columns_mobile }};
+      --grid-columns-tablet: {{ columns_tablet }};
+      --grid-columns-desktop: {{ columns_desktop }};
+
+      {%- if slider_columns_mobile == 1 -%}
+        --deployer-grid-mobile-horizontal-spacing: 0px;
+        --deployer-grid-mobile-vertical-spacing: 0px;
+      {%- else -%}
+        --deployer-grid-mobile-horizontal-spacing: var(--deployer-default-grid-mobile-horizontal-spacing, 10px);
+        --deployer-grid-mobile-vertical-spacing: var(--deployer-default-grid-mobile-vertical-spacing, 10px);
+      {%- endif -%}
+      {%- if slider_columns_tablet == 0 -%}
+        --deployer-grid-tablet-horizontal-spacing: 0px;
+        --deployer-grid-tablet-vertical-spacing: 0px;
+      {%- else -%}
+        --deployer-grid-tablet-horizontal-spacing: var(--deployer-default-grid-tablet-horizontal-spacing, 15px);
+        --deployer-grid-tablet-vertical-spacing: var(--deployer-default-grid-tablet-vertical-spacing, 15px);
+      {%- endif -%}
+      {%- if slider_columns_desktop == 0 -%}
+        --deployer-grid-desktop-horizontal-spacing: 0px;
+        --deployer-grid-desktop-vertical-spacing: 0px;
+      {%- else -%}
+        --deployer-grid-desktop-horizontal-spacing: var(--deployer-default-grid-desktop-horizontal-spacing, 20px);
+        --deployer-grid-desktop-vertical-spacing: var(--deployer-default-grid-desktop-vertical-spacing, 20px);
+      {%- endif -%}
+
+      --animation-duration: {{ slider_slides_half | times: 4 | round: 1 }}s;
+      --animation-length: {{ slider_slides_half_minus_one | times: 100 | round: 1 }}%;
+    }
+  </style>
+
+  <ul
+    id="Deployer-Slider-{{ slider_id }}"
+    data-id="{{ slider_id }}"
+    class="deployer-slider {{ grid_classes }} deployer-grid--{{ columns_mobile }}-col-mobile deployer-grid--{{ columns_tablet }}-col-tablet deployer-grid--{{ columns_desktop }}-col-desktop"
+    role="list"
+    aria-label="{{ 'deployer.slider.name' | t }}"
+    {{ slider_attributes }}
+  >
+    {%- for slide in slider_slides -%}
+      {%- if forloop.index <= slider_slides_half -%}
+        <li
+          id="Deployer-Slide-{{ slider_id }}-{{ forloop.index }}"
+          class="deployer-grid__item deployer-slider__slide"
+          data-slide
+        >
+          {%- render 'image-slide', id: slider_id, index: forloop.index, slide: slide, page_width: page_width -%}
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+
+  {%- render 'deployer-slider-navigation', id: slider_id, enable_slider_mobile: enable_slider_mobile, enable_slider_desktop: enable_slider_desktop, enable_slider_autoplay: enable_slider_autoplay, slider_slides: slider_slides -%}
+</deployer-slider-component>
+
+<deployer-slider-component
+  class="deployer-slider-component"
+  {{ slider_component_attributes }}
+>
+  {% assign slider_id = id | append: '-2' %}
+
+  <style>
+    .deployer-slider[data-id="{{ slider_id }}"] {
+      --slider-columns-mobile: {{ slider_columns_mobile }};
+      --slider-columns-tablet: {{ slider_columns_tablet }};
+      --slider-columns-desktop: {{ slider_columns_desktop }};
+    }
+
+    .deployer-grid[data-id="{{ slider_id }}"] {
+      --grid-columns-mobile: {{ columns_mobile }};
+      --grid-columns-tablet: {{ columns_tablet }};
+      --grid-columns-desktop: {{ columns_desktop }};
+
+      {%- if slider_columns_mobile == 1 -%}
+        --deployer-grid-mobile-horizontal-spacing: 0px;
+        --deployer-grid-mobile-vertical-spacing: 0px;
+      {%- else -%}
+        --deployer-grid-mobile-horizontal-spacing: var(--deployer-default-grid-mobile-horizontal-spacing, 10px);
+        --deployer-grid-mobile-vertical-spacing: var(--deployer-default-grid-mobile-vertical-spacing, 10px);
+      {%- endif -%}
+      {%- if slider_columns_tablet == 0 -%}
+        --deployer-grid-tablet-horizontal-spacing: 0px;
+        --deployer-grid-tablet-vertical-spacing: 0px;
+      {%- else -%}
+        --deployer-grid-tablet-horizontal-spacing: var(--deployer-default-grid-tablet-horizontal-spacing, 15px);
+        --deployer-grid-tablet-vertical-spacing: var(--deployer-default-grid-tablet-vertical-spacing, 15px);
+      {%- endif -%}
+      {%- if slider_columns_desktop == 0 -%}
+        --deployer-grid-desktop-horizontal-spacing: 0px;
+        --deployer-grid-desktop-vertical-spacing: 0px;
+      {%- else -%}
+        --deployer-grid-desktop-horizontal-spacing: var(--deployer-default-grid-desktop-horizontal-spacing, 20px);
+        --deployer-grid-desktop-vertical-spacing: var(--deployer-default-grid-desktop-vertical-spacing, 20px);
+      {%- endif -%}
+
+      --animation-duration: {{ slider_slides_half | times: 4 | round: 1 }}s;
+      --animation-length: {{ slider_slides_half_minus_one | times: 100 | round: 1 }}%;
+    }
+  </style>
+
+  <ul
+    id="Deployer-Slider-{{ slider_id }}"
+    data-id="{{ slider_id }}"
+    class="deployer-slider {{ grid_classes }} deployer-grid--{{ columns_mobile }}-col-mobile deployer-grid--{{ columns_tablet }}-col-tablet deployer-grid--{{ columns_desktop }}-col-desktop"
+    role="list"
+    aria-label="{{ 'deployer.slider.name' | t }}"
+    {{ slider_attributes }}
+  >
+    {%- for slide in slider_slides -%}
+      {%- if forloop.index > slider_slides_half -%}
+        <li
+          id="Deployer-Slide-{{ slider_id }}-{{ forloop.index }}"
+          class="deployer-grid__item deployer-slider__slide"
+          data-slide
+        >
+          {%- render 'image-slide', id: slider_id, index: forloop.index, slide: slide, page_width: page_width -%}
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+
+  {%- render 'deployer-slider-navigation', id: slider_id, enable_slider_mobile: enable_slider_mobile, enable_slider_desktop: enable_slider_desktop, enable_slider_autoplay: enable_slider_autoplay, slider_slides: slider_slides -%}
+</deployer-slider-component>

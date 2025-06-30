@@ -1,0 +1,50 @@
+.deployer-component__fake-variants {
+    display: flex;
+}
+
+.deployer-component__fake-variants .fake-variants {
+    width: 100%;
+}
+
+.deployer-component__fake-variants .fake-variants__label {
+    margin-bottom: 1rem;
+}
+
+.deployer-component__fake-variants .deployer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.deployer-component__fake-variants .deployer-cards .deployer-button {
+    width: 100%;
+    padding: var(--deployer-default-spacing);
+    border: var(--deployer-default-border-width) solid rgba(var(--color-foreground, 36, 36, 36),1);
+    border-radius: var(--deployer-default-border-radius);
+}
+
+.deployer-component__fake-variants .deployer-cards .deployer-button:disabled {
+    opacity: 1;
+    outline: 1px solid rgb(var(--deployer-primary-color));
+    color: rgb(var(--deployer-secondary-color-text));
+    background-color: rgba(var(--deployer-primary-color),.1);
+}
+
+.deployer-component__fake-variants .deployer-cards .deployer-radio {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+}
+
+.deployer-component__fake-variants .deployer-cards .deployer-radio > span {
+    width: auto;
+}
+
+@media screen and (min-width: 990px) {
+    .deployer-component__fake-variants .deployer-cards .deployer-button {
+        width: calc(50% - 0.5rem);
+    }
+}
+  

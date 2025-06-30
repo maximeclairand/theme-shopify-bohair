@@ -1,0 +1,160 @@
+{{ 'component-subscription-widget.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'subscription-widget.js' | asset_url }}" defer></script>
+ 
+{%- render 'deployer-tools' -%}
+ 
+<subscription-widget class="color-{{ block.settings.subscription_color_scheme }}" id="subscription-widget__{{ section.id }}" data-url="{{ product.url }}" data-section-id="{{ section.id }}">
+  {% liquid
+    for selling_plan_group in product.selling_plan_groups
+      for selling_plan in selling_plan_group.selling_plans
+        if forloop.index0 == 0
+          assign selling_plan_value_type = selling_plan.price_adjustments[0].value_type
+          assign selling_plan_value = selling_plan.price_adjustments[0].value
+          # Vérification du type de la réduction (pourcentage, valeur fixe, prix final)
+          if selling_plan_value_type == null
+            assign price = product.price
+          endif
+          if selling_plan_value_type == 'percentage'
+            assign selling_plan_value_type = selling_plan.price_adjustments[0].value_type
+            assign sum_to_substract = product.selected_or_first_available_variant.price | times: selling_plan.price_adjustments[0].value | divided_by: 100
+            assign price = product.selected_or_first_available_variant.price | minus: sum_to_substract
+          elsif selling_plan_value_type == 'fixed_amount'
+            assign price = product.selected_or_first_available_variant.price | minus: selling_plan_value
+          elsif selling_plan_value_type == 'price'
+            assign price = selling_plan.price_adjustments[0].value
+          else
+            assign price = product.selected_or_first_available_variant.price
+          endif
+        endif
+      endfor
+    endfor
+    # calcul du % d'économie pour l'achat en abonnement
+    if price != product.selected_or_first_available_variant.price
+      assign saving = product.selected_or_first_available_variant.price | minus: price
+      assign saving_percentage = saving | times: 100 | divided_by: product.selected_or_first_available_variant.price
+      assign saving_percentage_element = '<span class="subscription-widget__dynamic-discount">' | append: saving_percentage | append: '%</span>'
+    endif
+  %}
+ 
+  <p class="subscription-widget__title">{{ block.settings.label }}</p>
+ 
+  {%- if block.settings.description != blank -%}
+    <div class="subscription-widget__description">
+      {{ block.settings.description | replace: '#', saving_percentage_element }}
+    </div>
+  {%- endif -%}
+ 
+  <div class="subscription-widget__options">
+    <div class="subscription-widget__option{% if block.settings.default_selected == 'one_time' %} subscription-widget__option--selected{% endif %}">
+      <div class="subscription-widget__option-wrapper">
+        <label class="deployer-radio">
+          <input
+            type="radio"
+            name="purchase_type"
+            value="one-time"
+            {% if block.settings.default_selected == 'one_time' %}
+              checked
+            {% endif %}
+          >
+          <span></span>
+          <div class="subscription-widget__option-header">
+            <span class="subscription-widget__option-label">{{ block.settings.one_time_label -}}</span>
+            <div class="subscription-widget__option-prices">
+              {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+                <s class="subscription-widget__option-compare-at-price">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</s>
+              {% endif %}
+              <span class="subscription-widget__option-price">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+ 
+    <div class="subscription-widget__option subscription-widget__option--subscription{% if block.settings.default_selected == 'subscription' %} subscription-widget__option--selected{% endif %}{% if product.selected_or_first_available_variant.selling_plan_allocations.size == 0 %} subscription-widget__option--disabled{% endif %}">
+      <div class="subscription-widget__option-wrapper">
+        <label class="deployer-radio">
+          <input
+            type="radio"
+            name="purchase_type"
+            {% if block.settings.default_selected == 'subscription' %}
+              checked
+            {% endif %}
+          >
+          <span></span>
+          <div class="subscription-widget__option-header">
+            <span class="subscription-widget__option-label">{{ block.settings.subscription_label }}</span>
+            <div class="subscription-widget__option-prices">
+              <span class="subscription-widget__option-prices-badge">-{{ saving_percentage_element }}</span>
+              {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+                <s class="subscription-widget__option-compare-at-price">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</s>
+              {% endif %}
+              {% comment %} {%- if saving_percentage != 0 -%}
+                <s>{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</s>
+              {%- endif -%} {% endcomment %}
+              <span class="subscription-widget__option-price">{{ price | money_without_trailing_zeros }}</span>
+            </div>
+          </div>
+        </label>
+ 
+        <div class="subscription-widget__option-content {%  if block.settings.subscription_badge != blank %}subscription-widget__option-content--with-badge{% endif %}">
+          <select class="deployer-select">
+            {% for selling_plan_group in product.selling_plan_groups %}
+              {% for selling_plan in selling_plan_group.selling_plans %}
+                {% liquid
+                  assign selling_plan_name_key = 'sellin_plan_name_' | append: forloop.index
+                  assign selling_plan_custom_name = block.settings[selling_plan_name_key]
+                %}
+                <option
+                  data-value="{{ selling_plan.id }}"
+                  {% if selling_plan_value_type != null %}
+                    data-ajustment-type="{{ selling_plan.price_adjustments[0].value_type }}"
+                    data-ajustment-value="{{ selling_plan.price_adjustments[0].value }}"
+                  {% endif %}
+                >
+                  {% if selling_plan_custom_name != blank %}
+                    {{ selling_plan_custom_name }}
+                  {% else %}
+                    {{ selling_plan.name }}
+                  {% endif %}
+                </option>
+              {% endfor %}
+            {% endfor %}
+          </select>
+ 
+          {% if block.settings.subscription_benefit_1 != blank %}
+            <ul class="subscription-widget__benefits">
+              {% for i in (1..4) %}
+                {% liquid
+                  assign benefit_key = 'subscription_benefit_' | append: i
+                  assign benefit_icon_key = 'subscription_benefit_icon_' | append: i
+                  assign advantage = block.settings[benefit_key]
+                  assign benefit_icon = block.settings[benefit_icon_key]
+                %}
+                {% if advantage != blank %}
+                  <li class="subscription-widget__benefit">
+                    {% if benefit_icon == blank %}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 -960 960 960">
+                        <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+                      </svg>
+                    {% else %}
+                      <img src="{{ benefit_icon | image_url: width: 64 }}" width="16" height="16" loading="lazy" alt="{{ advantage }}">
+                    {% endif %}
+                    <div>{{ advantage | replace: '#', saving_percentage_element }}</div>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {%- if block.settings.subscription_badge != blank -%}
+            <span class="badge subscription-widget__badge">{{ block.settings.subscription_badge }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script type="application/json" id="currentVariantData">
+    {{ product.selected_or_first_available_variant | json }}
+  </script>
+</subscription-widget>

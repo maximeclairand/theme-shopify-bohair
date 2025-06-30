@@ -1,0 +1,144 @@
+{% comment %}
+  Renders an ingredient card
+
+  Accepts:
+  - ingredient: {Object} Settings for the ingredient metaobject
+  - item_id: {String} ID of the item
+  - css_class: {String} CSS class to add to the card (optional)
+  - layout: {String} Card layout. Values are "vertical", "horizontal" and "stacked". Default is "vertical"
+  - media_aspect_ratio: {String} Size of the image card. Values are "adapt", "square", "portrait" and "landscape". Default is "square"
+  - image_adapt_aspect_ratio: {Number} Aspect ratio of the image if the media_aspect_ratio is "adapt". Default is 2.1
+  - card_content_vertical_position: {String} Position of the card content. Values are "top", "middle" and "bottom". Default is "middle"
+  - title_layout: {String} Title layout. Values are "vertical" and "horizontal". Default is "vertical"
+  - button_style: {String} Style of the button. Values are "deployer-button", "deployer-button deployer-button--secondary" and "deployer-button deployer-button--tertiary". Default is "deployer-button"
+  - alignment: {String} Alignment of the card. Values are "center", "left" and "right". Default is "center"
+  - alignment_margin: {String} Alignment of elements in the card that need to be aligned with margin
+  - page_width: {Number} Page width
+  - fetch_priority: {String} Fetch priority
+
+  Usage:
+  {% render 'deployer-card-ingredient', ingredient: ingredient %}
+{% endcomment %}
+
+{%- liquid
+  assign card_id = section.id | append: '__' | append: item_id
+  assign card_settings = ingredient
+
+  assign title = card_settings.title
+  assign description = card_settings.description
+  assign image = card_settings.image
+  assign image_popup = card_settings.image_popup
+
+  assign ratio = 1
+  if media_aspect_ratio == 'adapt'
+    assign ratio = image.aspect_ratio | default: image_adapt_aspect_ratio
+  elsif media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif media_aspect_ratio == 'landscape'
+    assign ratio = 1.2
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 1
+  endif
+-%}
+
+<deployer-card
+  data-id="{{ card_id }}"
+  class="deployer-card deployer-card--ingredient deployer-card--{{ layout }} {{ css_class }}"
+  style="--deployer-card-alignment: {{ alignment }}; --deployer-card-alignment-margin: {{ alignment_margin }};"
+>
+  <div class="deployer-card__inner">
+    {%- if image != blank -%}
+      <div class="deployer-card__media-item">
+        {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+        <deployer-card-media widths="{{ widths }}" class="deployer-card__media" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+          {%- capture sizes -%}
+                    (min-width: {{ page_width }}px) {{ page_width | minus: 100 | divided_by: 2 }}px,
+                    (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                {%- endcapture -%}
+          {{ image | image_url: width: 1500 | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority }}
+        </deployer-card-media>
+      </div>
+    {%- endif -%}
+
+    <div class="deployer-card__content deployer-card__content--{{ card_content_vertical_position }}">
+      <div class="deployer-card__information">
+        {%- if title_layout == 'horizontal' -%}
+          <div class="deployer-card__title-wrapper">
+        {%- endif -%}
+        {%- if title != blank -%}
+          <h3 class="deployer-card__title">
+            {{ title | escape }}
+          </h3>
+        {%- endif -%}
+        {%- if title_layout == 'horizontal' -%}
+          </div>
+        {%- endif -%}
+
+        {%- if description != blank -%}
+          <div class="deployer-card__description">
+            {{ description }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if description != blank -%}
+        <div class="deployer-card__bottom">
+          <div class="deployer-card__button-wrapper">
+            <modal-opener
+              class="ingredient-popup-modal__opener"
+              data-modal="#PopupModal-{{ card_id }}"
+            >
+              <button
+                class="ingredient-popup-modal__button deployer-button {{ button_style }} deployer-button--icon-only"
+                type="button"
+                aria-haspopup="dialog"
+              >
+                {{- 'icon-plus.svg' | inline_asset_content -}}
+              </button>
+            </modal-opener>
+          </div>
+
+          <modal-dialog id="PopupModal-{{ card_id }}" class="ingredient-popup-modal">
+            {%- style -%}
+              #PopupModal-{{ card_id }} {
+                --background-image: url('{{ image_popup | default: image | image_url: width: 1500 }}');
+                --color-foreground: {{ section.settings.card_text_color.red }},{{ section.settings.card_text_color.green }},{{ section.settings.card_text_color.blue }};
+              }
+            {%- endstyle -%}
+
+            <div
+              role="dialog"
+              aria-label="{{ title }}"
+              aria-modal="true"
+              class="ingredient-popup-modal__content"
+              tabindex="-1"
+            >
+              <button
+                id="ModalClose-{{ card_id }}"
+                type="button"
+                class="ingredient-popup-modal__toggle"
+                aria-label="{{ 'accessibility.close' | t }}"
+              >
+                {{- 'icon-close.svg' | inline_asset_content -}}
+              </button>
+              <div class="ingredient-popup-modal__content-info">
+                {%- if title != blank -%}
+                  <h3 class="popup-modal__title">
+                    {{ title | escape }}
+                  </h3>
+                  <hr class="popup-modal__divider">
+                {%- endif -%}
+                {%- if description != blank -%}
+                  <div class="popup-modal__description">
+                    {{ description }}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          </modal-dialog>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</deployer-card>

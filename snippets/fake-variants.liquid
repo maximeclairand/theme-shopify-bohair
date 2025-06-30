@@ -1,0 +1,94 @@
+{%- comment -%}
+  Composant de sélection de fausse variantes avec trois modes d'affichage :
+  - (color-swatch)
+  - (button)
+  - (card) - en construction
+{%- endcomment -%}
+
+{{ 'component-fake-variants.css' | asset_url | stylesheet_tag }}
+
+<section class="deployer-component__fake-variants">
+  {%- if product.metafields.custom.fake_variants -%}
+    {%- assign fake_variants = product.metafields.custom.fake_variants.value -%}
+    {%- assign available_products = fake_variants | where: 'available', true -%}
+
+    {%- if available_products.size > 0 -%}
+      <div class="fake-variants" role="group" aria-label="Options du produit">
+        {%- if block.settings.label != blank -%}
+          <p class="fake-variants__label">{{ block.settings.label }}</p>
+        {%- endif -%}
+        <div class="deployer-basics__container">
+          {%- case block.settings.display_mode -%}
+            {%- when 'color-swatch' -%}
+              <div class="deployer-swatches" role="radiogroup" aria-labelledby="variants-label">
+                {%- for fake_variant in available_products -%}
+                  {%- assign variant_color = fake_variant.metafields.custom.fake_variants_color.value | default: 'rgb(255,255,255)' -%}
+                  <input
+                    class="deployer-swatch-input"
+                    type="radio"
+                    name="{{ fake_variant.id }}"
+                    id="{{ fake_variant.id }}"
+                    data-name="{{ fake_variant.metafields.custom.fake_variant_title | default: fake_variant.title }}"
+                    value="{{ fake_variant.metafields.custom.fake_variant_title | default: fake_variant.title }}"
+                    {%- if fake_variant.id == product.id %}
+                      aria-current="true"
+                      checked
+                    {%- endif -%}
+                  >
+                  <label class="deployer-swatch deployer-swatch--rounded" for="{{ fake_variant.id }}" onclick="window.location.href='{{ fake_variant.url }}'">
+                    <span
+                      style="--color-swatch-background: {{ variant_color }};"
+                    >
+                    </span>
+                  </label>
+                {%- endfor -%}
+              </div>
+            {%- when 'button' -%}
+              <div class="deployer-buttons">
+                {%- for fake_variant in available_products -%}
+                  <button
+                    class="deployer-button deployer-button--{% if fake_variant.id == product.id %}primary{% else %}secondary{% endif %}"
+                    onclick="window.location.href='{{ fake_variant.url }}'"
+                    title="{{ fake_variant.metafields.custom.fake_variant_title | default: fake_variant.title }}"
+                    {% if fake_variant.id == product.id %}
+                      aria-current="true"
+                      disabled
+                    {% endif %}
+                  >
+                    {{ fake_variant.metafields.custom.fake_variant_title | default: fake_variant.title }}
+                  </button>
+                {%- endfor -%}
+              </div>
+            {%- when 'card' -%}
+              <div class="deployer-cards">
+                {%- for fake_variant in available_products -%}
+                  <button
+                    class="deployer-button deployer-button--{% if fake_variant.id == product.id %}primary{% else %}secondary{% endif %}"
+                    onclick="window.location.href='{{ fake_variant.url }}'"
+                    title="{{ fake_variant.metafields.custom.fake_variant_title | default: fake_variant.title }}"
+                    {% if fake_variant.id == product.id %}
+                      aria-current="true"
+                      disabled
+                    {% endif %}
+                  >
+                    <label class="deployer-radio">
+                      <input
+                        type="radio"
+                        name="{{ fake_variant.id }}"
+                        value="{{ fake_variant.metafields.custom.fake_variant_title | default: fake_variant.title }}"
+                        {% if fake_variant.id == product.id %}
+                          checked
+                        {% endif %}
+                      >
+                      <span></span>
+                      {{ fake_variant.metafields.custom.fake_variant_title | default: fake_variant.title }}
+                    </label>
+                  </button>
+                {%- endfor -%}
+              </div>
+          {%- endcase -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</section>

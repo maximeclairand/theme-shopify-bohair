@@ -1,0 +1,65 @@
+<script src="{{ 'delivery-estimation.js' | asset_url }}" defer="defer"></script>
+{{ 'component-delivery-estimation.css' | asset_url | stylesheet_tag }}
+
+{% assign selected_variant = product.selected_or_first_available_variant %}
+
+<delivery-estimation 
+  class="delivery-estimation__container {% if block.settings.enable_stock_count %}delivery-estimation__container-with-availability{% endif %}"
+  data-shop-locale="{{ shop.locale }}"
+>
+  <script type="application/json" class="">
+    {
+      "between_dates": "{{ block.settings.translation_between_dates }}",
+      "date_format": "{{ block.settings.date_format }}"
+    }
+  </script>
+  <div
+    class="delivery-estimation__delay-container"
+    data-min="{{ block.settings.delivery_delay_min }}"
+    data-max="{{ block.settings.delivery_delay_max }}"
+  >
+    {%- if block.settings.delivery_icon != blank -%}
+        <img src="{{ block.settings.delivery_icon | image_url: width: 100 }}" alt="Delivery icon" width="24" height="auto">
+    {%- endif -%}
+
+    <div>
+      {{ block.settings.delivery_estimation_text }}
+      {% if block.settings.delivery_delay_min != blank %}
+        <span id="datemin"></span>
+      {% endif %}
+      {% if block.settings.delivery_delay_max != 0 or block.settings.delivery_delay_max != blank %}
+        {{ block.settings.translation_between_dates }}
+        <span id="datemax"></span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div
+    class="stock-disp-cont hidden"
+    data-current-variant-id="{{ selected_variant.id }}"
+  >
+    {% if selected_variant.inventory_quantity > block.settings.stock_available %}
+      <span class="stock-disp">{{ block.settings.translation_available }}</span>
+      <div class="stock-indic stock-indic--available"></div>
+    {% elsif selected_variant.inventory_quantity <= block.settings.stock_low and selected_variant.inventory_quantity > 0 %}
+      <span class="stock-disp">
+        {{ block.settings.translation_low_before }}
+        {{ selected_variant.inventory_quantity }}
+        {{ block.settings.translation_low_before }}
+      </span>
+      <div class="stock-indic stock-indic--low"></div>
+    {% elsif selected_variant.inventory_quantity == 0 or selected_variant.inventory_quantity < 0 %}
+      <div class="stock-indic stock-indic--out"></div>
+      <span class="stock-disp">{{ block.settings.translation_unavailable }}</span>
+    {% endif %}
+  </div>
+</delivery-estimation>
+
+{% for variant in product.variants %}
+  <div
+    class="product-variant"
+    style="display:none"
+    data-variant-id="{{ variant.id }}"
+    data-variant-inventory-qty="{{ variant.inventory_quantity }}"
+  ></div>
+{% endfor %}

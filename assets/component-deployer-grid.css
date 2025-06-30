@@ -1,0 +1,208 @@
+/* Deployer grid - Grid */
+
+.deployer-grid {
+    display: flex;
+    flex-wrap: wrap;    
+    margin-bottom: 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+.deployer-grid:last-child {
+    margin-bottom: 0;
+}
+
+.deployer-grid.deployer-grid.deployer-grid--gapless {
+    --deployer-grid-mobile-horizontal-spacing: 0px;
+    --deployer-grid-mobile-vertical-spacing: 0px;
+    --deployer-grid-tablet-horizontal-spacing: 0px;
+    --deployer-grid-tablet-vertical-spacing: 0px;
+    --deployer-grid-desktop-horizontal-spacing: 0px;
+    --deployer-grid-desktop-vertical-spacing: 0px;
+}
+
+@media screen and (max-width: 749px) {
+    .deployer-grid {
+        column-gap: var(--deployer-grid-mobile-horizontal-spacing);
+        row-gap: var(--deployer-grid-mobile-vertical-spacing);
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+    .deployer-grid {
+        column-gap: var(--deployer-grid-tablet-horizontal-spacing);
+        row-gap: var(--deployer-grid-tablet-vertical-spacing);
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .deployer-grid {
+        column-gap: var(--deployer-grid-desktop-horizontal-spacing);
+        row-gap: var(--deployer-grid-desktop-vertical-spacing);
+    }
+}
+
+/* Deployer grid - Grid item */
+
+.deployer-grid__item {
+    width: calc(25% - var(--deployer-grid-mobile-horizontal-spacing) * 3 / 4);
+    max-width: calc(50% - var(--deployer-grid-mobile-horizontal-spacing) / 2);
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 749px) {
+    .deployer-grid--1-col-mobile .deployer-grid__item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .deployer-grid--2-col-mobile .deployer-grid__item {
+        width: calc(50% - var(--deployer-grid-mobile-horizontal-spacing) / 2);
+        max-width: calc(50% - var(--deployer-grid-mobile-horizontal-spacing) / 2);
+    }
+
+    .deployer-grid--3-col-mobile .deployer-grid__item {
+        width: calc(33.33% - var(--deployer-grid-mobile-horizontal-spacing) * 2 / 3);
+        max-width: calc(33.33% - var(--deployer-grid-mobile-horizontal-spacing) * 2 / 3);
+    }
+
+    .deployer-grid--4-col-mobile .deployer-grid__item {
+        width: calc(25% - var(--deployer-grid-mobile-horizontal-spacing) * 3 / 4);
+        max-width: calc(25% - var(--deployer-grid-mobile-horizontal-spacing) * 3 / 4);
+    }
+
+    .deployer-grid--5-col-mobile .deployer-grid__item {
+        width: calc(20% - var(--deployer-grid-mobile-horizontal-spacing) * 4 / 5);
+        max-width: calc(20% - var(--deployer-grid-mobile-horizontal-spacing) * 4 / 5);
+    }
+
+    .deployer-grid--6-col-mobile .deployer-grid__item {
+        width: calc(16.66% - var(--deployer-grid-mobile-horizontal-spacing) * 5 / 6);
+        max-width: calc(16.66% - var(--deployer-grid-mobile-horizontal-spacing) * 5 / 6);
+    }
+
+    .deployer-grid--7-col-mobile .deployer-grid__item {
+        width: calc(14.29% - var(--deployer-grid-mobile-horizontal-spacing) * 6 / 7);
+        max-width: calc(14.29% - var(--deployer-grid-mobile-horizontal-spacing) * 6 / 7);
+    }
+
+    .deployer-grid--8-col-mobile .deployer-grid__item {
+        width: calc(12.5% - var(--deployer-grid-mobile-horizontal-spacing) * 7 / 8);
+        max-width: calc(12.5% - var(--deployer-grid-mobile-horizontal-spacing) * 7 / 8);
+    }
+
+    .deployer-grid--9-col-mobile .deployer-grid__item {
+        width: calc(11.11% - var(--deployer-grid-mobile-horizontal-spacing) * 8 / 9);
+        max-width: calc(11.11% - var(--deployer-grid-mobile-horizontal-spacing) * 8 / 9);
+    }
+
+    .deployer-grid--10-col-mobile .deployer-grid__item {
+        width: calc(10% - var(--deployer-grid-mobile-horizontal-spacing) * 9 / 10);
+        max-width: calc(10% - var(--deployer-grid-mobile-horizontal-spacing) * 9 / 10);
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+    .deployer-grid--1-col-tablet .deployer-grid__item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .deployer-grid--2-col-tablet .deployer-grid__item {
+        width: calc(50% - var(--deployer-grid-tablet-horizontal-spacing) / 2);
+        max-width: calc(50% - var(--deployer-grid-tablet-horizontal-spacing) / 2);
+    }
+
+    .deployer-grid--3-col-tablet .deployer-grid__item {
+        width: calc(33.33% - var(--deployer-grid-tablet-horizontal-spacing) * 2 / 3);
+        max-width: calc(33.33% - var(--deployer-grid-tablet-horizontal-spacing) * 2 / 3);
+    }
+
+    .deployer-grid--4-col-tablet .deployer-grid__item {
+        width: calc(25% - var(--deployer-grid-tablet-horizontal-spacing) * 3 / 4);
+        max-width: calc(25% - var(--deployer-grid-tablet-horizontal-spacing) * 3 / 4);
+    }
+
+    .deployer-grid--5-col-tablet .deployer-grid__item {
+        width: calc(20% - var(--deployer-grid-tablet-horizontal-spacing) * 4 / 5);
+        max-width: calc(20% - var(--deployer-grid-tablet-horizontal-spacing) * 4 / 5);
+    }
+
+    .deployer-grid--6-col-tablet .deployer-grid__item {
+        width: calc(16.66% - var(--deployer-grid-tablet-horizontal-spacing) * 5 / 6);
+        max-width: calc(16.66% - var(--deployer-grid-tablet-horizontal-spacing) * 5 / 6);
+    }
+
+    .deployer-grid--7-col-tablet .deployer-grid__item {
+        width: calc(14.29% - var(--deployer-grid-tablet-horizontal-spacing) * 6 / 7);
+        max-width: calc(14.29% - var(--deployer-grid-tablet-horizontal-spacing) * 6 / 7);
+    }
+
+    .deployer-grid--8-col-tablet .deployer-grid__item {
+        width: calc(12.5% - var(--deployer-grid-tablet-horizontal-spacing) * 7 / 8);
+        max-width: calc(12.5% - var(--deployer-grid-tablet-horizontal-spacing) * 7 / 8);
+    }
+
+    .deployer-grid--9-col-tablet .deployer-grid__item {
+        width: calc(11.11% - var(--deployer-grid-tablet-horizontal-spacing) * 8 / 9);
+        max-width: calc(11.11% - var(--deployer-grid-tablet-horizontal-spacing) * 8 / 9);
+    }
+
+    .deployer-grid--10-col-tablet .deployer-grid__item {
+        width: calc(10% - var(--deployer-grid-tablet-horizontal-spacing) * 9 / 10);
+        max-width: calc(10% - var(--deployer-grid-tablet-horizontal-spacing) * 9 / 10);
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .deployer-grid--1-col-desktop .deployer-grid__item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .deployer-grid--2-col-desktop .deployer-grid__item {
+        width: calc(50% - var(--deployer-grid-desktop-horizontal-spacing) / 2);
+        max-width: calc(50% - var(--deployer-grid-desktop-horizontal-spacing) / 2);
+    }
+
+    .deployer-grid--3-col-desktop .deployer-grid__item {
+        width: calc(33.33% - var(--deployer-grid-desktop-horizontal-spacing) * 2 / 3);
+        max-width: calc(33.33% - var(--deployer-grid-desktop-horizontal-spacing) * 2 / 3);
+    }
+
+    .deployer-grid--4-col-desktop .deployer-grid__item {
+        width: calc(25% - var(--deployer-grid-desktop-horizontal-spacing) * 3 / 4);
+        max-width: calc(25% - var(--deployer-grid-desktop-horizontal-spacing) * 3 / 4);
+    }
+
+    .deployer-grid--5-col-desktop .deployer-grid__item {
+        width: calc(20% - var(--deployer-grid-desktop-horizontal-spacing) * 4 / 5);
+        max-width: calc(20% - var(--deployer-grid-desktop-horizontal-spacing) * 4 / 5);
+    }
+
+    .deployer-grid--6-col-desktop .deployer-grid__item {
+        width: calc(16.66% - var(--deployer-grid-desktop-horizontal-spacing) * 5 / 6);
+        max-width: calc(16.66% - var(--deployer-grid-desktop-horizontal-spacing) * 5 / 6);
+    }
+
+    .deployer-grid--7-col-desktop .deployer-grid__item {
+        width: calc(14.28% - var(--deployer-grid-desktop-horizontal-spacing) * 6 / 7);
+        max-width: calc(14.28% - var(--deployer-grid-desktop-horizontal-spacing) * 6 / 7);
+    }
+
+    .deployer-grid--8-col-desktop .deployer-grid__item {
+        width: calc(12.5% - var(--deployer-grid-desktop-horizontal-spacing) * 7 / 8);
+        max-width: calc(12.5% - var(--deployer-grid-desktop-horizontal-spacing) * 7 / 8);
+    }
+
+    .deployer-grid--9-col-desktop .deployer-grid__item {
+        width: calc(11.11% - var(--deployer-grid-desktop-horizontal-spacing) * 8 / 9);
+        max-width: calc(11.11% - var(--deployer-grid-desktop-horizontal-spacing) * 8 / 9);
+    }
+
+    .deployer-grid--10-col-desktop .deployer-grid__item {
+        width: calc(10% - var(--deployer-grid-desktop-horizontal-spacing) * 9 / 10);
+        max-width: calc(10% - var(--deployer-grid-desktop-horizontal-spacing) * 9 / 10);
+    }
+}

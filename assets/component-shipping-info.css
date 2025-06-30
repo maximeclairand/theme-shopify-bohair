@@ -1,0 +1,15 @@
+.cart-drawer__shipping-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-drawer__messages-personnalise-wrapper {
+  margin-bottom: 1rem;
+}
+
+.cart-drawer__shipping-info-label,
+.cart-drawer__shipping-info-value {
+  margin: 0;
+  font-size: 1.3rem;
+}

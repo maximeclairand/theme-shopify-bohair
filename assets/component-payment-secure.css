@@ -1,0 +1,36 @@
+.payment_secure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.payment_secure p {
+  margin: 0;
+  font-size: var(--deployer-p-small-font-size);
+}
+
+.payment_secure--start {
+  justify-content: flex-start;
+}
+
+.payment_secure--center {
+  justify-content: center;
+}
+
+.payment_secure--end {
+  justify-content: flex-end;
+}
+
+.payment_secure svg {
+  height: auto;
+  fill: rgb(var(--deployer-color-foreground));
+  color: rgb(var(--deployer-color-foreground));
+}
+
+.payment_secure svg path {
+  fill: rgb(var(--deployer-color-foreground));
+  color: rgb(var(--deployer-color-foreground));
+}

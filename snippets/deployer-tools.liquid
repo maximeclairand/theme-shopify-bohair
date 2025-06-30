@@ -1,0 +1,36 @@
+{% comment %}Deployer Tools est un fichier "boite à outils" qui qui vise à faciliter le développement en implémentant des fonctions récurrentes.{% endcomment %}
+
+<script>
+  /**
+   * Transforme un nombre flottant en une chaîne de caractères formatée et converti en fonction de la devise.
+   *
+   * Retourne une chaine de charactère formatté en fonction de la devise, du format de la boutique, converti au taux de la devise et dans laquelle le point est remplacé par une virgule.
+   *
+   * @param {type}   price           Un prix en centime.
+   *
+   * @return {type} Retourne une chaine de charactère contenant le prix, formatté en fonction de la devise et du format de la boutique.
+   */
+
+  function formatPrice(price) {
+    const shopMoneyFormat = '{{ shop.money_format }}';
+    const shopMoneySeparatorExample = '{{ 100 | money }}';
+    const shopMoneySeparator = shopMoneySeparatorExample.includes(',') ? ',' : '.';
+
+    var converted_price = price * Shopify.currency.rate;
+    converted_price = converted_price / 100;
+    converted_price = converted_price.toFixed(2);
+    converted_price = converted_price.toString().replace('.', shopMoneySeparator);
+    if (converted_price.endsWith('00')) {
+      converted_price = converted_price.replace(/0+$/, '').replace(/[.,]$/, '');
+    }
+    if (shopMoneyFormat.includes('{% raw %}{{amount_with_comma_separator}}{% endraw %}')) {
+      converted_price = shopMoneyFormat.replace(
+        '{% raw %}{{amount_with_comma_separator}}{% endraw %}',
+        converted_price
+      );
+    } else {
+      converted_price = shopMoneyFormat.replace('{% raw %}{{amount}}{% endraw %}', converted_price);
+    }
+    return converted_price;
+  }
+</script>

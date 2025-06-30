@@ -1,0 +1,527 @@
+{{ 'section-tableau-de-comparaison.css' | asset_url | stylesheet_tag }}
+ 
+<style>
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .section-{{ section.id }} .tableau-de-comparaison_title {
+    color: {{ section.settings.title_color }};
+  }
+ 
+  .section-{{ section.id }} .tableau-de-comparaison_row-item:not(.tableau-de-comparaison_row-item-highlighted) {
+    background-color: {{ section.settings.table_background_color }};
+    color: {{ section.settings.table_color }};
+  }
+ 
+  .section-{{ section.id }} .tableau-de-comparaison_table {
+    max-width: {{ section.settings.max_table_size }}%;
+  }
+ 
+  .section-{{ section.id }} .tableau-de-comparaison_row-item-highlighted {
+    background-color: {{ section.settings.highlighted_item_background_color}};
+    color: {{ section.settings.highlighted_item_color }};
+  }
+</style>
+ 
+{% assign nombre_de_colonnes = 1 %}
+ 
+<section class="section-{{ section.id }} tableau-de-comparaison page-width">
+  {%- if section.settings.title != blank or section.settings.text != blank -%}
+    <div class="tableau-de-comparaison_title-container">
+      {% if section.settings.title != blank %}
+        <h2 class="tableau-de-comparaison_title h1">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="tableau-de-comparaison_text">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+  {%- endif -%}
+ 
+  <div class="tableau-de-comparaison_table">
+    {% for block in section.blocks %}
+      {% if block.type == 'heading_row' %}
+        <div class="tableau-de-comparaison_heading-row">
+          <div class="tableau-de-comparaison_row-item tableau-de-comparaison_row-item-first"></div>
+          {% for i in (1..5) %}
+            {% assign image = 'logo' | append: i %}
+            {% assign image_width = 'logo' | append: i | append: '_width' %}
+            {% assign text = 'text' | append: i %}
+            {% assign column_highlight = 'column' | append: i | append: '_highlighted' %}
+ 
+            {% if block.settings[image] != blank or block.settings[text] != blank %}
+              {% assign nombre_de_colonnes = nombre_de_colonnes | plus: 1 %}
+              <div class="tableau-de-comparaison_row-item tableau-de-comparaison_row-item-title{% if block.settings[column_highlight] %} tableau-de-comparaison_row-item-highlighted{% endif %}">
+                {% if block.settings[image] != blank %}
+                  <img
+                    src="{{ block.settings[image] | image_url: width: 350 }}"
+                    alt="{{ block.settings[image].alt }}"
+                    width="{{ block.settings[image_width] | times: 2 }}"
+                    height="auto"
+                    style="--image-width: {{ block.settings[image_width] }}px;"
+                  >
+                {% else %}
+                  {{ block.settings[text] }}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+ 
+    <div class="tableau-de-comparaison_row-container">
+      {% for block in section.blocks %}
+        {% if block.type == 'row' %}
+          <div class="tableau-de-comparaison_row">
+            <div class="tableau-de-comparaison_row-item tableau-de-comparaison_row-item-first">
+              {{ block.settings.text }}
+            </div>
+            {% for i in (1..5) %}
+              {% if nombre_de_colonnes > i %}
+                {% assign column_img = 'column' | append: i | append: '_img' %}
+                {% assign column_img_width = 'column' | append: i | append: '_img_width' %}
+                {% assign column_text = 'column' | append: i | append: '_text' %}
+                {% assign column_highlight = 'column' | append: i | append: '_highlighted' %}
+ 
+                <div class="tableau-de-comparaison_row-item{% if block.settings[column_highlight] %} tableau-de-comparaison_row-item-highlighted{% endif %}">
+                  {%- if block.settings[column_img] != blank -%}
+                    <img
+                      src="{{ block.settings[column_img] | image_url: width: 100 }}"
+                      alt="{{ block.settings[column_img].alt }}"
+                      width="{{ block.settings[column_img_width] | times: 2 }}"
+                      height="auto"
+                      style="--icon-width: {{ block.settings[column_img_width] }}px;"
+                    >
+                  {%- endif -%}
+                  {%- if block.settings[column_text] != blank -%}
+                    {{ block.settings[column_text] }}
+                  {%- endif -%}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+ 
+<style>
+  .section-{{ section.id }} .tableau-de-comparaison_row-item-first {
+    width: {{ section.settings.max_first_column_size }}%;
+  }
+ 
+  .section-{{ section.id }} .tableau-de-comparaison_row-item:not(.tableau-de-comparaison_row-item-first) {
+    width: calc((100% - {{section.settings.max_first_column_size}}%) / {{nombre_de_colonnes | minus: 1}});
+  }
+</style>
+ 
+{% schema %}
+{
+  "name": "Tableau de comparaison",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Titre",
+      "default": "Tableau de comparaison"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texte",
+      "default": "<p>Je suis un tableau qui permet de comparer cette marque à ses concurrents</p>"
+    },
+    {
+      "type": "header",
+      "content": "Disposition"
+    },
+    {
+      "type": "range",
+      "id": "max_table_size",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Taille maximale du tableau",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "max_first_column_size",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Taille maximale de la première colonne",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Titre de la section",
+      "default": "#38584A"
+    },
+    {
+      "type": "color",
+      "id": "table_background_color",
+      "label": "Fond du tableau",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "table_color",
+      "label": "Texte du tableau",
+      "default": "#202020"
+    },
+    {
+      "type": "color",
+      "id": "highlighted_item_background_color",
+      "label": "Fond des cases en surbrillance",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "highlighted_item_color",
+      "label": "Texte des cases en surbrillance",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Marges de la section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge supérieur",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge inférieur",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Ligne en-tête",
+      "type": "heading_row",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Colonne 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo1",
+          "label": "Image"
+        },
+        {
+          "type": "number",
+          "id": "logo1_width",
+          "label": "Largeur de l'image (px)",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Texte",
+          "default": "Notre marque"
+        },
+        {
+          "type": "checkbox",
+          "id": "column1_highlighted",
+          "label": "Case en surbrillance",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Colonne 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo2",
+          "label": "Image"
+        },
+        {
+          "type": "number",
+          "id": "logo2_width",
+          "label": "Largeur de l'image (px)",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Texte",
+          "default": "Concurrent 1"
+        },
+        {
+          "type": "checkbox",
+          "id": "column2_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colonne 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo3",
+          "label": "Image"
+        },
+        {
+          "type": "number",
+          "id": "logo3_width",
+          "label": "Largeur de l'image (px)",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Texte",
+          "default": "Concurrent 2"
+        },
+        {
+          "type": "checkbox",
+          "id": "column3_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colonne 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo4",
+          "label": "Image"
+        },
+        {
+          "type": "number",
+          "id": "logo4_width",
+          "label": "Largeur de l'image (px)",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "text4",
+          "label": "Texte"
+        },
+        {
+          "type": "checkbox",
+          "id": "column4_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colonne 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo5",
+          "label": "Image"
+        },
+        {
+          "type": "number",
+          "id": "logo5_width",
+          "label": "Largeur de l'image (px)",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "text5",
+          "label": "Texte"
+        },
+        {
+          "type": "checkbox",
+          "id": "column5_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        }
+      ]
+    },
+    {
+      "name": "Ligne",
+      "type": "row",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Texte de la ligne",
+          "default": "Fonctionnalité"
+        },
+        {
+          "type": "header",
+          "content": "Colonne 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "column1_img",
+          "label": "Icône"
+        },
+        {
+          "type": "number",
+          "id": "column1_img_width",
+          "label": "Largeur de l'icône (px)",
+          "default": 24
+        },
+        {
+          "type": "inline_richtext",
+          "id": "column1_text",
+          "label": "Texte",
+          "default": "Oui"
+        },
+        {
+          "type": "checkbox",
+          "id": "column1_highlighted",
+          "label": "Case en surbrillance",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Colonne 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "column2_img",
+          "label": "Icône"
+        },
+        {
+          "type": "number",
+          "id": "column2_img_width",
+          "label": "Largeur de l'icône (px)",
+          "default": 24
+        },
+        {
+          "type": "inline_richtext",
+          "id": "column2_text",
+          "label": "Texte",
+          "default": "Non"
+        },
+        {
+          "type": "checkbox",
+          "id": "column2_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colonne 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "column3_img",
+          "label": "Icône"
+        },
+        {
+          "type": "number",
+          "id": "column3_img_width",
+          "label": "Largeur de l'icône (px)",
+          "default": 24
+        },
+        {
+          "type": "inline_richtext",
+          "id": "column3_text",
+          "label": "Texte",
+          "default": "Non"
+        },
+        {
+          "type": "checkbox",
+          "id": "column3_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colonne 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "column4_img",
+          "label": "Icône"
+        },
+        {
+          "type": "number",
+          "id": "column4_img_width",
+          "label": "Largeur de l'icône (px)",
+          "default": 24
+        },
+        {
+          "type": "inline_richtext",
+          "id": "column4_text",
+          "label": "Texte"
+        },
+        {
+          "type": "checkbox",
+          "id": "column4_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colonne 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "column5_img",
+          "label": "Icône"
+        },
+        {
+          "type": "number",
+          "id": "column5_img_width",
+          "label": "Largeur de l'icône (px)",
+          "default": 24
+        },
+        {
+          "type": "inline_richtext",
+          "id": "column5_text",
+          "label": "Texte"
+        },
+        {
+          "type": "checkbox",
+          "id": "column5_highlighted",
+          "label": "Case en surbrillance",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tableau de comparaison",
+      "blocks": [
+        {
+          "type": "heading_row"
+        },
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

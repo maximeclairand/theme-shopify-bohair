@@ -1,0 +1,1451 @@
+{{ 'component-deployer-cart-drawer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'deployer-cart-drawer.js' | asset_url }}" defer="defer"></script>
+
+{% for block in section.blocks %}
+  {% if block.type == 'deployer_discount_code' %}
+    {{ 'component-deployer-cart-discount.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'deployer-cart-discount.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
+
+  {% if block.type == 'progress_bar' %}
+    {{ 'component-cart-progress-bar.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+
+  {% if block.type == 'shipping_info' %}
+    {{ 'component-shipping-info.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+{% endfor %}
+
+<deployer-cart-drawer id="DeployerCartDrawer" class="deployer-cart-drawer {% if cart == empty %}deployer-cart-drawer--empty{% endif %}">
+  <div class="deployer-cart-drawer__overlay"></div>
+
+  <div class="deployer-cart-drawer__inner deployer-cart-drawer--{{ section.settings.cart_style }}" tabindex="-1">
+    {%- capture drawer_close -%}
+      <button class="deployer-cart-drawer__close" type="button" onclick="this.closest('deployer-cart-drawer').close()">
+        <svg class="icon icon-close" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8536 2.85355C13.0488 2.65829 13.0488 2.34171 12.8536 2.14645C12.6583 1.95118 12.3417 1.95118 12.1464 2.14645L7.5 6.79289L2.85355 2.14645C2.65829 1.95118 2.34171 1.95118 2.14645 2.14645C1.95118 2.34171 1.95118 2.65829 2.14645 2.85355L6.79289 7.5L2.14645 12.1464C1.95118 12.3417 1.95118 12.6583 2.14645 12.8536C2.34171 13.0488 2.65829 13.0488 2.85355 12.8536L7.5 8.20711L12.1464 12.8536C12.3417 13.0488 12.6583 13.0488 12.8536 12.8536C13.0488 12.6583 13.0488 12.3417 12.8536 12.1464L8.20711 7.5L12.8536 2.85355Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+    {%- endcapture -%}
+
+    <div class="deployer-cart-drawer__header">
+      <p>
+        {{- section.settings.cart_title -}}
+        {%- if section.settings.show_cart_count %}
+          <span class="deployer-cart-drawer__count_badge">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </p>
+      {{ drawer_close }}
+    </div>
+
+    <div class="cart__reassurances">
+      {% for block in section.blocks %}
+        {% if block.type == 'reassurance' %}
+          {% render 'cart-reassurances', block: block %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {%- if cart == empty -%}
+      <div class="deployer-cart-drawer__inner-empty">
+        <div class="deployer-cart-drawer__inner-empty-content color-{{ section.settings.body_color_scheme }}">
+          <h2>{{ section.settings.cart_empty_title }}</h2>
+
+          {%- if section.settings.cart_empty_button1_link != blank and section.settings.cart_empty_button1_text != blank -%}
+            <a href="{{ section.settings.cart_empty_button1_link }}" class="deployer-button deployer-button--full-width">{{ section.settings.cart_empty_button1_text }}</a>
+          {%- endif -%}
+
+          {%- if section.settings.cart_empty_button2_link != blank and section.settings.cart_empty_button2_text != blank -%}
+            <a href="{{ section.settings.cart_empty_button2_link }}" class="deployer-button deployer-button--secondary deployer-button--full-width">{{ section.settings.cart_empty_button2_text }}</a>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.cart_empty_collection -%}
+          <div class="search-deployer-cart-drawer__empty-collection-container">
+            <h2 class="h3">{{ section.settings.cart_empty_collection.title }}</h2>
+            <div class="search-deployer-cart-drawer__empty-collection">
+              {%- for product in section.settings.cart_empty_collection.products -%}
+                <div class="search-deployer-cart-drawer__empty-collection-item">
+                  {%- render 'card-product', card_product: product, show_rating: true, param_card_style: 'standard', quick_add: 'none' -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="deployer-cart-drawer__body color-{{ section.settings.body_color_scheme }}">
+      <form action="{{ routes.cart_url }}" method="post" id="DeployerCartDrawer-Form" class="deployer-cart-drawer__form">
+        <div class="deployer-cart-drawer__items">
+          {%- for item in cart.items -%}
+            <div class="deployer-cart-drawer__item{% if section.settings.show_remove_button == false %} deployer-cart-drawer__item--no-remove-button{% endif %}" id="DeployerCartDrawer-Item-{{ item.index | plus: 1 }}">
+              {% if item.image %}
+                <a href="{{ item.url }}">
+                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.image.alt | escape }}" loading="lazy" width="80" height="{{ 80 | divided_by: item.image.aspect_ratio | ceil }}">
+                </a>
+              {% endif %}
+
+              <div class="deployer-cart-drawer__item-wrapper">
+                <div class="deployer-cart-drawer__item-content">
+                  <a href="{{ item.url }}" class="deployer-cart-drawer__item-name">{{- item.product.title | escape -}}</a>
+
+                  {%- if item.product.has_only_default_variant == false -%}
+                    <div class="deployer-cart-drawer__item-options">
+                      {%- for option in item.options_with_values -%}
+                        {%- if section.settings.show_inline_product_options -%}
+                          <span>
+                            {{- option.value -}}
+                            {%- unless forloop.last %}, {% endunless -%}
+                          </span>
+                        {%- else -%}
+                          <div class="deployer-cart-drawer__item-option">
+                            <span>{{ option.name }}:</span>
+                            <span>{{ option.value -}}</span>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+
+                  {%- for property in item.properties -%}
+                    {%- if forloop.first -%}
+                      <div class="deployer-cart-drawer__item-options">
+                        {%- for property in item.properties -%}
+                          {%- assign property_first_char = property.first | slice: 0 -%}
+                          {%- if property.last != blank and property_first_char != '_' -%}
+                            {%- if section.settings.show_inline_product_options -%}
+                              {%- if property.last contains '/uploads/' -%}
+                                <div class="deployer-cart-drawer__item-option">
+                                  <a href="{{ property.last }}" target="_blank">{{ property.last | split: '/' | last }}</a>
+                                </div>
+                              {%- else -%}
+                                <span>
+                                  {{- property.last -}}
+                                  {%- unless forloop.last %}, {% endunless -%}
+                                </span>
+                              {%- endif -%}
+                            {%- else -%}
+                              <div class="deployer-cart-drawer__item-option">
+                                <span>{{ property.first }}:</span>
+                                <span>
+                                  {%- if property.last contains '/uploads/' -%}
+                                    <a href="{{ property.last }}" target="_blank">{{ property.last | split: '/' | last }}</a>
+                                  {%- else -%}
+                                    {{ property.last }}
+                                  {%- endif -%}
+                                </span>
+                              </div>
+                            {%- endif -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+
+                  {%- if item.selling_plan_allocation.selling_plan != blank -%}
+                    <div class="deployer-cart-drawer__item-options">
+                      <p class="deployer-cart-drawer__item-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                    </div>
+                  {%- endif -%}
+
+                  <div class="deployer-cart-drawer__item-prices">
+                    <div class="loading__spinner hidden">
+                      <svg class="spinner" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.90321 7.29677C1.90321 10.341 4.11041 12.4147 6.58893 12.8439C6.87255 12.893 7.06266 13.1627 7.01355 13.4464C6.96444 13.73 6.69471 13.9201 6.41109 13.871C3.49942 13.3668 0.86084 10.9127 0.86084 7.29677C0.860839 5.76009 1.55996 4.55245 2.37639 3.63377C2.96124 2.97568 3.63034 2.44135 4.16846 2.03202L2.53205 2.03202C2.25591 2.03202 2.03205 1.80816 2.03205 1.53202C2.03205 1.25588 2.25591 1.03202 2.53205 1.03202L5.53205 1.03202C5.80819 1.03202 6.03205 1.25588 6.03205 1.53202L6.03205 4.53202C6.03205 4.80816 5.80819 5.03202 5.53205 5.03202C5.25591 5.03202 5.03205 4.80816 5.03205 4.53202L5.03205 2.68645L5.03054 2.68759L5.03045 2.68766L5.03044 2.68767L5.03043 2.68767C4.45896 3.11868 3.76059 3.64538 3.15554 4.3262C2.44102 5.13021 1.90321 6.10154 1.90321 7.29677ZM13.0109 7.70321C13.0109 4.69115 10.8505 2.6296 8.40384 2.17029C8.12093 2.11718 7.93465 1.84479 7.98776 1.56188C8.04087 1.27898 8.31326 1.0927 8.59616 1.14581C11.4704 1.68541 14.0532 4.12605 14.0532 7.70321C14.0532 9.23988 13.3541 10.4475 12.5377 11.3662C11.9528 12.0243 11.2837 12.5586 10.7456 12.968L12.3821 12.968C12.6582 12.968 12.8821 13.1918 12.8821 13.468C12.8821 13.7441 12.6582 13.968 12.3821 13.968L9.38205 13.968C9.10591 13.968 8.88205 13.7441 8.88205 13.468L8.88205 10.468C8.88205 10.1918 9.10591 9.96796 9.38205 9.96796C9.65819 9.96796 9.88205 10.1918 9.88205 10.468L9.88205 12.3135L9.88362 12.3123C10.4551 11.8813 11.1535 11.3546 11.7585 10.6738C12.4731 9.86976 13.0109 8.89844 13.0109 7.70321Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div class="deployer-cart-drawer__item-price">
+                      {%- if item.original_line_price != item.final_line_price -%}
+                        <div class="deployer-cart-drawer__item-discounted-prices">
+                          <s class="deployer-cart-drawer__item-compare-price">{{ item.original_line_price | money }}</s>
+                          <span>{{ item.final_line_price | money }}</span>
+                        </div>
+                      {%- else -%}
+                        <span>{{ item.original_line_price | money }}</span>
+                      {%- endif -%}
+
+                      <div class="deployer-cart-drawer__item-discounts">
+                        {%- for discount in item.line_level_discount_allocations -%}
+                          <span class="deployer-cart-drawer__item-discount">
+                            <svg aria-hidden="true" focusable="false" class="icon icon-discount" viewBox="0 0 12 12">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0h3a2 2 0 012 2v3a1 1 0 01-.3.7l-6 6a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4l6-6A1 1 0 017 0zm2 2a1 1 0 102 0 1 1 0 00-2 0z" fill="currentColor">
+                            </svg>
+                            <span>{{ discount.discount_application.title }}</span>
+                          </span>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="deployer-cart-drawer__item-actions">
+                  <div class="deployer-cart-drawer__item-actions-wrapper">
+                    {%- if section.settings.show_remove_button -%}
+                      <div class="deployer-cart-drawer__item-remove" id="DeployerCartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                        <button type="button" class="deployer-cart-drawer__item-remove-button" data-variant-id="{{ item.variant.id }}">
+                          <svg class="icon icon-remove" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 1C5.22386 1 5 1.22386 5 1.5C5 1.77614 5.22386 2 5.5 2H9.5C9.77614 2 10 1.77614 10 1.5C10 1.22386 9.77614 1 9.5 1H5.5ZM3 3.5C3 3.22386 3.22386 3 3.5 3H5H10H11.5C11.7761 3 12 3.22386 12 3.5C12 3.77614 11.7761 4 11.5 4H11V12C11 12.5523 10.5523 13 10 13H5C4.44772 13 4 12.5523 4 12V4L3.5 4C3.22386 4 3 3.77614 3 3.5ZM5 4H10V12H5V4Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    {%- endif -%}
+
+                    <div class="deployer-quantity">
+                      {%- if item.quantity == 1 and section.settings.show_remove_button == false -%}
+                        <button name="minus">
+                          <svg class="icon icon-plus icon-plus-rotated" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                          </svg>
+                        </button>
+                      {%- else -%}
+                        <button name="minus">
+                          <svg class="icon-minus" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.25 7.5C2.25 7.22386 2.47386 7 2.75 7H12.25C12.5261 7 12.75 7.22386 12.75 7.5C12.75 7.77614 12.5261 8 12.25 8H2.75C2.47386 8 2.25 7.77614 2.25 7.5Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                          </svg>
+                        </button>
+                      {%- endif -%}
+                      <input
+                        type="number"
+                        data-quantity-variant-id="{{ item.variant.id }}"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        {% # theme-check-disable %}
+                        data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
+                        {% # theme-check-enable %}
+                        id="DeployerCartDrawer-Quantity-{{ item.index | plus: 1 }}"
+                        data-index="{{ item.index | plus: 1 }}"
+                      >
+                      <button
+                        name="plus"
+                        {% if item.quantity == item.variant.inventory_quantity %}
+                          disabled
+                        {% endif %}
+                      >
+                        <svg class="icon-plus" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {% liquid
+                assign selling_plan_group_price_adjustment_type = item.product.selling_plan_groups.first.selling_plans.first.price_adjustments.first.value_type
+                assign selling_plan_group_price_adjustment_value = item.product.selling_plan_groups.first.selling_plans.first.price_adjustments.first.value
+                assign first_selling_plan_id = item.product.selling_plan_groups.first.selling_plans.first.id
+
+                if selling_plan_group_price_adjustment_type == 'percentage'
+                  assign selling_plan_group_price_adjustment_value = selling_plan_group_price_adjustment_value | append: '%'
+                elsif selling_plan_group_price_adjustment_type == 'amount'
+                  assign selling_plan_group_price_adjustment_value = selling_plan_group_price_adjustment_value | money
+                elsif selling_plan_group_price_adjustment_type == 'fixed_amount'
+                  assign selling_plan_group_price_adjustment_value = item.original_price | minus: selling_plan_group_price_adjustment_value | money
+                endif
+              %}
+              {% if item.selling_plan_allocation == null and item.product.selling_plan_groups != blank and settings.enable_selling_plans_change == true %}
+                {% # Sans abonnement %}
+                <button
+                  id="DeployerCartDrawer-AddPlanButton-{{ item.index | plus: 1 }}"
+                  data-plan-id="{{ first_selling_plan_id }}"
+                  class="deployer-button deployer-button--secondary deployer-button--small deployer-button--full-width deployer-cart-drawer__item-selling-add-plan-button"
+                  name="add-plan"
+                  type="button"
+                >
+                  <span class="deployer-button-text">
+                    {{- 'sections.cart.selling_plan.button_label_html' | t: value: selling_plan_group_price_adjustment_value -}}
+                  </span>
+                  <div class="loading__spinner hidden">
+                    <svg
+                      class="spinner"
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M1.90321 7.29677C1.90321 10.341 4.11041 12.4147 6.58893 12.8439C6.87255 12.893 7.06266 13.1627 7.01355 13.4464C6.96444 13.73 6.69471 13.9201 6.41109 13.871C3.49942 13.3668 0.86084 10.9127 0.86084 7.29677C0.860839 5.76009 1.55996 4.55245 2.37639 3.63377C2.96124 2.97568 3.63034 2.44135 4.16846 2.03202L2.53205 2.03202C2.25591 2.03202 2.03205 1.80816 2.03205 1.53202C2.03205 1.25588 2.25591 1.03202 2.53205 1.03202L5.53205 1.03202C5.80819 1.03202 6.03205 1.25588 6.03205 1.53202L6.03205 4.53202C6.03205 4.80816 5.80819 5.03202 5.53205 5.03202C5.25591 5.03202 5.03205 4.80816 5.03205 4.53202L5.03205 2.68645L5.03054 2.68759L5.03045 2.68766L5.03044 2.68767L5.03043 2.68767C4.45896 3.11868 3.76059 3.64538 3.15554 4.3262C2.44102 5.13021 1.90321 6.10154 1.90321 7.29677ZM13.0109 7.70321C13.0109 4.69115 10.8505 2.6296 8.40384 2.17029C8.12093 2.11718 7.93465 1.84479 7.98776 1.56188C8.04087 1.27898 8.31326 1.0927 8.59616 1.14581C11.4704 1.68541 14.0532 4.12605 14.0532 7.70321C14.0532 9.23988 13.3541 10.4475 12.5377 11.3662C11.9528 12.0243 11.2837 12.5586 10.7456 12.968L12.3821 12.968C12.6582 12.968 12.8821 13.1918 12.8821 13.468C12.8821 13.7441 12.6582 13.968 12.3821 13.968L9.38205 13.968C9.10591 13.968 8.88205 13.7441 8.88205 13.468L8.88205 10.468C8.88205 10.1918 9.10591 9.96796 9.38205 9.96796C9.65819 9.96796 9.88205 10.1918 9.88205 10.468L9.88205 12.3135L9.88362 12.3123C10.4551 11.8813 11.1535 11.3546 11.7585 10.6738C12.4731 9.86976 13.0109 8.89844 13.0109 7.70321Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </button>
+              {% elsif item.selling_plan_allocation != null and item.product.selling_plan_groups != blank and settings.enable_selling_plans_change == true %}
+                {% # Avec abonnement %}
+                <select
+                  name="plan-select"
+                  class="deployer-select deployer-select--small deployer-select--full-width deployer-select--plan-select"
+                  id="DeployerCartDrawer-PlanSelect-{{ item.index | plus: 1 }}"
+                >
+                  <optgroup label="{{ 'sections.cart.selling_plan.without_subscription' | t }}">
+                    <option value="">{{ 'sections.cart.selling_plan.one_time_purchase' | t }}</option>
+                  </optgroup>
+                  <optgroup label="{{ 'sections.cart.selling_plan.with_subscription' | t }}">
+                    {% for plan in item.product.selling_plan_groups.first.selling_plans %}
+                      <option
+                        value="{{ plan.id }}"
+                        {% if item.selling_plan_allocation.selling_plan.id == plan.id %}
+                          selected
+                        {% endif %}
+                      >
+                        {{ plan.name }}
+                      </option>
+                    {% endfor %}
+                  </optgroup>
+                </select>
+              {% endif %}
+            </div>
+
+            <div id="DeployerCartDrawer-LineItemError-{{ item.index | plus: 1 }}" class="deployer-cart-drawer__item-error" role="alert">
+              <small class="deployer-cart-drawer__item-error-text"></small>
+              <svg class="icon icon-error" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.877075 7.49988C0.877075 3.84219 3.84222 0.877045 7.49991 0.877045C11.1576 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1576 14.1227 7.49991 14.1227C3.84222 14.1227 0.877075 11.1575 0.877075 7.49988ZM7.49991 1.82704C4.36689 1.82704 1.82708 4.36686 1.82708 7.49988C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C10.6329 13.1727 13.1727 10.6329 13.1727 7.49988C13.1727 4.36686 10.6329 1.82704 7.49991 1.82704ZM9.85358 5.14644C10.0488 5.3417 10.0488 5.65829 9.85358 5.85355L8.20713 7.49999L9.85358 9.14644C10.0488 9.3417 10.0488 9.65829 9.85358 9.85355C9.65832 10.0488 9.34173 10.0488 9.14647 9.85355L7.50002 8.2071L5.85358 9.85355C5.65832 10.0488 5.34173 10.0488 5.14647 9.85355C4.95121 9.65829 4.95121 9.3417 5.14647 9.14644L6.79292 7.49999L5.14647 5.85355C4.95121 5.65829 4.95121 5.3417 5.14647 5.14644C5.34173 4.95118 5.65832 4.95118 5.85358 5.14644L7.50002 6.79289L9.14647 5.14644C9.34173 4.95118 9.65832 4.95118 9.85358 5.14644Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          {%- endfor -%}
+        </div>
+        <div id="DeployerCartDrawer-CartErrors" role="alert"></div>
+      </form>
+    </div>
+
+    <div class="deployer-cart-drawer__footer">
+      {%- assign cart_note_block = section.blocks | where: 'type', 'cart_note' -%}
+      {%- for block in cart_note_block -%}
+        <deployer-cart-note>
+          <details>
+            <summary>
+              <span>
+                {{ block.settings.cart_note_label }}
+                <svg class="icon icon-caret" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </summary>
+            <textarea id="DeployerCartDrawer-Note" name="note" placeholder="{{ block.settings.cart_note_label }}">{{ cart.note }}</textarea>
+          </details>
+        </deployer-cart-note>
+      {%- endfor -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'deployer_discount_code' -%}
+          {%- render 'deployer_discount_code', block: block -%}
+        {%- endif -%}
+        
+        {%- if block.type == 'discount_code_note' -%}
+          <discount-code-note {{ block.shopify_attributes }}>
+              {%- if block.settings.text != blank -%}
+                  {{ block.settings.text }}
+              {%- endif -%}
+           </discount-code-note>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if cart.cart_level_discount_applications.size > 0 -%}
+        <div class="deployer-cart-drawer__discounts">
+          {%- for discount in cart.cart_level_discount_applications -%}
+            <div class="deployer-cart-drawer__discount discount-type-{{ discount.type }}">
+              <svg aria-hidden="true" focusable="false" class="icon icon-discount" viewBox="0 0 12 12">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0h3a2 2 0 012 2v3a1 1 0 01-.3.7l-6 6a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4l6-6A1 1 0 017 0zm2 2a1 1 0 102 0 1 1 0 00-2 0z" fill="currentColor">
+              </svg>
+              <span>{{ discount.title }} (-{{ discount.total_allocated_amount | money }})</span>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {% for block in section.blocks %}
+        {% if block.type == 'progress_bar' %}
+          {% if cart.empty? == false %}
+            {% if block.settings.type == 'montant' %}
+              <progress-container
+                id="progress-container"
+                class="progress-container {{ block.settings.custom_class }} color-{{ block.settings.color_scheme }}"
+              >
+                {% assign step1_value = block.settings.step1_value | times: 100.0 %}
+                {% assign step2_value = block.settings.step2_value | times: 100.0 %}
+                {% assign step3_value = block.settings.step3_value | times: 100.0 %}
+
+                {% assign step1_label = block.settings.step1_label | append: ' ✓' %}
+                {% assign step2_label = block.settings.step2_label | append: ' ✓' %}
+                {% assign step3_label = block.settings.step3_label | append: ' ✓' %}
+
+                {% assign progressPhrase = block.settings.step0_text %}
+                {% assign progressValue = 100 %}
+                {% assign progressValue2 = 100 %}
+                {% assign progressValue3 = 100 %}
+
+                {% assign max_value = step1_value %}
+                {% if step2_value > 0 %}
+                  {% assign max_value = step2_value %}
+                {% endif %}
+                {% if step3_value > 0 %}
+                  {% assign max_value = step3_value %}
+                {% endif %}
+                {% assign progressWidth1 = step1_value | times: 100.0 | divided_by: max_value %}
+                {% assign progressWidth2 = step2_value | times: 100.0 | divided_by: max_value %}
+                {% assign progressWidth2 = progressWidth2 | minus: progressWidth1 %}
+                {% assign progressWidth3 = step3_value | times: 100.0 | divided_by: max_value %}
+                {% assign progressWidth3 = progressWidth3 | minus: progressWidth1 | minus: progressWidth2 %}
+
+                {% if cart.total_price < step1_value %}
+                  {% assign missingValue = step1_value | minus: cart.total_price | money_with_currency %}
+                  {% assign step1_label = block.settings.step1_label %}
+                  {% assign step2_label = block.settings.step2_label %}
+                  {% assign step3_label = block.settings.step3_label %}
+                  {% assign progressValue = cart.total_price | divided_by: step1_value | times: 100.0 %}
+                  {% assign progressValue2 = 0 %}
+                  {% assign progressValue3 = 0 %}
+                  {% assign progressPhrase = block.settings.step1_text1 %}
+                  {% if block.settings.step1_text2 != blank %}
+                    {% assign progressPhrase = progressPhrase | append: ' ' | append: '<span class="missing-value">' | append: missingValue | append: '</span>' | append: ' ' | append: block.settings.step1_text2 %}
+                  {% endif %}
+                {% elsif cart.total_price < step2_value and step2_value != null and cart.total_price >= step1_value %}
+                  {% assign missingValue = step2_value | minus: cart.total_price | money_with_currency %}
+                  {% assign step2_label = block.settings.step2_label %}
+                  {% assign step3_label = block.settings.step3_label %}
+                  {% assign cartTotalPrice_remaster = cart.total_price | minus: step1_value %}
+                  {% assign step2_value_remaster = step2_value | minus: step1_value %}
+                  {% assign progressValue = 100 %}
+                  {% assign progressValue2 = cartTotalPrice_remaster | divided_by: step2_value_remaster | times: 100.0 %}
+                  {% assign progressValue3 = 0 %}
+                  {% assign progressPhrase = block.settings.step2_text1 %}
+                  {% if block.settings.step2_text2 != blank %}
+                    {% assign progressPhrase = progressPhrase | append: ' ' | append: '<span class="missing-value">' | append: missingValue | append: '</span>' | append: ' ' | append: block.settings.step2_text2 %}
+                  {% endif %}
+                {% elsif cart.total_price < step3_value and step3_value != null and cart.total_price >= step2_value %}
+                  {% assign missingValue = step3_value | minus: cart.total_price | money_with_currency %}
+                  {% assign step3_label = block.settings.step3_label %}
+                  {% assign cartTotalPrice_remaster = cart.total_price | minus: step1_value | minus: step2_value %}
+                  {% assign step3_value_remaster = step3_value | minus: step1_value | minus: step2_value %}
+                  {% assign progressValue = 100 %}
+                  {% assign progressValue2 = 100 %}
+                  {% assign progressValue3 = cartTotalPrice_remaster | divided_by: step3_value_remaster | times: 100.0 %}
+                  {% assign progressPhrase = block.settings.step3_text1 %}
+                  {% if block.settings.step3_text2 != blank %}
+                    {% assign progressPhrase = progressPhrase | append: ' ' | append: '<span class="missing-value">' | append: missingValue | append: '</span>' | append: ' ' | append: block.settings.step2_text3 %}
+                  {% endif %}
+                {% endif %}
+
+                <div class="progressContainer appear-animation appear-delay-1">
+                  <p class="label" for="progressLivraison">{{ progressPhrase }}</p>
+                  <div class="progressBarContainer">
+                    <div class="progress-group" style="width: {{ progressWidth1 }}%;">
+                      <progress class="progress" max="100" value="{{ progressValue }}"></progress>
+                      {% if block.settings.step2_value != null and block.settings.step2_value != 0 -%}
+                        <span>{{ step1_label }}</span>
+                      {%- endif %}
+                    </div>
+                    {% if block.settings.step2_value != null and block.settings.step2_value != 0 %}
+                      <div class="progress-group" style="width: {{ progressWidth2 }}%;">
+                        <progress class="progress" max="100" value="{{ progressValue2 }}"></progress>
+                        <span>{{ step2_label }}</span>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.step3_value != null and block.settings.step3_value != 0 %}
+                      <div class="progress-group" style="width: {{ progressWidth3 }}%;">
+                        <progress class="progress" max="100" value="{{ progressValue3 }}"></progress>
+                        <span>{{ step3_label }}</span>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </progress-container>
+            {% elsif block.settings.type == 'product_collection' %}
+              <progress-container
+                id="progress-container"
+                class="progress-container {{ block.settings.custom_class }} color-{{ block.settings.color_scheme }}"
+              >
+                {% assign step1_value = block.settings.step1_value %}
+                {% assign step2_value = block.settings.step2_value %}
+                {% assign step3_value = block.settings.step3_value %}
+
+                {% assign productInThisCollection = 0 %}
+
+                {% for item in cart.items %}
+                  {% for item_collection in item.product.collections %}
+                    {% if item_collection == block.settings.collection %}
+                      {% assign productInThisCollection = productInThisCollection | plus: item.quantity %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+
+                {% assign step1_label = block.settings.step1_label | append: ' ✓' %}
+                {% assign step2_label = block.settings.step2_label | append: ' ✓' %}
+                {% assign step3_label = block.settings.step3_label | append: ' ✓' %}
+
+                {% assign progressPhrase = block.settings.step0_text %}
+                {% assign progressValue = 100 %}
+                {% assign progressValue2 = 100 %}
+                {% assign progressValue3 = 100 %}
+
+                {% if productInThisCollection < step1_value %}
+                  {% assign missingValue = step1_value | minus: productInThisCollection %}
+                  {% assign step1_label = block.settings.step1_label %}
+                  {% assign step2_label = block.settings.step2_label %}
+                  {% assign step3_label = block.settings.step3_label %}
+                  {% assign progressValue = productInThisCollection | times: 1.0 | divided_by: step1_value | times: 100.0 %}
+                  {% assign progressValue2 = 0 %}
+                  {% assign progressValue3 = 0 %}
+                  {% assign progressPhrase = block.settings.step1_text1 | append: ' ' | append: '<span class="missing-value">' | append: missingValue | append: '</span>' | append: ' ' | append: block.settings.step1_text2 %}
+                {% elsif productInThisCollection < step2_value and step2_value != null and productInThisCollection >= step1_value %}
+                  {% assign missingValue = step2_value | minus: productInThisCollection %}
+                  {% assign step2_label = block.settings.step2_label %}
+                  {% assign step3_label = block.settings.step3_label %}
+                  {% assign cartTotalPrice_remaster = productInThisCollection | minus: step1_value %}
+                  {% assign step2_value_remaster = step2_value | minus: step1_value %}
+                  {% assign progressValue = 100 %}
+                  {% assign progressValue2 = cartTotalPrice_remaster | times: 1.0 | divided_by: step2_value_remaster | times: 100.0 %}
+                  {% assign progressValue3 = 0 %}
+                  {% assign progressPhrase = block.settings.step2_text1 | append: ' ' | append: '<span class="missing-value">' | append: missingValue | append: '</span>' | append: ' ' | append: block.settings.step1_text2 %}
+                {% elsif productInThisCollection < step3_value and step3_value != null and productInThisCollection >= step2_value %}
+                  {% assign missingValue = step3_value | minus: productInThisCollection %}
+                  {% assign step3_label = block.settings.step3_label %}
+                  {% assign cartTotalPrice_remaster = productInThisCollection | minus: step2_value %}
+                  {% assign step3_value_remaster = step3_value | minus: step2_value %}
+                  {% assign progressValue = 100 %}
+                  {% assign progressValue2 = 100 %}
+                  {% assign progressValue3 = cartTotalPrice_remaster | times: 1.0 | divided_by: step3_value_remaster | times: 100.0 %}
+                  {% assign progressPhrase = block.settings.step3_text1 | append: ' ' | append: '<span class="missing-value">' | append: missingValue | append: '</span>' | append: ' ' | append: block.settings.step1_text2 %}
+                {% endif %}
+
+                <div class="progressContainer appear-animation appear-delay-1">
+                  <p class="label" for="progressLivraison">{{ progressPhrase }}</p>
+                  <div class="progressBarContainer">
+                    <div class="progress-group">
+                      <progress class="progress" max="100" value="{{ progressValue }}"></progress>
+                      {% if block.settings.step2_value != null and block.settings.step2_value != 0 -%}
+                        <span>{{ step1_label }}</span>
+                      {%- endif %}
+                    </div>
+                    {% if block.settings.step2_value != null and block.settings.step2_value != 0 %}
+                      <div class="progress-group">
+                        <progress class="progress" max="100" value="{{ progressValue2 }}"></progress>
+                        <span>{{ step2_label }}</span>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.step3_value != null and block.settings.step3_value != 0 %}
+                      <div class="progress-group">
+                        <progress class="progress" max="100" value="{{ progressValue3 }}"></progress>
+                        <span>{{ step3_label }}</span>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </progress-container>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'slider_cross_sell' -%}
+          {%- render 'cart-slider-cross-sell', block: block -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {% for block in section.blocks %}
+        {% if block.type == 'shipping_info' %}
+          {%- assign step_value = block.settings.step_value | times: 100 -%}
+          <div class="cart-drawer__shipping-info-container" role="status">
+            <p class="cart-drawer__shipping-info-label">{{ block.settings.tarif_title }}</p>
+            {% if cart.total_price >= step_value %}
+              <p class="cart-drawer__shipping-info-value">{{ block.settings.tarif_text_free }}</p>
+            {% else %}
+              <p class="cart-drawer__shipping-info-value">{{ block.settings.tarif_text }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {%- if cart.original_total_price != cart.total_price -%}
+        <div class="deployer-cart-drawer__reductions">
+          <h3>Réductions</h3>
+          <p class="deployer-cart-drawer__reductions-value">
+            <span class="deployer-cart-drawer__reductions-value-price">
+              {{- cart.original_total_price | minus: cart.total_price | money_with_currency -}}
+            </span>
+            <span class="loading__spinner hidden">
+              <svg class="spinner" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.90321 7.29677C1.90321 10.341 4.11041 12.4147 6.58893 12.8439C6.87255 12.893 7.06266 13.1627 7.01355 13.4464C6.96444 13.73 6.69471 13.9201 6.41109 13.871C3.49942 13.3668 0.86084 10.9127 0.86084 7.29677C0.860839 5.76009 1.55996 4.55245 2.37639 3.63377C2.96124 2.97568 3.63034 2.44135 4.16846 2.03202L2.53205 2.03202C2.25591 2.03202 2.03205 1.80816 2.03205 1.53202C2.03205 1.25588 2.25591 1.03202 2.53205 1.03202L5.53205 1.03202C5.80819 1.03202 6.03205 1.25588 6.03205 1.53202L6.03205 4.53202C6.03205 4.80816 5.80819 5.03202 5.53205 5.03202C5.25591 5.03202 5.03205 4.80816 5.03205 4.53202L5.03205 2.68645L5.03054 2.68759L5.03045 2.68766L5.03044 2.68767L5.03043 2.68767C4.45896 3.11868 3.76059 3.64538 3.15554 4.3262C2.44102 5.13021 1.90321 6.10154 1.90321 7.29677ZM13.0109 7.70321C13.0109 4.69115 10.8505 2.6296 8.40384 2.17029C8.12093 2.11718 7.93465 1.84479 7.98776 1.56188C8.04087 1.27898 8.31326 1.0927 8.59616 1.14581C11.4704 1.68541 14.0532 4.12605 14.0532 7.70321C14.0532 9.23988 13.3541 10.4475 12.5377 11.3662C11.9528 12.0243 11.2837 12.5586 10.7456 12.968L12.3821 12.968C12.6582 12.968 12.8821 13.1918 12.8821 13.468C12.8821 13.7441 12.6582 13.968 12.3821 13.968L9.38205 13.968C9.10591 13.968 8.88205 13.7441 8.88205 13.468L8.88205 10.468C8.88205 10.1918 9.10591 9.96796 9.38205 9.96796C9.65819 9.96796 9.88205 10.1918 9.88205 10.468L9.88205 12.3135L9.88362 12.3123C10.4551 11.8813 11.1535 11.3546 11.7585 10.6738C12.4731 9.86976 13.0109 8.89844 13.0109 7.70321Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </p>
+        </div>
+      {%- endif -%}
+
+      {% comment %}
+        <div class="deployer-cart-drawer__totals">
+          <h3>{{ section.settings.cart_estimated_total }}</h3>
+          <p class="deployer-cart-drawer__totals-value">
+            <span class="deployer-cart-drawer__totals-value-price">
+              {%- if cart.original_total_price != cart.total_price -%}
+                <s>{{- cart.original_total_price | money_with_currency -}}</s>
+              {%- endif -%}
+              <span>{{- cart.total_price | money_with_currency -}}</span>
+            </span>
+            <span class="loading__spinner hidden">
+              <svg class="spinner" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.90321 7.29677C1.90321 10.341 4.11041 12.4147 6.58893 12.8439C6.87255 12.893 7.06266 13.1627 7.01355 13.4464C6.96444 13.73 6.69471 13.9201 6.41109 13.871C3.49942 13.3668 0.86084 10.9127 0.86084 7.29677C0.860839 5.76009 1.55996 4.55245 2.37639 3.63377C2.96124 2.97568 3.63034 2.44135 4.16846 2.03202L2.53205 2.03202C2.25591 2.03202 2.03205 1.80816 2.03205 1.53202C2.03205 1.25588 2.25591 1.03202 2.53205 1.03202L5.53205 1.03202C5.80819 1.03202 6.03205 1.25588 6.03205 1.53202L6.03205 4.53202C6.03205 4.80816 5.80819 5.03202 5.53205 5.03202C5.25591 5.03202 5.03205 4.80816 5.03205 4.53202L5.03205 2.68645L5.03054 2.68759L5.03045 2.68766L5.03044 2.68767L5.03043 2.68767C4.45896 3.11868 3.76059 3.64538 3.15554 4.3262C2.44102 5.13021 1.90321 6.10154 1.90321 7.29677ZM13.0109 7.70321C13.0109 4.69115 10.8505 2.6296 8.40384 2.17029C8.12093 2.11718 7.93465 1.84479 7.98776 1.56188C8.04087 1.27898 8.31326 1.0927 8.59616 1.14581C11.4704 1.68541 14.0532 4.12605 14.0532 7.70321C14.0532 9.23988 13.3541 10.4475 12.5377 11.3662C11.9528 12.0243 11.2837 12.5586 10.7456 12.968L12.3821 12.968C12.6582 12.968 12.8821 13.1918 12.8821 13.468C12.8821 13.7441 12.6582 13.968 12.3821 13.968L9.38205 13.968C9.10591 13.968 8.88205 13.7441 8.88205 13.468L8.88205 10.468C8.88205 10.1918 9.10591 9.96796 9.38205 9.96796C9.65819 9.96796 9.88205 10.1918 9.88205 10.468L9.88205 12.3135L9.88362 12.3123C10.4551 11.8813 11.1535 11.3546 11.7585 10.6738C12.4731 9.86976 13.0109 8.89844 13.0109 7.70321Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </p>
+        </div>
+      {% endcomment %}
+
+      <div class="deployer-cart-drawer__ctas">
+        <button
+          type="submit"
+          id="DeployerCartDrawer-Checkout"
+          class="deployer-button"
+          name="checkout"
+          form="DeployerCartDrawer-Form"
+          {% if cart == empty %}
+            disabled
+          {% endif %}
+        >
+          <span>
+            {{- section.settings.cart_checkout }} |
+            <span>
+              {%- if cart.original_total_price != cart.total_price -%}
+                <s>{{- cart.original_total_price | money_with_currency -}}</s>
+              {%- endif -%}
+              <span>{{- cart.total_price | money_with_currency -}}</span>
+            </span></span
+          >
+          <span class="deployer-button__loading-spinner">
+            <svg class="spinner" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.90321 7.29677C1.90321 10.341 4.11041 12.4147 6.58893 12.8439C6.87255 12.893 7.06266 13.1627 7.01355 13.4464C6.96444 13.73 6.69471 13.9201 6.41109 13.871C3.49942 13.3668 0.86084 10.9127 0.86084 7.29677C0.860839 5.76009 1.55996 4.55245 2.37639 3.63377C2.96124 2.97568 3.63034 2.44135 4.16846 2.03202L2.53205 2.03202C2.25591 2.03202 2.03205 1.80816 2.03205 1.53202C2.03205 1.25588 2.25591 1.03202 2.53205 1.03202L5.53205 1.03202C5.80819 1.03202 6.03205 1.25588 6.03205 1.53202L6.03205 4.53202C6.03205 4.80816 5.80819 5.03202 5.53205 5.03202C5.25591 5.03202 5.03205 4.80816 5.03205 4.53202L5.03205 2.68645L5.03054 2.68759L5.03045 2.68766L5.03044 2.68767L5.03043 2.68767C4.45896 3.11868 3.76059 3.64538 3.15554 4.3262C2.44102 5.13021 1.90321 6.10154 1.90321 7.29677ZM13.0109 7.70321C13.0109 4.69115 10.8505 2.6296 8.40384 2.17029C8.12093 2.11718 7.93465 1.84479 7.98776 1.56188C8.04087 1.27898 8.31326 1.0927 8.59616 1.14581C11.4704 1.68541 14.0532 4.12605 14.0532 7.70321C14.0532 9.23988 13.3541 10.4475 12.5377 11.3662C11.9528 12.0243 11.2837 12.5586 10.7456 12.968L12.3821 12.968C12.6582 12.968 12.8821 13.1918 12.8821 13.468C12.8821 13.7441 12.6582 13.968 12.3821 13.968L9.38205 13.968C9.10591 13.968 8.88205 13.7441 8.88205 13.468L8.88205 10.468C8.88205 10.1918 9.10591 9.96796 9.38205 9.96796C9.65819 9.96796 9.88205 10.1918 9.88205 10.468L9.88205 12.3135L9.88362 12.3123C10.4551 11.8813 11.1535 11.3546 11.7585 10.6738C12.4731 9.86976 13.0109 8.89844 13.0109 7.70321Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'payment_methods' -%}
+          {{ 'component-payment-methods.css' | asset_url | stylesheet_tag }}
+
+          <div class="payment-methods payment-methods--{{ block.settings.align }}">
+            {% render 'payment-icons', block: block %}
+          </div>
+
+          <style>
+            .payment-methods svg {
+               width: {{ block.settings.icon_size }}px;
+            }
+          </style>
+        {%- endif -%}
+
+        {%- if block.type == 'payment_secure' -%}
+          {% render 'payment-secure', block: block %}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</deployer-cart-drawer>
+
+{% schema %}
+{
+  "name": "Panier Drawer",
+  "class": "deployer-cart-drawer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Options générales"
+    },
+    {
+      "type": "select",
+      "id": "cart_style",
+      "label": "Style du panier",
+      "options": [
+        {
+          "value": "defaut",
+          "label": "Défaut"
+        },
+        {
+          "value": "flottant",
+          "label": "Flottant"
+        },
+        {
+          "value": "arrondi",
+          "label": "Arrondi"
+        }
+      ],
+      "default": "flottant"
+    },
+    {
+      "type": "color_scheme",
+      "id": "body_color_scheme",
+      "label": "Nuancier du conteneur des produits",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_inline_product_options",
+      "label": "Afficher les variantes de produit en une ligne",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_remove_button",
+      "label": "Afficher le bouton de suppression de produit",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Contenu"
+    },
+    {
+      "type": "text",
+      "id": "cart_title",
+      "label": "Titre du panier",
+      "default": "Panier"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_count",
+      "label": "Afficher le nombre d'articles dans le panier",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cart_estimated_total",
+      "label": "Total estimé",
+      "default": "Total"
+    },
+    {
+      "type": "text",
+      "id": "cart_discount",
+      "label": "Réduction",
+      "default": "Réduction"
+    },
+    {
+      "type": "text",
+      "id": "cart_checkout",
+      "label": "Procéder au paiement",
+      "default": "Procéder au paiement"
+    },
+    {
+      "type": "header",
+      "content": "Panier vide"
+    },
+    {
+      "type": "text",
+      "id": "cart_empty_title",
+      "label": "Titre du panier vide",
+      "default": "Votre panier est vide"
+    },
+    {
+      "type": "text",
+      "id": "cart_empty_button1_text",
+      "label": "Texte du bouton 1"
+    },
+    {
+      "type": "url",
+      "id": "cart_empty_button1_link",
+      "label": "Lien du bouton 1"
+    },
+    {
+      "type": "text",
+      "id": "cart_empty_button2_text",
+      "label": "Texte du bouton 2"
+    },
+    {
+      "type": "url",
+      "id": "cart_empty_button2_link",
+      "label": "Lien du bouton 2"
+    },
+    {
+      "type": "collection",
+      "id": "cart_empty_collection",
+      "label": "Collection à mettre en avant"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "payment_secure",
+      "name": "Paiement sécurisé",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Texte",
+          "default": "Transactions sécurisées et cryptées"
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Aligment",
+          "options": [
+            {
+              "value": "start",
+              "label": "Gauche"
+            },
+            {
+              "value": "center",
+              "label": "Centré"
+            },
+            {
+              "value": "end",
+              "label": "Droite"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "range",
+          "id": "icon_size",
+          "label": "Taille des icônes",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 15
+        }
+      ]
+    },
+    {
+      "type": "reassurance",
+      "name": "Réassurance",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "range",
+          "id": "change_slides_speed",
+          "min": 3,
+          "max": 9,
+          "step": 2,
+          "unit": "s",
+          "label": "t:sections.slideshow.settings.change_slides_speed.label",
+          "default": 5
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Nuancier de couleurs",
+          "default": "background-1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icone 1"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Reassurance 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icone 2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Reassurance 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icone 3"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Reassurance 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_4",
+          "label": "Icone 4"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Reassurance 4"
+        }
+      ]
+    },
+    {
+      "type": "cart_note",
+      "name": "Note de panier",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "cart_note_label",
+          "label": "Label",
+          "default": "Instructions spéciales concernant la commande"
+        }
+      ]
+    },
+    {
+      "type": "slider_cross_sell",
+      "name": "Slider de cross-sells",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Général"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-2"
+        },
+        {
+          "type": "header",
+          "content": "Produit 1"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Produit"
+        },
+        {
+          "type": "richtext",
+          "id": "product_title_1",
+          "label": "Titre du produit",
+          "info": "Remplace le titre du produit"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image_1",
+          "label": "Image du produit",
+          "info": "Remplace l'image du produit"
+        },
+        {
+          "type": "text",
+          "id": "button_text_1",
+          "label": "Texte du bouton",
+          "default": "Découvrir"
+        },
+        {
+          "type": "select",
+          "id": "button_action_1",
+          "options": [
+            {
+              "value": "link",
+              "label": "Redirige vers le produit"
+            },
+            {
+              "value": "add_to_cart",
+              "label": "Ajoute au panier"
+            }
+          ],
+          "default": "link",
+          "label": "Action du bouton"
+        },
+        {
+          "type": "header",
+          "content": "Produit 2"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Produit"
+        },
+        {
+          "type": "richtext",
+          "id": "product_title_2",
+          "label": "Titre du produit",
+          "info": "Remplace le titre du produit"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image_2",
+          "label": "Image du produit",
+          "info": "Remplace l'image du produit"
+        },
+        {
+          "type": "text",
+          "id": "button_text_2",
+          "label": "Texte du bouton",
+          "default": "Découvrir"
+        },
+        {
+          "type": "select",
+          "id": "button_action_2",
+          "options": [
+            {
+              "value": "link",
+              "label": "Redirige vers le produit"
+            },
+            {
+              "value": "add_to_cart",
+              "label": "Ajoute au panier"
+            }
+          ],
+          "default": "link",
+          "label": "Action du bouton"
+        },
+        {
+          "type": "header",
+          "content": "Produit 3"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Produit"
+        },
+        {
+          "type": "richtext",
+          "id": "product_title_3",
+          "label": "Titre du produit",
+          "info": "Remplace le titre du produit"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image_3",
+          "label": "Image du produit",
+          "info": "Remplace l'image du produit"
+        },
+        {
+          "type": "text",
+          "id": "button_text_3",
+          "label": "Texte du bouton",
+          "default": "Découvrir"
+        },
+        {
+          "type": "select",
+          "id": "button_action_3",
+          "options": [
+            {
+              "value": "link",
+              "label": "Redirige vers le produit"
+            },
+            {
+              "value": "add_to_cart",
+              "label": "Ajoute au panier"
+            }
+          ],
+          "default": "link",
+          "label": "Action du bouton"
+        },
+        {
+          "type": "header",
+          "content": "Produit 4"
+        },
+        {
+          "type": "product",
+          "id": "product_4",
+          "label": "Produit"
+        },
+        {
+          "type": "richtext",
+          "id": "product_title_4",
+          "label": "Titre du produit",
+          "info": "Remplace le titre du produit"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image_4",
+          "label": "Image du produit",
+          "info": "Remplace l'image du produit"
+        },
+        {
+          "type": "text",
+          "id": "button_text_4",
+          "label": "Texte du bouton",
+          "default": "Découvrir"
+        },
+        {
+          "type": "select",
+          "id": "button_action_4",
+          "options": [
+            {
+              "value": "link",
+              "label": "Redirige vers le produit"
+            },
+            {
+              "value": "add_to_cart",
+              "label": "Ajoute au panier"
+            }
+          ],
+          "default": "link",
+          "label": "Action du bouton"
+        },
+        {
+          "type": "header",
+          "content": "Produit 5"
+        },
+        {
+          "type": "product",
+          "id": "product_5",
+          "label": "Produit"
+        },
+        {
+          "type": "richtext",
+          "id": "product_title_5",
+          "label": "Titre du produit",
+          "info": "Remplace le titre du produit"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image_5",
+          "label": "Image du produit",
+          "info": "Remplace l'image du produit"
+        },
+        {
+          "type": "text",
+          "id": "button_text_5",
+          "label": "Texte du bouton",
+          "default": "Découvrir"
+        },
+        {
+          "type": "select",
+          "id": "button_action_5",
+          "options": [
+            {
+              "value": "link",
+              "label": "Redirige vers le produit"
+            },
+            {
+              "value": "add_to_cart",
+              "label": "Ajoute au panier"
+            }
+          ],
+          "default": "link",
+          "label": "Action du bouton"
+        }
+      ]
+    },
+    {
+      "type": "shipping_info",
+      "name": "Tarif livraison dynamique",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Progression basée sur",
+          "options": [
+            {
+              "value": "montant",
+              "label": "le montant total du panier"
+            }
+          ],
+          "default": "montant"
+        },
+        {
+          "type": "number",
+          "id": "step_value",
+          "label": "Palier atteint si égal à",
+          "default": 30,
+          "info": "Montant du panier (€)"
+        },
+        {
+          "type": "header",
+          "content": "Contenu"
+        },
+        {
+          "type": "text",
+          "id": "tarif_title",
+          "label": "Nom de la ligne",
+          "default": "Livraison (France)"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "tarif_text",
+          "label": "Prix si palier non atteint",
+          "default": "2,99€ (France)"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "tarif_text_free",
+          "label": "Prix si palier atteint",
+          "default": "Offerte"
+        }
+      ]
+    },
+    {
+      "type": "payment_methods",
+      "name": "Moyens de paiement",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_visa",
+          "label": "Show Visa icon",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_master",
+          "label": "Show MasterCard icon",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_apple_pay",
+          "label": "Show Apple Pay icon",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_google_pay",
+          "label": "Show Google Pay icon",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_paypal",
+          "label": "Show Paypal icon",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_american_express",
+          "label": "Show American express icon",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_diners_club",
+          "label": "Show Diners Club icon",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_discover",
+          "label": "Show Discover icon",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_shopify_pay",
+          "label": "Show Shopify Pay icon",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Aligment",
+          "options": [
+            {
+              "value": "start",
+              "label": "Gauche"
+            },
+            {
+              "value": "center",
+              "label": "Centré"
+            },
+            {
+              "value": "end",
+              "label": "Droite"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "range",
+          "id": "icon_size",
+          "label": "Taille des icônes",
+          "min": 20,
+          "max": 70,
+          "step": 1,
+          "unit": "px",
+          "default": 45
+        }
+      ]
+    },
+    {
+      "type": "progress_bar",
+      "name": "Jauge de progression",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "info": "t:sections.all.colors.has_cards_info",
+          "default": "background-1"
+        },
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Progression basée sur",
+          "options": [
+            {
+              "value": "montant",
+              "label": "le montant total du panier"
+            },
+            {
+              "value": "product_collection",
+              "label": "nombre de produit d'une collection"
+            }
+          ],
+          "default": "montant"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Produit de cette collection"
+        },
+        {
+          "type": "header",
+          "content": "Phrase par défaut",
+          "info": "Affichée si tous les paliers sont atteints"
+        },
+        {
+          "type": "text",
+          "id": "step0_text",
+          "label": "Phrase par défaut",
+          "default": "Félicitations ! Livraison + cadeau offerts"
+        },
+        {
+          "type": "header",
+          "content": "Premier palier"
+        },
+        {
+          "type": "text",
+          "id": "step1_label",
+          "label": "Nom du palier",
+          "default": "Livraison offerte"
+        },
+        {
+          "type": "number",
+          "id": "step1_value",
+          "label": "Premier palier atteint si égal à",
+          "default": 30,
+          "info": "Nombre d'article OU montant du panier (€)"
+        },
+        {
+          "type": "text",
+          "id": "step1_text1",
+          "label": "Phrase 1/2",
+          "default": "Plus que"
+        },
+        {
+          "type": "text",
+          "id": "step1_text2",
+          "label": "Phrase 2/2",
+          "default": "et la livraison est offerte !"
+        },
+        {
+          "type": "header",
+          "content": "Deuxième palier"
+        },
+        {
+          "type": "text",
+          "id": "step2_label",
+          "label": "Nom du palier",
+          "default": "Cadeau offert"
+        },
+        {
+          "type": "number",
+          "id": "step2_value",
+          "label": "Deuxième palier atteint si égal à",
+          "default": 60,
+          "info": "Nombre d'article OU montant du panier (€)"
+        },
+        {
+          "type": "text",
+          "id": "step2_text1",
+          "label": "Phrase 1/2",
+          "default": "Dépensez"
+        },
+        {
+          "type": "text",
+          "id": "step2_text2",
+          "label": "Phrase 2/2",
+          "default": "pour obtenir un cadeau !"
+        },
+        {
+          "type": "header",
+          "content": "Troisième palier"
+        },
+        {
+          "type": "text",
+          "id": "step3_label",
+          "label": "Nom du palier"
+        },
+        {
+          "type": "number",
+          "id": "step3_value",
+          "label": "Troisième palier atteint si égal à",
+          "info": "Nombre d'article OU montant du panier (€)"
+        },
+        {
+          "type": "text",
+          "id": "step3_text1",
+          "label": "Phrase 1/2"
+        },
+        {
+          "type": "text",
+          "id": "step3_text2",
+          "label": "Phrase 2/2"
+        }
+      ]
+    },
+    {
+      "type": "deployer_discount_code",
+      "name": "Deployer Discount Code™",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "discount_code_color_scheme",
+          "label": "Nuancier de couleur",
+          "default": "scheme-1"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ce bloc ne permet pas de cumuler plusieurs codes de réduction dûe à une limitation de Shopify."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Texte du bouton",
+          "default": "Appliquer"
+        },
+        {
+          "type": "text",
+          "id": "button_text_remove",
+          "label": "Texte du bouton de suppression de code de réduction",
+          "default": "Retirer"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder du champ",
+          "default": "Code de réduction"
+        },
+        {
+          "type": "header",
+          "content": "Ajout de produit automatique"
+        },
+        {
+          "type": "text",
+          "id": "auto_add_discount_prefix",
+          "label": "Le code promo contient:",
+          "default": "minitube"
+        },
+        {
+          "type": "product",
+          "id": "auto_add_product",
+          "label": "Produit à ajouter"
+        },
+      ]
+    },
+    {
+      "type": "discount_code_note",
+      "name": "Note de code de réduction",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texte",
+          "default": "<p>Vous pourrez saisir un code promo à la prochaine étape.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Panier Drawer"
+    }
+  ]
+}
+{% endschema %}

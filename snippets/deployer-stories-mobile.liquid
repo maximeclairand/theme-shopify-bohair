@@ -1,0 +1,105 @@
+{% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'deployer_stories_mobile' %}
+        {% style %}
+          @media screen and (max-width: 749px) {
+            deployer-stories .story-bubble-container {
+              display: none;
+            }
+          }
+        {% endstyle %}
+        <deployer-stories-mobile class="deployer-stories deployer-stories-mobile page-width">
+          <div class="stories-bubbles">
+            {% if block.settings.data_type == 'block' %}
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'deployer_story' %}
+                    <div class="story-bubble-container">
+                      <div class="story-bubble" data-index="{{ forloop.index0 }}">
+                        <span class="join-play-icon">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            role="presentation"
+                            class="icon icon-play"
+                            viewBox="18.24 17.35 24.52 28.3"
+                          >
+                            <path d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/>
+                          </svg>
+                        </span>
+                        {% comment %} theme-check-disable {% endcomment %}
+                        {% if block.settings.poster != blank %}
+                          <img
+                            src="{{ block.settings.poster | image_url: medium }}"
+                            loading="lazy"
+                            class="story-poster"
+                            alt="{{ block.settings.poster.alt }}"
+                          >
+                        {% else %}
+                          {% if block.settings.video_0 != blank and block.settings.image_0 == blank %}
+                            <img
+                              src="{{ block.settings.video_0.preview_image | image_url: medium }}"
+                              loading="lazy"
+                              alt="{{ block.settings.video_0.alt }}"
+                            >
+                          {% elsif block.settings.video_0 == blank and block.settings.image_0 != blank %}
+                            <img
+                              src="{{ block.settings.image_0.preview_image | image_url: medium }}"
+                              loading="lazy"
+                              alt="{{ block.settings.image_0.alt }}"
+                            >
+                          {% endif %}
+                        {% endif %}
+                        {% comment %} theme-check-enable {% endcomment %}
+                      </div>
+                      <div class="story-title">
+                        {{ block.settings.title }}
+                      </div>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            {% else %}
+              {% for story in product.metafields.custom.deployer_stories.value %}
+                <div class="story-bubble-container">
+                  <div class="story-bubble" data-index="{{ forloop.index0 }}">
+                    <span class="join-play-icon">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="icon icon-play"
+                        viewBox="18.24 17.35 24.52 28.3"
+                      >
+                        <path d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/>
+                      </svg>
+                    </span>
+                    {% comment %} theme-check-disable {% endcomment %}
+                    {% if story.miniature != blank %}
+                      <img
+                        src="{{ story.miniature | image_url: medium }}"
+                        loading="lazy"
+                        class="story-poster"
+                        alt="{{ story.miniature.alt }}"
+                      >
+                    {% else %}
+                      <img
+                        src="{{ story.media_1.value.preview_image | image_url: medium }}"
+                        loading="lazy"
+                        alt="{{ story.media_1.value.alt }}"
+                      >
+                    {% endif %}
+                    {% comment %} theme-check-enable {% endcomment %}
+                  </div>
+                  <div class="story-title">
+                    <p>
+                      {{ story.titre | metafield_tag }}
+                    </p>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </deployer-stories-mobile>
+    {% endcase %}
+  {% endfor %}
+ 

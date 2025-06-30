@@ -1,0 +1,150 @@
+<script defer>
+  window.deployerAdapter = {
+    cartIcon: document.querySelector('#cart-icon-bubble'),
+    cartIconSelector: '#cart-icon-bubble',
+    containerToAvoidScroll: document.body,
+    classToAvoidScroll: 'overflow-hidden',
+    cartDrawerSection: 'deployer-cart-drawer',
+    cartDrawerWebComponent: 'deployer-cart-drawer',
+  };
+</script>
+
+<style>
+  :root {
+    --deployer-color-foreground: var(--color-foreground, 36, 36, 36);
+    --deployer-color-background: var(--color-background, 255, 255, 255);
+    --deployer-primary-color: var(--color-button, 36, 36, 36);
+    --deployer-primary-color-text: var(--color-button-text, 255, 255, 255);
+    --deployer-secondary-color: var(--color-secondary-button, 255, 255, 255);
+    --deployer-secondary-color-text: var(--color-secondary-button-text, 36, 36, 36);
+    --deployer-tertiary-color: var(--color-button-3, 255, 255, 255);
+    --deployer-tertiary-color-text: var(--color-button-3-text, 36, 36, 36);
+
+    --deployer-default-border-width: 2px;
+    --deployer-default-border-color: rgba(var(--deployer-color-foreground), 0.1);
+    --deployer-default-border: var(--deployer-default-border-width) solid var(--deployer-default-border-color);
+    --deployer-small-border-radius: 8px;
+    --deployer-default-border-radius: 12px;
+    --deployer-large-border-radius: 15px;
+    --deployer-default-box-shadow: 0 1px 3px var(--deployer-default-border-color), 0 1px 2px -1px var(--deployer-default-border-color);
+
+    --deployer-no-spacing: 0px;
+    --deployer-small-spacing: 5px;
+    --deployer-default-spacing: 10px;
+    --deployer-large-spacing: 15px;
+    --deployer-xlarge-spacing: 20px;
+
+    --deployer-p-font-size: 14px;
+    --deployer-p-small-font-size: 12px;
+    --deployer-h2-font-size: 20px;
+    --deployer-h3-font-size: 16px;
+    --deployer-form-label-font-size: 13px;
+
+    --deployer-inputs-border-radius: 4px;
+    --deployer-inputs-border-width: calc(var(--buttons-border-width, 1.5px));
+    --deployer-inputs-font-size: 15px;
+    --deployer-inputs-font-size: 15px;
+    --deployer-inputs-min-height: 45px;
+    --deployer-inputs-min-with: calc(120px + var(--buttons-border-width, 1.5px) * 2);
+    --deployer-inputs-padding: 15px;
+
+    --deployer-button-border-radius: var(--buttons-radius, 40px);
+    --deployer-button-border-width: calc(0.5px + var(--buttons-border-width, 1.5px));
+    --deployer-button-font-weight: var(--font-body-weight, 600);
+    --deployer-button-text-transform: none;
+    --deployer-button-letter-spacing: 1px;
+    --deployer-button-padding-horizontal: calc(2 * var(--deployer-inputs-padding));
+    --deployer-button-padding-vertical: 0rem; /* Ne pas mettre "0", ca cause un soucis sur les petits boutons */
+
+    --deployer-swatch-size-normal: 36px;
+    --deployer-swatch-size-small: 20px;
+    --deployer-swatch-size-big: 50px;
+
+    /* Deployer Section Grid */
+    --deployer-section-grid-mobile-horizontal-spacing: 20px;
+    --deployer-section-grid-mobile-vertical-spacing: 20px;
+    --deployer-section-grid-desktop-horizontal-spacing: 40px;
+    --deployer-section-grid-desktop-vertical-spacing: 40px;
+
+    /* Deployer Card */
+    --deployer-card-gap: var(--deployer-default-spacing * 2);
+    --deployer-card-padding: var(--deployer-no-spacing);
+    --deployer-card-highlighted-background-color: var(--deployer-primary-color);
+    --deployer-card-highlighted-border-color: var(--deployer-primary-color);
+    --deployer-card-border: var(--deployer-default-border);
+    --deployer-card-border-radius: var(--deployer-large-border-radius);
+    --deployer-card-box-shadow: none;
+    --deployer-card-media-padding: var(--deployer-no-spacing);
+    --deployer-card-image-width: 100%;
+    --deployer-card-content-gap: var(--deployer-small-spacing);
+    --deployer-card-content-padding: var(--deployer-default-spacing);
+    --deployer-card-badges-gap: var(--deployer-small-spacing);
+    --deployer-card-badge-padding: var(--deployer-small-spacing) calc(var(--deployer-small-spacing) * 1.5);
+    --deployer-card-badge-border-radius: 100px;
+    --deployer-card-star-width: var(--deployer-h2-font-size);
+    --deployer-card-bullet-point-font-size: var(--deployer-p-font-size);
+
+    /* Deployer Grid */
+    --deployer-default-grid-mobile-horizontal-spacing: 10px;
+    --deployer-default-grid-mobile-vertical-spacing: 10px;
+    --deployer-default-grid-tablet-horizontal-spacing: 15px;
+    --deployer-default-grid-tablet-vertical-spacing: 15px;
+    --deployer-default-grid-desktop-horizontal-spacing: 20px;
+    --deployer-default-grid-desktop-vertical-spacing: 20px;
+
+    /* Deployer Slider */
+    --deployer-default-slider-scrollbar-size: 0.4rem;
+    --deployer-default-slider-scrollbar-border-radius: 0.4rem;
+    --deployer-default-slider-navigation-buttons-gap: 1.5rem;
+    --deployer-default-slider-navigation-link-padding-mobile: 0.75rem;
+    --deployer-default-slider-navigation-link-padding-desktop: 1rem;
+    --deployer-default-slider-navigation-link-size-mobile: 1rem;
+    --deployer-default-slider-navigation-link-size-desktop: 1rem;
+
+    /* Deployer Text Around Image */
+    --deployer-text-around-image-media-border-radius: 0;
+    --deployer-text-around-image-section-gap: 40px;
+    --deployer-text-around-image-section-header-gap: 20px;
+    --deployer-text-around-image-section-content-row-gap: 40px;
+    --deployer-text-around-image-section-content-column-gap: 20px;
+    --deployer-text-around-image-text-item-gap: 10px;
+
+    /* Tableau de comparaison */
+    --deployer-tableau-comparaison-border-radius: 15px;
+
+    /* Deployer Cart Drawer */
+    --deployer-cart-drawer-background-color: white;
+    --deployer-cart-drawer-width: 430px;
+    --deployer-cart-drawer-padding: 12px;
+    --deployer-cart-drawer-animation-duration: 0.25s;
+    --deployer-cart-item-background-color: #f9f9f9;
+    --deployer-cart-item-padding: 0;
+    --deployer-cart-item-image-width: 80px;
+    --deployer-cart-item-title-font-size: 13px;
+
+    /* Ingredient list */
+    --deployer-ingredients-list-section-gap: 20px;
+    --deployer-ingredients-list-section-header-gap: 20px;
+
+    /* Reviews */
+    --deployer-reviews-section-gap: 80px;
+    --deployer-reviews-section-header-gap: 20px;
+
+    /* Instagram */
+    --deployer-instagram-section-gap: 40px;
+    --deployer-instagram-section-header-gap: 20px;
+    --deployer-instagram-section-blocks-gap: 20px;
+    --deployer-instagram-media-border-radius: 0;
+  }
+
+  @media screen and (max-width: 350px) {
+    :root {
+      /* Deployer Cart Drawer */
+      --deployer-cart-drawer-width: 100%;
+      --deployer-cart-drawer-padding: 10px;
+      --deployer-cart-item-padding: 0;
+      --deployer-cart-item-image-width: 50px;
+      --deployer-cart-item-title-font-size: 12px;
+    }
+  }
+</style>

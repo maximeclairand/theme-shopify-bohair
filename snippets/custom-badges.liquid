@@ -1,0 +1,23 @@
+{{ 'component-custom-badges.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-badges color-{{ block.settings.badge_color_scheme }}">
+    <div class="custom-badges__left">
+        {%- if block.settings.badge1 != blank -%}
+            <span class="badge custom-badges__badge">{{ block.settings.badge1 }}</span>
+        {%- endif -%}
+
+        {%- if block.settings.badge2 != blank -%}
+            <span class="badge custom-badges__badge">{{ block.settings.badge2 }}</span>
+        {%- endif -%}
+
+        {%- if block.settings.badge3 != blank -%}
+            <span class="badge custom-badges__badge">{{ block.settings.badge3 }}</span>
+        {%- endif -%}
+    </div>
+
+    <div class="custom-badges__right">
+        {%- if block.settings.badge_secondary != blank -%}
+            <span class="badge custom-badges__badge custom-badges__badge--secondary">{{ block.settings.badge_secondary }}</span>
+        {%- endif -%}
+    </div>
+</div>

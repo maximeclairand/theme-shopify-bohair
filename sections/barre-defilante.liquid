@@ -1,0 +1,137 @@
+{{ 'section-barre-defilante.css' | asset_url | stylesheet_tag }}
+ 
+<style>
+    .section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+        .section-{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+ 
+  .section-{{ section.id }} .barre-defilante_slider {
+    animation: marquee {{ section.settings.speed | times: 2 }}s linear infinite;
+  }
+ 
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .barre-defilante_slider {
+      animation: marquee {{ section.settings.speed | times: 6 }}s linear infinite;
+    }
+  }
+</style>
+
+<div class="page-width">
+    <div class="barre-defilante color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}">
+        <div class="barre-defilante_slider ">
+            {% for i in (1..30) %}
+            {% for block in section.blocks %}
+                <div class="barre-defilante_information">
+                {% if block.settings.image != blank %}
+                    <img src="{{ block.settings.image | image_url: width: 80 }}" width="auto" height="{{ block.settings.icon_height }}" alt="{{ block.settings.text }}">
+                {% endif %}
+                {% if block.settings.text != blank %}
+                    <span>{{ block.settings.text }}</span>
+                {% endif %}
+                </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+ 
+{% schema %}
+{
+  "name": "Barre défilante",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "s",
+      "label": "Vitesse de défilement",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Marges intérieurs"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Marge supérieure",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Marge inférieure",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "information",
+      "name": "Information",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Texte",
+          "default": "Je suis une information"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icône"
+        },
+        {
+          "type": "range",
+          "id": "icon_height",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Hauteur de l'icône",
+          "default": 22
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barre défilante",
+      "blocks": [
+        {
+          "type": "information"
+        },
+        {
+          "type": "information"
+        },
+        {
+          "type": "information"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

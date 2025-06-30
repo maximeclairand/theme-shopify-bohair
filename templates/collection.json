@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "image_banner_gKxHiG": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_nCT6BN": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_YqEw6j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ collection.description }}</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["heading_nCT6BN", "text_YqEw6j"],
+      "custom_css": [
+        ".banner__heading {text-transform: uppercase;}",
+        "@media only screen and (min-width: 750px) {.banner--desktop-transparent .banner__box {max-width: 50rem; }}"
+      ],
+      "settings": {
+        "image": "{{ collection.image }}",
+        "round_top_corners": true,
+        "round_bottom_corners": true,
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "desktop_constrain_width": true,
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false,
+        "mobile_constrain_width": true
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "card_imiXxz": {
+          "type": "card",
+          "settings": {
+            "hide_mobile": false,
+            "hide_desktop": true,
+            "highlight_card": false,
+            "image": "",
+            "badge": "Économisez -10%",
+            "stars": 0,
+            "title": "Abonnez-vous & économisez en prenant soin de votre compagnon !",
+            "description": "<p>Optez pour l’abonnement et profitez d’une multitude d'avantages.</p>",
+            "bullet_points": "",
+            "button_text": "Texte du bouton",
+            "button_link": "",
+            "footer_text": "",
+            "position_in_grid": 5,
+            "columns_mobile": "2",
+            "columns_desktop": 2,
+            "card_layout": "stacked",
+            "card_media_aspect_ratio": "square",
+            "card_content_vertical_position": "bottom",
+            "card_title_layout": "vertical",
+            "enable_divider": false,
+            "card_button_style": "deployer-button",
+            "card_button_full_width": true,
+            "card_alignment": "left",
+            "card_background_color": "#364c84",
+            "card_text_color": "#ffffff",
+            "card_highlighted_background_color": "#95b1ee",
+            "card_highlighted_border_color": "#364c84",
+            "card_badge_background_color": "#e7f1a8",
+            "card_badge_color": "#364c84",
+            "card_star_color": "#f7be0b"
+          }
+        },
+        "card_BtpRET": {
+          "type": "card",
+          "settings": {
+            "hide_mobile": true,
+            "hide_desktop": false,
+            "highlight_card": false,
+            "image": "",
+            "badge": "Économisez -10%",
+            "stars": 0,
+            "title": "Abonnez-vous & économisez en prenant soin de votre compagnon !",
+            "description": "<p>Optez pour l’abonnement et profitez d’une multitude d'avantages.</p>",
+            "bullet_points": "",
+            "button_text": "Texte du bouton",
+            "button_link": "",
+            "footer_text": "",
+            "position_in_grid": 4,
+            "columns_mobile": "2",
+            "columns_desktop": 2,
+            "card_layout": "stacked",
+            "card_media_aspect_ratio": "square",
+            "card_content_vertical_position": "bottom",
+            "card_title_layout": "vertical",
+            "enable_divider": false,
+            "card_button_style": "deployer-button",
+            "card_button_full_width": true,
+            "card_alignment": "left",
+            "card_background_color": "#364c84",
+            "card_text_color": "#ffffff",
+            "card_highlighted_background_color": "#95b1ee",
+            "card_highlighted_border_color": "#364c84",
+            "card_badge_background_color": "#e7f1a8",
+            "card_badge_color": "#364c84",
+            "card_star_color": "#f7be0b"
+          }
+        }
+      },
+      "block_order": ["card_imiXxz", "card_BtpRET"],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_product_description": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "vertical_filter_type_sort_position": "sidebar",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": ["banner", "image_banner_gKxHiG", "product-grid"]
+}

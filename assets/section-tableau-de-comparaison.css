@@ -1,0 +1,151 @@
+.tableau-de-comparaison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+}
+
+/* Certains thèmes masquent les div vides, ce qu'on ne veut pas dans notre tableau */
+.tableau-de-comparaison div:empty {
+  display: block;
+}
+
+.tableau-de-comparaison_title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.tableau-de-comparaison_title {
+  text-align: center;
+  margin: 0;
+}
+
+.tableau-de-comparaison_text p {
+  margin: 0;
+}
+
+.tableau-de-comparaison_table {
+  border-radius: var(--deployer-tableau-comparaison-border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.tableau-de-comparaison_row-item-title {
+  padding: 10px 10px;
+}
+
+.tableau-de-comparaison_row-item-title img {
+  width: var(--image-width, 50px);
+  max-width: 100%;
+  height: auto;
+}
+
+.tableau-de-comparaison_row-container {
+  border: var(--deployer-default-border);
+  border-color: rgba(var(--color-foreground), 0.1);
+  border-radius: var(--deployer-tableau-comparaison-border-radius);
+  overflow: hidden;
+  width: 100%;
+}
+
+.tableau-de-comparaison_row,
+.tableau-de-comparaison_heading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 100%;
+  align-items: stretch;
+  border-top: var(--deployer-default-border);
+}
+
+.tableau-de-comparaison_row:first-child,
+.tableau-de-comparaison_heading-row:first-child {
+  border-top: 0;
+}
+
+.tableau-de-comparaison_row-item,
+.tableau-de-comparaison_row-item-first {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.tableau-de-comparaison_row-item.tableau-de-comparaison_row-item-first {
+  display: block;
+  text-align: left;
+}
+
+.tableau-de-comparaison .tableau-de-comparaison_row-item-first:empty {
+  background-color: transparent !important;
+}
+
+.tableau-de-comparaison_row-item:not(.tableau-de-comparaison_row-item-title) img {
+  width: var(--icon-width, 24px);
+  max-width: 100%;
+  height: auto;
+}
+
+.tableau-de-comparaison_row-item {
+  justify-content: center;
+  text-align: center;
+}
+
+.tableau-de-comparaison_row:last-child .tableau-de-comparaison_row-item-highlighted {
+  border-bottom-left-radius: var(--deployer-tableau-comparaison-border-radius);
+  border-bottom-right-radius: var(--deployer-tableau-comparaison-border-radius);
+}
+
+.tableau-de-comparaison_row-item-highlighted.tableau-de-comparaison_row-item-title {
+  border-top-left-radius: var(--deployer-tableau-comparaison-border-radius);
+  border-top-right-radius: var(--deployer-tableau-comparaison-border-radius);
+}
+
+.tableau-de-comparaison_row-container .tableau-de-comparaison_row:nth-of-type(even) .tableau-de-comparaison_row-item,
+.tableau-de-comparaison_row-container .tableau-de-comparaison_row:nth-of-type(even) .tableau-de-comparaison_row-item-first {
+  /* opacity: 0.8; */
+}
+
+.tableau-de-comparaison_heading-row .tableau-de-comparaison_row-item:not(.tableau-de-comparaison_row-item-first) {
+  border: var(--deployer-default-border);
+  border-color: rgba(var(--color-foreground), 0.1);
+  border-bottom: none;
+  border-top-right-radius: var(--deployer-tableau-comparaison-border-radius);
+  border-top-left-radius: var(--deployer-tableau-comparaison-border-radius);
+  font-weight: 600;
+}
+
+.tableau-de-comparaison_heading-row .tableau-de-comparaison_row-item-title:not(:last-child) {
+  border-right: 0;
+}
+
+.tableau-de-comparaison_heading-row .tableau-de-comparaison_row-item-title:last-child {
+  background-color: transparent !important;
+  border: none;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .tableau-de-comparaison_table {
+    max-width: 100% !important;
+  }
+
+  .tableau-de-comparaison_row-item {
+    word-break: break-word;
+  }
+
+  .tableau-de-comparaison_row-item,
+  .tableau-de-comparaison_row-item-first {
+    padding: 15px;
+  }
+}

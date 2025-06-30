@@ -1,0 +1,27 @@
+.payment-methods {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin: var(--deployer-cart-drawer-vertical-padding) 0;
+}
+
+.payment-methods--start {
+  justify-content: flex-start;
+}
+
+.payment-methods--center {
+  justify-content: center;
+}
+
+.payment-methods--end {
+  justify-content: flex-end;
+}
+
+.payment-methods svg {
+  height: auto;
+}
+
+.product .payment-methods {
+  margin: 1.5rem 0;
+}

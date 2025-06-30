@@ -1,0 +1,31 @@
+.barre-defilante_slider {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.barre-defilante {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  border-radius: var(--media-radius);
+  background-color: rgb(var(--color-background-3));
+}
+
+.barre-defilante_information {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgb(var(--color-foreground));
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-600%);
+  }
+}

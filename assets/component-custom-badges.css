@@ -1,0 +1,31 @@
+.custom-badges {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  background-color: transparent;
+}
+
+.custom-badges__left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.custom-badges__badge {
+  background-color: rgb(var(--color-badge-2-background));
+  color: rgb(var(--color-badge-2-foreground));
+  border-color: rgb(var(--color-badge-2-background));
+  padding: 0.75rem 1rem;
+  font-weight: 400;
+  width: max-content;
+}
+
+.custom-badges__badge--secondary {
+  background-color: transparent;
+  color: rgb(var(--color-foreground));
+  border-color: rgb(var(--color-foreground));
+}

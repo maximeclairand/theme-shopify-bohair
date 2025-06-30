@@ -1,0 +1,82 @@
+.trustpilot-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--gutter);
+  width: 100%;
+}
+
+.trustpilot-badge a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.trustpilot-badge_badge {
+  border-radius: 50px;
+  background-color: white;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 30px;
+}
+
+.trustpilot-badge_stars svg {
+  width: 100px;
+}
+
+.trustpilot-badge_logo,
+.trustpilot-badge_etoiles-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trustpilot-badge_logo img,
+.trustpilot-badge_logo svg {
+  width: 100%;
+  max-width: 80px;
+}
+
+.trustpilot-badge_stars svg,
+.trustpilot-badge_logo svg {
+  display: flex;
+}
+
+.trustpilot-badge_logo svg {
+  margin-top: -5px;
+}
+
+.trustpilot-badge_text-1 p,
+.trustpilot-badge_text-2 p {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .trustpilot-badge_badge {
+    padding: 10px 15px;
+    gap: 7px;
+  }
+
+  .trustpilot-badge_text-1,
+  .trustpilot-badge_text-2 {
+    font-size: 12px;
+  }
+
+  .trustpilot-badge_logo img,
+  .trustpilot-badge_logo svg {
+    width: 100%;
+    max-width: 80px;
+  }
+
+  .trustpilot-badge_stars svg {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .trustpilot-badge_text-1 {
+    display: none;
+  }
+}

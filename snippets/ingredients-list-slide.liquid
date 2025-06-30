@@ -1,0 +1,81 @@
+{% comment %}
+  Renders an ingredient list slide
+
+  Accepts:
+  - id: {String} ID of the section
+  - index: {Number} Index of the slide
+  - slide: {Object} Block settings for the slide
+  - page_width: {Number} Page width
+
+  Usage:
+  {% render 'ingredients-list-slide', id: id, index: forloop.index, slide: slide, page_width: page_width %}
+{% endcomment %}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .deployer-card {
+    --color-background: {{ section.settings.card_background_color.red }},{{ section.settings.card_background_color.green }},{{ section.settings.card_background_color.blue }};
+    --color-foreground: {{ section.settings.card_text_color.red }},{{ section.settings.card_text_color.green }},{{ section.settings.card_text_color.blue }};
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign columns_mobile = 1
+  assign columns_tablet = 3
+  assign columns_desktop = 3
+
+  assign ingredients_list_setting = slide.settings.ingredients_list_setting
+
+  assign page_width = section.settings.page_width | default: settings.page_width | default: 1200
+
+  assign card_layout = section.settings.card_layout | default: 'vertical'
+  assign card_media_aspect_ratio = section.settings.card_media_aspect_ratio | default: 'adapt'
+  assign card_image_adapt_aspect_ratio = section.settings.card_image_adapt_aspect_ratio | default: 2.1
+  assign card_content_vertical_position = section.settings.card_content_vertical_position | default: 'middle'
+  assign card_title_layout = section.settings.card_title_layout | default: 'vertical'
+  assign card_button_style = section.settings.card_button_style | default: 'deployer-button'
+  assign card_alignment = section.settings.card_alignment | default: 'center'
+  assign card_alignment_margin = '0 auto'
+
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign fetch_priority = 'high'
+  endif
+
+  if card_alignment == 'left'
+    assign card_alignment_margin = '0 auto 0 0'
+  elsif card_alignment == 'right'
+    assign card_alignment_margin = '0 0 0 auto'
+  endif
+-%}
+
+<ul
+  id="Deployer-Grid-{{ id }}-{{ index }}"
+  class="ingredients-list deployer-grid deployer-grid--{{ columns_mobile }}-col-mobile deployer-grid--{{ columns_tablet }}-col-tablet deployer-grid--{{ columns_desktop }}-col-desktop"
+  role="list"
+>
+  {%- for ingredient in ingredients_list_setting -%}
+    {%- assign item_id = index | append: '-' | append: forloop.index -%}
+    <li
+      id="Deployer-Grid-Item-{{ id }}-{{ index }}-{{ forloop.index }}"
+      class="deployer-grid__item"
+    >
+      <div class="deployer-card-wrapper deployer-card-wrapper--master">
+        {%- render 'deployer-card-ingredient',
+          ingredient: ingredient,
+          item_id: item_id,
+          css_class: '',
+          layout: card_layout,
+          media_aspect_ratio: card_media_aspect_ratio,
+          image_adapt_aspect_ratio: card_image_adapt_aspect_ratio,
+          card_content_vertical_position: card_content_vertical_position,
+          title_layout: card_title_layout,
+          button_style: card_button_style,
+          alignment: card_alignment,
+          alignment_margin: card_alignment_margin,
+          page_width: page_width,
+          fetch_priority: fetch_priority
+        -%}
+      </div>
+    </li>
+  {%- endfor -%}
+</ul>

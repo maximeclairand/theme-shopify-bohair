@@ -1,0 +1,116 @@
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart-reassurances.css' | asset_url | stylesheet_tag }}
+
+{% assign numberOfSlides = 0 %}
+{% for i in (1..4) %}
+    {% assign icon_key = "icon_" | append: i %}
+    {% assign text_key = "text_" | append: i %}
+    {% assign icon = block.settings[icon_key] %}
+    {% assign text = block.settings[text_key] %}
+    {% if text != blank %}
+        {% assign numberOfSlides = numberOfSlides | plus: 1 %}
+    {% endif %}
+{% endfor %}
+
+<slideshow-component class="cart-reassurances-slider slider-mobile-gutter slider-spaced color-{{ block.settings.color_scheme }} gradient" role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}">
+    <div class="slideshow__controls--top slider-buttons cart-reassurances-slider-button no-js-hidden">
+      
+      <button type="button" class="slider-button slider-button--prev hidden" name="previous" aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}" aria-controls="Slider-{{ block.id }}">{% render 'icon-caret' %}</button>
+    
+      <div class="slider-counter slider-counter--dots">
+        <div class="slideshow__control-wrapper">
+        {%- for i in (1..numberOfSlides) -%}
+            <button class="slider-counter__link slider-counter__link--dots link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ block.id }}">
+                <span class="dot"></span>
+            </button>
+        {%- endfor -%}
+        </div>
+      </div>
+      <button type="button" class="slider-button slider-button--next hidden" name="next" aria-label="{{ 'sections.slideshow.next_slideshow' | t }}" aria-controls="Slider-{{ block.id }}">{% render 'icon-caret' %}</button>
+      
+        <button type="button" class="slideshow__autoplay slideshow__hidden slider-button no-js-hidden{% if block.settings.auto_rotate == false %} slideshow__autoplay--paused{% endif %}" aria-label="{{ 'sections.slideshow.pause_slideshow' | t }}">
+          {%- render 'icon-pause' -%}
+          {%- render 'icon-play' -%}
+        </button>
+    </div>
+    <noscript>
+      <div class="slider-buttons">
+        <div class="slider-counter">
+          {%- for i in (1..3) -%}
+            <a href="#Slide-{{ block.id }}-{{ forloop.index }}" class="slider-counter__link link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}">
+              {{ forloop.index }}
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </noscript>
+
+
+  <div class="slideshow color-{{ block.settings.color_scheme }} banner banner--{{ block.settings.slide_height }} grid slider slider--everywhere"
+    id="Slider-{{ block.id }}"
+    aria-live="polite"
+    aria-atomic="true"
+    data-autoplay="true"
+    data-speed="{{ block.settings.change_slides_speed }}"
+  >
+    {%- for i in (1..numberOfSlides) -%}
+      
+      {% assign text_key = "text_" | append: i %}
+      {% assign icon_key = "icon_" | append: i %}
+      {% assign text = block.settings[text_key] %}
+      {% assign icon = block.settings[icon_key] %}
+
+      <div class="slideshow__slide grid__item slider__slide slider_slide--full-width"
+        id="Slide-{{ block.id }}-{{ forloop.index }}"
+        {{ block.shopify_attributes }}
+        role="group"
+        aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+        aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+        tabindex="-1"
+      >
+        <div class="cart-reassurances-slider__content-container">
+            {% if icon != blank %}
+                <img src="{{ icon | image_url: width: 200 }}" width="24" height="auto" alt="{{ image.alt }}" loading="lazy">
+            {% endif %}
+          {{ text }}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {%- if block.settings.auto_rotate == false -%}
+    <div class="slider-buttons no-js-hidden">
+      <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}" aria-controls="Slider-{{ block.id }}">{% render 'icon-caret' %}</button>
+      <div class="slider-counter slider-counter--dots">
+        <div class="slideshow__control-wrapper">
+        {%- for i in (1..numberOfSlides) -%}
+            <button class="slider-counter__link slider-counter__link--dots link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ block.id }}">
+            <span class="dot"></span>
+            </button>
+        {%- endfor -%}
+        </div>
+      </div>
+      <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'sections.slideshow.next_slideshow' | t }}" aria-controls="Slider-{{ section.id }}">{% render 'icon-caret' %}</button>
+
+      {%- if block.settings.auto_rotate -%}
+        <button type="button" class="slideshow__autoplay slideshow__hidden slider-button cart-reassurances-slider-button no-js-hidden{% if section.settings.auto_rotate == false %} slideshow__autoplay--paused{% endif %}" aria-label="{{ 'sections.slideshow.pause_slideshow' | t }}">
+          {%- render 'icon-pause' -%}
+          {%- render 'icon-play' -%}
+        </button>
+      {%- endif -%}
+
+    </div>
+    <noscript>
+      <div class="slider-buttons">
+        <div class="slider-counter">
+          {%- for i in (1..3) -%}
+            <a href="#Slide-{{ block.id }}-{{ forloop.index }}" class="slider-counter__link link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}">
+              {{ forloop.index }}
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </noscript>
+  {%- endif -%}
+</slideshow-component>

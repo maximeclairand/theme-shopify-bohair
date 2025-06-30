@@ -1,0 +1,454 @@
+{% # theme-check-disable %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% # theme-check-enable %}
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'deployer_stories' %}
+      {{ 'component-deployer-stories.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'deployer-stories.js' | asset_url }}" defer></script>
+      {% style %}
+          .story-bubble-container {
+            width: {{ block.settings.bubble_size_desktop }}px;
+          }
+            .story-bubble {
+            width: {{ block.settings.bubble_size_desktop }}px;
+            height: {{ block.settings.bubble_size_desktop }}px;
+          }
+
+          .story-bubble img {
+            width: {{ block.settings.bubble_size_desktop }}px;
+            height: {{ block.settings.bubble_size_desktop }}px;
+          }
+
+          .story-bubble:before {
+            width: {{ block.settings.bubble_size_desktop | plus: 5 }}px;
+            height: {{ block.settings.bubble_size_desktop | plus: 5 }}px;
+          }
+
+          .story-bubble:after {
+            content: "";
+            width: {{ block.settings.bubble_size_desktop | plus: 9 }}px;
+            height: {{ block.settings.bubble_size_desktop | plus: 9 }}px;
+          }
+          .story-title p,
+          .story-title span {
+            font-size: {{ block.settings.bubble_text_size_desktop }}px;
+          }
+          @media screen and (max-width:749px){
+
+          .story-bubble-container {
+            width: {{ block.settings.bubble_size_mobile }}px;
+          }
+            .story-bubble {
+            width: {{ block.settings.bubble_size_mobile }}px;
+            height: {{ block.settings.bubble_size_mobile }}px;
+          }
+
+          .story-bubble img {
+            width: {{ block.settings.bubble_size_mobile }}px;
+            height: {{ block.settings.bubble_size_mobile }}px;
+          }
+
+          .story-bubble:before {
+            width: {{ block.settings.bubble_size_mobile | plus: 3 }}px;
+            height: {{ block.settings.bubble_size_mobile | plus: 3 }}px;
+          }
+
+          .story-bubble:after {
+            content: "";
+            width: {{ block.settings.bubble_size_mobile | plus: 9 }}px;
+            height: {{ block.settings.bubble_size_mobile | plus: 9 }}px;
+          }
+          .story-title p,
+          .story-title span {
+            font-size: {{ block.settings.bubble_text_size_mobile }}px;
+          }
+        }
+      {% endstyle %}
+
+      <deployer-stories class="deployer-stories page-width">
+        <div class="stories-bubbles">
+          {% if block.settings.data_type == 'block' %}
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'deployer_story' %}
+                  <div class="story-bubble-container">
+                    <div class="story-bubble" data-index="{{ forloop.index0 }}">
+                      <span class="join-play-icon">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="icon icon-play"
+                          viewBox="18.24 17.35 24.52 28.3"
+                        >
+                          <path d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/>
+                        </svg>
+                      </span>
+                      {% comment %} theme-check-disable {% endcomment %}
+                      {% if block.settings.poster != blank %}
+                        <img
+                          src="{{ block.settings.poster | image_url: medium }}"
+                          loading="lazy"
+                          class="story-poster"
+                          alt="{{ block.settings.poster.alt }}"
+                        >
+                      {% else %}
+                        {% if block.settings.video_0 != blank and block.settings.image_0 == blank %}
+                          <img
+                            src="{{ block.settings.video_0.preview_image | image_url: medium }}"
+                            loading="lazy"
+                            alt="{{ block.settings.video_0.alt }}"
+                          >
+                        {% elsif block.settings.video_0 == blank and block.settings.image_0 != blank %}
+                          <img
+                            src="{{ block.settings.image_0.preview_image | image_url: medium }}"
+                            loading="lazy"
+                            alt="{{ block.settings.image_0.alt }}"
+                          >
+                        {% endif %}
+                      {% endif %}
+                      {% comment %} theme-check-enable {% endcomment %}
+                    </div>
+                    <div class="story-title">
+                      {{ block.settings.title }}
+                    </div>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          {% else %}
+            {% for story in product.metafields.custom.deployer_stories.value %}
+              <div class="story-bubble-container">
+                <div class="story-bubble" data-index="{{ forloop.index0 }}">
+                  <span class="join-play-icon">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      role="presentation"
+                      class="icon icon-play"
+                      viewBox="18.24 17.35 24.52 28.3"
+                    >
+                      <path d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/>
+                    </svg>
+                  </span>
+                  {% comment %} theme-check-disable {% endcomment %}
+                  {% if story.miniature != blank %}
+                    <img
+                      src="{{ story.miniature | image_url: medium }}"
+                      loading="lazy"
+                      class="story-poster"
+                      alt="{{ story.miniature.alt }}"
+                    >
+                  {% else %}
+                    {% if story.media_0.value.media_type == 'image' %}
+                      <img
+                        src="{{ story.media_0.value.src | image_url: medium }}"
+                        loading="lazy"
+                        alt="{{ story.media_0.value.alt }}"
+                      >
+                    {% elsif story.media_0.value.media_type == 'video' %}
+                      <img
+                        src="{{ story.media_0.value.preview_image | image_url: medium }}"
+                        loading="lazy"
+                        alt="{{ story.media_0.value.alt }}"
+                      >
+                    {% endif %}
+                  {% endif %}
+                  {% comment %} theme-check-enable {% endcomment %}
+                </div>
+                <div class="story-title">
+                  <p>
+                    {{ story.titre | metafield_tag }}
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="stories-slider-container">
+          <div class="stories-slider-container__close">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+              <path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+            </svg>
+          </div>
+          <div class="stories-slider">
+            <div class="swiper-wrapper">
+              {% if block.settings.data_type == 'block' %}
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'deployer_story' %}
+                      <deployer-story
+                        class="story-container story-slide swiper-slide"
+                        data-index="{{ forloop.index0 }}"
+                      >
+                        <div class="story-slider">
+                          <div class="stories-progress-container">
+                            {% for i in (0..9) %}
+                              {% liquid
+                                assign video_key = 'video_' | append: i
+                                assign image_key = 'image_' | append: i
+
+                                assign video = block.settings[video_key]
+                                assign image = block.settings[image_key]
+                              %}
+                              {% if video != blank or image != blank %}
+                                <div class="story-progress-bar" data-index="{{ i }}">
+                                  <div class="stories-progress-fill"></div>
+                                </div>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                          <div class="swiper-wrapper">
+                            {% for i in (0..9) %}
+                              {% liquid
+                                assign video_key = 'video_' | append: i
+                                assign image_key = 'image_' | append: i
+                                assign image_duration_key = 'image_duration_' | append: i
+                                assign url_link = 'link_' | append: i
+                                assign url_text = 'link_text_' | append: i
+
+                                assign video = block.settings[video_key]
+                                assign image = block.settings[image_key]
+                                assign image_duration = block.settings[image_duration_key]
+                                assign url = block.settings[url_link]
+                                assign url_text = block.settings[url_text]
+                              %}
+                              {% if video != blank %}
+                                <div
+                                  class="story-slide-content story-slider-slide swiper-slide"
+                                  data-duration="{{ video.duration }}"
+                                  data-index="{{ i }}"
+                                >
+                                  <div
+                                    class="story-slide-video {% if block.settings.border_radius %} rounded-slide {% endif %}"
+                                  >
+                                    <div class="mute-toggle">
+                                      <svg
+                                        id="mute-toggle-on"
+                                        class="mute-toggle-icon mute-toggle-icon--hidden"
+                                        fill="#FFF"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="24"
+                                        viewBox="0 -960 960 960"
+                                        width="24"
+                                      >
+                                        <path d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320Z"/>
+                                      </svg>
+                                      <svg
+                                        id="mute-toggle-off"
+                                        class="mute-toggle-icon"
+                                        fill="#FFF"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="24"
+                                        viewBox="0 -960 960 960"
+                                        width="24"
+                                      >
+                                        <path d="M792-56 671-177q-25 16-53 27.5T560-131v-82q14-5 27.5-10t25.5-12L480-368v208L280-360H120v-240h128L56-792l56-56 736 736-56 56Zm-8-232-58-58q17-31 25.5-65t8.5-70q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 53-14.5 102T784-288ZM650-422l-90-90v-130q47 22 73.5 66t26.5 96q0 15-2.5 29.5T650-422ZM480-592 376-696l104-104v208Z"/>
+                                      </svg>
+                                    </div>
+                                    {% if url != blank %}
+                                      <div class="story-media--cta">
+                                        <a href="{{ url }}" class="button button--primary story-media--cta-link">
+                                          {{- url_text -}}
+                                        </a>
+                                      </div>
+                                    {% endif %}
+                                    {{
+                                      video
+                                      | video_tag: controls: false, loop: false, muted: true, playsinline: true
+                                    }}
+                                  </div>
+                                </div>
+                              {% endif %}
+                              {% if image != blank %}
+                                <div
+                                  class="story-slide-content story-slider-slide swiper-slide"
+                                  data-duration="{{ image_duration | times: 1000 }}"
+                                  data-index="{{ i }}"
+                                >
+                                  <div
+                                    class="story-slide-image {% if block.settings.border_radius %} rounded-slide {% endif %}"
+                                  >
+                                    {% # theme-check-disable %}
+                                    <img
+                                      src="{{ image | image_url: medium }}"
+                                      loading="lazy"
+                                      alt="{{ block.settings.title }}"
+                                    >
+                                    {% # theme-check-enable %}
+                                    {% if url != blank %}
+                                      <div class="story-media--cta">
+                                        <a href="{{ url }}" class="story-link-text button button--primary">
+                                          {{- url_text -}}
+                                        </a>
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                        </div>
+                        <div class="swiper-button-container story-slider-arrows">
+                          <div class="swiper-button-prev button-prev-slider story-slider-arrow">
+                            <span class="svg-wrapper">
+                              {{- 'icon-caret.svg' | inline_asset_content -}}
+                            </span>
+                          </div>
+                          <div class="swiper-button-next button-next-slider story-slider-arrow">
+                            <span class="svg-wrapper">
+                              {{- 'icon-caret.svg' | inline_asset_content -}}
+                            </span>
+                          </div>
+                        </div>
+                      </deployer-story>
+                  {% endcase %}
+                {% endfor %}
+              {% else %}
+                {% for story in product.metafields.custom.deployer_stories.value %}
+                  <deployer-story
+                    class="story-container story-slide swiper-slide"
+                    data-index="{{ forloop.index0 }}"
+                  >
+                    <div class="story-slider">
+                      <div class="stories-progress-container">
+                        {% for i in (0..9) %}
+                          {% liquid
+                            assign media_key = 'media_' | append: i
+
+                            assign media = story[media_key]
+                          %}
+                          {% if media != blank %}
+                            <div class="story-progress-bar" data-index="{{ i }}">
+                              <div class="stories-progress-fill"></div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                      <div class="swiper-wrapper">
+                        {% for i in (0..9) %}
+                          {% liquid
+                            assign media_key = 'media_' | append: i
+                            assign image_duration_key = 'duration_' | append: i
+                            assign url_key = 'link_' | append: i
+                            assign url_text_key = 'link_text_' | append: i
+
+                            assign media = story[media_key]
+                            assign image_duration = story[image_duration_key]
+                            assign url = story[url_key]
+                            assign url_text = story[url_text_key]
+                          %}
+                          {% if media.value.media_type == 'video' %}
+                            <div
+                              class="story-slide-content story-slider-slide swiper-slide"
+                              data-duration="{{ media.value.duration }}"
+                              data-index="{{ i }}"
+                            >
+                              <div
+                                class="story-slide-video {% if block.settings.border_radius %} rounded-slide {% endif %}"
+                              >
+                                <div class="mute-toggle">
+                                  <svg
+                                    id="mute-toggle-on"
+                                    class="mute-toggle-icon mute-toggle-icon--hidden"
+                                    fill="#FFF"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24"
+                                    viewBox="0 -960 960 960"
+                                    width="24"
+                                  >
+                                    <path d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320Z"/>
+                                  </svg>
+                                  <svg
+                                    id="mute-toggle-off"
+                                    class="mute-toggle-icon"
+                                    fill="#FFF"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24"
+                                    viewBox="0 -960 960 960"
+                                    width="24"
+                                  >
+                                    <path d="M792-56 671-177q-25 16-53 27.5T560-131v-82q14-5 27.5-10t25.5-12L480-368v208L280-360H120v-240h128L56-792l56-56 736 736-56 56Zm-8-232-58-58q17-31 25.5-65t8.5-70q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 53-14.5 102T784-288ZM650-422l-90-90v-130q47 22 73.5 66t26.5 96q0 15-2.5 29.5T650-422ZM480-592 376-696l104-104v208Z"/>
+                                  </svg>
+                                </div>
+                                {% if url != blank %}
+                                  <div class="story-media--cta">
+                                    <a href="{{ url }}" class="story-link-text button button--primary">
+                                      {{- url_text -}}
+                                    </a>
+                                  </div>
+                                {% endif %}
+                                {{
+                                  media.value
+                                  | video_tag: controls: false, loop: false, muted: true, playsinline: true
+                                }}
+                              </div>
+                            </div>
+                          {% endif %}
+                          {% if media.value.media_type == 'image' %}
+                            <div
+                              class="story-slide-content story-slider-slide swiper-slide"
+                              data-duration="{{ image_duration | times: 1000 }}"
+                              data-index="{{ i }}"
+                            >
+                              <div
+                                class="story-slide-image {% if block.settings.border_radius %} rounded-slide {% endif %}"
+                              >
+                                {% # theme-check-disable %}
+                                <img
+                                  src="{{ media.value | image_url: medium }}"
+                                  loading="lazy"
+                                  alt="{{ story.titre }}"
+                                >
+                                {% # theme-check-enable %}
+                                {% if url != blank %}
+                                  <div class="story-media--cta">
+                                    <a href="{{ url }}" class="story-link-text button button--primary">
+                                      {{- url_text -}}
+                                    </a>
+                                  </div>
+                                {% endif %}
+                              </div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="swiper-button-container story-slider-arrows">
+                      <div class="swiper-button-prev button-prev-slider story-slider-arrow">
+                        <span class="svg-wrapper">
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </span>
+                      </div>
+                      <div class="swiper-button-next button-next-slider story-slider-arrow">
+                        <span class="svg-wrapper">
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </span>
+                      </div>
+                    </div>
+                  </deployer-story>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="swiper-button-container stories-slider-arrows">
+              <div class="swiper-button-prev button-prev-slider stories-slider-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                  <path d="M244.617-267.694v-424.612h45.384v424.612h-45.384Zm470.766 0L407.078-480l308.305-212.306v424.612ZM669.999-480Zm0 125.385v-251.154L486.691-480l183.308 125.385Z"/>
+                </svg>
+              </div>
+              <div class="swiper-button-next button-next-slider stories-slider-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                  <path d="M669.999-267.694v-424.612h45.384v424.612h-45.384Zm-425.382 0v-424.612L552.922-480 244.617-267.694ZM290.001-480Zm0 125.385L473.693-480 290.001-605.769v251.154Z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </deployer-stories>
+  {% endcase %}
+{% endfor %}

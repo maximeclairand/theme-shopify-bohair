@@ -1,0 +1,57 @@
+{% comment %}
+  Renders an image card
+
+  Accepts:
+  - block: {Object} Block settings for the slide
+  - css_class: {String} CSS class to add to the card (optional)
+  - layout: {String} Card layout. Values are "vertical", "horizontal" and "stacked". Default is "vertical"
+  - media_aspect_ratio: {String} Size of the image card. Values are "adapt", "square", "portrait" and "landscape". Default is "square"
+  - card_content_vertical_position: {String} Position of the card content. Values are "top", "middle" and "bottom". Default is "middle"
+  - title_layout: {String} Title layout. Values are "vertical" and "horizontal". Default is "vertical"
+  - alignment: {String} Alignment of the card. Values are "center", "left" and "right". Default is "center"
+  - alignment_margin: {String} Alignment of elements in the card that need to be aligned with margin
+  - page_width: {Number} Page width
+  - fetch_priority: {String} Fetch priority
+
+  Usage:
+  {% render 'deployer-card-image', block: block %}
+{% endcomment %}
+
+{%- liquid
+  assign card_id = section.id | append: '__' | append: block.id
+  assign card_settings = block.settings
+
+  assign image = card_settings.image
+
+  assign ratio = 1
+  if media_aspect_ratio == 'adapt'
+    assign ratio = image.aspect_ratio
+  elsif media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif media_aspect_ratio == 'landscape'
+    assign ratio = 1.2
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 1
+  endif
+-%}
+
+<deployer-card
+  data-id="{{ card_id }}"
+  class="deployer-card deployer-card--image deployer-card--{{ layout }} {{ css_class }}"
+>
+  <div class="deployer-card__inner">
+    {%- if image != blank -%}
+      <div class="deployer-card__media-item">
+        {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+        <deployer-card-media widths="{{ widths }}" class="deployer-card__media" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+          {%- capture sizes -%}
+            (min-width: {{ page_width }}px) {{ page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+          {{ image | image_url: width: 1500 | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority }}
+        </deployer-card-media>
+      </div>
+    {%- endif -%}
+  </div>
+</deployer-card>

@@ -1,0 +1,81 @@
+{% liquid
+  assign hide_mobile = block.settings.hide_mobile
+  assign hide_desktop = block.settings.hide_desktop
+
+  assign grid_item_css_class = ''
+  if section.settings.columns_mobile == block.settings.columns_mobile or is_last
+    assign grid_item_css_class = grid_item_css_class | append: ' grid__item--full-width-tablet-down'
+  endif
+  if section.settings.columns_desktop == block.settings.columns_desktop or is_last
+    assign grid_item_css_class = grid_item_css_class | append: ' grid__item--full-width-desktop'
+  endif
+  if hide_mobile
+    assign grid_item_css_class = grid_item_css_class | append: ' small-hide medium-hide'
+  endif
+  if hide_desktop
+    assign grid_item_css_class = grid_item_css_class | append: ' large-up-hide'
+  endif
+%}
+
+<li
+  class="grid__item grid__item--{{ block.settings.columns_mobile }}-col-tablet-down grid__item--{{ block.settings.columns_desktop }}-col-desktop{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{{ grid_item_css_class }}"
+  {% if settings.animations_reveal_on_scroll %}
+    data-cascade
+    style="--animation-order: {{ forloop.index }};"
+  {% endif %}
+>
+  {%- style -%}
+    #shopify-section-{{ section.id }} .deployer-card {
+      --color-background: {{ block.settings.card_background_color.red }},{{ block.settings.card_background_color.green }},{{ block.settings.card_background_color.blue }};
+      --color-foreground: {{ block.settings.card_text_color.red }},{{ block.settings.card_text_color.green }},{{ block.settings.card_text_color.blue }};
+      --deployer-card-highlighted-background-color: {{ block.settings.card_highlighted_background_color.red }},{{ block.settings.card_highlighted_background_color.green }},{{ block.settings.card_highlighted_background_color.blue }};
+      --deployer-card-highlighted-border-color: {{ block.settings.card_highlighted_border_color.red }},{{ block.settings.card_highlighted_border_color.green }},{{ block.settings.card_highlighted_border_color.blue }};
+      --deployer-card-badge-background-color: {{ block.settings.card_badge_background_color.red }},{{ block.settings.card_badge_background_color.green }},{{ block.settings.card_badge_background_color.blue }};
+      --deployer-card-badge-color: {{ block.settings.card_badge_color.red }},{{ block.settings.card_badge_color.green }},{{ block.settings.card_badge_color.blue }};
+      --deployer-card-star-color: {{ block.settings.card_star_color.red }},{{ block.settings.card_star_color.green }},{{ block.settings.card_star_color.blue }};
+    }
+  {%- endstyle -%}
+
+  {%- liquid
+    assign page_width = section.settings.page_width | default: settings.page_width | default: 1200
+
+    assign card_layout = block.settings.card_layout | default: 'vertical'
+    assign card_media_aspect_ratio = block.settings.card_media_aspect_ratio | default: 'adapt'
+    assign card_content_vertical_position = block.settings.card_content_vertical_position | default: 'middle'
+    assign card_title_layout = block.settings.card_title_layout | default: 'vertical'
+    assign enable_divider = block.settings.enable_divider
+    assign card_button_style = block.settings.card_button_style | default: 'deployer-button'
+    assign card_button_full_width = block.settings.card_button_full_width
+    assign card_alignment = block.settings.card_alignment | default: 'center'
+    assign card_alignment_margin = '0 auto'
+
+    assign fetch_priority = 'auto'
+    if section.index == 1
+      assign fetch_priority = 'high'
+    endif
+
+    if card_alignment == 'left'
+      assign card_alignment_margin = '0 auto 0 0'
+    elsif card_alignment == 'right'
+      assign card_alignment_margin = '0 0 0 auto'
+    endif
+  -%}
+
+  <div class="deployer-card-wrapper deployer-card-wrapper--master deployer-card-wrapper--extend-height" {{ block.shopify_attributes }}>
+    {%- render 'deployer-card',
+      block: block,
+      css_class: '',
+      layout: card_layout,
+      media_aspect_ratio: card_media_aspect_ratio,
+      card_content_vertical_position: card_content_vertical_position,
+      title_layout: card_title_layout,
+      enable_divider: enable_divider,
+      button_style: card_button_style,
+      button_full_width: card_button_full_width,
+      alignment: card_alignment,
+      alignment_margin: card_alignment_margin,
+      page_width: page_width,
+      fetch_priority: fetch_priority
+    -%}
+  </div>
+</li>

@@ -1,0 +1,29 @@
+<div class="dosage">
+  <div class="dosage__header">
+    <span>{{ block.settings.column_1_2_header }}</span>
+    <span>{{ block.settings.column_3_header }}</span>
+  </div>
+  <table width="100%">
+    <tbody>
+      {% for i in (1..6) %}
+        {% assign column_1_icon_key = 'column_1_icon_' | append: i %}
+        {% assign column_2_text_key = 'column_2_text_' | append: i %}
+        {% assign column_3_text_key = 'column_3_text_' | append: i %}
+
+        {% assign column_1_icon = block.settings[column_1_icon_key] %}
+        {% assign column_2_text = block.settings[column_2_text_key] %}
+        {% assign column_3_text = block.settings[column_3_text_key] %}
+
+        {% if column_1_icon != blank or column_2_text != blank or column_3_text != blank %}
+          <tr>
+            <td>
+              <img alt="{{ column_1_icon.alt }}" src="{{ column_1_icon | image_url: width: 200 }}" width="60" height="auto">
+            </td>
+            <td>{{ column_2_text }}</td>
+            <td>{{ column_3_text }}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
