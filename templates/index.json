@@ -205,64 +205,6 @@
         "padding_bottom": 36
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Découvrez nos compléments pour chiens",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "complements-alimentaires-chiens",
-        "show_product_description": true,
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "link",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 80,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collection_qyd6GG": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Découvrez nos compléments pour chats",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "complements-alimentaires-pour-chats",
-        "show_product_description": true,
-        "products_to_show": 2,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 80,
-        "padding_bottom": 36
-      }
-    },
     "featured_collection_Y6Cddr": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -378,6 +320,7 @@
         "text_htCw7g",
         "button_PyYetx"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -420,7 +363,7 @@
       ],
       "name": "Barre défilante",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
         "speed": 30,
         "padding_top": 20,
         "padding_bottom": 20
@@ -456,6 +399,7 @@
         "text_JzVUiy",
         "badge_crxgnW"
       ],
+      "disabled": true,
       "settings": {
         "height": "adapt",
         "desktop_image_width": "small",
@@ -502,6 +446,7 @@
         "text_h6DRpQ",
         "text_hFXtg3"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -1158,6 +1103,7 @@
         "image_kxjEmG",
         "image_m9tGUN"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "description": "",
@@ -1209,8 +1155,6 @@
     "image_banner",
     "multicolumn",
     "image_with_text_wQUUiD",
-    "featured_collection",
-    "featured_collection_qyd6GG",
     "featured_collection_Y6Cddr",
     "image_with_text_F86f8L",
     "rich_text_XEGbLp",
