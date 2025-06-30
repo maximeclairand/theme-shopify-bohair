@@ -3,26 +3,7 @@
     "main": {
       "type": "main-page",
       "settings": { "padding_top": 28, "padding_bottom": 28 }
-    },
-    "175085848565b679af": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_agg_section_QgpWYJ": {
-          "type": "",
-          "settings": {
-            "only_photos": false,
-            "hide_thumbnails": false,
-            "product_handle": "",
-            "aggregated": true,
-            "data-limit": 20,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": ["loox_reviews_loox_agg_section_QgpWYJ"],
-      "settings": { "include_margins": true }
     }
   },
-  "order": ["main", "175085848565b679af"]
+  "order": ["main"]
 }

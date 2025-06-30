@@ -448,10 +448,6 @@
         "padding_bottom": 36
       }
     },
-    "173746723618d65b5c": {
-      "type": "apps",
-      "settings": { "include_margins": true }
-    },
     "rich_text_abVmTw": {
       "type": "rich-text",
       "blocks": {
@@ -485,52 +481,6 @@
         "padding_top": 40,
         "padding_bottom": 12
       }
-    },
-    "1748344273aa8d347d": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_card_carousel_section_EGY9rj": {
-          "type": "",
-          "disabled": true,
-          "settings": {
-            "maxWidth": 1100,
-            "borderRadius": 8,
-            "itemsPerView": 4,
-            "mobileItemsPerView": 1,
-            "maxNumberOfCharacters": 100,
-            "imageRatio": "0.72",
-            "reviewerNameColor": "#000000",
-            "textColor": "#000000",
-            "itemBackgroundColor": "#ffffff",
-            "starsColor": "",
-            "starsBackgroundColor": "#ffffff",
-            "arrows_backgroundColor": "#ffffff",
-            "arrows_iconColor": "#9a9a9a",
-            "shadow": "offset-dark",
-            "border_active": false,
-            "border_width": 2,
-            "border_color": "#000000",
-            "productIds": ""
-          }
-        },
-        "loox_reviews_loox_agg_section_9ADCEn": {
-          "type": "",
-          "settings": {
-            "only_photos": false,
-            "hide_thumbnails": false,
-            "product_handle": "",
-            "aggregated": true,
-            "data-limit": 20,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": [
-        "loox_reviews_loox_card_carousel_section_EGY9rj",
-        "loox_reviews_loox_agg_section_9ADCEn"
-      ],
-      "settings": { "include_margins": true }
     },
     "rich_text": {
       "type": "rich-text",
@@ -586,10 +536,6 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
-    },
-    "1742484882d1b31cde": {
-      "type": "apps",
-      "settings": { "include_margins": true }
     },
     "reviews_list_i4zNT3": {
       "type": "reviews-list",
@@ -1171,14 +1117,6 @@
         "section_background_color": "#fffdf5",
         "section_text_color": "#364c84"
       }
-    },
-    "173764078140c9ed95": {
-      "type": "apps",
-      "settings": { "include_margins": true }
-    },
-    "1742484880426667ef": {
-      "type": "apps",
-      "settings": { "include_margins": true }
     }
   },
   "order": [
@@ -1192,16 +1130,11 @@
     "rich_text_XEGbLp",
     "barre_defilante_HVdiQX",
     "image_with_text_tHGn6d",
-    "173746723618d65b5c",
     "rich_text_abVmTw",
-    "1748344273aa8d347d",
     "rich_text",
     "trustpilot_badge_ccdfVN",
-    "1742484882d1b31cde",
     "reviews_list_i4zNT3",
     "collapsible_tabs_8fKwgQ",
-    "instagram_eyFpgD",
-    "173764078140c9ed95",
-    "1742484880426667ef"
+    "instagram_eyFpgD"
   ]
 }

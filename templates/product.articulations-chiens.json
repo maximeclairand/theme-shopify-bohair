@@ -754,29 +754,6 @@
         "padding_bottom": 20
       }
     },
-    "1745422666aaf96f4a": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_AaQBQ3": {
-          "type": "",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": ["loox_reviews_loox_dynamic_section_AaQBQ3"],
-      "settings": { "include_margins": true }
-    },
-    "173764577790496a12": {
-      "type": "apps",
-      "disabled": true,
-      "settings": { "include_margins": true }
-    },
     "tableau_de_comparaison_dLAPee": {
       "type": "tableau-de-comparaison",
       "blocks": {
@@ -954,11 +931,6 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
-    },
-    "173764084951ea6a87": {
-      "type": "apps",
-      "disabled": true,
-      "settings": { "include_margins": true }
     },
     "collapsible_tabs_8fKwgQ": {
       "type": "collapsible-tabs",
@@ -1447,11 +1419,6 @@
         "card_text_color": "#364c84",
         "card_star_color": "#95b1ee"
       }
-    },
-    "173979441764efb481": {
-      "type": "apps",
-      "disabled": true,
-      "settings": { "include_margins": true }
     }
   },
   "order": [
@@ -1461,14 +1428,10 @@
     "barre_defilante_NB8EVr",
     "ingredients_list_gcgaTn",
     "rich_text_PwRXnM",
-    "1745422666aaf96f4a",
-    "173764577790496a12",
     "tableau_de_comparaison_dLAPee",
     "trustpilot_badge_ccdfVN",
-    "173764084951ea6a87",
     "collapsible_tabs_8fKwgQ",
     "related-products",
-    "reviews_list_i4zNT3",
-    "173979441764efb481"
+    "reviews_list_i4zNT3"
   ]
 }

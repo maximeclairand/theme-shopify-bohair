@@ -742,28 +742,6 @@
         "padding_bottom": 24
       }
     },
-    "17508795798772a350": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_cMKTM8": {
-          "type": "",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": ["loox_reviews_loox_dynamic_section_cMKTM8"],
-      "settings": { "include_margins": true }
-    },
-    "17398845560f7e1270": {
-      "type": "apps",
-      "settings": { "include_margins": true }
-    },
     "tableau_de_comparaison_dLAPee": {
       "type": "tableau-de-comparaison",
       "blocks": {
@@ -1429,27 +1407,6 @@
         "padding_top": 36,
         "padding_bottom": 100
       }
-    },
-    "1738245133796f38e3": {
-      "type": "apps",
-      "blocks": {
-        "klaviyo_reviews_product_reviews_z94HFC": { "type": "", "settings": {} }
-      },
-      "block_order": ["klaviyo_reviews_product_reviews_z94HFC"],
-      "disabled": true,
-      "settings": { "include_margins": true }
-    },
-    "173824542408091e48": {
-      "type": "apps",
-      "blocks": {
-        "klaviyo_reviews_product_reviews_e7F7pB": {
-          "type": "",
-          "disabled": true,
-          "settings": {}
-        }
-      },
-      "block_order": ["klaviyo_reviews_product_reviews_e7F7pB"],
-      "settings": { "include_margins": true }
     }
   },
   "order": [
@@ -1459,14 +1416,10 @@
     "barre_defilante_NB8EVr",
     "ingredients_list_gcgaTn",
     "rich_text_fxGtAW",
-    "17508795798772a350",
-    "17398845560f7e1270",
     "tableau_de_comparaison_dLAPee",
     "trustpilot_badge_ccdfVN",
     "reviews_list_i4zNT3",
     "collapsible_tabs_8fKwgQ",
-    "related-products",
-    "1738245133796f38e3",
-    "173824542408091e48"
+    "related-products"
   ]
 }

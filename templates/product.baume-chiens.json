@@ -707,29 +707,6 @@
         "card_text_color": "#38584a"
       }
     },
-    "174543077304ef2faf": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_KNMThY": {
-          "type": "",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": ["loox_reviews_loox_dynamic_section_KNMThY"],
-      "settings": { "include_margins": true }
-    },
-    "173979442992322477": {
-      "type": "apps",
-      "disabled": true,
-      "settings": { "include_margins": true }
-    },
     "tableau_de_comparaison_dLAPee": {
       "type": "tableau-de-comparaison",
       "blocks": {
@@ -1403,8 +1380,6 @@
     "text_around_image_EfFAgx",
     "barre_defilante_NB8EVr",
     "ingredients_list_gcgaTn",
-    "174543077304ef2faf",
-    "173979442992322477",
     "tableau_de_comparaison_dLAPee",
     "collapsible_tabs_8fKwgQ",
     "trustpilot_badge_ccdfVN",

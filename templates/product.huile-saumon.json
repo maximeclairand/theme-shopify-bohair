@@ -900,29 +900,6 @@
         "padding_bottom": 40
       }
     },
-    "1745430864fecd6fa5": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_6pVYWQ": {
-          "type": "",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": ["loox_reviews_loox_dynamic_section_6pVYWQ"],
-      "settings": { "include_margins": true }
-    },
-    "1741618733bf2379db": {
-      "type": "apps",
-      "disabled": true,
-      "settings": { "include_margins": true }
-    },
     "reviews_list_i4zNT3": {
       "type": "reviews-list",
       "blocks": {
@@ -1450,8 +1427,6 @@
     "ingredients_list_gcgaTn",
     "tableau_de_comparaison_dLAPee",
     "trustpilot_badge_ccdfVN",
-    "1745430864fecd6fa5",
-    "1741618733bf2379db",
     "reviews_list_i4zNT3",
     "collapsible_tabs_8fKwgQ",
     "related-products"
