@@ -110,9 +110,7 @@
         "column_dqDmXA",
         "column_96MBKq"
       ],
-      "custom_css": [
-        ".bohair-section div {border-radius: 4px; /* change cette valeur selon ce que tu veux */}"
-      ],
+      "custom_css": [],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "css_class": "",
