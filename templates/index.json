@@ -26,12 +26,6 @@
             "text_style": "body"
           }
         },
-        "badge_MNi8TH": {
-          "type": "badge",
-          "settings": {
-            "text": "Application facile & ultra rapide"
-          }
-        },
         "button": {
           "type": "buttons",
           "settings": {
@@ -47,7 +41,6 @@
       "block_order": [
         "heading",
         "text",
-        "badge_MNi8TH",
         "button"
       ],
       "settings": {
@@ -85,7 +78,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "",
+        "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,

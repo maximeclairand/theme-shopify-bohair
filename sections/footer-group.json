@@ -18,8 +18,8 @@
           "type": "column",
           "settings": {
             "badge_text": "",
-            "title": "Livraison <strong>offerte</strong> !",
-            "text": "<p>Livraison gratuite avec mondial relay et à partir de 45€ d’achat en France Métropolitaine avec colissimo. </p>",
+            "title": "Livraison offerte !",
+            "text": "<p>À partir de xx€ d’achat en France Métropolitaine</p>",
             "link_label": "",
             "link": ""
           }
@@ -34,12 +34,22 @@
             "link": ""
           }
         },
+        "column_aifjqm": {
+          "type": "column",
+          "settings": {
+            "badge_text": "",
+            "title": "Paiement sécurisé",
+            "text": "<p>Commandez en toute tranquillité, paiement 100% crypté et sécurisé </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
         "column_UFLeHP": {
           "type": "column",
           "settings": {
             "badge_text": "",
             "title": "Satisfait ou remboursé",
-            "text": "<p>Votre compagnon n’est pas satisfait ? On vous rembourse !</p>",
+            "text": "<p>Nos produits ne vous conviennent pas ? On vous rembourse !</p>",
             "link_label": "",
             "link": ""
           }
@@ -48,6 +58,7 @@
       "block_order": [
         "column_AEEFnt",
         "column_XcDHmY",
+        "column_aifjqm",
         "column_UFLeHP"
       ],
       "settings": {
@@ -58,14 +69,14 @@
         "image_width_custom": 30,
         "image_position": "left",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "column_alignment": "left",
         "list_color_scheme": "",
         "card_color_scheme": "",
         "card_show_body_font": false,
         "button_label": "",
         "button_link": "",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
@@ -80,7 +91,7 @@
           "settings": {
             "show_social": true,
             "icon_stars": "shopify://shop_images/Plan_de_travail_1.png",
-            "review_paragraph": "<strong>4.8/5</strong> +10 000 clients ravis"
+            "review_paragraph": "<strong>4.8/5</strong> +230 clients ravis"
           }
         },
         "footer-0": {
@@ -113,7 +124,7 @@
         "newsletter_7pBqn8"
       ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
         "enable_follow_on_shop": false,
         "show_social": false,
         "enable_country_selector": false,

@@ -377,90 +377,6 @@
         "padding_bottom": 100
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_cEfTBM": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Hautement <br/>concentré</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_9AMdQr": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Sans ingrédients <br/>controversés</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_RYWr73": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Composition <br/>Unique</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_9JpMth": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Principes actifs <br/>Premium</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_xXzGhb": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Formule <br/>Vétérinaire</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_cEfTBM",
-        "column_9AMdQr",
-        "column_RYWr73",
-        "column_9JpMth",
-        "column_xXzGhb"
-      ],
-      "custom_css": [],
-      "settings": {
-        "css_class": "multicolumn--reinsurances",
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_width_custom": 30,
-        "image_position": "top",
-        "image_ratio": "adapt",
-        "columns_desktop": 6,
-        "column_alignment": "center",
-        "list_color_scheme": "scheme-1",
-        "card_color_scheme": "scheme-1",
-        "card_show_body_font": false,
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "text_around_image_EfFAgx": {
       "type": "text-around-image",
       "blocks": {
@@ -1375,7 +1291,6 @@
   },
   "order": [
     "main",
-    "multicolumn",
     "text_around_image_EfFAgx",
     "barre_defilante_NB8EVr",
     "ingredients_list_gcgaTn",
