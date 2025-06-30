@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -20,8 +29,10 @@
           }
         }
       },
-      "block_order": ["announcement-bar-0", "announcement_gwYtG6"],
-      "disabled": true,
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_gwYtG6"
+      ],
       "settings": {
         "color_scheme": "scheme-2",
         "show_line_separator": true,
@@ -40,7 +51,6 @@
           "settings": {
             "menu_banner_menu": "Chien",
             "menu_banner_color_scheme": "scheme-2",
-            "menu_banner_image": "",
             "menu_banner_badge": "Économisez -10%",
             "menu_banner_title": "Abonnez-vous & économisez en prenant soin de votre compagnon !",
             "menu_banner_text": "Optez pour l’abonnement et profitez d’une multitude davantages.",
@@ -52,7 +62,6 @@
           "settings": {
             "menu_banner_menu": "Chat",
             "menu_banner_color_scheme": "scheme-2",
-            "menu_banner_image": "",
             "menu_banner_badge": "Économisez -10%",
             "menu_banner_title": "Abonnez-vous & économisez en prenant soin de votre compagnon !",
             "menu_banner_text": "Optez pour l’abonnement et profitez d’une multitude davantages.",
@@ -60,7 +69,10 @@
           }
         }
       },
-      "block_order": ["megamenu_banner_B7VwTt", "megamenu_banner_GzEPNw"],
+      "block_order": [
+        "megamenu_banner_B7VwTt",
+        "megamenu_banner_GzEPNw"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "button_text": "Découvrir les produits",
@@ -81,12 +93,15 @@
         "padding_bottom": 12,
         "search_color_scheme": "",
         "search_menu1_title": "Produit...",
-        "search_menu1": "recherche-produit",
+        "search_menu1": "",
         "search_menu2_title": "Par besoin...",
-        "search_menu2": "recherche-par-besoin",
+        "search_menu2": "",
         "search_collection": "tous-les-produits"
       }
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
 }
