@@ -38,9 +38,12 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button"],
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
       "settings": {
-        "image": "",
         "round_top_corners": false,
         "round_bottom_corners": true,
         "image_overlay_opacity": 40,
@@ -63,7 +66,6 @@
         "column1": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Adorés <br/>des animaux</p>",
@@ -74,7 +76,6 @@
         "column_cEfTBM": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Hautement<br/>concentré</p>",
@@ -85,7 +86,6 @@
         "column_9AMdQr": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Sans ingrédients <br/>controversés</p>",
@@ -96,32 +96,9 @@
         "column_RYWr73": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Composition <br/>Unique</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_9JpMth": {
-          "type": "column",
-          "settings": {
-            "image": "",
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Principes actifs <br/>Premium</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_wzL9Xb": {
-          "type": "column",
-          "settings": {
-            "image": "",
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Formule<br/>Vétérinaire</p>",
             "link_label": "",
             "link": ""
           }
@@ -131,9 +108,7 @@
         "column1",
         "column_cEfTBM",
         "column_9AMdQr",
-        "column_RYWr73",
-        "column_9JpMth",
-        "column_wzL9Xb"
+        "column_RYWr73"
       ],
       "custom_css": [],
       "settings": {
@@ -184,10 +159,13 @@
           }
         }
       },
-      "block_order": ["heading_WRRXQx", "text_eyHYpt", "button_xPGNET"],
+      "block_order": [
+        "heading_WRRXQx",
+        "text_eyHYpt",
+        "button_xPGNET"
+      ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "",
         "height": "adapt",
         "desktop_image_width": "small",
         "desktop_image_width_custom": 40,
@@ -319,11 +297,14 @@
           }
         }
       },
-      "block_order": ["heading_BmrGCD", "text_McABp8", "button_RqMAWw"],
+      "block_order": [
+        "heading_BmrGCD",
+        "text_McABp8",
+        "button_RqMAWw"
+      ],
       "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "",
         "height": "small",
         "desktop_image_width": "medium",
         "desktop_image_width_custom": 40,
@@ -370,7 +351,11 @@
           }
         }
       },
-      "block_order": ["heading_f376mQ", "text_htCw7g", "button_PyYetx"],
+      "block_order": [
+        "heading_f376mQ",
+        "text_htCw7g",
+        "button_PyYetx"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -386,15 +371,24 @@
       "blocks": {
         "information_bVXVRT": {
           "type": "information",
-          "settings": { "text": "Santévet", "image": "", "icon_height": 22 }
+          "settings": {
+            "text": "Santévet",
+            "icon_height": 22
+          }
         },
         "information_f37cNR": {
           "type": "information",
-          "settings": { "text": "Dalma", "image": "", "icon_height": 22 }
+          "settings": {
+            "text": "Dalma",
+            "icon_height": 22
+          }
         },
         "information_bcAwiL": {
           "type": "information",
-          "settings": { "text": "Lassie", "image": "", "icon_height": 22 }
+          "settings": {
+            "text": "Lassie",
+            "icon_height": 22
+          }
         }
       },
       "block_order": [
@@ -431,14 +425,16 @@
           "type": "badge",
           "settings": {
             "text": "<strong>Formule</strong> vétérinaire vérifiée",
-            "icon": "",
             "color_scheme": "scheme-fcd49658-be08-414c-ae05-42c55aaae8c2"
           }
         }
       },
-      "block_order": ["heading_xfFp97", "text_JzVUiy", "badge_crxgnW"],
+      "block_order": [
+        "heading_xfFp97",
+        "text_JzVUiy",
+        "badge_crxgnW"
+      ],
       "settings": {
-        "image": "",
         "height": "adapt",
         "desktop_image_width": "small",
         "desktop_image_width_custom": 40,
@@ -450,7 +446,6 @@
         "color_scheme": "scheme-8b04b01c-215e-44a4-8e89-5bdd77f60209",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "image_background": "",
         "image_background_position_x": 53,
         "image_background_position_y": 100,
         "padding_top": 36,
@@ -480,7 +475,11 @@
           }
         }
       },
-      "block_order": ["heading_8mENyJ", "text_h6DRpQ", "text_hFXtg3"],
+      "block_order": [
+        "heading_8mENyJ",
+        "text_h6DRpQ",
+        "text_hFXtg3"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -519,7 +518,11 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button_n4DtC8"],
+      "block_order": [
+        "heading",
+        "text",
+        "button_n4DtC8"
+      ],
       "disabled": true,
       "settings": {
         "desktop_content_position": "center",
@@ -537,10 +540,8 @@
         "trustpilot_background_color": "#ffffff",
         "title_color": "#364c84",
         "text_1": "<strong>Noté 4.8/5</strong>",
-        "etoiles_logo": "",
         "trustpilot_stars": "4,5",
         "text_2": "+200 avis vérifiés",
-        "trustpilot_logo": "",
         "link": "",
         "padding_top": 40,
         "padding_bottom": 40
@@ -549,7 +550,10 @@
     "reviews_list_i4zNT3": {
       "type": "reviews-list",
       "blocks": {
-        "image_DmGCr8": { "type": "image", "settings": { "image": "" } },
+        "image_DmGCr8": {
+          "type": "image",
+          "settings": {}
+        },
         "review_xzQNaW": {
           "type": "review",
           "settings": {
@@ -559,7 +563,10 @@
             "footer_text": "<strong>Sandrine P.</strong>"
           }
         },
-        "image_cEKKLT": { "type": "image", "settings": { "image": "" } },
+        "image_cEKKLT": {
+          "type": "image",
+          "settings": {}
+        },
         "review_L7LmjD": {
           "type": "review",
           "settings": {
@@ -569,7 +576,10 @@
             "footer_text": "<strong>Catherine Z.</strong>"
           }
         },
-        "image_YkUhCe": { "type": "image", "settings": { "image": "" } },
+        "image_YkUhCe": {
+          "type": "image",
+          "settings": {}
+        },
         "review_CMNCfP": {
           "type": "review",
           "settings": {
@@ -579,7 +589,10 @@
             "footer_text": "<strong>Séverine S.</strong>"
           }
         },
-        "image_rNeaLw": { "type": "image", "settings": { "image": "" } },
+        "image_rNeaLw": {
+          "type": "image",
+          "settings": {}
+        },
         "review_x7pPVi": {
           "type": "review",
           "settings": {
@@ -589,7 +602,10 @@
             "footer_text": "<strong>Muhuli</strong>"
           }
         },
-        "image_igHWpp": { "type": "image", "settings": { "image": "" } },
+        "image_igHWpp": {
+          "type": "image",
+          "settings": {}
+        },
         "review_jbEek7": {
           "type": "review",
           "settings": {
@@ -599,7 +615,10 @@
             "footer_text": "<strong>Julie L.</strong>"
           }
         },
-        "image_iUQMwL": { "type": "image", "settings": { "image": "" } },
+        "image_iUQMwL": {
+          "type": "image",
+          "settings": {}
+        },
         "review_J33cf7": {
           "type": "review",
           "settings": {
@@ -609,7 +628,10 @@
             "footer_text": "<strong>Elodie D.</strong>"
           }
         },
-        "image_mFwmPV": { "type": "image", "settings": {} },
+        "image_mFwmPV": {
+          "type": "image",
+          "settings": {}
+        },
         "review_9NHyWn": {
           "type": "review",
           "settings": {
@@ -619,7 +641,10 @@
             "footer_text": "<strong>Mrs Georges</strong>"
           }
         },
-        "image_cPXEfC": { "type": "image", "settings": { "image": "" } },
+        "image_cPXEfC": {
+          "type": "image",
+          "settings": {}
+        },
         "review_7bcnXW": {
           "type": "review",
           "settings": {
@@ -629,7 +654,10 @@
             "footer_text": "<strong>Sandrine</strong>"
           }
         },
-        "image_ewETGN": { "type": "image", "settings": { "image": "" } },
+        "image_ewETGN": {
+          "type": "image",
+          "settings": {}
+        },
         "review_bjtHpC": {
           "type": "review",
           "settings": {
@@ -639,7 +667,10 @@
             "footer_text": "<strong>Leroi</strong>"
           }
         },
-        "image_xm3fkP": { "type": "image", "settings": { "image": "" } },
+        "image_xm3fkP": {
+          "type": "image",
+          "settings": {}
+        },
         "review_JDJxBf": {
           "type": "review",
           "settings": {
@@ -732,11 +763,17 @@
       "blocks": {
         "tab_HiGYYf": {
           "type": "tab",
-          "settings": { "tab_title": "Abonnement", "tab_id": "abonnement" }
+          "settings": {
+            "tab_title": "Abonnement",
+            "tab_id": "abonnement"
+          }
         },
         "tab_xHB8Be": {
           "type": "tab",
-          "settings": { "tab_title": "Nos formules", "tab_id": "formules" }
+          "settings": {
+            "tab_title": "Nos formules",
+            "tab_id": "formules"
+          }
         },
         "tab_a8gXHF": {
           "type": "tab",
@@ -747,7 +784,10 @@
         },
         "tab_HpKNEC": {
           "type": "tab",
-          "settings": { "tab_title": "Weloca", "tab_id": "weloca" }
+          "settings": {
+            "tab_title": "Weloca",
+            "tab_id": "weloca"
+          }
         },
         "collapsible_row_aUzjkq": {
           "type": "collapsible_row",
@@ -1003,11 +1043,9 @@
         "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse <em>weloca.club@gmail.com</em>. Nous vous garantissons une réponse sous 48 heures.</p>",
         "additional_button_text": "weloca.club@gmail.com",
         "additional_button_subtitle": "",
-        "additional_button_icon": "",
         "additional_button_url": "mailto:weloca.club@gmail.com",
         "additional_button2_text": "@we.loca",
         "additional_button2_subtitle": "",
-        "additional_button2_icon": "",
         "additional_button2_url": "https://instagram.com/we.loca/",
         "padding_top": 100,
         "padding_bottom": 100
@@ -1021,13 +1059,14 @@
           "settings": {
             "button_text": "@We.loca",
             "button_link": "https://instagram.com/we.loca/",
-            "button_icon": "",
             "button_style": "deployer-button deployer-button--tertiary"
           }
         },
         "title_8ECfaD": {
           "type": "title",
-          "settings": { "title": "Retrouvez-nous sur Instagram !" }
+          "settings": {
+            "title": "Retrouvez-nous sur Instagram !"
+          }
         },
         "text_DqzhtT": {
           "type": "text",
@@ -1037,35 +1076,51 @@
         },
         "image_qU6rn4": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         },
         "image_8KNRAR": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         },
         "image_7HHxca": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         },
         "image_c37K4E": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         },
         "image_KpwbGT": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         },
         "image_x3at9D": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         },
         "image_kxjEmG": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         },
         "image_m9tGUN": {
           "type": "image",
-          "settings": { "image": "", "url": "https://instagram.com/we.loca/" }
+          "settings": {
+            "url": "https://instagram.com/we.loca/"
+          }
         }
       },
       "block_order": [
