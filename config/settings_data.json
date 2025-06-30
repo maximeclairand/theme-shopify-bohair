@@ -10,8 +10,8 @@
 {
   "current": {
     "logo": "shopify://shop_images/Plan_de_travail_1.svg",
-    "logo_width": 150,
-    "favicon": "",
+    "logo_width": 140,
+    "favicon": "shopify://shop_images/PP_2.svg",
     "type_header_font": "assistant_n4",
     "custom_heading_font": "https://cdn.shopify.com/s/files/1/0922/8766/4401/files/BomstadDisplay-ExtraBold.woff?v=1751314789",
     "heading_scale": 100,
@@ -78,7 +78,7 @@
     "blog_card_shadow_blur": 5,
     "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 10,
-    "text_boxes_radius": 22,
+    "text_boxes_radius": 24,
     "text_boxes_shadow_opacity": 0,
     "text_boxes_shadow_horizontal_offset": 0,
     "text_boxes_shadow_vertical_offset": 4,

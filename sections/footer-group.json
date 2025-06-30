@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -8,7 +17,6 @@
         "column_AEEFnt": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "Livraison <strong>offerte</strong> !",
             "text": "<p>Livraison gratuite avec mondial relay et à partir de 45€ d’achat en France Métropolitaine avec colissimo. </p>",
@@ -19,7 +27,6 @@
         "column_XcDHmY": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "Conseils personnalisés",
             "text": "<p>Notre équipe vous répond dans un délai de 24h par e-mail ou sur Instagram</p>",
@@ -30,7 +37,6 @@
         "column_UFLeHP": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "Satisfait ou remboursé",
             "text": "<p>Votre compagnon n’est pas satisfait ? On vous rembourse !</p>",
@@ -39,7 +45,11 @@
           }
         }
       },
-      "block_order": ["column_AEEFnt", "column_XcDHmY", "column_UFLeHP"],
+      "block_order": [
+        "column_AEEFnt",
+        "column_XcDHmY",
+        "column_UFLeHP"
+      ],
       "settings": {
         "css_class": "",
         "title": "",
@@ -69,7 +79,7 @@
           "type": "brand_information",
           "settings": {
             "show_social": true,
-            "icon_stars": "",
+            "icon_stars": "shopify://shop_images/Plan_de_travail_1.png",
             "review_paragraph": "<strong>4.8/5</strong> +10 000 clients ravis"
           }
         },
@@ -77,12 +87,15 @@
           "type": "link_list",
           "settings": {
             "heading": "Menu principal",
-            "menu": "footer-menu-principal"
+            "menu": ""
           }
         },
         "footer-1": {
           "type": "link_list",
-          "settings": { "heading": "Aide & Infos", "menu": "footer" }
+          "settings": {
+            "heading": "Aide & Infos",
+            "menu": "footer"
+          }
         },
         "newsletter_7pBqn8": {
           "type": "newsletter",
@@ -121,5 +134,8 @@
       }
     }
   },
-  "order": ["multicolumn_gxGn4U", "footer"]
+  "order": [
+    "multicolumn_gxGn4U",
+    "footer"
+  ]
 }

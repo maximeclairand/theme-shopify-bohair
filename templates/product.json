@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -7,15 +16,20 @@
           "type": "inventory",
           "settings": {
             "inventory_color_scheme": "scheme-1",
-            "badge_icon": "",
             "badge_texte": "<strong>+100</strong> chiens et chats satisfaits",
             "text_style": "body",
             "inventory_threshold": 30,
             "show_inventory_quantity": false
           }
         },
-        "title": { "type": "title", "settings": {} },
-        "separator_crE74y": { "type": "separator", "settings": {} },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "separator_crE74y": {
+          "type": "separator",
+          "settings": {}
+        },
         "custom_badges_J7nmcw": {
           "type": "custom_badges",
           "settings": {
@@ -31,20 +45,23 @@
           "settings": {
             "layout": "vertical",
             "icon_1": "heart",
-            "image_1": "",
             "heading_1": "L'<strong>allié bien-être</strong> : pelage, articulations, vitalité",
             "icon_2": "return",
-            "image_2": "",
             "heading_2": "Riche en <strong>Oméga 3</strong>, notamment en<strong> EPA/DHA</strong>",
             "icon_3": "truck",
-            "image_3": "",
             "heading_3": "<strong>Améliore l'appétence</strong> des croquettes"
           }
         },
-        "separator_LXNDBX": { "type": "separator", "settings": {} },
+        "separator_LXNDBX": {
+          "type": "separator",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
-          "settings": { "picker_type": "button", "swatch_shape": "circle" }
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
         },
         "subscription_widget_TRM4hj": {
           "type": "subscription_widget",
@@ -57,11 +74,8 @@
             "one_time_label": "Achat unique",
             "subscription_label": "Abonnez-vous & <strong>économisez</strong>",
             "subscription_benefit_1": "Service client <strong>en moins de 5h</strong>",
-            "subscription_benefit_icon_1": "",
             "subscription_benefit_2": "<strong>Sans engagement</strong>, annulez en un clic",
-            "subscription_benefit_icon_2": "",
             "subscription_benefit_3": "Bénéficiez de <strong># sur chaque livraison</strong>",
-            "subscription_benefit_icon_3": "",
             "subscription_benefit_4": "",
             "sellin_plan_name_1": "Livraison tous les mois",
             "sellin_plan_name_2": "Livraison tous les 2 mois",
@@ -72,7 +86,6 @@
         "delivery_QFPCdY": {
           "type": "delivery",
           "settings": {
-            "delivery_icon": "",
             "date_format": "chiffres",
             "delivery_delay_min": 3,
             "delivery_delay_max": 3,
@@ -127,7 +140,6 @@
           "type": "deployer_story",
           "settings": {
             "title": "<p>Bienfaits</p>",
-            "video_0": "",
             "image_duration_0": 5,
             "link_0": "",
             "link_text_0": "Je découvre",
@@ -162,7 +174,6 @@
           "type": "deployer_story",
           "settings": {
             "title": "<p>Utilisation</p>",
-            "video_0": "",
             "image_duration_0": 5,
             "link_0": "",
             "link_text_0": "Je découvre",
@@ -197,7 +208,6 @@
           "type": "deployer_story",
           "settings": {
             "title": "<p>Formules</p>",
-            "video_0": "",
             "image_duration_0": 5,
             "link_0": "",
             "link_text_0": "Je découvre",
@@ -232,7 +242,6 @@
           "type": "deployer_story",
           "settings": {
             "title": "<p>Avis clients</p>",
-            "video_0": "",
             "image_duration_0": 5,
             "link_0": "",
             "link_text_0": "Je découvre",
@@ -293,16 +302,12 @@
             "page": "",
             "column_1_2_header": "Poids de votre chien",
             "column_3_header": "Dosage quotidien",
-            "column_1_icon_1": "",
             "column_2_text_1": "Moins de 10 kg",
             "column_3_text_1": "1/2 bouchon",
-            "column_1_icon_2": "",
             "column_2_text_2": "Entre 10 et 25 kg",
             "column_3_text_2": "1 bouchon",
-            "column_1_icon_3": "",
             "column_2_text_3": "Entre 25 et 40 kg",
             "column_3_text_3": "1.5 bouchon",
-            "column_1_icon_4": "",
             "column_2_text_4": "> 40 kg",
             "column_3_text_4": "2 bouchons",
             "column_2_text_5": "",
@@ -358,7 +363,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "color_scheme": "scheme-1",
         "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -375,21 +380,9 @@
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "image": "",
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Adorés<br/>des animaux</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
         "column_cEfTBM": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Hautement <br/>concentré</p>",
@@ -400,7 +393,6 @@
         "column_9AMdQr": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Sans ingrédients <br/>controversés</p>",
@@ -411,7 +403,6 @@
         "column_RYWr73": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Composition <br/>Unique</p>",
@@ -422,7 +413,6 @@
         "column_9JpMth": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Principes actifs <br/>Premium</p>",
@@ -433,7 +423,6 @@
         "column_xXzGhb": {
           "type": "column",
           "settings": {
-            "image": "",
             "badge_text": "",
             "title": "",
             "text": "<p>Formule <br/>Vétérinaire</p>",
@@ -443,7 +432,6 @@
         }
       },
       "block_order": [
-        "column1",
         "column_cEfTBM",
         "column_9AMdQr",
         "column_RYWr73",
@@ -479,7 +467,6 @@
         "text_eJjCDG": {
           "type": "text",
           "settings": {
-            "image_icon": "",
             "svg_icon": "",
             "icon_width": 28,
             "title": "Huile 100% pure",
@@ -490,7 +477,6 @@
         "text_ArrPDj": {
           "type": "text",
           "settings": {
-            "image_icon": "",
             "svg_icon": "",
             "icon_width": 28,
             "title": "Facile à utiliser",
@@ -501,7 +487,6 @@
         "text_CzxNe8": {
           "type": "text",
           "settings": {
-            "image_icon": "",
             "svg_icon": "",
             "icon_width": 28,
             "title": "L'allié bien-être au quotidien",
@@ -512,7 +497,6 @@
         "text_9rUU7D": {
           "type": "text",
           "settings": {
-            "image_icon": "",
             "svg_icon": "",
             "icon_width": 28,
             "title": "Fabriqué en France",
@@ -530,7 +514,7 @@
       "settings": {
         "title": "",
         "description": "",
-        "image": "",
+        "image": "shopify://shop_images/brown-powder-explosion-isolated-white-background-Photoroom_83fe16b1-1aa9-495c-bfdc-b6337a2021fc.png",
         "image_width": 35,
         "items_per_row_mobile": "1",
         "button_text": "",
@@ -541,8 +525,8 @@
         "padding_bottom": 60,
         "alignment_mobile": "center",
         "alignment_desktop": "center",
-        "section_background_color": "#fffdf5",
-        "section_text_color": "#364c84"
+        "section_background_color": "#fafafa",
+        "section_text_color": "#262626"
       }
     },
     "barre_defilante_NB8EVr": {
@@ -552,7 +536,6 @@
           "type": "information",
           "settings": {
             "text": "Huile pure",
-            "image": "",
             "icon_height": 18
           }
         },
@@ -560,7 +543,6 @@
           "type": "information",
           "settings": {
             "text": "Naturel",
-            "image": "",
             "icon_height": 18
           }
         },
@@ -568,7 +550,6 @@
           "type": "information",
           "settings": {
             "text": "Fabriqué en France",
-            "image": "",
             "icon_height": 18
           }
         },
@@ -576,7 +557,6 @@
           "type": "information",
           "settings": {
             "text": "Format test",
-            "image": "",
             "icon_height": 18
           }
         },
@@ -584,7 +564,6 @@
           "type": "information",
           "settings": {
             "text": "Sans lactose",
-            "image": "",
             "icon_height": 18
           }
         }
@@ -597,7 +576,7 @@
         "information_EgFF7d"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
         "speed": 30,
         "padding_top": 20,
         "padding_bottom": 20
@@ -630,7 +609,10 @@
           }
         }
       },
-      "block_order": ["ingredients_nXNC74", "ingredients_nxg8ra"],
+      "block_order": [
+        "ingredients_nXNC74",
+        "ingredients_nxg8ra"
+      ],
       "disabled": true,
       "settings": {
         "title": "13 principes actifs puissants",
@@ -693,8 +675,8 @@
         "heading_row_9cwtDT": {
           "type": "heading_row",
           "settings": {
-            "logo1": "",
-            "logo1_width": 50,
+            "logo1": "shopify://shop_images/Plan_de_travail_1.png",
+            "logo1_width": 95,
             "text1": "Notre marque",
             "column1_highlighted": true,
             "logo2_width": 50,
@@ -714,12 +696,10 @@
         "row_PjGV77": {
           "type": "row",
           "settings": {
-            "text": "Formulé par <strong>un vétérinaire</strong>",
-            "column1_img": "",
+            "text": "Produit <strong>100%</strong> <strong>naturel</strong>",
             "column1_img_width": 60,
             "column1_text": "",
             "column1_highlighted": true,
-            "column2_img": "",
             "column2_img_width": 20,
             "column2_text": "",
             "column2_highlighted": false,
@@ -737,12 +717,10 @@
         "row_p7xcQU": {
           "type": "row",
           "settings": {
-            "text": "<strong>Hautement </strong>concentré",
-            "column1_img": "",
+            "text": "Testé <strong>dermatologiquement</strong>",
             "column1_img_width": 60,
             "column1_text": "",
             "column1_highlighted": true,
-            "column2_img": "",
             "column2_img_width": 20,
             "column2_text": "",
             "column2_highlighted": false,
@@ -760,12 +738,10 @@
         "row_ybzNhb": {
           "type": "row",
           "settings": {
-            "text": "Composition <strong>unique</strong>",
-            "column1_img": "",
+            "text": "<strong>Facilité</strong> d'application",
             "column1_img_width": 60,
             "column1_text": "",
             "column1_highlighted": true,
-            "column2_img": "",
             "column2_img_width": 22,
             "column2_text": "",
             "column2_highlighted": false,
@@ -783,12 +759,10 @@
         "row_9RAxbx": {
           "type": "row",
           "settings": {
-            "text": "<strong>120</strong> bouchées dans chaque formule",
-            "column1_img": "",
+            "text": "Effet naturel<strong> immédiat</strong>",
             "column1_img_width": 60,
             "column1_text": "",
             "column1_highlighted": true,
-            "column2_img": "",
             "column2_img_width": 20,
             "column2_text": "",
             "column2_highlighted": false,
@@ -806,12 +780,10 @@
         "row_wc3UHN": {
           "type": "row",
           "settings": {
-            "text": "<strong>Adoré</strong> des animaux",
-            "column1_img": "",
+            "text": "Tenue<strong> longue durée</strong>",
             "column1_img_width": 60,
             "column1_text": "",
             "column1_highlighted": true,
-            "column2_img": "",
             "column2_img_width": 22,
             "column2_text": "",
             "column2_highlighted": false,
@@ -836,14 +808,14 @@
         "row_wc3UHN"
       ],
       "settings": {
-        "title": "Pourquoi nous choisir ?",
+        "title": "Pourquoi choisir notre poudre ?",
         "text": "",
         "max_table_size": 60,
         "max_first_column_size": 40,
-        "title_color": "#364c84",
+        "title_color": "#262626",
         "table_background_color": "#ffffff",
-        "table_color": "#364c84",
-        "highlighted_item_background_color": "#364c84",
+        "table_color": "#262626",
+        "highlighted_item_background_color": "#262626",
         "highlighted_item_color": "#ffffff",
         "padding_top": 100,
         "padding_bottom": 60
@@ -856,10 +828,8 @@
         "trustpilot_background_color": "#ffffff",
         "title_color": "#364c84",
         "text_1": "<strong>Noté 4.8/5</strong>",
-        "etoiles_logo": "",
         "trustpilot_stars": "4,5",
         "text_2": "+2342 avis vérifiés",
-        "trustpilot_logo": "",
         "link": "",
         "padding_top": 40,
         "padding_bottom": 40
@@ -870,7 +840,7 @@
       "blocks": {
         "image_DmGCr8": {
           "type": "image",
-          "settings": { "image": "" }
+          "settings": {}
         },
         "review_xzQNaW": {
           "type": "review",
@@ -883,9 +853,7 @@
         },
         "image_cEKKLT": {
           "type": "image",
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_L7LmjD": {
           "type": "review",
@@ -898,9 +866,7 @@
         },
         "image_YkUhCe": {
           "type": "image",
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_CMNCfP": {
           "type": "review",
@@ -913,9 +879,7 @@
         },
         "image_rNeaLw": {
           "type": "image",
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_x7pPVi": {
           "type": "review",
@@ -930,9 +894,7 @@
         "image_igHWpp": {
           "type": "image",
           "disabled": true,
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_jbEek7": {
           "type": "review",
@@ -946,9 +908,7 @@
         "image_iUQMwL": {
           "type": "image",
           "disabled": true,
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_J33cf7": {
           "type": "review",
@@ -963,9 +923,7 @@
         "image_mFwmPV": {
           "type": "image",
           "disabled": true,
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_9NHyWn": {
           "type": "review",
@@ -980,9 +938,7 @@
         "image_cPXEfC": {
           "type": "image",
           "disabled": true,
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_7bcnXW": {
           "type": "review",
@@ -997,7 +953,7 @@
         "image_ewETGN": {
           "type": "image",
           "disabled": true,
-          "settings": { "image": "" }
+          "settings": {}
         },
         "review_bjtHpC": {
           "type": "review",
@@ -1012,9 +968,7 @@
         "image_xm3fkP": {
           "type": "image",
           "disabled": true,
-          "settings": {
-            "image": ""
-          }
+          "settings": {}
         },
         "review_JDJxBf": {
           "type": "review",
@@ -1109,11 +1063,17 @@
       "blocks": {
         "tab_HiGYYf": {
           "type": "tab",
-          "settings": { "tab_title": "Abonnement", "tab_id": "abonnement" }
+          "settings": {
+            "tab_title": "Abonnement",
+            "tab_id": "abonnement"
+          }
         },
         "tab_xHB8Be": {
           "type": "tab",
-          "settings": { "tab_title": "Nos formules", "tab_id": "formules" }
+          "settings": {
+            "tab_title": "Nos formules",
+            "tab_id": "formules"
+          }
         },
         "tab_a8gXHF": {
           "type": "tab",
@@ -1124,7 +1084,10 @@
         },
         "tab_HpKNEC": {
           "type": "tab",
-          "settings": { "tab_title": "Weloca", "tab_id": "weloca" }
+          "settings": {
+            "tab_title": "Weloca",
+            "tab_id": "weloca"
+          }
         },
         "collapsible_row_aUzjkq": {
           "type": "collapsible_row",
@@ -1371,7 +1334,7 @@
         "heading_alignment": "center",
         "layout": "none",
         "color_scheme": "",
-        "container_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "container_color_scheme": "scheme-1",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
@@ -1380,11 +1343,9 @@
         "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse <em>weloca.club@gmail.com</em>. Nous vous garantissons une réponse sous 48 heures.</p>",
         "additional_button_text": "weloca.club@gmail.com",
         "additional_button_subtitle": "",
-        "additional_button_icon": "",
         "additional_button_url": "mailto:weloca.club@gmail.com",
         "additional_button2_text": "@we.loca",
         "additional_button2_subtitle": "",
-        "additional_button2_icon": "",
         "additional_button2_url": "https://instagram.com/we.loca/",
         "padding_top": 100,
         "padding_bottom": 100
