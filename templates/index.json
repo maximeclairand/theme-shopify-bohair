@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Prenez soin d'eux  intérieurement et extérieurement.",
+            "heading": "Des cheveux plus denses,en quelques secondes.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Des produits naturels, sûrs, formulés par un vétérinaire et adorés des animaux.</p>",
+            "text": "<p>Redonnez instantanément densité et style à vos cheveux.<br/>Un résultat naturel, une confiance retrouvée.</p>",
             "text_style": "body"
           }
         },
@@ -48,162 +48,16 @@
         "round_bottom_corners": true,
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "desktop_constrain_width": false,
         "color_scheme": "scheme-2",
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
+        "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
         "show_text_below": false,
         "mobile_constrain_width": false
-      }
-    },
-    "multicolumn_pxTab7": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_BUgkLL": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_rdz4CJ": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_k9Nx6Y": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_7YhtKR": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_BUgkLL",
-        "column_rdz4CJ",
-        "column_k9Nx6Y",
-        "column_7YhtKR"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "css_class": "",
-        "title": "Multicolonne",
-        "heading_size": "h2",
-        "image_width": "half",
-        "image_width_custom": 30,
-        "image_position": "top",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "list_color_scheme": "",
-        "card_color_scheme": "",
-        "card_show_body_font": false,
-        "button_label": "Texte du bouton",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Adorés <br/>des animaux</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_cEfTBM": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Hautement<br/>concentré</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_9AMdQr": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Sans ingrédients <br/>controversés</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_RYWr73": {
-          "type": "column",
-          "settings": {
-            "badge_text": "",
-            "title": "",
-            "text": "<p>Composition <br/>Unique</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column_cEfTBM",
-        "column_9AMdQr",
-        "column_RYWr73"
-      ],
-      "custom_css": [],
-      "settings": {
-        "css_class": "multicolumn--reinsurances",
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_width_custom": 30,
-        "image_position": "top",
-        "image_ratio": "adapt",
-        "columns_desktop": 6,
-        "column_alignment": "center",
-        "list_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
-        "card_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
-        "card_show_body_font": false,
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 32,
-        "padding_bottom": 28
       }
     },
     "image_with_text_wQUUiD": {
@@ -253,64 +107,6 @@
         "image_background_position_x": 50,
         "image_background_position_y": 50,
         "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Découvrez nos compléments pour chiens",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "complements-alimentaires-chiens",
-        "show_product_description": true,
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "link",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 80,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collection_qyd6GG": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Découvrez nos compléments pour chats",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "complements-alimentaires-pour-chats",
-        "show_product_description": true,
-        "products_to_show": 2,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 80,
         "padding_bottom": 36
       }
     },
@@ -429,6 +225,7 @@
         "text_htCw7g",
         "button_PyYetx"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -471,7 +268,7 @@
       ],
       "name": "Barre défilante",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
         "speed": 30,
         "padding_top": 20,
         "padding_bottom": 20
@@ -507,6 +304,7 @@
         "text_JzVUiy",
         "badge_crxgnW"
       ],
+      "disabled": true,
       "settings": {
         "height": "adapt",
         "desktop_image_width": "small",
@@ -553,6 +351,7 @@
         "text_h6DRpQ",
         "text_hFXtg3"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -837,15 +636,22 @@
         "tab_HiGYYf": {
           "type": "tab",
           "settings": {
-            "tab_title": "Abonnement",
-            "tab_id": "abonnement"
+            "tab_title": "Nos produits",
+            "tab_id": "Nosproduits"
           }
         },
         "tab_xHB8Be": {
           "type": "tab",
           "settings": {
-            "tab_title": "Nos formules",
-            "tab_id": "formules"
+            "tab_title": "Utilisation",
+            "tab_id": "Utilisation"
+          }
+        },
+        "tab_HpKNEC": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Bienfaits",
+            "tab_id": "Bienfaits"
           }
         },
         "tab_a8gXHF": {
@@ -853,13 +659,6 @@
           "settings": {
             "tab_title": "Livraison & retours",
             "tab_id": "livraison"
-          }
-        },
-        "tab_HpKNEC": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "Weloca",
-            "tab_id": "weloca"
           }
         },
         "collapsible_row_aUzjkq": {
@@ -1076,8 +875,8 @@
       "block_order": [
         "tab_HiGYYf",
         "tab_xHB8Be",
-        "tab_a8gXHF",
         "tab_HpKNEC",
+        "tab_a8gXHF",
         "collapsible_row_aUzjkq",
         "collapsible_row_Kbici3",
         "collapsible_row_wLhPxC",
@@ -1107,17 +906,17 @@
         "heading_alignment": "center",
         "layout": "none",
         "color_scheme": "",
-        "container_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "container_color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "additionnal_color_scheme": "scheme-2851433d-59d2-40af-9f3d-84da68cd3b68",
         "additional_title": "Besoin d’aide ?",
-        "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse <em>weloca.club@gmail.com</em>. Nous vous garantissons une réponse sous 48 heures.</p>",
-        "additional_button_text": "weloca.club@gmail.com",
+        "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse hello.bohair@gmail.com. Nous vous garantissons une réponse sous 48 heures.</p>",
+        "additional_button_text": "hello.bohair@gmail.com",
         "additional_button_subtitle": "",
         "additional_button_url": "mailto:weloca.club@gmail.com",
-        "additional_button2_text": "@we.loca",
+        "additional_button2_text": "@bohair_co",
         "additional_button2_subtitle": "",
         "additional_button2_url": "https://instagram.com/we.loca/",
         "padding_top": 100,
@@ -1209,6 +1008,7 @@
         "image_kxjEmG",
         "image_m9tGUN"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "description": "",
@@ -1258,11 +1058,7 @@
   },
   "order": [
     "image_banner",
-    "multicolumn_pxTab7",
-    "multicolumn",
     "image_with_text_wQUUiD",
-    "featured_collection",
-    "featured_collection_qyd6GG",
     "featured_collection_Y6Cddr",
     "image_with_text_F86f8L",
     "rich_text_XEGbLp",
