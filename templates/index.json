@@ -102,13 +102,35 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "column_9JpMth": {
+          "type": "column",
+          "settings": {
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Principes actifs <br/>Premium</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wzL9Xb": {
+          "type": "column",
+          "settings": {
+            "badge_text": "",
+            "title": "",
+            "text": "<p>Formule<br/>Vétérinaire</p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "column1",
         "column_cEfTBM",
         "column_9AMdQr",
-        "column_RYWr73"
+        "column_RYWr73",
+        "column_9JpMth",
+        "column_wzL9Xb"
       ],
       "custom_css": [],
       "settings": {
@@ -129,8 +151,8 @@
         "color_scheme": "scheme-1",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 32,
-        "padding_bottom": 28
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_with_text_wQUUiD": {
@@ -764,15 +786,22 @@
         "tab_HiGYYf": {
           "type": "tab",
           "settings": {
-            "tab_title": "Abonnement",
-            "tab_id": "abonnement"
+            "tab_title": "Nos produits",
+            "tab_id": "Nos produits"
           }
         },
         "tab_xHB8Be": {
           "type": "tab",
           "settings": {
-            "tab_title": "Nos formules",
-            "tab_id": "formules"
+            "tab_title": "Utilisation",
+            "tab_id": "Utilisation"
+          }
+        },
+        "tab_HpKNEC": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Bienfaits",
+            "tab_id": "Bienfaits"
           }
         },
         "tab_a8gXHF": {
@@ -780,13 +809,6 @@
           "settings": {
             "tab_title": "Livraison & retours",
             "tab_id": "livraison"
-          }
-        },
-        "tab_HpKNEC": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "Weloca",
-            "tab_id": "weloca"
           }
         },
         "collapsible_row_aUzjkq": {
@@ -1003,8 +1025,8 @@
       "block_order": [
         "tab_HiGYYf",
         "tab_xHB8Be",
-        "tab_a8gXHF",
         "tab_HpKNEC",
+        "tab_a8gXHF",
         "collapsible_row_aUzjkq",
         "collapsible_row_Kbici3",
         "collapsible_row_wLhPxC",
@@ -1034,17 +1056,17 @@
         "heading_alignment": "center",
         "layout": "none",
         "color_scheme": "",
-        "container_color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "container_color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "additionnal_color_scheme": "scheme-2851433d-59d2-40af-9f3d-84da68cd3b68",
         "additional_title": "Besoin d’aide ?",
-        "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse <em>weloca.club@gmail.com</em>. Nous vous garantissons une réponse sous 48 heures.</p>",
-        "additional_button_text": "weloca.club@gmail.com",
+        "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse hello.bohair@gmail.com. Nous vous garantissons une réponse sous 48 heures.</p>",
+        "additional_button_text": "hello.bohair@gmail.com",
         "additional_button_subtitle": "",
         "additional_button_url": "mailto:weloca.club@gmail.com",
-        "additional_button2_text": "@we.loca",
+        "additional_button2_text": "@bohair_co",
         "additional_button2_subtitle": "",
         "additional_button2_url": "https://instagram.com/we.loca/",
         "padding_top": 100,
