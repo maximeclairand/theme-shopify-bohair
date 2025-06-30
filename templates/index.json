@@ -60,6 +60,79 @@
         "mobile_constrain_width": false
       }
     },
+    "multicolumn_HJ78rY": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_CTcAqM": {
+          "type": "column",
+          "settings": {
+            "badge_text": "",
+            "title": "Colonne",
+            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LGYHed": {
+          "type": "column",
+          "settings": {
+            "badge_text": "",
+            "title": "Colonne",
+            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dqDmXA": {
+          "type": "column",
+          "settings": {
+            "badge_text": "",
+            "title": "Colonne",
+            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_96MBKq": {
+          "type": "column",
+          "settings": {
+            "badge_text": "",
+            "title": "Colonne",
+            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_CTcAqM",
+        "column_LGYHed",
+        "column_dqDmXA",
+        "column_96MBKq"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "css_class": "",
+        "title": "Multicolonne",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_width_custom": 30,
+        "image_position": "top",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "list_color_scheme": "",
+        "card_color_scheme": "",
+        "card_show_body_font": false,
+        "button_label": "Texte du bouton",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text_wQUUiD": {
       "type": "image-with-text",
       "blocks": {
@@ -91,6 +164,7 @@
         "text_eyHYpt",
         "button_xPGNET"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "height": "adapt",
@@ -1058,6 +1132,7 @@
   },
   "order": [
     "image_banner",
+    "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
     "featured_collection_Y6Cddr",
     "image_with_text_F86f8L",
