@@ -67,8 +67,8 @@
           "type": "column",
           "settings": {
             "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "title": "Confiance retrouvée",
+            "text": "<p>Vous n’avez pas seulement densifié vos cheveux. Vous avez retrouvé votre assurance.</p>",
             "link_label": "",
             "link": ""
           }
@@ -77,8 +77,8 @@
           "type": "column",
           "settings": {
             "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "title": "Densité et volume immédiats",
+            "text": "<p>Camoufle les zones clairsemées en quelques secondes, pour un effet naturel et homogène.</p>",
             "link_label": "",
             "link": ""
           }
@@ -87,8 +87,8 @@
           "type": "column",
           "settings": {
             "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "title": "Formule respectueuse",
+            "text": "<p>Testée dermatologiquement,<br/>adaptée aux cuirs chevelus sensibles.</p>",
             "link_label": "",
             "link": ""
           }
@@ -97,8 +97,8 @@
           "type": "column",
           "settings": {
             "badge_text": "",
-            "title": "Colonne",
-            "text": "<p>Associez un texte à une image pour mettre en avant le produit, la collection ou l’article de blog de votre choix. Ajoutez des informations sur la disponibilité ou le style. Vous pouvez même fournir un avis.</p>",
+            "title": "Tenue longue durée",
+            "text": "<p>Résiste à la transpiration, au vent<br/>et aux mouvements du quotidien.</p>",
             "link_label": "",
             "link": ""
           }
@@ -113,7 +113,7 @@
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "css_class": "",
-        "title": "Multicolonne",
+        "title": "Retrouvez 100% de votre confiance",
         "heading_size": "h1",
         "image_width": "full",
         "image_width_custom": 30,
@@ -122,7 +122,7 @@
         "columns_desktop": 4,
         "column_alignment": "center",
         "list_color_scheme": "",
-        "card_color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+        "card_color_scheme": "",
         "card_show_body_font": false,
         "button_label": "Texte du bouton",
         "button_link": "",
