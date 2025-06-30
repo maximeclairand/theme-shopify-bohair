@@ -15,7 +15,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Des cheveux plus denses, en quelques secondes.",
+            "heading": "Des cheveux plus denses,< en quelques secondes.",
             "heading_size": "h1"
           }
         },
@@ -30,7 +30,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Je teste Bohair !",
-            "button_link_1": "",
+            "button_link_1": "shopify://products/poudre",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
