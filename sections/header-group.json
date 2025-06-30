@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "-10% sur votre première commande <span style=\"text-decoration:underline\">J’en profite !</span>",
+            "text": "Livraison <strong>offerte</strong> dès <strong>30€</strong> d’achat    <span style=\"text-decoration:underline\">J’en profite !</span>",
             "link": ""
           }
         },
