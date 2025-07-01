@@ -1,0 +1,299 @@
+{% schema %}
+{
+  "name": "Hero Bohair",
+  "tag": "section",
+  "class": "section-hero-bohair",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Image à droite",
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "rating_color",
+      "label": "Couleur des étoiles/avis",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Couleur de fond du bouton",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Couleur du texte du bouton",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Couleur de fond au hover",
+      "default": "#3730a3"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Couleur du texte au hover",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "titre_text",
+      "label": "Texte du bouton",
+      "default": "Des cheveux plus denses, en quelques secondes."
+    },
+    {
+      "type": "text",
+      "id": "soustitre_text",
+      "label": "Texte du bouton",
+      "default": "Redonnez instantanément densité et style à vos cheveux. Un résultat naturel, une confiance retrouvée."
+    },
+    {
+      "type": "text",
+      "id": "adv1_text",
+      "label": "Texte du bouton",
+      "default": "Application facile<br>& ultra-rapide"
+    },
+    {
+      "type": "text",
+      "id": "adv2_text",
+      "label": "Texte du bouton",
+      "default": "Résultat naturel<br>immédiat"
+    },
+    {
+      "type": "text",
+      "id": "adv3_text",
+      "label": "Texte du bouton",
+      "default": "Tenue longue durée,<br>résiste à la transpiration"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "Je teste Bohair !"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bohair Hero"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="hero-section" style="color: {{ section.settings.text_color }};">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-rating" style="color: {{ section.settings.rating_color }};">
+        Excellent <span></span>
+        <span> ★★★★★</span> +342 avis vérifiés
+      </div>
+      <h1 style="color: {{ section.settings.title_color }};">{{ section.settings.titre_text }}</h1>
+      <p class="hero-subtitle">
+        {{ section.settings.soustitre_text }}
+      </p>
+
+      <div class="hero-advantages">
+        <div class="advantage-item">
+          <img src="https://cdn.shopify.com/s/files/1/0937/5573/6401/files/coche_1.png?v=1751363795" alt="check" class="check-icon">
+          <span>{{ section.settings.adv1_text }}</span>
+        </div>
+        <div class="advantage-item">
+          <img src="https://cdn.shopify.com/s/files/1/0937/5573/6401/files/coche_1.png?v=1751363795" alt="check" class="check-icon">
+          <span>{{ section.settings.adv2_text }}</span>
+        </div>
+        <div class="advantage-item">
+          <img src="https://cdn.shopify.com/s/files/1/0937/5573/6401/files/coche_1.png?v=1751363795" alt="check" class="check-icon">
+          <span>{{ section.settings.adv3_text }}</span>
+        </div>
+      </div>
+
+      <a href="/products/kit-deco-100-personnalisable-50cc"
+         class="hero-button"
+         style="
+           background-color: {{ section.settings.button_bg_color }};
+           color: {{ section.settings.button_text_color }};
+         "
+         onmouseover="this.style.backgroundColor='{{ section.settings.button_hover_bg_color }}'; this.style.color='{{ section.settings.button_hover_text_color }}'"
+         onmouseout="this.style.backgroundColor='{{ section.settings.button_bg_color }}'; this.style.color='{{ section.settings.button_text_color }}'">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="Bohair visuel">
+    </div>
+  </div>
+</section>
+
+<style>
+.hero-section {
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  margin-bottom: 40px;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  width: auto;
+  max-width: 1000px;
+  flex: 1.05;
+}
+
+.hero-image {
+  flex: 0.95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-rating {
+  font-size: 16px;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.hero-content h1 {
+  font-size: 43px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  margin-bottom: 60px;
+  opacity: 0.9;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 15px 60px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-advantages {
+  display: flex;
+  gap: 27px;
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.9;
+  flex-wrap: wrap;
+}
+
+.advantage-item {
+  display: flex;
+  gap: 8px;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-content {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .hero-rating {
+    justify-content: center;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px;
+    gap: 6px;
+  }
+
+  .hero-rating span {
+    font-size: 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+    padding: 12px 24px;
+    margin-bottom: 20px;
+  }
+
+  .hero-advantages {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .advantage-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>

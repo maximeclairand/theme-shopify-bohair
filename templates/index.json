@@ -141,6 +141,7 @@
         "column_dqDmXA",
         "column_96MBKq"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "css_class": "",
