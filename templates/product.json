@@ -394,20 +394,22 @@
         "text_ArrPDj": {
           "type": "text",
           "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9_72c6b088-6258-4cf8-bee6-6fe890e571f1.png",
             "svg_icon": "",
             "icon_width": 28,
-            "title": "Formule légère",
-            "description": "<p>Laisse le cuir chevelu respirer sans boucher les pores, pour un confort optimal au quotidien.</p>",
+            "title": "Douceur garantie",
+            "description": "<p>Formule légère qui respecte le cuir chevelu, sans aggraver la chute de cheveux.</p>",
             "position": "left"
           }
         },
         "text_CzxNe8": {
           "type": "text",
           "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9_a706c6ae-7981-45d5-840c-31676560254c.png",
             "svg_icon": "",
             "icon_width": 28,
-            "title": "Hypoallergénique",
-            "description": "<p>Testée dermatologiquement, elle convient aux cuirs chevelus sensibles et réactifs.</p>",
+            "title": "Conçu en laboratoire",
+            "description": "<p>Développé par des experts en cosmétique capillaire pour une efficacité optimale.<br/></p>",
             "position": "right"
           }
         },
