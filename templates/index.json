@@ -109,6 +109,32 @@
         "padding_bottom": 36
       }
     },
+    "temoignage_section_ymiVKg": {
+      "type": "temoignage-section",
+      "blocks": {
+        "slide_ek7HTM": {
+          "type": "slide",
+          "settings": {
+            "image_avant": "shopify://shop_images/16.png",
+            "image_apres": "shopify://shop_images/10.png",
+            "tag_apres": "APRÈS",
+            "testimonial_title": "Super facile à appliquer !",
+            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "name": "Coralie.F",
+            "stars": "★★★★★",
+            "linked_product": "poudre"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ek7HTM"
+      ],
+      "name": "Témoignages",
+      "settings": {
+        "section_title": "Nos clients témoignent de l’éclat de leur bronzage",
+        "bg_color": "#f9f9f9"
+      }
+    },
     "multicolumn_HJ78rY": {
       "type": "multicolumn",
       "blocks": {
@@ -1160,6 +1186,7 @@
     "section_hero_bohair_KNimmH",
     "section_confiance_6g3gEf",
     "featured_collection_Y6Cddr",
+    "temoignage_section_ymiVKg",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
     "image_with_text_F86f8L",
