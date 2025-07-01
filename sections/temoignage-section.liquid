@@ -173,6 +173,8 @@
 
   .temoignage-slide {
     width: 820px;
+    max-width: 100%; /* ✅ empêche de dépasser sur mobile */
+
     flex-shrink: 0;
     background: white;
     border-radius: 12px;
@@ -311,172 +313,96 @@
 }
 
   @media screen and (max-width: 768px) {
-  .temoignage-track {
-    flex-direction: column;
-    gap: 20px;
-    transform: none !important;
-  }
-
-  .temoignage-slide {
-    width: 100% !important;
-    flex-direction: column;
-    max-height: none;
-    padding: 20px;
-  }
-
-  .temoignage-photos {
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-
-  .temoignage-photo-block img {
-    width: 140px;
-    height: auto;
-    max-height: none;
-  }
-
-  .temoignage-photo-block span {
-    font-size: 11px;
-    padding: 2px 8px;
-  }
-
-  .temoignage-content {
-    padding: 0;
-    text-align: center;
-    align-items: center;
-  }
-
-  .temoignage-content h3 {
-    font-size: 20px;
-    margin: 10px 0;
-  }
-
-  .temoignage-content p {
-    font-size: 15px;
-    max-width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .temoignage-footer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .temoignage-form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .temoignage-product-info {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .temoignage-product-info img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .temoignage-arrow {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
   .temoignage-section {
     padding: 40px 16px;
   }
 
-  .temoignage-slide {
-    width: 100% !important;
-    flex-direction: column;
-    max-height: none;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .temoignage-track {
-    gap: 0;
-    padding: 0 5px; /* évite que les slides collent */
+  .temoignage-wrapper {
+    padding: 0 12px;
+    overflow: hidden;
   }
 
   .temoignage-carousel {
-    overflow-x: hidden;
+    overflow: hidden;
+  }
+
+  .temoignage-track {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
+    width: max-content;
+  }
+
+  .temoignage-slide {
+    width: calc(100vw - 48px); /* 100% viewport - marges */
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: none;
+  }
+
+  .temoignage-content {
+    padding: 0 5px;
+    text-align: center;
+    align-items: center;
   }
 
   .temoignage-photos {
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .temoignage-photo-block img {
     width: 140px;
     height: auto;
-    max-height: none;
-  }
-
-  .temoignage-photo-block span {
-    font-size: 11px;
-    padding: 2px 8px;
-  }
-
-  .temoignage-content {
-    padding: 0 10px; /* ✅ marge interne droite */
-    text-align: center;
-    align-items: center;
-  }
-
-  .temoignage-content h3 {
-    font-size: 20px;
-    margin: 10px 0;
-  }
-
-  .temoignage-content p {
-    font-size: 15px;
-    max-width: 100%;
-    margin-bottom: 15px;
   }
 
   .temoignage-footer {
     flex-direction: column;
+    gap: 10px;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .temoignage-form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .temoignage-product-info {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .temoignage-product-info img {
-    width: 50px;
-    height: 50px;
   }
 
   .temoignage-arrow {
     display: block;
     top: 50%;
     transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
   }
 
   .temoignage-arrow.left {
-    left: -12px;
+    left: -10px;
   }
 
   .temoignage-arrow.right {
-    right: -12px;
+    right: -10px;
+  }
+
+  .temoignage-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .temoignage-product-info {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .temoignage-product-info img {
+    width: 48px;
+    height: 48px;
   }
 }
+
 
 </style>
 
