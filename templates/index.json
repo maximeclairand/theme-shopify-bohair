@@ -9,56 +9,73 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "section_hero_bohair_KNimmH": {
+      "type": "section-hero-bohair",
+      "name": "Bohair Hero",
+      "settings": {
+        "hero_image": "shopify://shop_images/IMAGE_BENEFICE_PRODUIT_BOHAIR.png",
+        "title_color": "#000000",
+        "text_color": "#000000",
+        "rating_color": "#000000",
+        "button_bg_color": "#000000",
+        "button_text_color": "#ffffff",
+        "button_hover_bg_color": "#3730a3",
+        "button_hover_text_color": "#ffffff",
+        "titre_text": "Des cheveux plus denses, en quelques secondes.",
+        "soustitre_text": "Redonnez instantanément densité et style à vos cheveux. Un résultat naturel, une confiance retrouvée.",
+        "adv1_text": "Application facile& ultra-rapide",
+        "adv2_text": "Résultat naturelimmédiat",
+        "adv3_text": "Tenue longue durée,résiste à la transpiration",
+        "button_text": "Je teste Bohair !"
+      }
+    },
+    "section_confiance_6g3gEf": {
+      "type": "section-confiance",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "item_r9im9y": {
+          "type": "item",
           "settings": {
-            "heading": "Des cheveux plus denses, en quelques secondes.",
-            "heading_size": "h1"
+            "title": "Confiance retrouvée",
+            "text": "Vous n’avez pas seulement densifié vos cheveux. Vous avez retrouvé votre assurance."
           }
         },
-        "text": {
-          "type": "text",
+        "item_yH8PBh": {
+          "type": "item",
           "settings": {
-            "text": "<p>Redonnez instantanément densité et style à vos cheveux.<br/>Un résultat naturel, une confiance retrouvée.</p>",
-            "text_style": "body"
+            "title": "Densité et volume immédiats",
+            "text": "Camoufle les zones clairsemées en quelques secondes, pour un effet naturel et homogène."
           }
         },
-        "button": {
-          "type": "buttons",
+        "item_NrREmB": {
+          "type": "item",
           "settings": {
-            "button_label_1": "Je teste Bohair !",
-            "button_link_1": "shopify://products/poudre",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "title": "Formule respectueuse",
+            "text": "Testée dermatologiquement, adaptée aux cuirs chevelus sensibles."
+          }
+        },
+        "item_Akrt3c": {
+          "type": "item",
+          "settings": {
+            "title": "Tenue longue durée",
+            "text": "Résiste à la transpiration, au vent et aux mouvements du quotidien."
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "item_r9im9y",
+        "item_yH8PBh",
+        "item_NrREmB",
+        "item_Akrt3c"
       ],
+      "name": "Section Confiance",
       "settings": {
-        "image": "shopify://shop_images/Plan_de_travail_1_2x_976d276a-5e8a-4f80-b011-d3c6431378cf.jpg",
-        "round_top_corners": false,
-        "round_bottom_corners": false,
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "desktop_constrain_width": false,
-        "color_scheme": "scheme-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": false,
-        "show_text_below": false,
-        "mobile_constrain_width": false
+        "bg_color": "#f9f9f9",
+        "title_color": "#111111",
+        "item_title_color": "#111111",
+        "item_text_color": "#444444",
+        "title_font_size": 32,
+        "titlebloc_font_size": 16,
+        "text_font_size": 14
       }
     },
     "featured_collection_Y6Cddr": {
@@ -1139,7 +1156,8 @@
     }
   },
   "order": [
-    "image_banner",
+    "section_hero_bohair_KNimmH",
+    "section_confiance_6g3gEf",
     "featured_collection_Y6Cddr",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
