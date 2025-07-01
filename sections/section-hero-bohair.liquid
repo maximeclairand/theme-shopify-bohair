@@ -100,6 +100,25 @@
       "label": "Texte du bouton",
       "default": "Tenue longue durée,<br>résiste à la transpiration"
     },
+
+    {
+  "type": "image_picker",
+  "id": "adv1_icon",
+  "label": "Icône avantage 1"
+},
+
+{
+  "type": "image_picker",
+  "id": "adv2_icon",
+  "label": "Icône avantage 2"
+},
+
+{
+  "type": "image_picker",
+  "id": "adv3_icon",
+  "label": "Icône avantage 3"
+},
+
     {
       "type": "text",
       "id": "button_text",
@@ -134,19 +153,25 @@
       </p>
 
       <div class="hero-advantages">
-        <div class="advantage-item">
-          <img src="https://cdn.shopify.com/s/files/1/0937/5573/6401/files/coche_1.png?v=1751363795" alt="check" class="check-icon">
-          <span>{{ section.settings.adv1_text }}</span>
-        </div>
-        <div class="advantage-item">
-          <img src="https://cdn.shopify.com/s/files/1/0937/5573/6401/files/coche_1.png?v=1751363795" alt="check" class="check-icon">
-          <span>{{ section.settings.adv2_text }}</span>
-        </div>
-        <div class="advantage-item">
-          <img src="https://cdn.shopify.com/s/files/1/0937/5573/6401/files/coche_1.png?v=1751363795" alt="check" class="check-icon">
-          <span>{{ section.settings.adv3_text }}</span>
-        </div>
-      </div>
+  <div class="advantage-item">
+    {% if section.settings.adv1_icon %}
+      <img src="{{ section.settings.adv1_icon | image_url }}" alt="check" class="check-icon">
+    {% endif %}
+    <span>{{ section.settings.adv1_text }}</span>
+  </div>
+  <div class="advantage-item">
+    {% if section.settings.adv2_icon %}
+      <img src="{{ section.settings.adv2_icon | image_url }}" alt="check" class="check-icon">
+    {% endif %}
+    <span>{{ section.settings.adv2_text }}</span>
+  </div>
+  <div class="advantage-item">
+    {% if section.settings.adv3_icon %}
+      <img src="{{ section.settings.adv3_icon | image_url }}" alt="check" class="check-icon">
+    {% endif %}
+    <span>{{ section.settings.adv3_text }}</span>
+  </div>
+</div>
 
       <a href="/products/kit-deco-100-personnalisable-50cc"
          class="hero-button"
