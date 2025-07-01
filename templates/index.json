@@ -14,7 +14,7 @@
       "name": "Bohair Hero",
       "settings": {
         "hero_image": "shopify://shop_images/IMAGE_BENEFICE_PRODUIT_BOHAIR.png",
-        "hero_image_width": "500px",
+        "hero_image_width": "300px",
         "title_color": "#262626",
         "text_color": "#262626",
         "rating_color": "#262626",
@@ -167,6 +167,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
+            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -181,6 +182,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
+            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -195,6 +197,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
+            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -209,6 +212,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
+            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
