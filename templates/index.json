@@ -167,7 +167,8 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
-            "tag_color": "#000000",
+            "pastille_color": "#151515",
+            "tag_color": "#0a0909",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
           }
@@ -181,6 +182,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
+            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -195,6 +197,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
+            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -209,6 +212,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
+            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
