@@ -318,43 +318,40 @@
   }
 
   .temoignage-wrapper {
-    padding: 0 12px;
+    padding: 0;
     overflow: hidden;
+    position: relative;
   }
 
   .temoignage-carousel {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .temoignage-track {
-    flex-wrap: nowrap;
+    display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 0;
     padding: 0;
-    width: max-content;
+    width: 100%;
+    transition: transform 0.5s ease;
   }
 
   .temoignage-slide {
-    width: calc(100vw - 48px); /* 100% viewport - marges */
-    padding: 20px;
+    width: 100vw;
     box-sizing: border-box;
+    padding: 24px 20px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-height: none;
-  }
-
-  .temoignage-content {
-    padding: 0 5px;
-    text-align: center;
-    align-items: center;
+    background: white;
+    border-radius: 12px;
+    margin: 0 auto;
   }
 
   .temoignage-photos {
     justify-content: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   .temoignage-photo-block img {
@@ -362,28 +359,28 @@
     height: auto;
   }
 
+  .temoignage-content {
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .temoignage-content h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .temoignage-content p {
+    font-size: 15px;
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
+
   .temoignage-footer {
     flex-direction: column;
     gap: 10px;
     align-items: center;
     justify-content: center;
-  }
-
-  .temoignage-arrow {
-    display: block;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    font-size: 22px;
-  }
-
-  .temoignage-arrow.left {
-    left: -10px;
-  }
-
-  .temoignage-arrow.right {
-    right: -10px;
   }
 
   .temoignage-form {
@@ -400,6 +397,32 @@
   .temoignage-product-info img {
     width: 48px;
     height: 48px;
+  }
+
+  .temoignage-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .temoignage-arrow.left {
+    left: 6px;
+  }
+
+  .temoignage-arrow.right {
+    right: 6px;
   }
 }
 
