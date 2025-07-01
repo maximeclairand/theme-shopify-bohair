@@ -1017,9 +1017,9 @@
         "collapsible_row_aUzjkq": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Comment fonctionne l'abonnement chez Weloca ?",
+            "heading": "Comment faire si je me suis trompé(e) de teinte ?",
             "icon": "none",
-            "row_content": "<p>L'abonnement est simple et flexible : choisissez la fréquence qui vous convient (mensuelle ou trimestrielle) et profitez de 10 % de réduction sur chaque commande.</p><p>Avec le système d'abonnement automatique, plus besoin de revenir sur le site pour valider vos commandes.</p><p>Sans engagement, l'abonnement peut être annulé à tout moment, en toute simplicité.</p><p>Vous avez également la possibilité de personnaliser votre abonnement en sélectionnant différents produits à des fréquences variées (par exemple, une livraison mensuelle pour la Formule Articulations et une livraison trimestrielle pour la Formule Anti-stress).</p>",
+            "row_content": "<p><strong>Pas de panique !</strong>Chez BOHAIR, votre satisfaction est notre priorité. Si la couleur ne correspond pas, nous vous offrons<strong>le retour gratuit</strong>et procédons à un<strong>échange simple et rapide</strong>, sans aucun frais.<br/><br/>👉 Il vous suffit de nous contacter avec votre numéro de commande, et nous nous occupons du reste.</p>",
             "page": "",
             "tab_id": "abonnement"
           }
