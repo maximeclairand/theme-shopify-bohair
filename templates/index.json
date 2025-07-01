@@ -36,7 +36,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "Découvrez nos soins",
+        "title": "Découvrez nos produits",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
