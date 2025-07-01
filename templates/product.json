@@ -63,6 +63,18 @@
             "swatch_shape": "circle"
           }
         },
+        "subscriptions_app_block_MpAaMz": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "settings": {
+            "color_text_body": "#262626",
+            "dividers_color": "#8F8D8D",
+            "bacgkround_color": "#FFFFFF",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "subscription_policy_url": "",
+            "product": "{{product}}"
+          }
+        },
         "subscription_widget_TRM4hj": {
           "type": "subscription_widget",
           "disabled": true,
@@ -322,6 +334,7 @@
         "icon_with_text_qfjEkM",
         "separator_LXNDBX",
         "variant_picker",
+        "subscriptions_app_block_MpAaMz",
         "subscription_widget_TRM4hj",
         "delivery_QFPCdY",
         "buy_buttons",
