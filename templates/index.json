@@ -124,10 +124,24 @@
             "stars": "★★★★★",
             "linked_product": "poudre"
           }
+        },
+        "slide_aQhfCV": {
+          "type": "slide",
+          "settings": {
+            "image_avant": "shopify://shop_images/2_071f3c04-e68c-44d3-8199-04f2c3d7a6a3.png",
+            "image_apres": "shopify://shop_images/11.png",
+            "tag_apres": "APRÈS",
+            "testimonial_title": "Super facile à appliquer !",
+            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "name": "Coralie.F",
+            "stars": "★★★★★",
+            "linked_product": "le-spray-fixateur"
+          }
         }
       },
       "block_order": [
-        "slide_ek7HTM"
+        "slide_ek7HTM",
+        "slide_aQhfCV"
       ],
       "name": "Témoignages",
       "settings": {
