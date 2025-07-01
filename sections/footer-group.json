@@ -39,6 +39,7 @@
         "column_aifjqm": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Plan_de_travail_12.svg",
             "badge_text": "",
             "title": "Paiement sécurisé",
             "text": "<p>Commandez en toute tranquillité, paiement 100% crypté et sécurisé </p>",
@@ -49,6 +50,7 @@
         "column_UFLeHP": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Plan_de_travail_11.svg",
             "badge_text": "",
             "title": "Satisfait ou remboursé",
             "text": "<p>Nos produits ne vous conviennent pas ? On vous rembourse !</p>",
