@@ -28,6 +28,11 @@
       "default": "#000000"
     },
     {
+  "type": "url",
+  "id": "etoile_link",
+  "label": "Lien des étoiles"
+},
+    {
       "type": "color",
       "id": "button_bg_color",
       "label": "Couleur de fond du bouton",
@@ -50,6 +55,12 @@
       "id": "button_hover_text_color",
       "label": "Couleur du texte au hover",
       "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "etoile_text",
+      "label": "Texte des étoiles",
+      "default": "Excellent ★★★★★ +342 avis vérifiés"
     },
     {
       "type": "text",
@@ -99,10 +110,16 @@
 <section class="hero-section" style="color: {{ section.settings.text_color }};">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-rating" style="color: {{ section.settings.rating_color }};">
-        Excellent <span></span>
-        <span> ★★★★★</span> +342 avis vérifiés
-      </div>
+      {% if section.settings.etoile_link != blank %}
+  <a href="{{ section.settings.etoile_link }}" class="hero-rating" style="color: {{ section.settings.rating_color }};">
+    {{ section.settings.etoile_text }}
+  </a>
+{% else %}
+  <div class="hero-rating" style="color: {{ section.settings.rating_color }};">
+    {{ section.settings.etoile_text }}
+  </div>
+{% endif %}
+
       <h1 style="color: {{ section.settings.title_color }};">{{ section.settings.titre_text }}</h1>
       <p class="hero-subtitle">
         {{ section.settings.soustitre_text }}
