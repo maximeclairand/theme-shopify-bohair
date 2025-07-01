@@ -146,7 +146,8 @@
           "type": "review_card",
           "settings": {
             "media_type": "video",
-            "video_url": "",
+            "video_poster": "shopify://shop_images/brown-powder-explosion-isolated-white-background-Photoroom_5cdefb7b-3d24-43ce-ad7a-3b594f260d1f.png",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/1a23dd521c854ea9aed2937aeaee8690.mp4",
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
