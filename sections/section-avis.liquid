@@ -1,6 +1,356 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Section Avis Carrousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Titre principal",
+      "default": "Elles l’ont adoptées !"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre (px)",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "stars_text",
+      "label": "Texte étoiles",
+      "default": "★★★★★"
+    },
+    {
+      "type": "color",
+      "id": "stars_color",
+      "label": "Couleur des étoiles",
+      "default": "#ffbf00"
+    },
+    {
+      "type": "text",
+      "id": "note_text",
+      "label": "Texte note",
+      "default": "Excellent 4.8/5 sur 74 avis"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_card",
+      "name": "Carte d'avis",
+      "settings": [
+        {
+          "type": "select",
+          "id": "media_type",
+          "label": "Type de média",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "video", "label": "Vidéo" }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_poster",
+          "label": "Aperçu vidéo (image)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre de l’avis",
+          "default": "Agréable sur la peau !"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Contenu de l’avis",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "type": "text",
+          "id": "tag_text",
+          "label": "Texte pastille",
+          "default": "Cure découverte"
+        },
+        {
+          "type": "color",
+          "id": "tag_color",
+          "label": "Couleur pastille",
+          "default": "#f2c400"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Nom de l'auteur",
+          "default": "Émilie.O"
+        },
+        {
+          "type": "text",
+          "id": "verified_text",
+          "label": "Texte 'avis vérifié'",
+          "default": "Avis vérifié"
+        },
+        {
+          "type": "image_picker",
+          "id": "verified_icon",
+          "label": "Icône 'avis vérifié'",
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Avis Carrousel",
+      "category": "Avis"
+    }
+  ]
+}
 {% endschema %}
+
+
+<style>
+  .adoption-section {
+    background: #fff;
+    padding: 60px 20px;
+    font-family: "Helvetica Neue", sans-serif;
+    display: flex;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .adoption-left {
+    flex: 0 0 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .adoption-left .stars {
+    font-size: 20px;
+  }
+  .adoption-left .note {
+    font-size: 16px;
+    margin-top: 8px;
+    color: #2d1e1e;
+  }
+  .adoption-left h2 {
+    font-family: 'Courier New', monospace;
+    margin-top: 20px;
+    color: #2d1e1e;
+    line-height: 1.3;
+  }
+  .adoption-arrows {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+  }
+  .adoption-arrow {
+    background: transparent;
+    border: none;
+    width: 42px;
+    height: 42px;
+    font-size: 0;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .adoption-arrow:first-child {
+    background-image: url('{{ section.settings.arrow_left | image_url }}');
+  }
+  .adoption-arrow:last-child {
+    background-image: url('{{ section.settings.arrow_right | image_url }}');
+  }
+
+  .adoption-right {
+    overflow: hidden;
+    flex: 1;
+    position: relative;
+  }
+  .adoption-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 30px;
+    width: fit-content;
+  }
+  .adoption-slide {
+    flex-shrink: 0;
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+  .adoption-image,
+  .adoption-video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+  .adoption-image img,
+  .adoption-video img {
+    width: 100%;
+    display: block;
+  }
+  .adoption-video .play-button {
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .adoption-caption {
+    padding: 20px;
+  }
+  .adoption-caption .tag {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .adoption-caption h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .adoption-caption p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .adoption-footer {
+    font-size: 13px;
+    padding: 0 20px 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #2d1e1e;
+  }
+  .adoption-footer span::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('{{ section.settings.verified_icon | image_url }}');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  @media screen and (max-width: 768px) {
+    .adoption-section {
+      flex-direction: column;
+      gap: 30px;
+      padding: 40px 0;
+      overflow: hidden;
+    }
+    .adoption-slide {
+      width: 100vw;
+      box-sizing: border-box;
+      padding: 0 16px;
+    }
+    .adoption-caption .tag {
+      margin-top: 60px;
+    }
+    .adoption-arrow,
+    .adoption-arrow:hover,
+    .adoption-arrow:focus,
+    .adoption-arrow:active {
+      background-color: transparent !important;
+      filter: none !important;
+      opacity: 1 !important;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+</style>
+
+<div class="adoption-section">
+  <div class="adoption-left">
+    <div>
+      <div class="stars" style="color: {{ section.settings.stars_color }};">{{ section.settings.stars_text }}</div>
+      <div class="note">{{ section.settings.note_text }}</div>
+      <h2 style="font-size: {{ section.settings.title_size }}px">{{ section.settings.section_title }}</h2>
+    </div>
+    <div class="adoption-arrows">
+      <button class="adoption-arrow" onclick="prevAdoption()">‹</button>
+      <button class="adoption-arrow" onclick="nextAdoption()">›</button>
+    </div>
+  </div>
+  <div class="adoption-right">
+    <div class="adoption-track" id="adoptionTrack">
+      {% for block in section.blocks %}
+        <div class="adoption-slide">
+          {% if block.settings.media_type == 'image' %}
+            <div class="adoption-image">
+              <img src="{{ block.settings.image | image_url }}" alt="Image avis">
+            </div>
+          {% else %}
+            <div class="adoption-video" onclick="playVideo()">
+              <img src="{{ block.settings.video_poster | image_url }}" alt="Vidéo">
+              <div class="play-button">▶</div>
+            </div>
+          {% endif %}
+          {% if block.settings.media_type == 'image' %}
+            <div class="adoption-caption">
+              <div class="tag" style="background: {{ block.settings.tag_color }}">{{ block.settings.tag_text }}</div>
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.content }}</p>
+            </div>
+            <div class="adoption-footer">
+              <strong>{{ block.settings.author_name }}</strong>
+              <span>{{ block.settings.verified_text }}</span>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  let adoptionIndex = 0;
+  function updateAdoptionCarousel() {
+    const track = document.getElementById('adoptionTrack');
+    const slideWidth = document.querySelector('.adoption-right').offsetWidth;
+    track.style.transform = `translateX(-${adoptionIndex * slideWidth}px)`;
+  }
+  function prevAdoption() {
+    const slides = document.querySelectorAll('.adoption-slide');
+    adoptionIndex = (adoptionIndex - 1 + slides.length) % slides.length;
+    updateAdoptionCarousel();
+  }
+  function nextAdoption() {
+    const slides = document.querySelectorAll('.adoption-slide');
+    adoptionIndex = (adoptionIndex + 1) % slides.length;
+    updateAdoptionCarousel();
+  }
+  window.addEventListener('resize', updateAdoptionCarousel);
+  window.addEventListener('load', updateAdoptionCarousel);
+</script>
