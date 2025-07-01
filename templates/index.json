@@ -23,9 +23,9 @@
         "button_hover_text_color": "#ffffff",
         "titre_text": "Des cheveux plus denses, en quelques secondes.",
         "soustitre_text": "Redonnez instantanément densité et style à vos cheveux. Un résultat naturel, une confiance retrouvée.",
-        "adv1_text": "Application facile<br>& ultra-rapide",
-        "adv2_text": "Résultat nature<br>limmédiat",
-        "adv3_text": "Tenue longue durée,<br>résiste à la transpiration",
+        "adv1_text": "Application facile& ultra-rapide",
+        "adv2_text": "Résultat naturelimmédiat",
+        "adv3_text": "Tenue longue durée,résiste à la transpiration",
         "button_text": "Je teste Bohair !"
       }
     },
@@ -35,6 +35,7 @@
         "item_r9im9y": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Plan_de_travail_8.svg",
             "title": "Confiance retrouvée",
             "text": "Vous n’avez pas seulement densifié vos cheveux. Vous avez retrouvé votre assurance."
           }
@@ -50,6 +51,7 @@
         "item_NrREmB": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Plan_de_travail_5.svg",
             "title": "Formule respectueuse",
             "text": "Testée dermatologiquement, adaptée aux cuirs chevelus sensibles."
           }
@@ -57,6 +59,7 @@
         "item_Akrt3c": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Plan_de_travail_6_530bb7d3-df56-47fc-9bc9-66b6463bd396.svg",
             "title": "Tenue longue durée",
             "text": "Résiste à la transpiration, au vent et aux mouvements du quotidien."
           }
@@ -107,46 +110,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "temoignage_section_ymiVKg": {
-      "type": "temoignage-section",
-      "blocks": {
-        "slide_ek7HTM": {
-          "type": "slide",
-          "settings": {
-            "image_avant": "shopify://shop_images/16.png",
-            "image_apres": "shopify://shop_images/10.png",
-            "tag_apres": "APRÈS",
-            "testimonial_title": "Super facile à appliquer !",
-            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "name": "Coralie.F",
-            "stars": "★★★★★",
-            "linked_product": "poudre"
-          }
-        },
-        "slide_aQhfCV": {
-          "type": "slide",
-          "settings": {
-            "image_avant": "shopify://shop_images/2_071f3c04-e68c-44d3-8199-04f2c3d7a6a3.png",
-            "image_apres": "shopify://shop_images/11.png",
-            "tag_apres": "APRÈS",
-            "testimonial_title": "Super facile à appliquer !",
-            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "name": "Coralie.F",
-            "stars": "★★★★★",
-            "linked_product": "le-spray-fixateur"
-          }
-        }
-      },
-      "block_order": [
-        "slide_ek7HTM",
-        "slide_aQhfCV"
-      ],
-      "name": "Témoignages",
-      "settings": {
-        "section_title": "Nos clients témoignent de l’éclat de leur bronzage",
-        "bg_color": "#f9f9f9"
       }
     },
     "multicolumn_HJ78rY": {
@@ -1200,7 +1163,6 @@
     "section_hero_bohair_KNimmH",
     "section_confiance_6g3gEf",
     "featured_collection_Y6Cddr",
-    "temoignage_section_ymiVKg",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
     "image_with_text_F86f8L",
