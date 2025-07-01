@@ -384,6 +384,99 @@
     display: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .temoignage-section {
+    padding: 40px 16px;
+  }
+
+  .temoignage-slide {
+    width: 100% !important;
+    flex-direction: column;
+    max-height: none;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .temoignage-track {
+    gap: 0;
+    padding: 0 5px; /* évite que les slides collent */
+  }
+
+  .temoignage-carousel {
+    overflow-x: hidden;
+  }
+
+  .temoignage-photos {
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .temoignage-photo-block img {
+    width: 140px;
+    height: auto;
+    max-height: none;
+  }
+
+  .temoignage-photo-block span {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
+  .temoignage-content {
+    padding: 0 10px; /* ✅ marge interne droite */
+    text-align: center;
+    align-items: center;
+  }
+
+  .temoignage-content h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .temoignage-content p {
+    font-size: 15px;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .temoignage-footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .temoignage-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .temoignage-product-info {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .temoignage-product-info img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .temoignage-arrow {
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .temoignage-arrow.left {
+    left: -12px;
+  }
+
+  .temoignage-arrow.right {
+    right: -12px;
+  }
+}
 
 </style>
 
