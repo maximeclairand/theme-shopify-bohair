@@ -292,6 +292,30 @@
             "page": ""
           }
         },
+        "collapsible_tab_table_WnDzaR": {
+          "type": "collapsible_tab_table",
+          "settings": {
+            "heading": "Dosage",
+            "show_heading_font": true,
+            "icon": "none",
+            "content": "",
+            "page": "",
+            "column_1_2_header": "Poids de votre chien",
+            "column_3_header": "Dosage quotidien",
+            "column_2_text_1": "Moins de 10 kg",
+            "column_3_text_1": "1/2 bouchon",
+            "column_2_text_2": "Entre 10 et 25 kg",
+            "column_3_text_2": "1 bouchon",
+            "column_2_text_3": "Entre 25 et 40 kg",
+            "column_3_text_3": "1.5 bouchon",
+            "column_2_text_4": "> 40 kg",
+            "column_3_text_4": "2 bouchons",
+            "column_2_text_5": "",
+            "column_3_text_5": "",
+            "column_2_text_6": "",
+            "column_3_text_6": ""
+          }
+        },
         "collapsible_tab_TGfm7j": {
           "type": "collapsible_tab",
           "settings": {
@@ -333,6 +357,7 @@
         "deployer_story_zBi6RF",
         "collapsible-row-3",
         "collapsible_tab_GCpinq",
+        "collapsible_tab_table_WnDzaR",
         "collapsible_tab_TGfm7j",
         "collapsible_tab_XfkMXT"
       ],
@@ -992,9 +1017,9 @@
         "collapsible_row_aUzjkq": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Comment fonctionne l'abonnement chez Weloca ?",
+            "heading": "Comment faire si je me suis trompé(e) de teinte ?",
             "icon": "none",
-            "row_content": "<p>L'abonnement est simple et flexible : choisissez la fréquence qui vous convient (mensuelle ou trimestrielle) et profitez de 10 % de réduction sur chaque commande.</p><p>Avec le système d'abonnement automatique, plus besoin de revenir sur le site pour valider vos commandes.</p><p>Sans engagement, l'abonnement peut être annulé à tout moment, en toute simplicité.</p><p>Vous avez également la possibilité de personnaliser votre abonnement en sélectionnant différents produits à des fréquences variées (par exemple, une livraison mensuelle pour la Formule Articulations et une livraison trimestrielle pour la Formule Anti-stress).</p>",
+            "row_content": "<p><strong>Pas de panique !</strong>Chez BOHAIR, votre satisfaction est notre priorité. Si la couleur ne correspond pas, nous vous offrons<strong>le retour gratuit</strong>et procédons à un<strong>échange simple et rapide</strong>, sans aucun frais.<br/><br/>👉 Il vous suffit de nous contacter avec votre numéro de commande, et nous nous occupons du reste.</p>",
             "page": "",
             "tab_id": "abonnement"
           }
@@ -1002,9 +1027,9 @@
         "collapsible_row_Kbici3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Quels sont les avantages de l'abonnement Weloca ?",
+            "heading": "De quoi sont composées les fibres capillaires BOHAIR ?",
             "icon": "none",
-            "row_content": "<p>En souscrivant à un abonnement, vous profitez de nombreux avantages :</p><p>10 % de réduction sur chaque commande,</p><p>Un service client prioritaire, avec une réponse garantie en moins de 5 heures,</p><p>Un accès anticipé de 24 heures à toutes les promotions avant leur publication au grand public.</p>",
+            "row_content": "<p>Les fibres BOHAIR sont fabriquées à partir de kératine naturelle, la même protéine que celle présente dans les cheveux humains. Elles se fixent aux cheveux existants pour un rendu parfaitement réaliste et invisible</p>",
             "page": "",
             "tab_id": "abonnement"
           }
@@ -1241,11 +1266,13 @@
         "additionnal_color_scheme": "",
         "additional_title": "Besoin d’aide ?",
         "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions du Lundi au Vendredi.</p><p>Contactez-nous à l’adresse <em>weloca.club@gmail.com</em>. Nous vous garantissons une réponse sous 48 heures.</p>",
-        "additional_button_text": "weloca.club@gmail.com",
+        "additional_button_text": "hello.bohair@gmail.com",
         "additional_button_subtitle": "",
-        "additional_button_url": "mailto:hello.bohair@gmail.com",
+        "additional_button_icon": "shopify://shop_images/enveloppe_f3d8eef2-2c58-4417-a187-2c315c9212a1.png",
+        "additional_button_url": "mailto:weloca.club@gmail.com",
         "additional_button2_text": "@bohair_co",
         "additional_button2_subtitle": "",
+        "additional_button2_icon": "shopify://shop_images/Plan_de_travail_2_f990b2a6-39f9-43ec-810a-781f1a2d5438.png",
         "additional_button2_url": "https://instagram.com/we.loca/",
         "padding_top": 100,
         "padding_bottom": 100
