@@ -85,8 +85,8 @@
         "slide_zVjx9p": {
           "type": "slide",
           "settings": {
-            "image_avant": "shopify://shop_images/right-arrow.png",
-            "image_apres": "shopify://shop_images/left-arrow.png",
+            "image_avant": "shopify://shop_images/10.png",
+            "image_apres": "shopify://shop_images/13.png",
             "tag_apres": "APRÈS",
             "testimonial_title": "Super facile à appliquer !",
             "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
