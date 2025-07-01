@@ -79,6 +79,32 @@
         "text_font_size": 14
       }
     },
+    "temoignage_section_LpyEdc": {
+      "type": "temoignage-section",
+      "blocks": {
+        "slide_zVjx9p": {
+          "type": "slide",
+          "settings": {
+            "image_avant": "shopify://shop_images/right-arrow.png",
+            "image_apres": "shopify://shop_images/left-arrow.png",
+            "tag_apres": "APRÈS",
+            "testimonial_title": "Super facile à appliquer !",
+            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "name": "Coralie.F",
+            "stars": "★★★★★",
+            "linked_product": "le-spray-fixateur"
+          }
+        }
+      },
+      "block_order": [
+        "slide_zVjx9p"
+      ],
+      "name": "Témoignages",
+      "settings": {
+        "section_title": "Nos clients témoignent de l’éclat de leur bronzage",
+        "bg_color": "#f9f9f9"
+      }
+    },
     "featured_collection_Y6Cddr": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -1159,6 +1185,7 @@
   "order": [
     "section_hero_bohair_KNimmH",
     "section_confiance_6g3gEf",
+    "temoignage_section_LpyEdc",
     "featured_collection_Y6Cddr",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
