@@ -146,7 +146,7 @@
           "type": "review_card",
           "settings": {
             "media_type": "video",
-            "video_poster": "shopify://shop_images/brown-powder-explosion-isolated-white-background-Photoroom_5cdefb7b-3d24-43ce-ad7a-3b594f260d1f.png",
+            "video_poster": "shopify://shop_images/banner-tel_5e4f17c6-87b8-4334-a46d-66363763c214.jpg",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/1a23dd521c854ea9aed2937aeaee8690.mp4",
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -183,27 +183,13 @@
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
           }
-        },
-        "review_card_4N8RjG": {
-          "type": "review_card",
-          "settings": {
-            "media_type": "image",
-            "video_url": "",
-            "title": "Agréable sur la peau !",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "tag_text": "Cure découverte",
-            "tag_color": "#f2c400",
-            "author_name": "Émilie.O",
-            "verified_text": "Avis vérifié"
-          }
         }
       },
       "block_order": [
         "review_card_cV8VD3",
         "review_card_hhzDHe",
         "review_card_CQrAxQ",
-        "review_card_DxCdP7",
-        "review_card_4N8RjG"
+        "review_card_DxCdP7"
       ],
       "name": "Section Avis Carrousel",
       "settings": {
