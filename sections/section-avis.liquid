@@ -360,7 +360,12 @@
 
   function updateAdoptionCarousel() {
     const track = document.getElementById('adoptionTrack');
-    const slideWidth = document.querySelector('.adoption-right').offsetWidth;
+    const slides = document.querySelectorAll('.adoption-slide');
+    const slide = slides[0];
+
+    if (!slide) return;
+
+    const slideWidth = slide.offsetWidth + parseInt(getComputedStyle(track).gap || 0);
     track.style.transform = `translateX(-${adoptionIndex * slideWidth}px)`;
   }
 
