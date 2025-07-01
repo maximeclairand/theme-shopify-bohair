@@ -10,6 +10,12 @@
       "label": "Image à droite",
     },
     {
+  "type": "text",
+  "id": "hero_image_width",
+  "label": "Largeur de l'image (ex : 300px ou 80%)",
+  "default": "300px"
+},
+    {
       "type": "color",
       "id": "title_color",
       "label": "Couleur du titre",
@@ -155,7 +161,10 @@
     </div>
 
     <div class="hero-image">
-      <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="Bohair visuel">
+<img
+  src="{{ section.settings.hero_image | image_url }}"
+  alt="Bohair visuel"
+  style="width: {{ section.settings.hero_image_width }}; height: auto;">
     </div>
   </div>
 </section>
@@ -194,8 +203,7 @@
 }
 
 .hero-image img {
-  max-width: 100%;
-  height: auto;
+ 
 }
 
 .hero-rating {
