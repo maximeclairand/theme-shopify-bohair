@@ -395,8 +395,8 @@
           "settings": {
             "svg_icon": "",
             "icon_width": 28,
-            "title": "Facile à utiliser",
-            "description": "<p>Son format pratique permet une intégration simple et rapide dans les repas quotidiens de votre chien ou chat, sans effort.</p>",
+            "title": "Formule légère",
+            "description": "<p>Laisse le cuir chevelu respirer sans boucher les pores, pour un confort optimal au quotidien.</p>",
             "position": "left"
           }
         },
@@ -405,8 +405,8 @@
           "settings": {
             "svg_icon": "",
             "icon_width": 28,
-            "title": "L'allié bien-être au quotidien",
-            "description": "<p>Des bienfaits prouvés pour une peau saine, un pelage brillant et une vitalité renforcée, pour accompagner vos compagnons tout au long de leur vie.</p>",
+            "title": "Hypoallergénique",
+            "description": "<p>Testée dermatologiquement, elle convient aux cuirs chevelus sensibles et réactifs.</p>",
             "position": "right"
           }
         },
@@ -415,7 +415,7 @@
           "settings": {
             "svg_icon": "",
             "icon_width": 28,
-            "title": "Fabriqué en France",
+            "title": "Conçu en laboratoire",
             "description": "<p>Une production locale et responsable, gage de traçabilité et de respect des normes de qualité les plus strictes.</p>",
             "position": "right"
           }
