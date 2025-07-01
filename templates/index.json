@@ -14,7 +14,7 @@
       "name": "Bohair Hero",
       "settings": {
         "hero_image": "shopify://shop_images/IMAGE_BENEFICE_PRODUIT_BOHAIR.png",
-        "hero_image_width": "100%",
+        "hero_image_width": "120%",
         "title_color": "#262626",
         "text_color": "#262626",
         "rating_color": "#262626",
