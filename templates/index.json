@@ -125,6 +125,94 @@
         "bg_color": "#f9f9f9"
       }
     },
+    "section_avis_NMNH6W": {
+      "type": "section-avis",
+      "blocks": {
+        "review_card_cV8VD3": {
+          "type": "review_card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/5_f7edd36f-d6c1-44d5-b38d-3bfa3fdc3126.png",
+            "video_url": "",
+            "title": "Agréable sur la peau !",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "tag_text": "Cure découverte",
+            "tag_color": "#f2c400",
+            "author_name": "Émilie.O",
+            "verified_text": "Avis vérifié"
+          }
+        },
+        "review_card_hhzDHe": {
+          "type": "review_card",
+          "settings": {
+            "media_type": "video",
+            "video_url": "",
+            "title": "Agréable sur la peau !",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "tag_text": "Cure découverte",
+            "tag_color": "#f2c400",
+            "author_name": "Émilie.O",
+            "verified_text": "Avis vérifié"
+          }
+        },
+        "review_card_CQrAxQ": {
+          "type": "review_card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/IMAGE_BENEFICE_PRODUIT_BOHAIR.png",
+            "video_url": "",
+            "title": "Agréable sur la peau !",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "tag_text": "Cure découverte",
+            "tag_color": "#f2c400",
+            "author_name": "Émilie.O",
+            "verified_text": "Avis vérifié"
+          }
+        },
+        "review_card_DxCdP7": {
+          "type": "review_card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Plan_de_travail_2_357df7ea-2c7a-4533-8075-4784e46f7859.png",
+            "video_url": "",
+            "title": "Agréable sur la peau !",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "tag_text": "Cure découverte",
+            "tag_color": "#f2c400",
+            "author_name": "Émilie.O",
+            "verified_text": "Avis vérifié"
+          }
+        },
+        "review_card_4N8RjG": {
+          "type": "review_card",
+          "settings": {
+            "media_type": "image",
+            "video_url": "",
+            "title": "Agréable sur la peau !",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "tag_text": "Cure découverte",
+            "tag_color": "#f2c400",
+            "author_name": "Émilie.O",
+            "verified_text": "Avis vérifié"
+          }
+        }
+      },
+      "block_order": [
+        "review_card_cV8VD3",
+        "review_card_hhzDHe",
+        "review_card_CQrAxQ",
+        "review_card_DxCdP7",
+        "review_card_4N8RjG"
+      ],
+      "name": "Section Avis Carrousel",
+      "settings": {
+        "section_title": "Elles l’ont adoptées !",
+        "title_size": 36,
+        "stars_text": "★★★★★",
+        "stars_color": "#ffbf00",
+        "note_text": "Excellent 4.8/5 sur 74 avis"
+      }
+    },
     "featured_collection_Y6Cddr": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -1206,6 +1294,7 @@
     "section_hero_bohair_KNimmH",
     "section_confiance_6g3gEf",
     "temoignage_section_yM7XR8",
+    "section_avis_NMNH6W",
     "featured_collection_Y6Cddr",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
