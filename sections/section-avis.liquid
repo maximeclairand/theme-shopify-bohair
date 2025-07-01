@@ -333,10 +333,10 @@
               <img src="{{ block.settings.image | image_url }}" alt="Image avis">
             </div>
           {% else %}
-            <div class="adoption-video" onclick="playVideo()">
-              <img src="{{ block.settings.video_poster | image_url }}" alt="Vidéo">
-              <div class="play-button">▶</div>
-            </div>
+           <div class="adoption-video" data-video-url="{{ block.settings.video_url }}" onclick="openVideoModal(this)">
+  <img src="{{ block.settings.video_poster | image_url }}" alt="Vidéo">
+  <div class="play-button">▶</div>
+</div>
           {% endif %}
           {% if block.settings.media_type == 'image' %}
             <div class="adoption-caption">
@@ -354,6 +354,16 @@
     </div>
   </div>
 </div>
+
+<!-- Lightbox vidéo -->
+<div id="videoModal" class="video-modal" style="display: none;">
+  <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
+  <div class="video-modal-content">
+    <iframe id="videoIframe" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <button class="video-close-button" onclick="closeVideoModal()">×</button>
+  </div>
+</div>
+
 
 <script>
   let adoptionIndex = 0;
@@ -384,4 +394,21 @@
   window.addEventListener('resize', updateAdoptionCarousel);
   window.addEventListener('load', updateAdoptionCarousel);
 </script>
+
+<script>
+  function openVideoModal(el) {
+    const url = el.getAttribute('data-video-url');
+    const iframe = document.getElementById('videoIframe');
+    iframe.src = url + '?autoplay=1';
+    document.getElementById('videoModal').style.display = 'flex';
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+    iframe.src = ''; // stop video
+    modal.style.display = 'none';
+  }
+</script>
+
 
