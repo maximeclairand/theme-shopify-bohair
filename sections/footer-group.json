@@ -26,6 +26,7 @@
         },
         "column_XcDHmY": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "badge_text": "",
             "title": "Conseils personnalisés",
@@ -69,7 +70,7 @@
         "image_width_custom": 30,
         "image_position": "left",
         "image_ratio": "adapt",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "list_color_scheme": "",
         "card_color_scheme": "",
