@@ -414,10 +414,11 @@
         "text_9rUU7D": {
           "type": "text",
           "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9_d67dc93d-fd19-49f2-bde8-274c589ac96c.png",
             "svg_icon": "",
             "icon_width": 28,
-            "title": "Conçu en laboratoire",
-            "description": "<p>Une production locale et responsable, gage de traçabilité et de respect des normes de qualité les plus strictes.</p>",
+            "title": "Efficacité prouvée",
+            "description": "<p>Résultats visibles dès les premières utilisations sur la tenue et le volume.<br/></p>",
             "position": "right"
           }
         }
