@@ -450,6 +450,7 @@
       "blocks": {
         "information_qGLjLT": {
           "type": "information",
+          "disabled": true,
           "settings": {
             "text": "Huile pure",
             "icon_height": 18
@@ -457,6 +458,7 @@
         },
         "information_BCrBDM": {
           "type": "information",
+          "disabled": true,
           "settings": {
             "text": "Naturel",
             "icon_height": 18
@@ -464,6 +466,7 @@
         },
         "information_V3hhkJ": {
           "type": "information",
+          "disabled": true,
           "settings": {
             "text": "Fabriqué en France",
             "icon_height": 18
@@ -472,14 +475,16 @@
         "information_86FYYi": {
           "type": "information",
           "settings": {
-            "text": "Format test",
+            "text": "Sans addictif",
+            "image": "shopify://shop_images/Plan_de_travail_3_5fe3352d-96ea-4890-b0d1-9ade718566d5.png",
             "icon_height": 18
           }
         },
         "information_EgFF7d": {
           "type": "information",
           "settings": {
-            "text": "Sans lactose",
+            "text": "Sans addictif",
+            "image": "shopify://shop_images/Plan_de_travail_3_dc8b203b-89ac-4aed-a0c8-091e1f4ef4ab.png",
             "icon_height": 18
           }
         }
