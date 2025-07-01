@@ -71,7 +71,7 @@
         "button_link": "",
         "menu": "main-menu",
         "menu2": "customer-account-main-menu",
-        "menu_type_desktop": "mega",
+        "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": false,
         "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
