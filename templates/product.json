@@ -1018,7 +1018,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Comment fonctionne l'abonnement chez Weloca ?",
-            "icon": "none",
+            "icon": "check_mark",
             "row_content": "<p>L'abonnement est simple et flexible : choisissez la fréquence qui vous convient (mensuelle ou trimestrielle) et profitez de 10 % de réduction sur chaque commande.</p><p>Avec le système d'abonnement automatique, plus besoin de revenir sur le site pour valider vos commandes.</p><p>Sans engagement, l'abonnement peut être annulé à tout moment, en toute simplicité.</p><p>Vous avez également la possibilité de personnaliser votre abonnement en sélectionnant différents produits à des fréquences variées (par exemple, une livraison mensuelle pour la Formule Articulations et une livraison trimestrielle pour la Formule Anti-stress).</p>",
             "page": "",
             "tab_id": "abonnement"
