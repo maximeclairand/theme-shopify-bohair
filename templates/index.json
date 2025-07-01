@@ -210,7 +210,9 @@
         "title_size": 36,
         "stars_text": "★★★★★",
         "stars_color": "#ffbf00",
-        "note_text": "Excellent 4.8/5 sur 74 avis"
+        "note_text": "Excellent 4.8/5 sur 74 avis",
+        "arrow_left": "shopify://shop_images/iconleft.png",
+        "arrow_right": "shopify://shop_images/arrow-right.png"
       }
     },
     "featured_collection_Y6Cddr": {
