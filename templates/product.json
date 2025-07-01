@@ -34,22 +34,25 @@
           "type": "custom_badges",
           "settings": {
             "badge_color_scheme": "scheme-1",
-            "badge1": "Fabriqué en France",
-            "badge2": "Naturel",
-            "badge3": "Huile pure",
-            "badge_secondary": "100 ml"
+            "badge1": "Naturel",
+            "badge2": "Hypoallergénique",
+            "badge3": "Légère & couvrante",
+            "badge_secondary": "28g"
           }
         },
         "icon_with_text_qfjEkM": {
           "type": "icon-with-text",
           "settings": {
             "layout": "vertical",
-            "icon_1": "heart",
-            "heading_1": "L'<strong>allié bien-être</strong> : pelage, articulations, vitalité",
+            "icon_1": "none",
+            "image_1": "shopify://shop_images/Plan_de_travail_9_72c6b088-6258-4cf8-bee6-6fe890e571f1.png",
+            "heading_1": "Application <strong>rapide & efficacité</strong> immédiate",
             "icon_2": "return",
-            "heading_2": "Riche en <strong>Oméga 3</strong>, notamment en<strong> EPA/DHA</strong>",
+            "image_2": "shopify://shop_images/Plan_de_travail_9_72c6b088-6258-4cf8-bee6-6fe890e571f1.png",
+            "heading_2": "<strong>Résiste</strong> à la transpiration",
             "icon_3": "truck",
-            "heading_3": "<strong>Améliore l'appétence</strong> des croquettes"
+            "image_3": "shopify://shop_images/Plan_de_travail_9_72c6b088-6258-4cf8-bee6-6fe890e571f1.png",
+            "heading_3": "<strong>Booste la confiance</strong> des hommes"
           }
         },
         "separator_LXNDBX": {
@@ -67,8 +70,8 @@
           "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
           "settings": {
             "color_text_body": "#262626",
-            "dividers_color": "#8F8D8D",
-            "bacgkround_color": "#FFFFFF",
+            "dividers_color": "#8f8d8d",
+            "bacgkround_color": "#ffffff",
             "border_thickness": 1,
             "border_radius": 0,
             "subscription_policy_url": "",
