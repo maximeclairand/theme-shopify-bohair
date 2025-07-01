@@ -14,6 +14,7 @@
       "name": "Bohair Hero",
       "settings": {
         "hero_image": "shopify://shop_images/IMAGE_BENEFICE_PRODUIT_BOHAIR.png",
+        "hero_image_width": "500px",
         "title_color": "#262626",
         "text_color": "#262626",
         "rating_color": "#262626",
@@ -21,11 +22,13 @@
         "button_text_color": "#ffffff",
         "button_hover_bg_color": "#262626",
         "button_hover_text_color": "#ffffff",
+        "etoile_text": "Excellent ★★★★★ +342 avis vérifiés",
+        "etoile_link": "",
         "titre_text": "Des cheveux plus denses, en quelques secondes.",
         "soustitre_text": "Redonnez instantanément densité et style à vos cheveux. Un résultat naturel, une confiance retrouvée.",
-        "adv1_text": "Application facile <br>& ultra-rapide",
-        "adv2_text": "Résultat nature<br>immédiat",
-        "adv3_text": "Tenue longue durée,<br>résiste à la transpiration",
+        "adv1_text": "Application facile & ultra-rapide",
+        "adv2_text": "Résultat natureimmédiat",
+        "adv3_text": "Tenue longue durée,résiste à la transpiration",
         "button_text": "Je teste Bohair !"
       }
     },
