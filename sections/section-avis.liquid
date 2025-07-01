@@ -357,21 +357,26 @@
 
 <script>
   let adoptionIndex = 0;
+
   function updateAdoptionCarousel() {
     const track = document.getElementById('adoptionTrack');
     const slideWidth = document.querySelector('.adoption-right').offsetWidth;
     track.style.transform = `translateX(-${adoptionIndex * slideWidth}px)`;
   }
+
   function prevAdoption() {
     const slides = document.querySelectorAll('.adoption-slide');
     adoptionIndex = (adoptionIndex - 1 + slides.length) % slides.length;
     updateAdoptionCarousel();
   }
+
   function nextAdoption() {
     const slides = document.querySelectorAll('.adoption-slide');
     adoptionIndex = (adoptionIndex + 1) % slides.length;
     updateAdoptionCarousel();
   }
+
   window.addEventListener('resize', updateAdoptionCarousel);
   window.addEventListener('load', updateAdoptionCarousel);
 </script>
+
