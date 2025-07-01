@@ -383,10 +383,11 @@
         "text_eJjCDG": {
           "type": "text",
           "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9.png",
             "svg_icon": "",
             "icon_width": 28,
-            "title": "Huile 100% pure",
-            "description": "<p>Une composition naturelle et pure pour garantir à votre animal une qualité exceptionnelle et des bienfaits ciblés, en toute confiance</p>",
+            "title": "Formule testée & approuvée",
+            "description": "<p>Soumise à des tests rigoureux pour garantir sécurité et performance.<br/></p>",
             "position": "left"
           }
         },
