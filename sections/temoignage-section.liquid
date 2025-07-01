@@ -1,0 +1,305 @@
+{% schema %}
+{
+  "name": "Témoignages carrousel",
+  "tag": "section",
+  "class": "temoignage-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Titre de la section",
+      "default": "Nos clients témoignent de l’éclat de leur bronzage"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#f9f9f9"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Témoignage",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_avant",
+          "label": "Image AVANT"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_apres",
+          "label": "Image APRÈS"
+        },
+        {
+          "type": "text",
+          "id": "tag_apres",
+          "label": "Texte du tag APRÈS",
+          "default": "APRÈS"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_title",
+          "label": "Titre",
+          "default": "Super facile à appliquer !"
+        },
+        {
+          "type": "textarea",
+          "id": "testimonial_text",
+          "label": "Texte",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom de l'auteur",
+          "default": "Coralie.F"
+        },
+        {
+          "type": "text",
+          "id": "stars",
+          "label": "Étoiles (ex : ★★★★★)",
+          "default": "★★★★★"
+        },
+        {
+          "type": "product",
+          "id": "linked_product",
+          "label": "Produit lié"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Témoignages",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+
+<div class="temoignage-section" style="background: {{ section.settings.bg_color }};">
+  <h2 class="temoignage-title">{{ section.settings.section_title }}</h2>
+
+  <div class="temoignage-wrapper">
+    <button class="temoignage-arrow left" onclick="prevSlide()">‹</button>
+
+    <div class="temoignage-carousel">
+      <div class="temoignage-track" id="temoignageTrack">
+        {% for block in section.blocks %}
+          <div class="temoignage-slide">
+            <div class="temoignage-photos">
+              <div class="temoignage-photo-block">
+                {% if block.settings.image_avant != blank %}
+                  <img src="{{ block.settings.image_avant | image_url: width: 300 }}" alt="Avant">
+                {% endif %}
+                <span>AVANT</span>
+              </div>
+              <div class="temoignage-photo-block">
+                {% if block.settings.image_apres != blank %}
+                  <img src="{{ block.settings.image_apres | image_url: width: 300 }}" alt="Après">
+                {% endif %}
+                <span style="background:#511e24;">{{ block.settings.tag_apres }}</span>
+              </div>
+            </div>
+            <div class="temoignage-content">
+              <div>
+                <h3>{{ block.settings.testimonial_title }}</h3>
+                <p>{{ block.settings.testimonial_text }}</p>
+              </div>
+              <div class="temoignage-footer">
+                <div>
+                  <b>{{ block.settings.name }}</b><br>
+                  <span class="temoignage-stars">{{ block.settings.stars }}</span>
+                </div>
+                {% if block.settings.linked_product != blank %}
+                  <form method="post" action="/cart/add">
+                    <input type="hidden" name="id" value="{{ block.settings.linked_product.variants.first.id }}">
+                    <button type="submit" class="temoignage-btn">Ajouter au panier</button>
+                  </form>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <button class="temoignage-arrow right" onclick="nextSlide()">›</button>
+  </div>
+</div>
+
+<style>
+  .temoignage-section {
+    padding: 60px 20px;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+
+  .temoignage-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #2d1e1e;
+    margin-bottom: 40px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .temoignage-wrapper {
+    position: relative;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .temoignage-carousel {
+    overflow: hidden;
+  }
+
+  .temoignage-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+    width: fit-content;
+  }
+
+  .temoignage-slide {
+    width: 820px;
+    flex-shrink: 0;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-height: 360px;
+    box-sizing: border-box;
+  }
+
+  .temoignage-photos {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+  }
+
+  .temoignage-photo-block {
+    position: relative;
+  }
+
+  .temoignage-photo-block img {
+    border-radius: 8px;
+    width: 160px;
+    height: 100%;
+    max-height: 300px;
+  }
+
+  .temoignage-photo-block span {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2d1e1e;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .temoignage-content {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-right: 10px;
+  }
+
+  .temoignage-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+
+  .temoignage-content p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    max-width: 90%;
+  }
+
+  .temoignage-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .temoignage-stars {
+    color: #ffbf00;
+    font-size: 16px;
+  }
+
+  .temoignage-btn {
+    border: 1px solid #2d1e1e;
+    background: white;
+    color: #2d1e1e;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .temoignage-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .temoignage-arrow.left {
+    left: -22px;
+  }
+
+  .temoignage-arrow.right {
+    right: -22px;
+  }
+</style>
+
+<script>
+  let currentIndex = 0;
+  function updateCarousel() {
+    const track = document.getElementById('temoignageTrack');
+    const offset = -currentIndex * 840;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  }
+
+  function nextSlide() {
+    const slides = document.querySelectorAll('.temoignage-slide');
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  }
+</script>
