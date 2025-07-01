@@ -32,6 +32,36 @@
         "button_text": "Je teste Bohair !"
       }
     },
+    "featured_collection_Y6Cddr": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Découvrez nos soins",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "soins",
+        "show_product_description": true,
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_confiance_6g3gEf": {
       "type": "section-confiance",
       "blocks": {
@@ -200,36 +230,6 @@
         "note_text": "Excellent 4.8/5 sur 74 avis",
         "arrow_left": "shopify://shop_images/iconleft.png",
         "arrow_right": "shopify://shop_images/arrow-right.png"
-      }
-    },
-    "featured_collection_Y6Cddr": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "title": "Découvrez nos soins",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "soins",
-        "show_product_description": true,
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "multicolumn_HJ78rY": {
@@ -1281,10 +1281,10 @@
   },
   "order": [
     "section_hero_bohair_KNimmH",
+    "featured_collection_Y6Cddr",
     "section_confiance_6g3gEf",
     "temoignage_section_yM7XR8",
     "section_avis_NMNH6W",
-    "featured_collection_Y6Cddr",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
     "image_with_text_F86f8L",
