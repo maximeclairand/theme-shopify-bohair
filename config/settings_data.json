@@ -46,7 +46,7 @@
     "card_style": "card",
     "card_image_padding": 14,
     "card_text_alignment": "left",
-    "card_color_scheme": "scheme-1",
+    "card_color_scheme": "scheme-0c29b09b-b042-4cfb-b239-2acaae16dbbb",
     "card_border_thickness": 0,
     "card_border_opacity": 10,
     "card_corner_radius": 4,
@@ -360,21 +360,21 @@
       },
       "scheme-0c29b09b-b042-4cfb-b239-2acaae16dbbb": {
         "settings": {
-          "background": "#fffdf5",
+          "background": "#fafafa",
           "background_gradient": "",
-          "background2": "#d8e5cf",
+          "background2": "#ffffff",
           "background3": "#ffffff",
-          "text": "#38584a",
-          "button": "#38584a",
-          "button_label": "#fffdf5",
-          "secondary_button_label": "#38584a",
-          "shadow": "#38584a",
-          "tertiary_button": "#b1baaa",
+          "text": "#262626",
+          "button": "#262626",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#262626",
+          "shadow": "#262626",
+          "tertiary_button": "#262626",
           "tertiary_button_label": "#ffffff",
-          "badge": "#e7f1a8",
-          "badge_label": "#38584a",
-          "badge2": "#d8e5cf",
-          "badge2_label": "#38584a"
+          "badge": "#e3f8c0",
+          "badge_label": "#262626",
+          "badge2": "#e3f8c0",
+          "badge2_label": "#262626"
         }
       },
       "scheme-51d5babd-f359-449c-8ae7-b8287aa12d6b": {

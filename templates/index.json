@@ -9,26 +9,26 @@
  */
 {
   "sections": {
-    "section_hero_bohair_inH34t": {
+    "section_hero_bohair_KNimmH": {
       "type": "section-hero-bohair",
       "name": "Bohair Hero",
       "settings": {
         "hero_image": "shopify://shop_images/IMAGE_BENEFICE_PRODUIT_BOHAIR.png",
-        "hero_image_width": "300px",
-        "title_color": "#000000",
-        "text_color": "#000000",
-        "rating_color": "#000000",
-        "button_bg_color": "#000000",
+        "hero_image_width": "500px",
+        "title_color": "#262626",
+        "text_color": "#262626",
+        "rating_color": "#262626",
+        "button_bg_color": "#262626",
         "button_text_color": "#ffffff",
-        "button_hover_bg_color": "#3730a3",
+        "button_hover_bg_color": "#262626",
         "button_hover_text_color": "#ffffff",
         "etoile_text": "Excellent ★★★★★ +342 avis vérifiés",
         "etoile_link": "",
         "titre_text": "Des cheveux plus denses, en quelques secondes.",
         "soustitre_text": "Redonnez instantanément densité et style à vos cheveux. Un résultat naturel, une confiance retrouvée.",
-        "adv1_text": "Application facile<br>& ultra-rapide",
-        "adv2_text": "Résultat nature<br>limmédiat",
-        "adv3_text": "Tenue longue durée,<br>résiste à la transpiration",
+        "adv1_text": "Application facile & ultra-rapide",
+        "adv2_text": "Résultat natureimmédiat",
+        "adv3_text": "Tenue longue durée,résiste à la transpiration",
         "button_text": "Je teste Bohair !"
       }
     },
@@ -41,7 +41,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "soins",
+        "collection": "collection",
         "show_product_description": true,
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -49,8 +49,8 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-        "image_ratio": "adapt",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
@@ -167,8 +167,7 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
-            "pastille_color": "#848484",
-            "tag_color": "#ca2828",
+            "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
           }
@@ -182,7 +181,6 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
-            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -197,7 +195,6 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
-            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -212,7 +209,6 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
-            "pastille_color": "#000000",
             "tag_color": "#f2c400",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié"
@@ -1284,7 +1280,7 @@
     }
   },
   "order": [
-    "section_hero_bohair_inH34t",
+    "section_hero_bohair_KNimmH",
     "featured_collection_Y6Cddr",
     "section_confiance_6g3gEf",
     "temoignage_section_yM7XR8",
