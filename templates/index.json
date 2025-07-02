@@ -131,6 +131,8 @@
             "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "name": "Coralie.F",
             "stars": "★★★★★",
+            "subtitle": "Cure 3 mois",
+            "icon": "shopify://shop_images/panier.png",
             "linked_product": "le-spray-fixateur"
           }
         },
@@ -144,6 +146,7 @@
             "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "name": "Coralie.F",
             "stars": "★★★★★",
+            "subtitle": "Cure 3 mois",
             "linked_product": "poudre"
           }
         }
