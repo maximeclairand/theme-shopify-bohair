@@ -70,8 +70,8 @@
 },
         {
       "type": "color",
-      "id": "bg_color",
-      "label": "Couleur de fond",
+      "id": "bgproduit_color",
+      "label": "Couleur de fond produit",
       "default": "#f3f5f6"
     },
 {
@@ -129,7 +129,7 @@
                   <b>{{ block.settings.name }}</b><br>
                   <span class="temoignage-stars">{{ block.settings.stars }}</span>
                 </div>
-              <div class="temoignage-footer">
+              <div class="temoignage-footer" backround="{{ section.settings.bg_color }}">
                
                 {% if block.settings.linked_product != blank %}
                  {% if block.settings.linked_product %}
