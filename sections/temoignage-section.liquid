@@ -10,6 +10,19 @@
       "label": "Titre de la section",
       "default": "Nos clients témoignent de l’éclat de leur bronzage"
     },
+
+       {
+  "type": "image_picker",
+  "id": "arrow_left",
+  "label": "Icône flèche gauche"
+},
+{
+  "type": "image_picker",
+  "id": "arrow_right",
+  "label": "Icône flèche droite"
+},
+
+    
     {
       "type": "color",
       "id": "bg_color",
@@ -100,8 +113,9 @@
   <h2 class="temoignage-title">{{ section.settings.section_title }}</h2>
 
   <div class="temoignage-wrapper">
-<button class="temoignage-arrow left" onclick="prevSlide()" aria-label="Précédent"></button>
-
+<button class="temoignage-arrow left" onclick="prevSlide()" aria-label="Précédent">
+  <img src="{{ section.settings.arrow_left | image_url }}" alt="Flèche gauche" />
+</button>
     <div class="temoignage-carousel">
       <div class="temoignage-track" id="temoignageTrack">
         {% for block in section.blocks %}
@@ -161,8 +175,9 @@
       </div>
     </div>
 
-<button class="temoignage-arrow right" onclick="nextSlide()" aria-label="Suivant"></button>
-  </div>
+<button class="temoignage-arrow right" onclick="nextSlide()" aria-label="Suivant">
+  <img src="{{ section.settings.arrow_right | image_url }}" alt="Flèche droite" />
+</button>  </div>
 </div>
 
 
@@ -232,6 +247,11 @@
     
   }
 
+  .temoignage-arrow img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
   .temoignage-photo-block span {
     position: absolute;
     bottom: 6px;
