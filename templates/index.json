@@ -517,7 +517,7 @@
         "text_FFiT4P": {
           "type": "text",
           "settings": {
-            "text": "<p>Nos produits sont désormais disponibles dans une sélection de salons partenaires. <br/><br/>L’occasion idéale pour découvrir l’efficacité de nos produits en direct, bénéficier de conseils personnalisés, et repartez avec un look parfaitement maîtrisé.</p>",
+            "text": "<p>Nos produits sont désormais <strong>disponibles </strong>dans une sélection de <strong>salons partenaires.</strong> <br/><br/>L’occasion idéale pour <strong>découvrir</strong> l’efficacité de nos produits en direct, bénéficier de conseils personnalisés, et repartez avec un look parfaitement maîtrisé.</p>",
             "text_style": "body"
           }
         },
