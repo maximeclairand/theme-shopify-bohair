@@ -127,8 +127,8 @@
             "image_avant": "shopify://shop_images/17.png",
             "image_apres": "shopify://shop_images/5_f7edd36f-d6c1-44d5-b38d-3bfa3fdc3126.png",
             "tag_apres": "APRÈS",
-            "testimonial_title": "Super facile à appliquer !",
-            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "testimonial_title": "Application rapide, tenue parfaite",
+            "testimonial_text": "L’application est simple et intuitive, même sans être expert. En quelques gestes, le résultat est net, et surtout, ça tient toute la journée sans retouche. Même en cas de pluie ou de transpiration, rien ne bouge. Le combo poudre + fixateur est redoutable.",
             "name": "Hugo.F",
             "stars": "★★★★★",
             "subtitle": "Teinte brun foncé",
@@ -159,7 +159,7 @@
         "slide_KKbMWG"
       ],
       "custom_css": [
-        "h2{color:black;}"
+        "h2 {color: #262626;}"
       ],
       "name": "Témoignages",
       "settings": {
