@@ -307,10 +307,21 @@
  display: flex;
   justify-content: space-between; 
 
-    gap: 6px;
+    
     color: #2d1e1e;
   }
- 
+  .adoption-footer span::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('{{ section.settings.verified_icon | image_url }}');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
 
 /* ✅ Mobile optimization */
 @media screen and (max-width: 768px) {
