@@ -108,7 +108,7 @@
                 <h3>{{ block.settings.testimonial_title }}</h3>
                 <p>{{ block.settings.testimonial_text }}</p>
               </div>
-               <div>
+               <div class="temoignage-etoiles">
                   <b>{{ block.settings.name }}</b><br>
                   <span class="temoignage-stars">{{ block.settings.stars }}</span>
                 </div>
@@ -222,11 +222,17 @@
     flex: 1;
     text-align: left;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     height: 100%;
     padding-right: 10px;
   }
 
+.temoignage-etoiles
+  {
+    display:flex;
+    justify-content:space-arround;
+  }
   .temoignage-content h3 {
     font-size: 18px;
     font-weight: bold;
