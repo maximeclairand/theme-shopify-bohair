@@ -128,7 +128,7 @@
             "image_apres": "shopify://shop_images/5_f7edd36f-d6c1-44d5-b38d-3bfa3fdc3126.png",
             "tag_apres": "APRÈS",
             "testimonial_title": "Super facile à appliquer !",
-            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur ann Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "name": "Coralie.F",
             "stars": "★★★★★",
             "linked_product": "le-spray-fixateur"
@@ -502,6 +502,57 @@
         "speed": 30,
         "padding_top": 20,
         "padding_bottom": 20
+      }
+    },
+    "image_with_text_XrpEw6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pYq3e8": {
+          "type": "heading",
+          "settings": {
+            "heading": "BOHAIR s'invite chez votre coiffeur",
+            "heading_size": "h1"
+          }
+        },
+        "text_FFiT4P": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nos produits sont désormais disponibles dans une sélection de salons partenaires. <br/><br/>L’occasion idéale pour découvrir l’efficacité de nos produits en direct, bénéficier de conseils personnalisés, et repartez avec un look parfaitement maîtrisé.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_nnNize": {
+          "type": "button",
+          "settings": {
+            "button_label": "Je choisis Bohair !",
+            "button_link": "shopify://products/poudre",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pYq3e8",
+        "text_FFiT4P",
+        "button_nnNize"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/handsome-hipster-bearded-male-sitting-armchair-barber-shop-while-hairdresser-shaves-his-beard-with-dangerous-razor.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "desktop_image_width_custom": 40,
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "image_background_position_x": 50,
+        "image_background_position_y": 50,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_with_text_tHGn6d": {
@@ -1299,6 +1350,7 @@
     "image_with_text_F86f8L",
     "rich_text_XEGbLp",
     "barre_defilante_HVdiQX",
+    "image_with_text_XrpEw6",
     "image_with_text_tHGn6d",
     "rich_text_abVmTw",
     "rich_text",
