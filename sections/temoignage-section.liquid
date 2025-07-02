@@ -108,11 +108,12 @@
                 <h3>{{ block.settings.testimonial_title }}</h3>
                 <p>{{ block.settings.testimonial_text }}</p>
               </div>
-              <div class="temoignage-footer">
-                <div>
+               <div>
                   <b>{{ block.settings.name }}</b><br>
                   <span class="temoignage-stars">{{ block.settings.stars }}</span>
                 </div>
+              <div class="temoignage-footer">
+               
                 {% if block.settings.linked_product != blank %}
                  {% if block.settings.linked_product %}
   <form method="post" action="/cart/add" class="temoignage-form">
