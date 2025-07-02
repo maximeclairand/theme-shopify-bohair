@@ -478,9 +478,8 @@
       "blocks": {
         "information_bVXVRT": {
           "type": "information",
-          "disabled": true,
           "settings": {
-            "text": "Santévet",
+            "text": "Sans perte de cheveux",
             "image": "shopify://shop_images/Plan_de_travail_3.png",
             "icon_height": 22
           }
@@ -488,7 +487,7 @@
         "information_f37cNR": {
           "type": "information",
           "settings": {
-            "text": "Sans addictif",
+            "text": "Sans alcool agressif",
             "image": "shopify://shop_images/Plan_de_travail_3_2fa57dc4-3f06-4dc1-ac25-bca9efa63242.png",
             "icon_height": 22
           }
@@ -496,7 +495,7 @@
         "information_bcAwiL": {
           "type": "information",
           "settings": {
-            "text": "Sans addictif",
+            "text": "Zéro résidu, zéro effet carton",
             "image": "shopify://shop_images/Plan_de_travail_3_ce1bbad9-4d46-4e65-acc2-746de110fc83.png",
             "icon_height": 22
           }
