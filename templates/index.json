@@ -161,6 +161,8 @@
       "name": "Témoignages",
       "settings": {
         "section_title": "Nos clients en disent que du bien !",
+        "arrow_left": "shopify://shop_images/Plan_de_travail_17.svg",
+        "arrow_right": "shopify://shop_images/Plan_de_travail_17_copie.svg",
         "bg_color": "#f9f9f9"
       }
     },
