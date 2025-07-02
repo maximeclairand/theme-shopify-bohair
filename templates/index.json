@@ -22,7 +22,7 @@
         "button_text_color": "#ffffff",
         "button_hover_bg_color": "#262626",
         "button_hover_text_color": "#ffffff",
-        "etoile_text": "Excellent ★★★★★ +342 avis vérifiés",
+        "etoile_text": "<p>Excellent ★★★★★ +342 avis vérifiés</p>",
         "etoile_link": "",
         "titre_text": "Des cheveux plus denses, en quelques secondes.",
         "soustitre_text": "Redonnez instantanément densité et style à vos cheveux. Un résultat naturel, une confiance retrouvée.",
@@ -235,7 +235,8 @@
         "title_size": 36,
         "stars_text": "★★★★★",
         "stars_color": "#262626",
-        "note_text": "Excellent 4.8/5 sur 74 avis",
+        "note_text": "<p><strong>Excellent</strong> 4.8/5 sur 74 avis</p>",
+        "etoile_link": "",
         "arrow_left": "shopify://shop_images/iconleft.png",
         "arrow_right": "shopify://shop_images/arrow-right.png"
       }
