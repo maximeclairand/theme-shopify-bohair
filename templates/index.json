@@ -231,7 +231,7 @@
       ],
       "name": "Section Avis Carrousel",
       "settings": {
-        "section_title": "Elles l’ont adoptées !",
+        "section_title": "Ils l’ont adoptés !",
         "title_size": 36,
         "stars_text": "★★★★★",
         "stars_color": "#262626",
@@ -537,7 +537,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/handsome-hipster-bearded-male-sitting-armchair-barber-shop-while-hairdresser-shaves-his-beard-with-dangerous-razor.jpg",
+        "image": "shopify://shop_images/interior-view-of-a-barbershop-with-multiple-seatin-2025-02-12-00-08-25-utc.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "desktop_image_width_custom": 40,
