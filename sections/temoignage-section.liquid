@@ -63,6 +63,17 @@
           "default": "★★★★★"
         },
         {
+  "type": "text",
+  "id": "subtitle",
+  "label": "Sous-titre du produit",
+  "default": "Cure 3 mois"
+},
+{
+  "type": "image_picker",
+  "id": "icon",
+  "label": "Icône bouton"
+},
+        {
           "type": "product",
           "id": "linked_product",
           "label": "Produit lié"
@@ -116,16 +127,24 @@
                
                 {% if block.settings.linked_product != blank %}
                  {% if block.settings.linked_product %}
-  <form method="post" action="/cart/add" class="temoignage-form">
-    <input type="hidden" name="id" value="{{ block.settings.linked_product.variants.first.id }}">
-    <div class="temoignage-product-info">
-      {% if block.settings.linked_product.featured_image %}
-        <img src="{{ block.settings.linked_product.featured_image | image_url: width: 60 }}" alt="{{ block.settings.linked_product.title }}">
-      {% endif %}
-      <span>{{ block.settings.linked_product.title }}</span>
+ <form method="post" action="/cart/add" class="temoignage-form">
+  <input type="hidden" name="id" value="{{ block.settings.linked_product.variants.first.id }}">
+
+  <div class="temoignage-product">
+    {% if block.settings.linked_product.featured_image %}
+      <img class="product-image" src="{{ block.settings.linked_product.featured_image | image_url: width: 60 }}" alt="{{ block.settings.linked_product.title }}">
+    {% endif %}
+
+    <div class="product-text">
+      <div class="product-title">{{ block.settings.linked_product.title }}</div>
+      <div class="product-subtitle">{{ block.settings.subtitle }}</div>
     </div>
-    <button type="submit" class="temoignage-btn">Ajouter au panier</button>
-  </form>
+  </div>
+
+  <button type="submit" class="temoignage-btn">
+    <img src="{{ block.settings.icon | image_url: width: 20 }}" alt="Ajouter au panier" />
+  </button>
+</form>
 {% endif %}
 
                 {% endif %}
@@ -263,19 +282,24 @@
     font-size: 16px;
   }
 
-  .temoignage-btn {
-    border: 1px solid #2d1e1e;
-    background: white;
-    color: #2d1e1e;
-    padding: 10px 16px;
-    font-size: 14px;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    text-align: center;
-    line-height: 1.4;
-    white-space: nowrap;
-  }
+ .temoignage-btn {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+  .temoignage-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
 
   .temoignage-arrow {
     display: flex;
@@ -292,6 +316,30 @@
     cursor: pointer;
     padding: 0;
   }
+
+  .product-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+  .product-text {
+  display: flex;
+  flex-direction: column;
+  color: #1e2d23;
+}
+
+  .product-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.product-subtitle {
+  font-size: 14px;
+  margin-top: 2px;
+  opacity: 0.8;
+}
 
   .temoignage-arrow::before {
     content: "";
@@ -320,19 +368,22 @@
   }
 
   .temoignage-form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f4f1;
+  padding: 12px 20px;
+  border-radius: 12px;
+  width: 100%;
+  gap: 20px;
+}
 
-  .temoignage-product-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: #2d1e1e;
-  }
+  .temoignage-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 
   .temoignage-product-info img {
     width: 40px;
