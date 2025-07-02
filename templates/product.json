@@ -981,99 +981,106 @@
         "tab_HiGYYf": {
           "type": "tab",
           "settings": {
-            "tab_title": "Abonnement",
-            "tab_id": "abonnement"
+            "tab_title": "Général",
+            "tab_id": "Général"
           }
         },
         "tab_xHB8Be": {
           "type": "tab",
           "settings": {
-            "tab_title": "Nos formules",
-            "tab_id": "formules"
+            "tab_title": "Abonnement",
+            "tab_id": "Abonnement"
+          }
+        },
+        "tab_HpKNEC": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Utilisation",
+            "tab_id": "Utilisation"
+          }
+        },
+        "tab_8xafyb": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Bienfaits",
+            "tab_id": "Bienfaits"
           }
         },
         "tab_a8gXHF": {
           "type": "tab",
           "settings": {
             "tab_title": "Livraison & retours",
-            "tab_id": "livraison"
-          }
-        },
-        "tab_HpKNEC": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "Weloca",
-            "tab_id": "weloca"
+            "tab_id": "livraison&retours"
           }
         },
         "collapsible_row_aUzjkq": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Comment fonctionne l'abonnement chez Weloca ?",
+            "heading": "Qu’est-ce que BOHAIR™ ?",
             "icon": "none",
-            "row_content": "<p>L'abonnement est simple et flexible : choisissez la fréquence qui vous convient (mensuelle ou trimestrielle) et profitez de 10 % de réduction sur chaque commande.</p><p>Avec le système d'abonnement automatique, plus besoin de revenir sur le site pour valider vos commandes.</p><p>Sans engagement, l'abonnement peut être annulé à tout moment, en toute simplicité.</p><p>Vous avez également la possibilité de personnaliser votre abonnement en sélectionnant différents produits à des fréquences variées (par exemple, une livraison mensuelle pour la Formule Articulations et une livraison trimestrielle pour la Formule Anti-stress).</p>",
+            "row_content": "<p>BOHAIR™ est une marque experte en solutions capillaires instantanées. Nos produits sont conçus pour masquer les zones clairsemées et redonner visuellement du volume aux cheveux, en quelques secondes.</p>",
             "page": "",
-            "tab_id": "abonnement"
+            "tab_id": "Général"
           }
         },
         "collapsible_row_Kbici3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Quels sont les avantages de l'abonnement Weloca ?",
+            "heading": "À qui s’adressent vos produits ?",
             "icon": "none",
-            "row_content": "<p>En souscrivant à un abonnement, vous profitez de nombreux avantages :</p><p>10 % de réduction sur chaque commande,</p><p>Un service client prioritaire, avec une réponse garantie en moins de 5 heures,</p><p>Un accès anticipé de 24 heures à toutes les promotions avant leur publication au grand public.</p>",
+            "row_content": "<p>Nos produits s’adressent aux hommes et femmes souhaitant camoufler des zones clairsemées, qu’il s’agisse de perte de densité, d’alopécie ou de repousses irrégulières.</p>",
             "page": "",
-            "tab_id": "abonnement"
+            "tab_id": "Général"
           }
         },
         "collapsible_row_wLhPxC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Je souhaite résilier mon abonnement",
+            "heading": "Où sont fabriqués vos produits ?",
             "icon": "none",
-            "row_content": "<p>Écrivez nous à weloca.club@gmail.com</p>",
+            "row_content": "<p>Tous nos produits sont conçus en laboratoire, dans le respect des normes européennes, avec des ingrédients sélectionnés pour leur efficacité et leur innocuité.</p>",
             "page": "",
-            "tab_id": "abonnement"
+            "tab_id": "Général"
           }
         },
         "collapsible_row_G8gmNt": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "À partir de quel âge pouvons-nous donner les compléments Weloca ?",
+            "heading": "Vos produits sont-ils sûrs pour une utilisation quotidienne ?",
             "icon": "none",
-            "row_content": "<p>Nos compléments alimentaires conviennent à tous les chiens, tous les chats, tous les poids, tous les âges. Il est conseillé, néanmoins, de ne pas en donner à des chiens ou des chats de moins de 16 semaines.</p>",
+            "row_content": "<p>Oui, nos formules sont légères, non irritantes et conviennent à une utilisation quotidienne sur le cuir chevelu.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Général"
           }
         },
         "collapsible_row_T74DKF": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Au bout de combien de temps puis-je observer des résultats ?",
+            "heading": "Proposez-vous des réductions ou offres spéciales ?",
             "icon": "none",
-            "row_content": "<p>En donnant des compléments alimentaires à votre chien ou votre chat, vous pouvez généralement constater des premiers légers résultats au bout d'un mois. Pour obtenir des résultats concrets sur le long terme il est recommandé de faire des cures de 3 mois. </p><p>Cependant, ce délai peut varier en fonction de plusieurs facteurs, comme les besoins spécifiques de votre animal, sa santé générale, et la raison pour laquelle vous administrez les compléments. Certains animaux peuvent montrer des effets plus rapidement, tandis que d'autres peuvent nécessiter un peu plus de temps pour que les bénéfices soient visibles. Pour des résultats optimaux, il est important de suivre les recommandations de dosage et de durée fournies et de consulter votre vétérinaire.</p>",
+            "row_content": "<p>Oui, vous pouvez profiter d’offres ponctuelles, de packs avantageux et de tarifs réduits avec l’abonnement. <br/><br/>Vous avez également la possibilité d'avoir 10% de réduction sur votre prochaine commande en nous laissant un avis sur notre compte Trustpilot !</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Général"
           }
         },
         "collapsible_row_UV8L8E": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "J'ai une question sur la composition",
+            "heading": "Comment fonctionne l’abonnement BOHAIR™ ?",
             "icon": "none",
-            "row_content": "<p>Vous avez une question sur la composition d'une formule ? Ecrivez nous à weloca.club@gmail.com</p>",
+            "row_content": "<p>Vous choisissez la fréquence d’envoi souhaitée (une fois par mois, une fois tous les 2 mois ou 3 mois...) et recevez automatiquement vos produits à domicile. L’abonnement est 100% flexible.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Abonnement"
           }
         },
         "collapsible_row_LLNTYg": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Est-ce qu'il peut y avoir des effets secondaires ?",
+            "heading": "Puis-je modifier, suspendre ou annuler mon abonnement ?",
             "icon": "none",
-            "row_content": "<p>Dans de rares cas, des troubles digestifs ou une diarrhée peuvent survenir. Si ces symptômes persistent, arrêtez l'administration de compléments alimentaires et consultez votre vétérinaire.</p>",
+            "row_content": "<p>Oui, tout se gère simplement depuis votre espace client. Vous pouvez modifier, suspendre ou annuler à tout moment.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Abonnement"
           }
         },
         "collapsible_row_xj8bCe": {
@@ -1089,139 +1096,190 @@
         "collapsible_row_DfPjpN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Où sont produits nos compléments alimentaires ?",
+            "heading": "À quelle fréquence vais-je recevoir mes produits ?",
             "icon": "none",
-            "row_content": "<p>Nos compléments alimentaires sont formulés en France et fabriqués en Belgique, juste à côté de chez nous !</p>",
+            "row_content": "<p>Vous choisissez la fréquence qui vous convient : chaque mois, tous les 2 mois, ou tous les 3 mois.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Abonnement"
           }
         },
         "collapsible_row_WDFaDp": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Qui élabore nos formules ?",
+            "heading": "L’abonnement est-il sans engagement ?",
             "icon": "none",
-            "row_content": "<p>Nos formules sont élaborées par une vétérinaire nutritionniste et par une experte en compléments alimentaires.</p>",
+            "row_content": "<p>Absolument. Vous êtes libre d’interrompre votre abonnement à tout moment.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Abonnement"
           }
         },
         "collapsible_row_DVHWmP": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Est-ce que je peux donner un complément alimentaire en continu à mon chien ou mon chat ?",
+            "heading": "Que se passe-t-il si je change d’adresse ou de moyen de paiement ?",
             "icon": "none",
-            "row_content": "<p>Tant que vous suivez les dosages indiqués sur les sachets vous pouvez donner nos compléments alimentaires en continu à votre chien ou à votre chat. Néanmoins avant de décider de prolonger une cure nous vous recommandons d'en discuter directement avec votre vétérinaire. </p>",
+            "row_content": "<p>Il vous suffit de mettre à jour vos informations dans votre espace client avant la prochaine expédition.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Abonnement"
           }
         },
         "collapsible_row_RyRpzW": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Est-ce que nos formules conviennent à tous les chiens et tous les chats ?",
+            "heading": "Comment appliquer les fibres capillaires BOHAIR™ ?",
             "icon": "none",
-            "row_content": "<p>Nos compléments alimentaires sont formulés pour convenir à tous les chiens ou à tous les chats en fonction de la formule. Néanmoins si votre chien ou votre chat a des allergies nous vous recommandons d'en discuter avec votre vétérinaire. </p>",
+            "row_content": "<p>Appliquez sur cheveux secs en ciblant les zones clairsemées, puis fixez avec notre spray pour une tenue optimale.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Utilisation"
           }
         },
         "collapsible_row_YAzywP": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Pendant combien de temps dois-je donner un complément alimentaire à mon chien ?",
+            "heading": "Le spray fixateur est-il obligatoire ?",
             "icon": "none",
-            "row_content": "<p>Il est recommandé de faire des cures d'au moins 3 mois pour obtenir des résultats visibles sur le long terme. </p>",
+            "row_content": "<p>Il est fortement recommandé pour prolonger la tenue des fibres et assurer un rendu naturel toute la journée.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Utilisation"
           }
         },
         "collapsible_row_cj9gnP": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Où dois-je conserver le complément alimentaire ?",
+            "heading": "Combien de temps la poudre tiennent-elles ?",
             "icon": "none",
-            "row_content": "<p>Vous pouvez conserver les bouchées dans le sachet dans un endroit frais et sec. </p>",
+            "row_content": "<p>Jusqu’à votre prochain shampoing. Elles résistent à la transpiration et au vent avec le spray fixateur.</p>",
             "page": "",
-            "tab_id": "formules"
+            "tab_id": "Utilisation"
           }
         },
         "collapsible_row_DA6kzx": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Comment suivre ma commande ?",
+            "heading": "Les produits résistent-ils à la pluie ou à la transpiration ?",
             "icon": "none",
-            "row_content": "<p>Vous pouvez suivre votre commande en allant sur ce lien. Vous pouvez également nous écrire à weloca.club@gmail.com</p>",
+            "row_content": "<p>Oui, avec le spray fixateur, les fibres tiennent même en cas d’humidité ou d’effort physique modéré.</p>",
             "page": "",
-            "tab_id": "livraison"
+            "tab_id": "Utilisation"
           }
         },
         "collapsible_row_MhaWRL": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Comment faire un retour ?",
+            "heading": "Dois-je les retirer chaque soir ?",
             "icon": "none",
-            "row_content": "<p>Pour faire une demande de retour, écrivez-nous à weloca.club@gmail.com. Vous avez 30 jours pour faire un retour à partir de la date de livraison de votre commande. Le sachet doit être renvoyé intact. Les frais de retour sont à votre charge. </p>",
+            "row_content": "<p>Ce n’est pas obligatoire, mais nous recommandons de les retirer avant de dormir pour laisser respirer votre cuir chevelu.</p>",
             "page": "",
-            "tab_id": "livraison"
+            "tab_id": "Utilisation"
           }
         },
         "collapsible_row_NJrYeb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Je souhaite modifier ma commande",
+            "heading": "Les fibres BOHAIR™ favorisent-elles la repousse ?",
             "icon": "none",
-            "row_content": "<p>Si votre commande n'est pas encore expédiée, nous pouvons la modifier. Ecrivez nous à weloca.club@gmail.com</p>",
+            "row_content": "<p>Non, elles ont un rôle esthétique. Elles n’interviennent pas sur la croissance capillaire.</p>",
             "page": "",
-            "tab_id": "livraison"
+            "tab_id": "Bienfaits"
           }
         },
         "collapsible_row_iVxWyB": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Weloca, ça veut dire quoi ?",
+            "heading": "Les produits abîmement-ils les cheveux ou le cuir chevelu ?",
             "icon": "none",
-            "row_content": "<p>Weloca c'est la contraction de We love, we care. En français ça donnerait \"on les aime, on en prend soin\". </p>",
+            "row_content": "<p>Non, nos formules sont testées dermatologiquement, sans effets agressifs ni composants occlusifs.</p>",
             "page": "",
-            "tab_id": "weloca"
+            "tab_id": "Bienfaits"
           }
         },
         "collapsible_row_EmgChx": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Notre équipe",
+            "heading": "Est-ce que les fibres sont visibles à l’œil nu ?",
             "icon": "none",
-            "row_content": "<p>Derrière Weloca se cachent Victoire et son chien Rosty. Pour en savoir plus, suivez leurs aventures sur le compte instagram we.loca !</p>",
+            "row_content": "<p>Non, une fois appliquées correctement, elles se fondent naturellement avec vos cheveux.</p>",
             "page": "",
-            "tab_id": "weloca"
+            "tab_id": "Bienfaits"
           }
         },
         "collapsible_row_tjinzw": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Rencontrez la fondatrice",
+            "heading": "Les produits conviennent-ils aux cuirs chevelus sensibles ?",
             "icon": "none",
-            "row_content": "<p>Je m’appelle Victoire, j’ai 34 ans et je viens du Havre en Normandie. J’ai travaillé pour une grande marque de croquettes et ensuite dans l’industrie des compléments alimentaires pour humain. À côté de cela, je partage ma vie avec un adorable teckel à poil dur nommé Rosty, qui a maintenant 4 ans. En voyant Rosty grandir et son système immunitaire être mis à rude épreuve, j’ai eu envie de créer Weloca pour qu’il puisse bénéficier de remèdes naturels pour le soulager. En fait, j’ai simplement voulu appliquer à Rosty ce que je fais pour moi-même : prendre soin de moi de l’intérieur grâce à des produits naturels. </p><p>Chez Weloca,  3 choses sont essentielles pour moi : le bien-être de nos animaux, créer des produits de qualité (efficaces, sains, naturels, respectant la réglementation tout en mettant la science au centre du développement) et être proche de vous (échanger, comprendre ce que vous recherchez, vos besoins, connaître vos animaux, partager vos expériences, vos réflexions ou tout simplement discuter). </p>",
+            "row_content": "<p>Oui, notre formule est douce, sans alcool agressif ni parfum irritant.</p>",
             "page": "",
-            "tab_id": "weloca"
+            "tab_id": "Bienfaits"
+          }
+        },
+        "collapsible_row_NpBYxX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les délais de livraison ?",
+            "icon": "check_mark",
+            "row_content": "<p>Les commandes sont généralement livrées en 2 à 4 jours ouvrés en France métropolitaine.</p>",
+            "page": "",
+            "tab_id": "livraison&retours"
           }
         },
         "collapsible_row_Q6NGjt": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Nous contacter",
+            "heading": "Puis-je les utiliser après une greffe ou un traitement capillaire ?",
             "icon": "none",
-            "row_content": "<p>Vous pouvez nous contacter à l'adresse mail weloca.club@gmail.com ou sur instagram en message privé sur le comtpe we.loca !</p>",
+            "row_content": "<p>Oui, après cicatrisation complète. Demandez l’avis de votre médecin ou dermatologue en cas de doute.</p>",
             "page": "",
-            "tab_id": "weloca"
+            "tab_id": "Bienfaits"
+          }
+        },
+        "collapsible_row_b7gMKT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Livrez-vous à l’international ?",
+            "icon": "check_mark",
+            "row_content": "<p>Oui, nous livrons dans la plupart des pays européens. Les délais varient selon la destination.</p>",
+            "page": "",
+            "tab_id": "livraisons&retours"
+          }
+        },
+        "collapsible_row_RzNMCi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Puis-je retourner un produit s’il ne me convient pas ?",
+            "icon": "check_mark",
+            "row_content": "<p>Oui, vous disposez d’un délai de 14 jours pour retourner un produit non utilisé dans son emballage d’origine.</p>",
+            "page": "",
+            "tab_id": "livraison&retours"
+          }
+        },
+        "collapsible_row_gkmNEb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Les frais de retour sont-ils à ma charge ?",
+            "icon": "check_mark",
+            "row_content": "<p>Sauf erreur de notre part, les frais de retour sont à la charge du client.</p>",
+            "page": "",
+            "tab_id": "livraison&retours"
+          }
+        },
+        "collapsible_row_wrQPPN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment suivre ma commande ?",
+            "icon": "check_mark",
+            "row_content": "<p>Un lien de suivi vous est envoyé par e-mail dès que votre commande est expédiée.</p>",
+            "page": "",
+            "tab_id": "livraison&retours"
           }
         }
       },
       "block_order": [
         "tab_HiGYYf",
         "tab_xHB8Be",
-        "tab_a8gXHF",
         "tab_HpKNEC",
+        "tab_8xafyb",
+        "tab_a8gXHF",
         "collapsible_row_aUzjkq",
         "collapsible_row_Kbici3",
         "collapsible_row_wLhPxC",
@@ -1242,7 +1300,12 @@
         "collapsible_row_iVxWyB",
         "collapsible_row_EmgChx",
         "collapsible_row_tjinzw",
-        "collapsible_row_Q6NGjt"
+        "collapsible_row_NpBYxX",
+        "collapsible_row_Q6NGjt",
+        "collapsible_row_b7gMKT",
+        "collapsible_row_RzNMCi",
+        "collapsible_row_gkmNEb",
+        "collapsible_row_wrQPPN"
       ],
       "settings": {
         "caption": "",
