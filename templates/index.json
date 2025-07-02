@@ -22,7 +22,7 @@
         "button_text_color": "#ffffff",
         "button_hover_bg_color": "#262626",
         "button_hover_text_color": "#ffffff",
-        "etoile_text": "<p>Excellent ★★★★★ +342 avis vérifiés</p>",
+        "etoile_text": "<p><strong>Excellent </strong>★★★★★ +342 avis vérifiés</p>",
         "etoile_link": "",
         "titre_text": "Des cheveux plus denses, en quelques secondes.",
         "soustitre_text": "Redonnez instantanément densité et style à vos cheveux. Un résultat naturel, une confiance retrouvée.",
@@ -132,6 +132,7 @@
             "name": "Coralie.F",
             "stars": "★★★★★",
             "subtitle": "Cure 3 mois",
+            "bgproduit_color": "#f3f5f6",
             "icon": "shopify://shop_images/panier.png",
             "linked_product": "le-spray-fixateur"
           }
@@ -147,6 +148,7 @@
             "name": "Coralie.F",
             "stars": "★★★★★",
             "subtitle": "Cure 3 mois",
+            "bgproduit_color": "#f3f5f6",
             "linked_product": "poudre"
           }
         }
