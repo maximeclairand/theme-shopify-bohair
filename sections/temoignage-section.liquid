@@ -129,11 +129,11 @@
                   <b>{{ block.settings.name }}</b><br>
                   <span class="temoignage-stars">{{ block.settings.stars }}</span>
                 </div>
-              <div class="temoignage-footer" style="background: {{ section.settings.bgproduit_color }};">
+              <div class="temoignage-footer">
                
                 {% if block.settings.linked_product != blank %}
                  {% if block.settings.linked_product %}
- <form method="post" action="/cart/add" class="temoignage-form">
+ <form method="post" action="/cart/add" class="temoignage-form" style="background: {{ section.settings.bgproduit_color }};">
   <input type="hidden" name="id" value="{{ block.settings.linked_product.variants.first.id }}">
 
   <div class="temoignage-product">
@@ -378,7 +378,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f5f4f1;
+  
   padding: 12px 20px;
   border-radius: 5px;
   margin-top:10px;
