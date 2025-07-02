@@ -37,6 +37,12 @@
     },
 
     {
+     "type": "url",
+  "id": "etoile_link",
+  "label": "Lien des étoiles"
+},
+
+    {
   "type": "image_picker",
   "id": "arrow_left",
   "label": "Icône flèche gauche"
@@ -147,6 +153,8 @@
     margin: 0 auto;
     align-items: flex-start;
     flex-wrap: wrap;
+      
+
   }
 
   .adoption-left {
@@ -157,6 +165,8 @@
   }
   .adoption-left .stars {
     font-size: 20px;
+      text-decoration:none;
+
   }
   .adoption-left .note {
     font-size: 16px;
@@ -394,7 +404,15 @@
 <div class="adoption-section">
   <div class="adoption-left">
     <div>
-      <div class="stars" style="color: {{ section.settings.stars_color }};">{{ section.settings.stars_text }}</div>
+{% if section.settings.etoile_link != blank %}
+  <a href="{{ section.settings.etoile_link }}" class="stars" style="color: {{ section.settings.stars_color }};">
+    {{ section.settings.stars_text }}
+  </a>
+{% else %}
+  <div class="stars" style="color: {{ section.settings.stars_color }};">
+    {{ section.settings.stars_text }}
+  </div>
+{% endif %}
       <div class="note">{{ section.settings.note_text }}</div>
       <h2 style="font-size: {{ section.settings.title_size }}px">{{ section.settings.section_title }}</h2>
     </div>
