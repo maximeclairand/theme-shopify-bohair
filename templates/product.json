@@ -1260,9 +1260,11 @@
         "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions <strong>du Lundi au Vendredi.</strong></p><p>Contactez-nous à l’adresse <em><strong>hello.bohair@gmail.com</strong></em><strong>.</strong> Nous vous garantissons une réponse <strong>sous 48 heures.</strong></p>",
         "additional_button_text": "weloca.club@gmail.com",
         "additional_button_subtitle": "",
+        "additional_button_icon": "shopify://shop_images/enveloppe_f3d8eef2-2c58-4417-a187-2c315c9212a1.png",
         "additional_button_url": "mailto:hello.bohair@gmail.com",
         "additional_button2_text": "@bohair_co",
         "additional_button2_subtitle": "",
+        "additional_button2_icon": "shopify://shop_images/Plan_de_travail_2_f990b2a6-39f9-43ec-810a-781f1a2d5438.png",
         "additional_button2_url": "https://instagram.com/we.loca/",
         "padding_top": 100,
         "padding_bottom": 100
