@@ -170,8 +170,8 @@
             "title": "Agréable sur la peau !",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "tag_text": "Cure découverte",
-            "pastille_color": "#000000",
-            "tag_color": "#f2c400",
+            "pastille_color": "#262626",
+            "tag_color": "#e3f8c0",
             "author_name": "Émilie.O",
             "verified_text": "Avis vérifié",
             "verified_icon": "shopify://shop_images/Plan_de_travail_9_72c6b088-6258-4cf8-bee6-6fe890e571f1.png"
@@ -234,7 +234,7 @@
         "section_title": "Elles l’ont adoptées !",
         "title_size": 36,
         "stars_text": "★★★★★",
-        "stars_color": "#ffbf00",
+        "stars_color": "#262626",
         "note_text": "Excellent 4.8/5 sur 74 avis",
         "arrow_left": "shopify://shop_images/iconleft.png",
         "arrow_right": "shopify://shop_images/arrow-right.png"
