@@ -181,8 +181,10 @@
   }
 
   .temoignage-carousel {
-    overflow: hidden;
+ 
     width: 100%;
+      overflow: visible;
+
   }
 
   .temoignage-track {
@@ -192,8 +194,12 @@
   }
 
   .temoignage-slide {
-    min-width: 100%;
-    max-width: 100%;
+     min-width: 80%;
+  max-width: 80%;
+  opacity: 0.3;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+  pointer-events: none;
     min-height:300px;
     box-sizing: border-box;
     padding: 30px 24px;
@@ -206,6 +212,13 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     margin: 0 auto;
   }
+
+  .temoignage-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
 
   .temoignage-photos {
     display: flex;
@@ -496,14 +509,23 @@
   let currentIndex = 0;
 
   function updateCarousel() {
-    const track = document.getElementById('temoignageTrack');
-    const slide = document.querySelector('.temoignage-slide');
-    if (!track || !slide) return;
+  const track = document.getElementById('temoignageTrack');
+  const slides = document.querySelectorAll('.temoignage-slide');
+  if (!track || !slides.length) return;
 
-    const slideWidth = slide.offsetWidth;
-    const offset = -currentIndex * slideWidth;
-    track.style.transform = `translateX(${offset}px)`;
-  }
+  const slideWidth = slides[0].offsetWidth;
+  const offset = -currentIndex * slideWidth;
+  track.style.transform = `translateX(${offset}px)`;
+
+  slides.forEach((slide, index) => {
+    if (index === currentIndex) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+}
+
 
   function prevSlide() {
     const slides = document.querySelectorAll('.temoignage-slide');
