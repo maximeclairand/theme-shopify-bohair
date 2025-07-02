@@ -133,10 +133,10 @@
                
                 {% if block.settings.linked_product != blank %}
                  {% if block.settings.linked_product %}
- <form method="post" action="/cart/add" class="temoignage-form" style="background: {{ section.settings.bgproduit_color }};">
+ <form method="post" action="/cart/add" class="temoignage-form" style="background: {{ section.settings.bgproduit_color }}">
   <input type="hidden" name="id" value="{{ block.settings.linked_product.variants.first.id }}">
 
-  <div class="temoignage-product">
+  <div class="temoignage-product" style="background: {{ section.settings.bgproduit_color }}">
     {% if block.settings.linked_product.featured_image %}
       <img class="product-image" src="{{ block.settings.linked_product.featured_image | image_url: width: 60 }}" alt="{{ block.settings.linked_product.title }}">
     {% endif %}
