@@ -171,14 +171,14 @@
           "type": "review_card",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/5_f7edd36f-d6c1-44d5-b38d-3bfa3fdc3126.png",
+            "image": "shopify://shop_images/21.png",
             "video_url": "",
             "title": "Agréable sur la peau !",
             "content": "<p>Lorem ipsum <strong>dolor sit</strong> amet, consectetur adipiscing elit.</p>",
             "tag_text": "Teinte brun foncé",
             "pastille_color": "#262626",
             "tag_color": "#e3f8c0",
-            "author_name": "Émilie.O",
+            "author_name": "Christophe.P",
             "verified_text": "Avis vérifié",
             "verified_icon": "shopify://shop_images/Plan_de_travail_9_72c6b088-6258-4cf8-bee6-6fe890e571f1.png"
           }
@@ -202,14 +202,14 @@
           "type": "review_card",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/5_f7edd36f-d6c1-44d5-b38d-3bfa3fdc3126.png",
+            "image": "shopify://shop_images/13.png",
             "video_url": "",
             "title": "Agréable sur la peau !",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
-            "tag_text": "Teinte brun",
+            "tag_text": "Teinte noire",
             "pastille_color": "#262626",
             "tag_color": "#e3f8c0",
-            "author_name": "Émilie.O",
+            "author_name": "Émilien.G",
             "verified_text": "Avis vérifié"
           }
         },
