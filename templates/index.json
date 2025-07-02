@@ -129,11 +129,11 @@
             "tag_apres": "APRÈS",
             "testimonial_title": "Super facile à appliquer !",
             "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "name": "Coralie.F",
+            "name": "Hugo.F",
             "stars": "★★★★★",
-            "subtitle": "Cure 3 mois",
-            "bgproduit_color": "#f3f5f6",
-            "icon": "shopify://shop_images/panier.png",
+            "subtitle": "Teinte brun foncé",
+            "bgproduit_color": "#e3f8c0",
+            "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
             "linked_product": "le-spray-fixateur"
           }
         },
@@ -148,7 +148,8 @@
             "name": "Coralie.F",
             "stars": "★★★★★",
             "subtitle": "Cure 3 mois",
-            "bgproduit_color": "#f3f5f6",
+            "bgproduit_color": "#e3f8c0",
+            "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
             "linked_product": "poudre"
           }
         }
