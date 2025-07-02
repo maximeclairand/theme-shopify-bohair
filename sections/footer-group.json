@@ -94,8 +94,8 @@
           "type": "brand_information",
           "settings": {
             "show_social": true,
-            "icon_stars": "shopify://shop_images/Plan_de_travail_1.png",
-            "review_paragraph": "<strong>4.8/5</strong> +230 clients ravis"
+            "icon_stars": "shopify://shop_images/Plan_de_travail_1.svg",
+            "review_paragraph": "<strong>Noté 4.5/5</strong> +230 clients ravis"
           }
         },
         "footer-0": {
