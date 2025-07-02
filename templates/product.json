@@ -1043,6 +1043,16 @@
             "tab_id": "Général"
           }
         },
+        "collapsible_row_ghnDUw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment ça se passe si je me trompe de teinte ?",
+            "icon": "none",
+            "row_content": "<p>Pas d’inquiétude ! Il vous suffit de nous renvoyer la teinte reçue, et nous vous expédierons gratuitement la bonne couleur.</p>",
+            "page": "",
+            "tab_id": "Général"
+          }
+        },
         "collapsible_row_G8gmNt": {
           "type": "collapsible_row",
           "settings": {
@@ -1283,6 +1293,7 @@
         "collapsible_row_aUzjkq",
         "collapsible_row_Kbici3",
         "collapsible_row_wLhPxC",
+        "collapsible_row_ghnDUw",
         "collapsible_row_G8gmNt",
         "collapsible_row_T74DKF",
         "collapsible_row_UV8L8E",
