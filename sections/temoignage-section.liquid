@@ -494,13 +494,14 @@
 
 <script>
   let currentIndex = 0;
+  let autoScrollInterval;
 
   function updateCarousel() {
     const track = document.getElementById('temoignageTrack');
-    const slide = document.querySelector('.temoignage-slide');
-    if (!track || !slide) return;
+    const slides = document.querySelectorAll('.temoignage-slide');
+    if (!track || !slides.length) return;
 
-    const slideWidth = slide.offsetWidth;
+    const slideWidth = slides[0].offsetWidth;
     const offset = -currentIndex * slideWidth;
     track.style.transform = `translateX(${offset}px)`;
   }
@@ -513,8 +514,16 @@
 
   function nextSlide() {
     const slides = document.querySelectorAll('.temoignage-slide');
-    currentIndex = (currentIndex + 1) % slides.length;
+    currentIndex = (currentIndex + 1) % document.querySelectorAll('.temoignage-slide').length;
     updateCarousel();
+  }
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(nextSlide, 3000);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
   }
 
   let startX = 0;
@@ -524,6 +533,7 @@
   if (track) {
     track.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
+      stopAutoScroll(); // pause scroll quand l'utilisateur touche
     });
 
     track.addEventListener('touchend', (e) => {
@@ -534,9 +544,13 @@
       } else if (delta < -50) {
         nextSlide();
       }
+      startAutoScroll(); // reprend après swipe
     });
   }
 
   window.addEventListener('resize', updateCarousel);
-  window.addEventListener('DOMContentLoaded', updateCarousel);
+  window.addEventListener('DOMContentLoaded', () => {
+    updateCarousel();
+    startAutoScroll(); // lancement auto-scroll après chargement
+  });
 </script>
