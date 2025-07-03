@@ -159,7 +159,8 @@
         "slide_KKbMWG"
       ],
       "custom_css": [
-        "h2 {color: #262626;}"
+        "h2 {color: #262626;}",
+        ".temoignage-stars {color: #262626;}"
       ],
       "name": "Témoignages",
       "settings": {
