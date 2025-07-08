@@ -3036,7 +3036,7 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 1rem;
   text-decoration: none;
   color: rgb(var(--color-foreground));
 }
