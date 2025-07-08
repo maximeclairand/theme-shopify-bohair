@@ -2817,7 +2817,7 @@ details .header__icon-close {
 }
 
 details[open] .header__icon-close {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 account-icon {
