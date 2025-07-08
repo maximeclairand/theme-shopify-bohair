@@ -170,6 +170,78 @@
         "bg_color": "#fafafa"
       }
     },
+    "text_around_image_MBeWRD": {
+      "type": "text-around-image",
+      "blocks": {
+        "text_WXzgag": {
+          "type": "text",
+          "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9.png",
+            "svg_icon": "",
+            "icon_width": 28,
+            "title": "Formule testée & approuvée",
+            "description": "<p>Soumise à des tests rigoureux pour garantir sécurité et performance.<br/></p>",
+            "position": "left"
+          }
+        },
+        "text_XYzpne": {
+          "type": "text",
+          "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9_72c6b088-6258-4cf8-bee6-6fe890e571f1.png",
+            "svg_icon": "",
+            "icon_width": 28,
+            "title": "Douceur garantie",
+            "description": "<p>Formule légère qui respecte le cuir chevelu, sans aggraver la chute de cheveux.</p>",
+            "position": "left"
+          }
+        },
+        "text_8zEW9j": {
+          "type": "text",
+          "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9_a706c6ae-7981-45d5-840c-31676560254c.png",
+            "svg_icon": "",
+            "icon_width": 28,
+            "title": "Conçu en laboratoire",
+            "description": "<p>Développé par des experts en cosmétique capillaire pour une efficacité optimale </p>",
+            "position": "right"
+          }
+        },
+        "text_TQqHRa": {
+          "type": "text",
+          "settings": {
+            "image_icon": "shopify://shop_images/Plan_de_travail_9_d67dc93d-fd19-49f2-bde8-274c589ac96c.png",
+            "svg_icon": "",
+            "icon_width": 28,
+            "title": "Efficacité prouvée",
+            "description": "<p>Résultats visibles dès les premières utilisations sur la tenue et le volume.<br/></p>",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "text_WXzgag",
+        "text_XYzpne",
+        "text_8zEW9j",
+        "text_TQqHRa"
+      ],
+      "settings": {
+        "title": "Offrez à vos cheveux,le soin qu’ils méritent.",
+        "description": "",
+        "image": "shopify://shop_images/IMAGE_BENEFICE_PRODUIT_BOHAIR.png",
+        "image_width": 45,
+        "items_per_row_mobile": "1",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "deployer-button",
+        "page_width": 1500,
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "alignment_mobile": "center",
+        "alignment_desktop": "center",
+        "section_background_color": "#fafafa",
+        "section_text_color": "#262626"
+      }
+    },
     "section_avis_NMNH6W": {
       "type": "section-avis",
       "blocks": {
@@ -1502,6 +1574,7 @@
     "featured_collection_Y6Cddr",
     "section_confiance_6g3gEf",
     "temoignage_section_yM7XR8",
+    "text_around_image_MBeWRD",
     "section_avis_NMNH6W",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
