@@ -2709,8 +2709,8 @@ input[type="checkbox"] {
 .header__icons-and-menu-2 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-right: -1.5rem;
+  justify-content: space-between;
 }
 
 .header__icons-and-menu-2 .list-menu {
