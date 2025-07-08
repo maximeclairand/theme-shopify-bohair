@@ -3043,7 +3043,7 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1rem;
+  padding: 0.5rem;
   text-decoration: none;
   color: rgb(var(--color-foreground));
 }
@@ -3137,6 +3137,10 @@ details[open] > .header__menu-item .icon-caret {
   flex-shrink: 0;
   margin-left: 1rem;
   position: static;
+}
+
+.button--header {
+  padding: 0 2rem;
 }
 
 header-menu > details,
