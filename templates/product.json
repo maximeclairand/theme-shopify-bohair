@@ -738,94 +738,6 @@
         "padding_bottom": 60
       }
     },
-    "trustpilot_badge_ccdfVN": {
-      "type": "trustpilot-badge",
-      "settings": {
-        "trustpilot_background_color": "#ffffff",
-        "title_color": "#262626",
-        "text_1": "<strong>Noté 4.5/5</strong>",
-        "etoiles_logo": "shopify://shop_images/Plan_de_travail_140.svg",
-        "trustpilot_stars": "4,5",
-        "text_2": "+23 avis vérifiés",
-        "trustpilot_logo": "shopify://shop_images/Plan_de_travail_17_copie_4.svg",
-        "link": "",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "slider_reviews_VzdqLW": {
-      "type": "slider-reviews",
-      "blocks": {
-        "review_MnEThR": {
-          "type": "review",
-          "settings": {
-            "product": "",
-            "title": "Une vraie pépite !",
-            "text": "<p>J’ai découvert bohair par hasard, et c’est clairement l’une de mes meilleures trouvailles beauté de l’année. Les produits sont d’une qualité irréprochable, le service client est top ! Commande reçue rapidement, emballage soigné, et surtout… des résultats visibles.</p>",
-            "author": "Lucas Martin",
-            "note": 5,
-            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
-            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-            "show_border": false
-          }
-        },
-        "review_hgpAPD": {
-          "type": "review",
-          "settings": {
-            "product": "",
-            "title": "Excellent produit",
-            "text": "<p>C'est un super produit que je recommande.</p>",
-            "author": "Thomas Giraud",
-            "note": 5,
-            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
-            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-            "show_border": false
-          }
-        },
-        "review_QdU6fP": {
-          "type": "review",
-          "settings": {
-            "product": "",
-            "title": "Excellent produit",
-            "text": "<p>C'est un super produit que je recommande.</p>",
-            "author": "Thomas Giraud",
-            "note": 5,
-            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
-            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-            "show_border": false
-          }
-        }
-      },
-      "block_order": [
-        "review_MnEThR",
-        "review_hgpAPD",
-        "review_QdU6fP"
-      ],
-      "name": "Slider d'avis",
-      "settings": {
-        "display_card_mode": true,
-        "title": "C'est vous qui le dites !",
-        "heading_size": "h1",
-        "center_title": true,
-        "note_generale": 5,
-        "note_generale_text": "4.5/5 Excellent",
-        "block_info_image_link": "",
-        "block_info_text": "",
-        "heading_card_size": "h4",
-        "slider_buttons_position": "bottom",
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "column_alignment": "left",
-        "button_label": "Voir tous les avis",
-        "button_link": "",
-        "color_scheme": "",
-        "color_scheme_buttons": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "collapsible_tabs_8fKwgQ": {
       "type": "collapsible-tabs",
       "blocks": {
@@ -1183,7 +1095,7 @@
         "additionnal_color_scheme": "",
         "additional_title": "Besoin d’aide ?",
         "additional_description": "<p>Notre équipe est disponible pour répondre à vos questions <strong>du Lundi au Vendredi.</strong></p><p>Contactez-nous à l’adresse <em><strong>hello.bohair@gmail.com</strong></em><strong>.</strong> Nous vous garantissons une réponse <strong>sous 48 heures.</strong></p>",
-        "additional_button_text": "weloca.club@gmail.com",
+        "additional_button_text": "hello.bohair@gmail.com",
         "additional_button_subtitle": "",
         "additional_button_icon": "shopify://shop_images/enveloppe_f3d8eef2-2c58-4417-a187-2c315c9212a1.png",
         "additional_button_url": "mailto:hello.bohair@gmail.com",
@@ -1193,6 +1105,94 @@
         "additional_button2_url": "https://instagram.com/we.loca/",
         "padding_top": 100,
         "padding_bottom": 100
+      }
+    },
+    "trustpilot_badge_ccdfVN": {
+      "type": "trustpilot-badge",
+      "settings": {
+        "trustpilot_background_color": "#ffffff",
+        "title_color": "#262626",
+        "text_1": "<strong>Noté 4.5/5</strong>",
+        "etoiles_logo": "shopify://shop_images/Plan_de_travail_140.svg",
+        "trustpilot_stars": "4,5",
+        "text_2": "+23 avis vérifiés",
+        "trustpilot_logo": "shopify://shop_images/Plan_de_travail_17_copie_4.svg",
+        "link": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "slider_reviews_VzdqLW": {
+      "type": "slider-reviews",
+      "blocks": {
+        "review_MnEThR": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Une vraie pépite !",
+            "text": "<p>J’ai découvert bohair par hasard, et c’est clairement l’une de mes meilleures trouvailles beauté de l’année. Les produits sont d’une qualité irréprochable, le service client est top ! Commande reçue rapidement, emballage soigné, et surtout… des résultats visibles.</p>",
+            "author": "Lucas Martin",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
+          }
+        },
+        "review_hgpAPD": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
+          }
+        },
+        "review_QdU6fP": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
+          }
+        }
+      },
+      "block_order": [
+        "review_MnEThR",
+        "review_hgpAPD",
+        "review_QdU6fP"
+      ],
+      "name": "Slider d'avis",
+      "settings": {
+        "display_card_mode": true,
+        "title": "C'est vous qui le dites !",
+        "heading_size": "h1",
+        "center_title": true,
+        "note_generale": 5,
+        "note_generale_text": "4.5/5 Excellent",
+        "block_info_image_link": "",
+        "block_info_text": "",
+        "heading_card_size": "h4",
+        "slider_buttons_position": "bottom",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "column_alignment": "left",
+        "button_label": "Voir tous les avis",
+        "button_link": "",
+        "color_scheme": "",
+        "color_scheme_buttons": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "reviews_list_i4zNT3": {
@@ -1447,9 +1447,9 @@
     "barre_defilante_NB8EVr",
     "ingredients_list_gcgaTn",
     "tableau_de_comparaison_dLAPee",
+    "collapsible_tabs_8fKwgQ",
     "trustpilot_badge_ccdfVN",
     "slider_reviews_VzdqLW",
-    "collapsible_tabs_8fKwgQ",
     "reviews_list_i4zNT3",
     "related-products"
   ]
