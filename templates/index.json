@@ -1007,6 +1007,21 @@
         "padding_bottom": 100
       }
     },
+    "trustpilot_badge_8GdwPC": {
+      "type": "trustpilot-badge",
+      "settings": {
+        "trustpilot_background_color": "#ffffff",
+        "title_color": "#262626",
+        "text_1": "<strong>Noté 4.5/5</strong>",
+        "etoiles_logo": "shopify://shop_images/Plan_de_travail_140.svg",
+        "trustpilot_stars": "4,5",
+        "text_2": "+23 avis vérifiés",
+        "trustpilot_logo": "shopify://shop_images/Plan_de_travail_17_copie_4.svg",
+        "link": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "image_with_text_tHGn6d": {
       "type": "image-with-text",
       "blocks": {
@@ -1583,6 +1598,7 @@
     "barre_defilante_HVdiQX",
     "image_with_text_XrpEw6",
     "collapsible_tabs_qjigJj",
+    "trustpilot_badge_8GdwPC",
     "image_with_text_tHGn6d",
     "rich_text_abVmTw",
     "rich_text",
