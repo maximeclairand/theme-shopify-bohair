@@ -124,7 +124,7 @@
 }
 {% endschema %}
 
-<div class="confiance-section" style="background-color: {{ section.settings.bg_color }};">
+<div class="confiance-section page-width" style="background-color: {{ section.settings.bg_color }};">
   <h2 class="confiance-title" style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.title_font_size }}px;">
     Retrouvez 100% de votre confiance
   </h2>
@@ -152,19 +152,16 @@
   }
 
   .confiance-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1500px;
-    margin: 0 auto;
   }
 
   .confiance-item {
     background: #fff;
     padding: 25px 25px;
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
     transition: transform 0.3s ease;
   }
 
@@ -188,8 +185,7 @@
 
   @media screen and (max-width: 768px) {
     .confiance-grid {
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: 1fr;
     }
 
     .confiance-item {
