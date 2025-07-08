@@ -242,6 +242,47 @@
         "section_text_color": "#262626"
       }
     },
+    "barre_defilante_HVdiQX": {
+      "type": "barre-defilante",
+      "blocks": {
+        "information_bVXVRT": {
+          "type": "information",
+          "settings": {
+            "text": "Sans perte de cheveux",
+            "image": "shopify://shop_images/Plan_de_travail_3.png",
+            "icon_height": 22
+          }
+        },
+        "information_f37cNR": {
+          "type": "information",
+          "settings": {
+            "text": "Sans alcool agressif",
+            "image": "shopify://shop_images/Plan_de_travail_3_2fa57dc4-3f06-4dc1-ac25-bca9efa63242.png",
+            "icon_height": 22
+          }
+        },
+        "information_bcAwiL": {
+          "type": "information",
+          "settings": {
+            "text": "Zéro résidu, zéro effet carton",
+            "image": "shopify://shop_images/Plan_de_travail_3_ce1bbad9-4d46-4e65-acc2-746de110fc83.png",
+            "icon_height": 22
+          }
+        }
+      },
+      "block_order": [
+        "information_bVXVRT",
+        "information_f37cNR",
+        "information_bcAwiL"
+      ],
+      "name": "Barre défilante",
+      "settings": {
+        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
+        "speed": 30,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "section_avis_NMNH6W": {
       "type": "section-avis",
       "blocks": {
@@ -546,47 +587,6 @@
         "padding_bottom": 20
       }
     },
-    "barre_defilante_HVdiQX": {
-      "type": "barre-defilante",
-      "blocks": {
-        "information_bVXVRT": {
-          "type": "information",
-          "settings": {
-            "text": "Sans perte de cheveux",
-            "image": "shopify://shop_images/Plan_de_travail_3.png",
-            "icon_height": 22
-          }
-        },
-        "information_f37cNR": {
-          "type": "information",
-          "settings": {
-            "text": "Sans alcool agressif",
-            "image": "shopify://shop_images/Plan_de_travail_3_2fa57dc4-3f06-4dc1-ac25-bca9efa63242.png",
-            "icon_height": 22
-          }
-        },
-        "information_bcAwiL": {
-          "type": "information",
-          "settings": {
-            "text": "Zéro résidu, zéro effet carton",
-            "image": "shopify://shop_images/Plan_de_travail_3_ce1bbad9-4d46-4e65-acc2-746de110fc83.png",
-            "icon_height": 22
-          }
-        }
-      },
-      "block_order": [
-        "information_bVXVRT",
-        "information_f37cNR",
-        "information_bcAwiL"
-      ],
-      "name": "Barre défilante",
-      "settings": {
-        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
-        "speed": 30,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
     "image_with_text_XrpEw6": {
       "type": "image-with-text",
       "blocks": {
@@ -634,8 +634,8 @@
         "mobile_content_alignment": "left",
         "image_background_position_x": 50,
         "image_background_position_y": 50,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 60,
+        "padding_bottom": 0
       }
     },
     "collapsible_tabs_qjigJj": {
@@ -1537,12 +1537,12 @@
     "section_confiance_6g3gEf",
     "temoignage_section_yM7XR8",
     "text_around_image_MBeWRD",
+    "barre_defilante_HVdiQX",
     "section_avis_NMNH6W",
     "multicolumn_HJ78rY",
     "image_with_text_wQUUiD",
     "image_with_text_F86f8L",
     "rich_text_XEGbLp",
-    "barre_defilante_HVdiQX",
     "image_with_text_XrpEw6",
     "collapsible_tabs_qjigJj",
     "trustpilot_badge_8GdwPC",
