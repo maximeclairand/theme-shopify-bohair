@@ -2778,6 +2778,11 @@ input[type="checkbox"] {
   vertical-align: middle;
 }
 
+.header__icon .icon-search {
+  height: 2rem;
+  width: 2rem;
+}
+
 /* .header__icon .icon-cart,
 .header__icon .icon-cart-empty,
 .header__icon .icon-account {
