@@ -1071,45 +1071,6 @@
         "padding_bottom": 36
       }
     },
-    "rich_text_abVmTw": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_8mENyJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Faites confiance aux autres propriétaires.",
-            "heading_size": "h1"
-          }
-        },
-        "text_h6DRpQ": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Lisez leurs avis, ils en parlent mieux que nous !</p>"
-          }
-        },
-        "text_hFXtg3": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Tous nos <strong>avis sont vérifiés et publiés</strong>, en témoignent les photos de chaque chien ou chat utilisant nos produits.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_8mENyJ",
-        "text_h6DRpQ",
-        "text_hFXtg3"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 12
-      }
-    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -1151,20 +1112,6 @@
         "full_width": false,
         "padding_top": 80,
         "padding_bottom": 36
-      }
-    },
-    "trustpilot_badge_ccdfVN": {
-      "type": "trustpilot-badge",
-      "disabled": true,
-      "settings": {
-        "trustpilot_background_color": "#ffffff",
-        "title_color": "#364c84",
-        "text_1": "<strong>Noté 4.8/5</strong>",
-        "trustpilot_stars": "4,5",
-        "text_2": "+200 avis vérifiés",
-        "link": "",
-        "padding_top": 40,
-        "padding_bottom": 40
       }
     },
     "reviews_list_i4zNT3": {
@@ -1600,9 +1547,7 @@
     "collapsible_tabs_qjigJj",
     "trustpilot_badge_8GdwPC",
     "image_with_text_tHGn6d",
-    "rich_text_abVmTw",
     "rich_text",
-    "trustpilot_badge_ccdfVN",
     "reviews_list_i4zNT3",
     "instagram_eyFpgD",
     "slider_reviews_FNjDRQ"
