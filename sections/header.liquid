@@ -250,11 +250,11 @@
                 {%- if customer and customer.has_avatar? -%}
                   {{ customer | avatar }}
                 {%- else -%}
-                  <span class="svg-wrapper">{{ 'icon-account-3.svg' | inline_asset_content }}</span>
+                  <span class="svg-wrapper">{{ 'icon-account-2.svg' | inline_asset_content }}</span>
                 {%- endif -%}
               </account-icon>
             {%- else -%}
-              <span class="svg-wrapper">{{ 'icon-account-3.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper">{{ 'icon-account-2.svg' | inline_asset_content }}</span>
             {%- endif -%}
             <span class="visually-hidden">
               {%- liquid
@@ -277,9 +277,9 @@
 
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
             {% if cart == empty %}
-              <span class="svg-wrapper">{{ 'icon-cart-empty-2.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper">{{ 'icon-cart-empty-3.svg' | inline_asset_content }}</span>
             {% else %}
-              <span class="svg-wrapper">{{ 'icon-cart-2.svg' | inline_asset_content }}</span>
+              <span class="svg-wrapper">{{ 'icon-cart-3.svg' | inline_asset_content }}</span>
             {% endif %}
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
           {%- if cart != empty -%}
