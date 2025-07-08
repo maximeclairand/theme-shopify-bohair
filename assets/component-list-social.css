@@ -17,12 +17,7 @@
 }
 
 .list-social__link {
-  align-items: center;
-  display: flex;
-  padding: 0.8rem;
-  background-color: rgb(var(--color-foreground));
-  color: rgb(var(--color-background));
-  border-radius: 50%;
+  color: rgb(var(--color-foreground));
 }
 
 .utility-bar .list-social__link {
