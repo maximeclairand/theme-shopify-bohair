@@ -1,0 +1,562 @@
+{{ 'section-review-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+
+  assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+  assign show_desktop_slider = false
+  if section.settings.swipe_on_desktop and section.blocks.size > columns_desktop_int
+    assign show_desktop_slider = true
+  endif
+-%}
+
+{% capture slider_buttons %}
+    <div class="slider-buttons{% if show_mobile_slider == false %} small-hide medium-hide{% endif %}{% if show_desktop_slider == false %} large-up-hide{% endif %}">
+        <button
+          type="button"
+          class="slider-button slider-button--prev color-{{ section.settings.color_scheme_buttons }}"
+          name="previous"
+          aria-label="{{ 'general.slider.previous_slide' | t }}"
+        >
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </button>
+        <div class="slider-counter caption hidden">
+          <span class="slider-counter--current">1</span>
+          <span aria-hidden="true"> / </span>
+          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+          <span class="slider-counter--total">{{ section.blocks.size }}</span>
+        </div>
+        <button
+          type="button"
+          class="slider-button slider-button--next color-{{ section.settings.color_scheme_buttons }}"
+          name="next"
+          aria-label="{{ 'general.slider.next_slide' | t }}"
+        >
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </button>
+      </div>
+{% endcapture %}
+
+<slider-component class="slider-mobile-gutter{% if section.settings.swipe_on_desktop %} slider-enable-desktop{% endif %}">
+  <div class="review-slider{% if section.settings.display_card_mode == false %} color-{{ section.settings.color_scheme }}{% endif %} gradient{% if section.settings.title == blank %} no-heading{% endif %}">
+    <div class="isolate">
+      <div class="review-slider_container{% if section.settings.display_card_mode %} review-slider_container--card color-{{ section.settings.color_scheme }}{% endif %} section-{{ section.id }}-padding">
+        {%- unless section.settings.title == blank -%}
+          <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin review-slider__title">
+            <h2 class="title{% if section.settings.center_title %} title-centered{% endif %} inline-richtext {{ section.settings.heading_size }}">
+              {{ section.settings.title }}
+            </h2>
+
+            {%- if section.settings.slider_buttons_position == 'top' and show_mobile_slider or show_desktop_slider -%}
+              {{ slider_buttons }}
+            {%- endif -%}
+          </div>
+        {%- endunless -%}
+        {% if section.settings.block_info_image != blank or section.settings.block_info_text != blank %}
+          <div class="review-slider__main-container">
+            <div class="review-slider__block-info">
+              {% if section.settings.block_info_image != blank %}
+                {% if section.settings.block_info_image_link != blank %}
+                  <a href="{{ section.settings.block_info_image_link }}">
+                {%- endif %}
+
+                <img src="{{ section.settings.block_info_image | image_url: width:600 }}" alt="{{ section.settings.block_info_image.alt }}" width="170" height="100">
+                {% if section.settings.block_info_image_link != blank %}</a>{% endif %}
+              {% endif %}
+
+              <div class="review-slider__block-info-main">
+                {% if section.settings.note_generale and section.settings.note_generale_text %}
+                  <div class="review-slider_general-rating{% if section.settings.center_title %} review-slider_general-rating-centered{% endif %}">
+                    {% liquid
+                      assign rating_decimal = 0
+                      assign decimal = section.settings.note_generale | modulo: 1
+                      if decimal >= 0.3 and decimal <= 0.7
+                        assign rating_decimal = 0.5
+                      elsif decimal > 0.7
+                        assign rating_decimal = 1
+                      endif
+                    %}
+                    <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: section.settings.note_generale, rating_max: 5 }}">
+                      <span class="rating-star" style="--rating: {{ section.settings.note_generale | floor }}; --rating-max: 5; --rating-decimal: {{ rating_decimal }}; --letter-spacing: 0; --font-size: 2;"></span>
+                    </div>
+                    <p class="rating-count">
+                      <span>{{ section.settings.note_generale_text }}</span>
+                    </p>
+                  </div>
+                {% endif %}
+
+                {%- if section.settings.slider_buttons_position == 'left' and show_mobile_slider or show_desktop_slider -%}
+                  {{ slider_buttons }}
+                {%- endif -%}
+
+                {% if section.settings.block_info_text != blank %}
+                  <div>{{ section.settings.block_info_text }}</div>
+                {% endif %}
+              </div>
+            </div>
+        {% endif %}
+
+        <ul
+          class="review-slider_list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider or show_desktop_slider %} slider grid--peek{% endif %}{% if show_mobile_slider %} slider--tablet{% endif %}{% if show_desktop_slider %} slider--desktop{% endif %}"
+          id="Slider-{{ section.id }}"
+          role="list"
+        >
+          {%- for block in section.blocks -%}
+            {% case block.type %}
+              {% when 'review' %}
+                {%- assign empty_column = '' -%}
+                {%- if block.settings.title == blank and block.settings.text == blank and block.settings.link_label == blank -%}
+                  {%- assign empty_column = ' review-slider_list__item--empty' -%}
+                {%- endif -%}
+
+                <li
+                  id="Slide-{{ section.id }}-{{ forloop.index }}"
+                  class="review-slider_list__item grid__item{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="review-slider_card {% if block.settings.show_border %}review-slider_card--with-border{% endif %} content-container color-{{ block.settings.color_scheme }}">
+                    <div class="review-slider_card__info">
+                      <div class="review-slider_card__info_rating">
+                        {% if block.settings.note_image != blank %}
+                          <div class="rating-image">
+                              <img src="{{ block.settings.note_image | image_url: width:300 }}" alt="{{ block.settings.note_image.alt }}" width="100" height="40">
+                          </div>
+                          {%- elsif block.settings.note != blank -%}
+                          {% liquid
+                              assign rating_decimal = 0
+                              assign decimal = section.settings.note_generale | modulo: 1
+                              if decimal >= 0.3 and decimal <= 0.7
+                              assign rating_decimal = 0.5
+                              elsif decimal > 0.7
+                              assign rating_decimal = 1
+                              endif
+                          %}
+                          <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: block.settings.note, rating_max: 5 }}">
+                              <span class="rating-star" style="--rating: {{ block.settings.note | floor }}; --rating-max: 5; --rating-decimal: {{ rating_decimal }}; --letter-spacing: 0;--font-size: 2;"></span>
+                          </div>
+                        {%- endif -%}
+                      
+                        {% if block.settings.note_icon != blank %}
+                          <img src="{{ block.settings.note_icon | image_url: width:100 }}" alt="{{ block.settings.note_icon.alt }}" width="25" height="40">
+                        {% endif %}
+                        
+                      </div>
+
+                      {% if block.settings.product != blank %}
+                        <a class="review-slider--link_product_review" href="{{ block.settings.product.url }}">
+                          {% if block.settings.product.featured_media.media_type == 'image' %}
+                            <img
+                              src="{{ block.settings.product.featured_media | image_url: width: 300 }}"
+                              alt="{{ block.settings.product.featured_media.alt }}"
+                              width="100"
+                              height="100"
+                            >
+                          {% endif %}
+                          <span>{{ block.settings.product.title }}</span>
+                          <svg
+                            viewBox="0 0 14 10"
+                            fill="none"
+                            aria-hidden="true"
+                            focusable="false"
+                            class="icon icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor">
+                          </svg>
+                        </a>
+                      {% endif %}
+
+                      {%- if block.settings.title != blank -%}
+                        <h3 class="inline-richtext {{ section.settings.heading_card_size }}">{{ block.settings.title }}</h3>
+                      {%- endif -%}
+
+                      {%- if block.settings.text != blank -%}
+                        <div class="review-slider_card__info_description">{{ block.settings.text }}</div>
+                      {%- endif -%}
+
+                      {%- if block.settings.author != blank -%}
+                        <div class="review-slider_card__info_author{% if block.settings.author_image != blank %} contains-author-image{% endif %}">
+                          {% if block.settings.author_image != blank %}
+                            <img src="{{ block.settings.author_image | image_url: width:200 }}" alt="{{ block.settings.author_image.alt }}" width="40" height="40">
+                          {% endif %}
+                          <span>{{ block.settings.author }}</span>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </li>
+            {% endcase %}
+          {%- endfor -%}
+        </ul>
+
+        {% if section.settings.block_info_image != blank or section.settings.block_info_text != blank %}
+          </div>
+        {% endif %}
+
+        {%- if section.settings.slider_buttons_position == 'bottom' and show_mobile_slider or show_desktop_slider -%}
+            {{ slider_buttons }}
+        {%- endif -%}
+
+        <div class="center">
+          {%- if section.settings.button_label != blank -%}
+            <a
+              class="button button--primary"
+              {% if section.settings.button_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.button_link }}"
+              {% endif %}
+            >
+              {{ section.settings.button_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</slider-component>
+
+{% schema %}
+{
+  "name": "Slider d'avis",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_card_mode",
+      "default": false,
+      "label": "Afficher la section dans une carte"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Avis clients",
+      "label": "Titre"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h0",
+          "label": "Grand"
+        }
+      ],
+      "default": "h1",
+      "label": "Taille du titre"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_title",
+      "default": false,
+      "label": "Centrer le titre"
+    },
+    {
+      "type": "header",
+      "content": "Block d'infos avant les avis clients"
+    },
+    {
+      "type": "image_picker",
+      "id": "block_info_image",
+      "label": "Image du block"
+    },
+    {
+        "type": "range",
+        "id": "note_generale",
+        "label": "Note générale",
+        "min": 0,
+        "max": 5,
+        "step": 0.5,
+        "default": 5
+      },
+      {
+        "type": "inline_richtext",
+        "id": "note_generale_text",
+        "default": "4.6/5 Excellent",
+        "label": "Note générale (texte)"
+      },
+    {
+      "type": "url",
+      "id": "block_info_image_link",
+      "label": "Lien de l'image du block"
+    },
+    {
+      "type": "richtext",
+      "id": "block_info_text",
+      "label": "Texte du block"
+    },
+    {
+      "type": "select",
+      "id": "heading_card_size",
+      "options": [
+        {
+          "value": "h5",
+          "label": "Très petit"
+        },
+        {
+          "value": "h4",
+          "label": "Plus petit"
+        },
+        {
+          "value": "h2",
+          "label": "Petit"
+        },
+        {
+          "value": "h1",
+          "label": "Moyen"
+        },
+        {
+          "value": "h0",
+          "label": "Grand"
+        }
+      ],
+      "default": "h4",
+      "label": "Taille des titres des cartes"
+    },
+    {
+      "type": "select",
+      "id": "slider_buttons_position",
+      "options": [
+        {
+          "value": "top",
+          "label": "En haut"
+        },
+        {
+          "value": "left",
+          "label": "À gauche"
+        },
+        {
+          "value": "bottom",
+          "label": "En bas"
+        }
+      ],
+      "default": "bottom",
+      "label": "Position des boutons du slider"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Nombre de colonnes sur ordinateur"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_desktop",
+      "default": false,
+      "label": "Activer le balayage sur desktop"
+    },
+    {
+      "type": "select",
+      "id": "column_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gaucher"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        }
+      ],
+      "default": "left",
+      "label": "Alignement de colonne"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Voir tous les avis",
+      "label": "Texte du bouton"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_buttons",
+      "label": "Nuancier de couleurs des boutons slider",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Mise en page sur mobile"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 colonne"
+        },
+        {
+          "value": "2",
+          "label": "2 colonnes"
+        }
+      ],
+      "default": "1",
+      "label": "Nombre de colonnes sur mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Activer le balayage sur mobile"
+    },
+    {
+      "type": "header",
+      "content": "Marges de la section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge supérieure",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge inférieure",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Produit"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Excellent produit",
+          "label": "Titre"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>C'est un super produit que je recommande.</p>",
+          "label": "Texte de l'avis"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "author",
+          "default": "Thomas Giraud",
+          "label": "Auteur"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Image de l'auteur"
+        },
+        {
+          "type": "range",
+          "id": "note",
+          "label": "Note",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "default": 5
+        },
+        {
+          "type": "image_picker",
+          "id": "note_image",
+          "label": "Image de note",
+          "info": "Remplace les étoiles de la note"
+        },
+        {
+          "type": "image_picker",
+          "id": "note_icon",
+          "label": "Icône de note"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-2"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_border",
+          "label": "Afficher la bordure",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider d'avis",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
