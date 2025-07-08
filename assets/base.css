@@ -2709,7 +2709,7 @@ input[type="checkbox"] {
 .header__icons-and-menu-2 {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-right: -1.5rem;
 }
 
@@ -2720,7 +2720,6 @@ input[type="checkbox"] {
 @media screen and (min-width: 990px) {
   .header__icons-and-menu-2 {
     margin-right: 0;
-    justify-content: space-between;
   }
 
   .header__icons-and-menu-2 .list-menu {
@@ -2999,7 +2998,7 @@ details[open] > .header__submenu {
   margin-left: -1.2rem;
   grid-area: navigation;
   display: none;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
