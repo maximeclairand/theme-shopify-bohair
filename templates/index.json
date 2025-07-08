@@ -1430,9 +1430,9 @@
           "type": "review",
           "settings": {
             "product": "",
-            "title": "Excellent produit",
-            "text": "<p>C'est un super produit que je recommande.</p>",
-            "author": "Thomas Giraud",
+            "title": "Une vraie pépite !",
+            "text": "<p>J’ai découvert bohair par hasard, et c’est clairement l’une de mes meilleures trouvailles beauté de l’année. Les produits sont d’une qualité irréprochable, le service client est top ! Commande reçue rapidement, emballage soigné, et surtout… des résultats visibles.</p>",
+            "author": "Lucas Martin",
             "note": 5,
             "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
             "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
