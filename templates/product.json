@@ -68,6 +68,7 @@
         },
         "subscriptions_app_block_MpAaMz": {
           "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "disabled": true,
           "settings": {
             "color_text_body": "#262626",
             "dividers_color": "#8f8d8d",
@@ -80,9 +81,8 @@
         },
         "subscription_widget_TRM4hj": {
           "type": "subscription_widget",
-          "disabled": true,
           "settings": {
-            "subscription_color_scheme": "scheme-51d5babd-f359-449c-8ae7-b8287aa12d6b",
+            "subscription_color_scheme": "scheme-1",
             "label": "Sélectionnez votre offre",
             "description": "",
             "default_selected": "subscription",
