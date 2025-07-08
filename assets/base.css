@@ -855,6 +855,11 @@ summary::-webkit-details-marker {
   font-size: inherit;
 }
 
+.title-centered {
+  text-align: center;
+  width: 100%;
+}
+
 .title-wrapper {
   margin-bottom: 3rem;
 }
