@@ -3000,6 +3000,7 @@ details[open] > .header__submenu {
   display: none;
   justify-content: flex-end;
   align-items: center;
+  gap: 1rem;
 }
 
 .header__inline-menu {
