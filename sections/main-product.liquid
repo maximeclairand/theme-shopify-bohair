@@ -92,11 +92,11 @@
   {% assign animal_label = 'Tous les compléments' %}
 {% endif %}
 
-<nav class="breadcrumb" aria-label="Fil d'Ariane" style="margin-bottom: 1rem;">
+{% comment %} <nav class="breadcrumb" aria-label="Fil d'Ariane" style="margin-bottom: 1rem;">
   <a href="{{ routes.root_url }}">Accueil</a> ›
   <a href="{{ animal_collection_url }}">{{ animal_label }}</a> ›
   <span>{{ product.title | escape }}</span>
-</nav>
+</nav> {% endcomment %}
 
 <script type="application/ld+json">
 {
