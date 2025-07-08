@@ -1,0 +1,71 @@
+{% comment %}
+  Renders a slider slide.
+
+  Accepts:
+  - id: {{ String }} ID of the component
+  - index: {{ Number }} Index of the slide
+  - slide: Can be a block, a product, a collection, a blog post, a page or whatever object you want to display in the slider.
+  - page_width: {Number} Page width
+
+  Usage:
+  {%- render 'deployer-slider-slide', id: id, index: index, slide: slide, page_width: page_width -%}
+{% endcomment %}
+
+{%- liquid
+  assign image = slide.settings.image
+
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign fetch_priority = 'high'
+  endif
+-%}
+
+<div
+  class="deployer-slider-slide"
+  data-id="Deployer-Slider-{{ id }}-{{ index }}"
+  {% if image != blank %}
+    style="--ratio-percent: {{ 1 | divided_by: image.aspect_ratio | times: 100 }}%;"
+  {% endif %}
+>
+  <style>
+      .deployer-slider-slide[data-id="Deployer-Slider-{{ id }}-{{ index }}"] {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: var(--ratio-percent);
+      }
+
+      .deployer-slider-slide[data-id="Deployer-Slider-{{ id }}-{{ index }}"] img:not(.deployer-slider-slide__icon) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        object-position: 0 50%;
+        overflow: hidden;
+    }
+  </style>
+
+
+      {%- if image != blank -%}
+      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {%- capture sizes -%}
+      (min-width: {{ page_width }}px) {{ page_width | minus: 100 | divided_by: 2 }}px,
+      (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+      {%- endcapture -%}
+      {{ image | image_url: width: 1500 | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority }}
+      {%- else -%}
+      {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+      
+      {% if slide.settings.icon != blank %}
+      <a {% if slide.settings.url != blank %}href="{{ slide.settings.url }}"{% else %}class="link-disabled"{% endif %} {% if slide.settings.url_target_blank %}target="_blank"{% endif %}>
+        <img class="deployer-slider-slide__icon" src="{{ slide.settings.icon | image_url: width:100 }}" alt="{{ slide.settings.icon.alt}}" width="20" height="20">
+    </a>
+      {% endif %}
+  
+</div>
