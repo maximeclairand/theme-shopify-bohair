@@ -2958,6 +2958,11 @@ details[open] .modal-overlay::after {
   transition: transform 150ms ease, opacity 150ms ease;
 }
 
+.header__icon--menu .icon-hamburger {
+  width: 20px;
+  height: 20px;
+}
+
 details:not([open]) > .header__icon--menu .icon-close,
 details[open] > .header__icon--menu .icon-hamburger {
   visibility: hidden;
