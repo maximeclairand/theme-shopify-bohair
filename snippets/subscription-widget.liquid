@@ -97,7 +97,7 @@
         </label>
  
         <div class="subscription-widget__option-content {%  if block.settings.subscription_badge != blank %}subscription-widget__option-content--with-badge{% endif %}">
-          <select class="deployer-select">
+          <select class="deployer-select deployer-select--full-width">
             {% for selling_plan_group in product.selling_plan_groups %}
               {% for selling_plan in selling_plan_group.selling_plans %}
                 {% liquid
