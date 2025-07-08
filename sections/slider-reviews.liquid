@@ -61,8 +61,8 @@
       </div>
 {% endcapture %}
 
-<slider-component class="slider-mobile-gutter{% if section.settings.swipe_on_desktop %} slider-enable-desktop{% endif %}">
-  <div class="page-width review-slider{% if section.settings.display_card_mode == false %} color-{{ section.settings.color_scheme }}{% endif %} gradient{% if section.settings.title == blank %} no-heading{% endif %}">
+<slider-component class="page-width slider-mobile-gutter{% if section.settings.swipe_on_desktop %} slider-enable-desktop{% endif %}">
+  <div class="review-slider{% if section.settings.display_card_mode == false %} color-{{ section.settings.color_scheme }}{% endif %} gradient{% if section.settings.title == blank %} no-heading{% endif %}">
     <div class="isolate">
       <div class="review-slider_container{% if section.settings.display_card_mode %} review-slider_container--card color-{{ section.settings.color_scheme }}{% endif %} section-{{ section.id }}-padding">
         {%- unless section.settings.title == blank -%}
