@@ -1,7 +1,7 @@
 <svg class="icon icon-account" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 24" width="40" height="48">
 	<style>
-		.icon-account-s0 { fill: #364c84;stroke: #364c84;stroke-width: .5 } 
-		.icon-account-s1 { fill: #364c84;stroke: #364c84;stroke-miterlimit:10;stroke-width: .5 } 
+		.icon-account-s0 { fill: #000000;stroke: #000000;stroke-width: .5 } 
+		.icon-account-s1 { fill: #000000;stroke: #000000;stroke-miterlimit:10;stroke-width: .5 } 
 	</style>
 	<g>
 		<g>
