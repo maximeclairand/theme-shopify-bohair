@@ -718,6 +718,7 @@ summary .svg-wrapper:has(.icon-caret) {
   top: 50%;
   transform: translateY(-50%);
   background: rgb(var(--color-background-2));
+  color: rgb(var(--color-background));
   border-radius: 50%;
 }
 
