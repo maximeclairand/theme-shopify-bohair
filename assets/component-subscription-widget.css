@@ -29,7 +29,8 @@ subscription-widget {
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  border: var(--deployer-default-border-width) solid rgba(var(--deployer-color-foreground), 1);
+  border: var(--deployer-default-border-width) solid
+    rgba(var(--deployer-color-foreground), 1);
   outline: 1px solid transparent;
   border-radius: var(--deployer-default-border-radius);
   color: rgba(var(--deployer-color-foreground));
@@ -92,7 +93,8 @@ subscription-widget {
   font-weight: 500;
 }
 
-.subscription-widget__option-prices .subscription-widget__option-compare-at-price {
+.subscription-widget__option-prices
+  .subscription-widget__option-compare-at-price {
   opacity: 0.7;
 }
 
@@ -118,7 +120,6 @@ subscription-widget {
 }
 
 .subscription-widget__option-content .deployer-select {
-  width: fit-content;
   padding-right: 3rem;
   background-color: white;
 }
