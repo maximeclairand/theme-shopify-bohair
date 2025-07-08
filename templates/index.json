@@ -65,6 +65,88 @@
         "padding_bottom": 36
       }
     },
+    "multicolumn_AJgTBB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_t9DVtY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_icon": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_text": "",
+            "title": "Confiance retrouvée",
+            "text": "<p>Vous n’avez pas seulement densifié vos cheveux. Vous avez retrouvé votre assurance.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_AxTdrM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_icon": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_text": "",
+            "title": "Confiance retrouvée",
+            "text": "<p>Vous n’avez pas seulement densifié vos cheveux. Vous avez retrouvé votre assurance.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_gU7GhK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_icon": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_text": "",
+            "title": "Confiance retrouvée",
+            "text": "<p>Vous n’avez pas seulement densifié vos cheveux. Vous avez retrouvé votre assurance.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YJxjFa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_icon": "shopify://shop_images/Plan_de_travail_8.svg",
+            "badge_text": "",
+            "title": "Confiance retrouvée",
+            "text": "<p>Vous n’avez pas seulement densifié vos cheveux. Vous avez retrouvé votre assurance.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_t9DVtY",
+        "column_AxTdrM",
+        "column_gU7GhK",
+        "column_YJxjFa"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "css_class": "",
+        "title": "Retrouvez 100% de votre confiance",
+        "heading_size": "h1",
+        "image_width": "fifth",
+        "image_width_custom": 30,
+        "image_position": "top",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "list_color_scheme": "",
+        "card_color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+        "card_show_body_font": false,
+        "button_label": "Texte du bouton",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_confiance_6g3gEf": {
       "type": "section-confiance",
       "blocks": {
@@ -1534,6 +1616,7 @@
   "order": [
     "section_hero_bohair_KNimmH",
     "featured_collection_Y6Cddr",
+    "multicolumn_AJgTBB",
     "section_confiance_6g3gEf",
     "temoignage_section_yM7XR8",
     "text_around_image_MBeWRD",
