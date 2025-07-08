@@ -1434,7 +1434,7 @@
             "text": "<p>C'est un super produit que je recommande.</p>",
             "author": "Thomas Giraud",
             "note": 5,
-            "note_image": "shopify://shop_images/Plan_de_travail_140.svg",
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
             "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
             "show_border": false
           }
@@ -1447,6 +1447,7 @@
             "text": "<p>C'est un super produit que je recommande.</p>",
             "author": "Thomas Giraud",
             "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
             "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
             "show_border": false
           }
@@ -1459,6 +1460,7 @@
             "text": "<p>C'est un super produit que je recommande.</p>",
             "author": "Thomas Giraud",
             "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
             "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
             "show_border": false
           }
@@ -1472,9 +1474,9 @@
       "name": "Slider d'avis",
       "settings": {
         "display_card_mode": true,
-        "title": "Avis clients",
+        "title": "C'est vous qui le dites !",
         "heading_size": "h1",
-        "center_title": false,
+        "center_title": true,
         "note_generale": 5,
         "note_generale_text": "4.6/5 Excellent",
         "block_info_image_link": "",
