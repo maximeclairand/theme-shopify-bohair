@@ -1478,7 +1478,7 @@
         "heading_size": "h1",
         "center_title": true,
         "note_generale": 5,
-        "note_generale_text": "4.6/5 Excellent",
+        "note_generale_text": "4.5/5 Excellent",
         "block_info_image_link": "",
         "block_info_text": "",
         "heading_card_size": "h4",
@@ -1491,7 +1491,7 @@
         "color_scheme": "",
         "color_scheme_buttons": "",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
