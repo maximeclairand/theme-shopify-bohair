@@ -236,7 +236,10 @@
           }
         }
       },
-      "block_order": ["slide_pLPj3N", "slide_KKbMWG"],
+      "block_order": [
+        "slide_pLPj3N",
+        "slide_KKbMWG"
+      ],
       "custom_css": [
         "h2 {color: #262626;}",
         ".temoignage-stars {color: #262626;}"
@@ -545,7 +548,11 @@
           }
         }
       },
-      "block_order": ["heading_WRRXQx", "text_eyHYpt", "button_xPGNET"],
+      "block_order": [
+        "heading_WRRXQx",
+        "text_eyHYpt",
+        "button_xPGNET"
+      ],
       "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -592,7 +599,11 @@
           }
         }
       },
-      "block_order": ["heading_BmrGCD", "text_McABp8", "button_RqMAWw"],
+      "block_order": [
+        "heading_BmrGCD",
+        "text_McABp8",
+        "button_RqMAWw"
+      ],
       "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -642,7 +653,11 @@
           }
         }
       },
-      "block_order": ["heading_f376mQ", "text_htCw7g", "button_PyYetx"],
+      "block_order": [
+        "heading_f376mQ",
+        "text_htCw7g",
+        "button_PyYetx"
+      ],
       "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -680,7 +695,11 @@
           }
         }
       },
-      "block_order": ["heading_pYq3e8", "text_FFiT4P", "button_nnNize"],
+      "block_order": [
+        "heading_pYq3e8",
+        "text_FFiT4P",
+        "button_nnNize"
+      ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/interior-view-of-a-barbershop-with-multiple-seatin-2025-02-12-00-08-25-utc.jpg",
@@ -1110,7 +1129,11 @@
           }
         }
       },
-      "block_order": ["heading_xfFp97", "text_JzVUiy", "badge_crxgnW"],
+      "block_order": [
+        "heading_xfFp97",
+        "text_JzVUiy",
+        "badge_crxgnW"
+      ],
       "disabled": true,
       "settings": {
         "height": "adapt",
@@ -1158,7 +1181,11 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button_n4DtC8"],
+      "block_order": [
+        "heading",
+        "text",
+        "button_n4DtC8"
+      ],
       "disabled": true,
       "settings": {
         "desktop_content_position": "center",
@@ -1555,7 +1582,11 @@
           }
         }
       },
-      "block_order": ["review_kWPJn4", "review_qEcAiF", "review_fdbE3T"],
+      "block_order": [
+        "review_kWPJn4",
+        "review_qEcAiF",
+        "review_fdbE3T"
+      ],
       "name": "Slider d'avis",
       "settings": {
         "display_card_mode": true,
@@ -1577,7 +1608,7 @@
         "color_scheme_buttons": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 36
       }
     },
@@ -1587,8 +1618,6 @@
         "image_UhXcWj": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Carotte_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }
@@ -1596,8 +1625,6 @@
         "image_wcBiCc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Figue_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }
@@ -1605,8 +1632,6 @@
         "image_QfwrGi": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Pomodorini_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }
@@ -1614,8 +1639,6 @@
         "image_CRcLYq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cassis_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }
@@ -1623,8 +1646,6 @@
         "image_h8GR6T": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/PetitPois_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }
@@ -1632,8 +1653,6 @@
         "image_QiG9dw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Pomodorini_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }
@@ -1641,8 +1660,6 @@
         "image_iFQdA7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Figue_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }
@@ -1650,8 +1667,6 @@
         "image_AXhT3N": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cassis_2-min.jpg",
-            "icon": "shopify://shop_images/icon-insta-mc.svg",
             "url": "https://www.instagram.com/maison_chandelier/",
             "url_target_blank": true
           }

@@ -441,64 +441,6 @@
         "section_text_color": "#262626"
       }
     },
-    "barre_defilante_NB8EVr": {
-      "type": "barre-defilante",
-      "blocks": {
-        "information_qGLjLT": {
-          "type": "information",
-          "disabled": true,
-          "settings": {
-            "text": "Huile pure",
-            "icon_height": 18
-          }
-        },
-        "information_BCrBDM": {
-          "type": "information",
-          "disabled": true,
-          "settings": {
-            "text": "Naturel",
-            "icon_height": 18
-          }
-        },
-        "information_V3hhkJ": {
-          "type": "information",
-          "disabled": true,
-          "settings": {
-            "text": "Fabriqué en France",
-            "icon_height": 18
-          }
-        },
-        "information_86FYYi": {
-          "type": "information",
-          "settings": {
-            "text": "Sans addictif",
-            "image": "shopify://shop_images/Plan_de_travail_3_5fe3352d-96ea-4890-b0d1-9ade718566d5.png",
-            "icon_height": 18
-          }
-        },
-        "information_EgFF7d": {
-          "type": "information",
-          "settings": {
-            "text": "Sans addictif",
-            "image": "shopify://shop_images/Plan_de_travail_3_dc8b203b-89ac-4aed-a0c8-091e1f4ef4ab.png",
-            "icon_height": 18
-          }
-        }
-      },
-      "block_order": [
-        "information_qGLjLT",
-        "information_BCrBDM",
-        "information_V3hhkJ",
-        "information_86FYYi",
-        "information_EgFF7d"
-      ],
-      "settings": {
-        "color_scheme": "scheme-3238c942-587b-48e6-902b-5da159c4e8d0",
-        "speed": 30,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
     "ingredients_list_gcgaTn": {
       "type": "ingredients-list",
       "blocks": {
@@ -1444,7 +1386,6 @@
   "order": [
     "main",
     "text_around_image_EfFAgx",
-    "barre_defilante_NB8EVr",
     "ingredients_list_gcgaTn",
     "tableau_de_comparaison_dLAPee",
     "collapsible_tabs_8fKwgQ",
