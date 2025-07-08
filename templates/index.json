@@ -1422,6 +1422,76 @@
         "section_background_color": "#fffdf5",
         "section_text_color": "#364c84"
       }
+    },
+    "slider_reviews_FNjDRQ": {
+      "type": "slider-reviews",
+      "blocks": {
+        "review_kWPJn4": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "color_scheme": "",
+            "show_border": false
+          }
+        },
+        "review_qEcAiF": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "color_scheme": "",
+            "show_border": false
+          }
+        },
+        "review_fdbE3T": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "color_scheme": "",
+            "show_border": false
+          }
+        }
+      },
+      "block_order": [
+        "review_kWPJn4",
+        "review_qEcAiF",
+        "review_fdbE3T"
+      ],
+      "name": "Slider d'avis",
+      "settings": {
+        "display_card_mode": true,
+        "title": "Avis clients",
+        "heading_size": "h1",
+        "center_title": false,
+        "note_generale": 5,
+        "note_generale_text": "4.6/5 Excellent",
+        "block_info_image_link": "",
+        "block_info_text": "",
+        "heading_card_size": "h4",
+        "slider_buttons_position": "bottom",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "column_alignment": "left",
+        "button_label": "Voir tous les avis",
+        "button_link": "",
+        "color_scheme": "",
+        "color_scheme_buttons": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -1442,6 +1512,7 @@
     "rich_text",
     "trustpilot_badge_ccdfVN",
     "reviews_list_i4zNT3",
-    "instagram_eyFpgD"
+    "instagram_eyFpgD",
+    "slider_reviews_FNjDRQ"
   ]
 }
