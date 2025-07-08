@@ -740,239 +740,90 @@
     },
     "trustpilot_badge_ccdfVN": {
       "type": "trustpilot-badge",
-      "disabled": true,
       "settings": {
         "trustpilot_background_color": "#ffffff",
-        "title_color": "#364c84",
-        "text_1": "<strong>Noté 4.8/5</strong>",
+        "title_color": "#262626",
+        "text_1": "<strong>Noté 4.5/5</strong>",
+        "etoiles_logo": "shopify://shop_images/Plan_de_travail_140.svg",
         "trustpilot_stars": "4,5",
-        "text_2": "+2342 avis vérifiés",
+        "text_2": "+23 avis vérifiés",
+        "trustpilot_logo": "shopify://shop_images/Plan_de_travail_17_copie_4.svg",
         "link": "",
         "padding_top": 40,
         "padding_bottom": 40
       }
     },
-    "reviews_list_i4zNT3": {
-      "type": "reviews-list",
+    "slider_reviews_VzdqLW": {
+      "type": "slider-reviews",
       "blocks": {
-        "image_DmGCr8": {
-          "type": "image",
-          "settings": {}
-        },
-        "review_xzQNaW": {
+        "review_MnEThR": {
           "type": "review",
           "settings": {
-            "stars": 5,
-            "title": "Je recommande !",
-            "description": "<p>Mon chat était stressé avant de le prendre et depuis qu'il le prend il va mieux et ne fais plus de marquage urinaire .3 petits biscuit par jour . Le gout lui plait car il se jette dessus :)</p>",
-            "footer_text": "<strong>Virgine P</strong>"
+            "product": "",
+            "title": "Une vraie pépite !",
+            "text": "<p>J’ai découvert bohair par hasard, et c’est clairement l’une de mes meilleures trouvailles beauté de l’année. Les produits sont d’une qualité irréprochable, le service client est top ! Commande reçue rapidement, emballage soigné, et surtout… des résultats visibles.</p>",
+            "author": "Lucas Martin",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
           }
         },
-        "image_cEKKLT": {
-          "type": "image",
-          "settings": {}
-        },
-        "review_L7LmjD": {
+        "review_hgpAPD": {
           "type": "review",
           "settings": {
-            "stars": 5,
-            "title": " Très bon produit que je recommande",
-            "description": "<p>Je ne m’attendais pas à grand chose et j’ai été agréablement surprise de l’efficacité du produit, j’ai accueillis plusieurs chats chez moi pendant plus d’une semaine, mon chat était donc très stressé. Dès les premières bouchées elle était détendue et moins agressive. Apparement le goût et délicieux puisqu’elle les dévore en quelques secondes !</p>",
-            "footer_text": "<strong>Milo</strong>"
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
           }
         },
-        "image_YkUhCe": {
-          "type": "image",
-          "settings": {}
-        },
-        "review_CMNCfP": {
+        "review_QdU6fP": {
           "type": "review",
           "settings": {
-            "stars": 5,
-            "title": "Des bouchées au top !",
-            "description": "<p>Formule excellente que mes 3 chats adorent, et qui me les réclame dès qu'ils voient le sachet</p>",
-            "footer_text": "<strong>Urwen</strong>"
-          }
-        },
-        "image_rNeaLw": {
-          "type": "image",
-          "settings": {}
-        },
-        "review_x7pPVi": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "stars": 5,
-            "title": "Je recommande !",
-            "description": "<p>Ces bouchées semblent très bonnes, ma petit chienne les attend tous les matins. J’ai constaté une meilleure réactivité lors des promenades qui sont maintenant plus longues et avec entrain.</p>",
-            "footer_text": "<strong>Muhuli</strong>"
-          }
-        },
-        "image_igHWpp": {
-          "type": "image",
-          "disabled": true,
-          "settings": {}
-        },
-        "review_jbEek7": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "title": "Dites adieu au stress de votre chat !",
-            "description": "<p>Efficacité sur le long terme : Après quelques jours d'utilisation, j'ai remarqué une réelle amélioration dans le comportement de mon chat. Il est beaucoup plus calme et détendu, même dans des situations habituellement stressantes comme les visites chez le vétérinaire ou les bruits extérieurs.</p>",
-            "footer_text": "<strong>Cattie</strong>"
-          }
-        },
-        "image_iUQMwL": {
-          "type": "image",
-          "disabled": true,
-          "settings": {}
-        },
-        "review_J33cf7": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "stars": 5,
-            "title": "Je recommande !",
-            "description": "<p>Ces petites bouchées sont très pratiques, Mango les apprécie beaucoup, les dosages sont bien expliquer au dos du paquet.Une composition saine et naturelle !Quant à l'efficacité, je remarque déjà une belle amélioration, il semble plus souple et fatigue moins vite lors de longue balade !</p>",
-            "footer_text": "<strong>Elodie D.</strong>"
-          }
-        },
-        "image_mFwmPV": {
-          "type": "image",
-          "disabled": true,
-          "settings": {}
-        },
-        "review_9NHyWn": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "stars": 5,
-            "title": "Je recommande !",
-            "description": "<p>Je donne à ma doyenne de 10 ans car elle a l'arrière train qui commence à fatiguer et se lèche beaucoup les pattes (ras niveau veto). Au bout de quelques semaines elle a arreter de se lécher les pattes à voir dans le temps en tout cas ça lui plaît beaucoup et ca nous fait un petit rituel </p>",
-            "footer_text": "<strong>Mrs Georges</strong>"
-          }
-        },
-        "image_cPXEfC": {
-          "type": "image",
-          "disabled": true,
-          "settings": {}
-        },
-        "review_7bcnXW": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "stars": 5,
-            "title": "Je recommande !",
-            "description": "<p>Mon chien de 60kg 4 ans, dysplasique du coude, opéré du coude a 1 an souffrait depuis tout jeune. Était sous metacam lors de fortes crises ( ça coûte un bras!) . Je lui en donne depuis 5 jours. Je le reconnais plus, ne boite pratiquement plus, devient joueur, a plus d appétit, moins raide le matin.</p>",
-            "footer_text": "<strong>Sandrine</strong>"
-          }
-        },
-        "image_ewETGN": {
-          "type": "image",
-          "disabled": true,
-          "settings": {}
-        },
-        "review_bjtHpC": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "stars": 5,
-            "title": "Je recommande !",
-            "description": "<p>Efficace il est vrai on voulait juste voir pour essayer et on a été convaincu.</p>",
-            "footer_text": "<strong>Leroi</strong>"
-          }
-        },
-        "image_xm3fkP": {
-          "type": "image",
-          "disabled": true,
-          "settings": {}
-        },
-        "review_JDJxBf": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "stars": 5,
-            "title": "Je recommande !",
-            "description": "<p>J’en donne à ma chienne Raven, berger américain miniature de bientôt 4 ans, qui boîte souvent depuis un an. Alors ces compléments c’est le top, c’est comme une friandise elle en raffole, tellement plus simple à donner. Après quelques semaines, je la sens bien plus à l’aise maintenant, elle ne boîte plus du tout !</p>",
-            "footer_text": "<strong>Laura N.</strong>"
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
           }
         }
       },
       "block_order": [
-        "image_DmGCr8",
-        "review_xzQNaW",
-        "image_cEKKLT",
-        "review_L7LmjD",
-        "image_YkUhCe",
-        "review_CMNCfP",
-        "image_rNeaLw",
-        "review_x7pPVi",
-        "image_igHWpp",
-        "review_jbEek7",
-        "image_iUQMwL",
-        "review_J33cf7",
-        "image_mFwmPV",
-        "review_9NHyWn",
-        "image_cPXEfC",
-        "review_7bcnXW",
-        "image_ewETGN",
-        "review_bjtHpC",
-        "image_xm3fkP",
-        "review_JDJxBf"
+        "review_MnEThR",
+        "review_hgpAPD",
+        "review_QdU6fP"
       ],
-      "disabled": true,
+      "name": "Slider d'avis",
       "settings": {
-        "title": "Vos compagnons vous remercient !",
-        "description": "",
-        "remove_grid_spaces": false,
-        "enable_slider_mobile": true,
-        "enable_slider_desktop": true,
-        "enable_slider_full_width_mobile": true,
-        "enable_slider_full_width_desktop": true,
-        "enable_slider_left_margin_mobile": true,
-        "enable_slider_left_margin_desktop": true,
-        "slider_columns_mobile": 1.2,
-        "slider_columns_desktop": 3.2,
-        "slider_step_mobile": 1,
-        "slider_step_desktop": 1,
-        "enable_slider_drag_mobile": false,
-        "enable_slider_free_scroll_mobile": false,
-        "enable_slider_drag_desktop": false,
-        "enable_slider_free_scroll_desktop": false,
-        "enable_slider_loop": true,
-        "enable_slider_autoplay": true,
-        "slider_autoplay_speed": 5,
-        "enable_slider_autoplay_button": false,
-        "enable_slider_scrollbar": false,
-        "slider_navigation_mobile": "none",
-        "slider_navigation_desktop": "none",
-        "slider_button_style": "deployer-button deployer-button--secondary",
-        "enable_slider_numbering_mobile": false,
-        "enable_slider_numbering_desktop": false,
-        "slider_numbering_text": "",
-        "slider_navigation_position_mobile": "top-center",
-        "slider_navigation_position_desktop": "top-right",
-        "verified_text": "Avis vérifié",
-        "card_layout": "vertical",
-        "card_media_aspect_ratio": "landscape",
-        "card_image_adapt_aspect_ratio": 1.3,
-        "card_content_vertical_position": "top",
-        "card_title_layout": "vertical",
-        "enable_divider": false,
-        "button_text": "",
+        "display_card_mode": true,
+        "title": "C'est vous qui le dites !",
+        "heading_size": "h1",
+        "center_title": true,
+        "note_generale": 5,
+        "note_generale_text": "4.5/5 Excellent",
+        "block_info_image_link": "",
+        "block_info_text": "",
+        "heading_card_size": "h4",
+        "slider_buttons_position": "bottom",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "column_alignment": "left",
+        "button_label": "Voir tous les avis",
         "button_link": "",
-        "button_style": "deployer-button",
-        "page_width": 1500,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "alignment_mobile": "center",
-        "alignment_desktop": "center",
-        "section_background_color": "#fffdf5",
-        "section_text_color": "#364c84",
-        "card_alignment": "left",
-        "card_background_color": "#ffffff",
-        "card_text_color": "#364c84",
-        "card_star_color": "#95b1ee"
+        "color_scheme": "",
+        "color_scheme_buttons": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collapsible_tabs_8fKwgQ": {
@@ -1344,6 +1195,229 @@
         "padding_bottom": 100
       }
     },
+    "reviews_list_i4zNT3": {
+      "type": "reviews-list",
+      "blocks": {
+        "image_DmGCr8": {
+          "type": "image",
+          "settings": {}
+        },
+        "review_xzQNaW": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Je recommande !",
+            "description": "<p>Mon chat était stressé avant de le prendre et depuis qu'il le prend il va mieux et ne fais plus de marquage urinaire .3 petits biscuit par jour . Le gout lui plait car il se jette dessus :)</p>",
+            "footer_text": "<strong>Virgine P</strong>"
+          }
+        },
+        "image_cEKKLT": {
+          "type": "image",
+          "settings": {}
+        },
+        "review_L7LmjD": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": " Très bon produit que je recommande",
+            "description": "<p>Je ne m’attendais pas à grand chose et j’ai été agréablement surprise de l’efficacité du produit, j’ai accueillis plusieurs chats chez moi pendant plus d’une semaine, mon chat était donc très stressé. Dès les premières bouchées elle était détendue et moins agressive. Apparement le goût et délicieux puisqu’elle les dévore en quelques secondes !</p>",
+            "footer_text": "<strong>Milo</strong>"
+          }
+        },
+        "image_YkUhCe": {
+          "type": "image",
+          "settings": {}
+        },
+        "review_CMNCfP": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Des bouchées au top !",
+            "description": "<p>Formule excellente que mes 3 chats adorent, et qui me les réclame dès qu'ils voient le sachet</p>",
+            "footer_text": "<strong>Urwen</strong>"
+          }
+        },
+        "image_rNeaLw": {
+          "type": "image",
+          "settings": {}
+        },
+        "review_x7pPVi": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "stars": 5,
+            "title": "Je recommande !",
+            "description": "<p>Ces bouchées semblent très bonnes, ma petit chienne les attend tous les matins. J’ai constaté une meilleure réactivité lors des promenades qui sont maintenant plus longues et avec entrain.</p>",
+            "footer_text": "<strong>Muhuli</strong>"
+          }
+        },
+        "image_igHWpp": {
+          "type": "image",
+          "disabled": true,
+          "settings": {}
+        },
+        "review_jbEek7": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Dites adieu au stress de votre chat !",
+            "description": "<p>Efficacité sur le long terme : Après quelques jours d'utilisation, j'ai remarqué une réelle amélioration dans le comportement de mon chat. Il est beaucoup plus calme et détendu, même dans des situations habituellement stressantes comme les visites chez le vétérinaire ou les bruits extérieurs.</p>",
+            "footer_text": "<strong>Cattie</strong>"
+          }
+        },
+        "image_iUQMwL": {
+          "type": "image",
+          "disabled": true,
+          "settings": {}
+        },
+        "review_J33cf7": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "stars": 5,
+            "title": "Je recommande !",
+            "description": "<p>Ces petites bouchées sont très pratiques, Mango les apprécie beaucoup, les dosages sont bien expliquer au dos du paquet.Une composition saine et naturelle !Quant à l'efficacité, je remarque déjà une belle amélioration, il semble plus souple et fatigue moins vite lors de longue balade !</p>",
+            "footer_text": "<strong>Elodie D.</strong>"
+          }
+        },
+        "image_mFwmPV": {
+          "type": "image",
+          "disabled": true,
+          "settings": {}
+        },
+        "review_9NHyWn": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "stars": 5,
+            "title": "Je recommande !",
+            "description": "<p>Je donne à ma doyenne de 10 ans car elle a l'arrière train qui commence à fatiguer et se lèche beaucoup les pattes (ras niveau veto). Au bout de quelques semaines elle a arreter de se lécher les pattes à voir dans le temps en tout cas ça lui plaît beaucoup et ca nous fait un petit rituel </p>",
+            "footer_text": "<strong>Mrs Georges</strong>"
+          }
+        },
+        "image_cPXEfC": {
+          "type": "image",
+          "disabled": true,
+          "settings": {}
+        },
+        "review_7bcnXW": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "stars": 5,
+            "title": "Je recommande !",
+            "description": "<p>Mon chien de 60kg 4 ans, dysplasique du coude, opéré du coude a 1 an souffrait depuis tout jeune. Était sous metacam lors de fortes crises ( ça coûte un bras!) . Je lui en donne depuis 5 jours. Je le reconnais plus, ne boite pratiquement plus, devient joueur, a plus d appétit, moins raide le matin.</p>",
+            "footer_text": "<strong>Sandrine</strong>"
+          }
+        },
+        "image_ewETGN": {
+          "type": "image",
+          "disabled": true,
+          "settings": {}
+        },
+        "review_bjtHpC": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "stars": 5,
+            "title": "Je recommande !",
+            "description": "<p>Efficace il est vrai on voulait juste voir pour essayer et on a été convaincu.</p>",
+            "footer_text": "<strong>Leroi</strong>"
+          }
+        },
+        "image_xm3fkP": {
+          "type": "image",
+          "disabled": true,
+          "settings": {}
+        },
+        "review_JDJxBf": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "stars": 5,
+            "title": "Je recommande !",
+            "description": "<p>J’en donne à ma chienne Raven, berger américain miniature de bientôt 4 ans, qui boîte souvent depuis un an. Alors ces compléments c’est le top, c’est comme une friandise elle en raffole, tellement plus simple à donner. Après quelques semaines, je la sens bien plus à l’aise maintenant, elle ne boîte plus du tout !</p>",
+            "footer_text": "<strong>Laura N.</strong>"
+          }
+        }
+      },
+      "block_order": [
+        "image_DmGCr8",
+        "review_xzQNaW",
+        "image_cEKKLT",
+        "review_L7LmjD",
+        "image_YkUhCe",
+        "review_CMNCfP",
+        "image_rNeaLw",
+        "review_x7pPVi",
+        "image_igHWpp",
+        "review_jbEek7",
+        "image_iUQMwL",
+        "review_J33cf7",
+        "image_mFwmPV",
+        "review_9NHyWn",
+        "image_cPXEfC",
+        "review_7bcnXW",
+        "image_ewETGN",
+        "review_bjtHpC",
+        "image_xm3fkP",
+        "review_JDJxBf"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Vos compagnons vous remercient !",
+        "description": "",
+        "remove_grid_spaces": false,
+        "enable_slider_mobile": true,
+        "enable_slider_desktop": true,
+        "enable_slider_full_width_mobile": true,
+        "enable_slider_full_width_desktop": true,
+        "enable_slider_left_margin_mobile": true,
+        "enable_slider_left_margin_desktop": true,
+        "slider_columns_mobile": 1.2,
+        "slider_columns_desktop": 3.2,
+        "slider_step_mobile": 1,
+        "slider_step_desktop": 1,
+        "enable_slider_drag_mobile": false,
+        "enable_slider_free_scroll_mobile": false,
+        "enable_slider_drag_desktop": false,
+        "enable_slider_free_scroll_desktop": false,
+        "enable_slider_loop": true,
+        "enable_slider_autoplay": true,
+        "slider_autoplay_speed": 5,
+        "enable_slider_autoplay_button": false,
+        "enable_slider_scrollbar": false,
+        "slider_navigation_mobile": "none",
+        "slider_navigation_desktop": "none",
+        "slider_button_style": "deployer-button deployer-button--secondary",
+        "enable_slider_numbering_mobile": false,
+        "enable_slider_numbering_desktop": false,
+        "slider_numbering_text": "",
+        "slider_navigation_position_mobile": "top-center",
+        "slider_navigation_position_desktop": "top-right",
+        "verified_text": "Avis vérifié",
+        "card_layout": "vertical",
+        "card_media_aspect_ratio": "landscape",
+        "card_image_adapt_aspect_ratio": 1.3,
+        "card_content_vertical_position": "top",
+        "card_title_layout": "vertical",
+        "enable_divider": false,
+        "button_text": "",
+        "button_link": "",
+        "button_style": "deployer-button",
+        "page_width": 1500,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "alignment_mobile": "center",
+        "alignment_desktop": "center",
+        "section_background_color": "#fffdf5",
+        "section_text_color": "#364c84",
+        "card_alignment": "left",
+        "card_background_color": "#ffffff",
+        "card_text_color": "#364c84",
+        "card_star_color": "#95b1ee"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -1374,8 +1448,9 @@
     "ingredients_list_gcgaTn",
     "tableau_de_comparaison_dLAPee",
     "trustpilot_badge_ccdfVN",
-    "reviews_list_i4zNT3",
+    "slider_reviews_VzdqLW",
     "collapsible_tabs_8fKwgQ",
+    "reviews_list_i4zNT3",
     "related-products"
   ]
 }
