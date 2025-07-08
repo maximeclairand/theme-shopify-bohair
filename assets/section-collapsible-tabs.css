@@ -95,7 +95,7 @@
 
 .collapsible-content__additional-content-button--secondary {
   background-color: rgb(var(--color-button-3-text));
-  border: 1.5px solid rgb(var(--color-button-3));
+  border: 1px solid rgb(var(--color-button-3));
   color: rgb(var(--color-button-3));
 }
 

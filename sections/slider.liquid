@@ -1,0 +1,575 @@
+{{ 'section-deployer-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-deployer-grid.css' | asset_url | stylesheet_tag }}
+{{ 'component-deployer-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'deployer-slider.js' | asset_url }}" defer></script>
+
+{%- style -%}
+  #section-{{ section.id }} {
+    --page-width: {{ section.settings.page_width | divided_by: 10 }}rem;
+    --color-background: {{ section.settings.section_background_color.red }},{{ section.settings.section_background_color.green }},{{ section.settings.section_background_color.blue }};
+    --color-foreground: {{ section.settings.section_text_color.red }},{{ section.settings.section_text_color.green }},{{ section.settings.section_text_color.blue }};
+
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    text-align: {{ section.settings.alignment_mobile }};
+  }
+
+  @media screen and (min-width: 750px) {
+    #section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      text-align: {{ section.settings.alignment_desktop }};
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign page_width = section.settings.page_width | default: settings.page_width | default: 1200
+
+  assign section_title = section.settings.title
+  assign section_description = section.settings.description
+  assign section_button_text = section.settings.button_text
+  assign section_button_link = section.settings.button_link
+  assign section_button_style = section.settings.button_style | default: 'deployer-button'
+-%}
+
+<section id="section-{{ section.id }}" class="section deployer-slider color-{{ section.settings.color_scheme }}">
+  <div class="section__inner section__page-width">
+    {%- if section_title != blank or section_description != blank -%}
+      <div class="section__header deployer-slider__header">
+        {% if section.settings.legend != blank %}        
+          <span class="subtitle subtitle--small italic">{{ section.settings.legend }}</span>
+        {% endif %}
+
+        {% if section_title != blank %}
+          <h2 class="section__title {{ section.settings.heading_size }}">{{ section_title }}</h2>
+        {% endif %}
+        {% if section_description != blank %}
+          <div class="section__description">{{ section_description }}</div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+
+    <div class="section__content deployer-slider__content">
+      {%- render 'deployer-slider', id: section.id, page_width: page_width -%}
+    </div>
+
+    {%- if section_button_text != blank and section_button_link != blank -%}
+      <div class="section__footer deployer-slider__footer">
+        <a href="{{ section_button_link }}" class="{{ section_button_style }}">{{ section_button_text }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Slider",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "En-tête de la section"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Titre"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "legend",
+      "label": "Légende",
+      "default":"@maisonchandelier"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Contenu de la section"
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_grid_spaces",
+      "label": "Supprimer les espaces entre les éléments",
+      "info": "Les espaces entre les éléments seront supprimés automatiquement si le nombre de colonnes est égal à 1 sur une taille d'écran spécifique.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Carrousel"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_mobile",
+      "label": "Activer le balayage sur mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_desktop",
+      "label": "Activer le balayage sur bureau",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_full_width_mobile",
+      "label": "Activer la pleine largeur sur mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_full_width_desktop",
+      "label": "Activer la pleine largeur sur bureau",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_left_margin_mobile",
+      "label": "Activer la marge gauche si le slider est en pleine largeur sur mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_left_margin_desktop",
+      "label": "Activer la marge gauche si le slider est en pleine largeur sur bureau",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "slider_columns_mobile",
+      "min": 1,
+      "max": 10,
+      "step": 0.1,
+      "label": "Nombre de colonnes sur mobile",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "slider_columns_desktop",
+      "min": 1,
+      "max": 10,
+      "step": 0.1,
+      "label": "Nombre de colonnes sur bureau",
+      "default": 3.6
+    },
+    {
+      "type": "range",
+      "id": "slider_step_mobile",
+      "min": 1,
+      "max": 10,
+      "step": 0.1,
+      "label": "Nombre d'éléments qui défilent en même temps sur mobile",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "slider_step_desktop",
+      "min": 1,
+      "max": 10,
+      "step": 0.1,
+      "label": "Nombre d'éléments qui défilent en même temps sur bureau",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_drag_mobile",
+      "label": "Activer le glissement sur mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_free_scroll_mobile",
+      "label": "Activer le défilement libre sur mobile",
+      "info": "Si le glissement sur mobile est activé, alors le glissement ne s'arrêtera pas au début de l'élément.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_drag_desktop",
+      "label": "Activer le glissement sur bureau",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_free_scroll_desktop",
+      "label": "Activer le défilement libre sur bureau",
+      "info": "Si le glissement sur bureau est activé, alors le glissement ne s'arrêtera pas au début de l'élément.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_loop",
+      "label": "Activer le défilement en boucle",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_autoplay",
+      "label": "Activer le défilement automatique",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "slider_autoplay_speed",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "label": "Vitesse du défilement automatique",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_autoplay_button",
+      "label": "Activer le bouton du défilement automatique",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_scrollbar",
+      "label": "Activer la barre de défilement",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "slider_navigation_mobile",
+      "label": "Navigation sur mobile",
+      "options": [
+        {
+          "value": "buttons_arrow",
+          "label": "Boutons avec flèche"
+        },
+        {
+          "value": "links_dots",
+          "label": "Liens avec points"
+        },
+        {
+          "value": "links_numbers",
+          "label": "Liens avec nombres"
+        },
+        {
+          "value": "none",
+          "label": "Aucune"
+        }
+      ],
+      "default": "buttons_arrow"
+    },
+    {
+      "type": "select",
+      "id": "slider_navigation_desktop",
+      "label": "Navigation sur bureau",
+      "info": "Si vous choisissez le même type de navigation sur mobile et bureau, la navigation sur bureau sera automatiquement remplacée par la même navigation que sur mobile.",
+      "options": [
+        {
+          "value": "buttons_arrow",
+          "label": "Boutons avec flèche"
+        },
+        {
+          "value": "links_dots",
+          "label": "Liens avec points"
+        },
+        {
+          "value": "links_numbers",
+          "label": "Liens avec nombres"
+        },
+        {
+          "value": "none",
+          "label": "Aucune"
+        }
+      ],
+      "default": "buttons_arrow"
+    },
+    {
+      "type": "select",
+      "id": "slider_button_style",
+      "label": "Style du bouton de navigation",
+      "options": [
+        {
+          "value": "deployer-button",
+          "label": "Bouton"
+        },
+        {
+          "value": "deployer-button deployer-button--secondary",
+          "label": "Bouton secondaire"
+        },
+        {
+          "value": "deployer-button deployer-button--tertiary",
+          "label": "Bouton tertiaire"
+        }
+      ],
+      "default": "deployer-button deployer-button--tertiary"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_numbering_mobile",
+      "label": "Activer la numérotation sur mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_numbering_desktop",
+      "label": "Activer la numérotation sur bureau",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "slider_numbering_text",
+      "label": "Texte de la numérotation",
+      "info": "Optionnel, apparaît devant la numérotation."
+    },
+    {
+      "type": "select",
+      "id": "slider_navigation_position_mobile",
+      "label": "Position de la navigation sur mobile",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Au dessus - A gauche"
+        },
+        {
+          "value": "top-center",
+          "label": "Au dessus - Au centre"
+        },
+        {
+          "value": "top-right",
+          "label": "Au dessus - A droite"
+        },
+        {
+          "value": "bottom-left",
+          "label": "En dessous - A gauche"
+        },
+        {
+          "value": "bottom-center",
+          "label": "En dessous - Au centre"
+        },
+        {
+          "value": "bottom-right",
+          "label": "En dessous - A droite"
+        }
+      ],
+      "default": "bottom-center"
+    },
+    {
+      "type": "select",
+      "id": "slider_navigation_position_desktop",
+      "label": "Position de la navigation sur bureau",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Au dessus - A gauche"
+        },
+        {
+          "value": "top-center",
+          "label": "Au dessus - Au centre"
+        },
+        {
+          "value": "top-right",
+          "label": "Au dessus - A droite"
+        },
+        {
+          "value": "bottom-left",
+          "label": "En dessous - A gauche"
+        },
+        {
+          "value": "bottom-center",
+          "label": "En dessous - Au centre"
+        },
+        {
+          "value": "bottom-right",
+          "label": "En dessous - A droite"
+        }
+      ],
+      "default": "bottom-center"
+    },
+    {
+      "type": "header",
+      "content": "Pied de page de la section"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style du bouton",
+      "options": [
+        {
+          "value": "deployer-button",
+          "label": "Bouton"
+        },
+        {
+          "value": "deployer-button deployer-button--secondary",
+          "label": "Bouton secondaire"
+        },
+        {
+          "value": "deployer-button deployer-button--tertiary",
+          "label": "Bouton tertiaire"
+        }
+      ],
+      "default": "deployer-button"
+    },
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "range",
+      "id": "page_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "default": 1200,
+      "unit": "px",
+      "label": "Largeur de la page"
+    },
+    {
+      "type": "header",
+      "content": "Marges de la section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge supérieur",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge inférieur",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment_mobile",
+      "label": "Alignement sur mobile",
+      "default": "left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment_desktop",
+      "label": "Alignement sur bureau",
+      "default": "left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id":"icon",
+          "label":"Icône sur l'image"
+        },
+        {
+          "type":"url",
+          "id":"url",
+          "label":"URL de lien"
+        },
+        {
+          "type":"checkbox",
+          "id":"url_target_blank",
+          "label":"Ouvrir le lien dans un nouvel onglet",
+          "default":true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

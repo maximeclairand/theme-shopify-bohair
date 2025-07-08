@@ -292,7 +292,9 @@
 
         <div class="footer__column footer__copyright caption">
           <span class="copyright__content">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}</span>
-          <span>| Webdesigned by <a href="https://www.studionoune.com/" target="_blank">Studio Noune</a>® & <a href="https://luvaika.com/" target="_blank">Luvaïka</a>®</span>
+          <span>| Webdesigned by <a href="https://www.studionoune.com/" target="_blank">Studio Noune</a>® 
+          {% comment %} & <a href="https://luvaika.com/" target="_blank">Luvaïka</a>® {% endcomment %}
+          </span>
         </div>
 
         <div class="footer__column footer__column--info">
