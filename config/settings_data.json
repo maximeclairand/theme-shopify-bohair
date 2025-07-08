@@ -143,7 +143,7 @@
             "type": "reassurance",
             "settings": {
               "change_slides_speed": 5,
-              "color_scheme": "scheme-1",
+              "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
               "text_1": "Satisfait ou remboursé",
               "text_2": "Livraison offerte dès 45€",
               "text_3": "Abonnez-vous pour économiser",
@@ -262,7 +262,7 @@
           "payment_secure_JePUUP"
         ],
         "settings": {
-          "cart_style": "arrondi",
+          "cart_style": "defaut",
           "body_color_scheme": "",
           "show_inline_product_options": true,
           "show_remove_button": false,
