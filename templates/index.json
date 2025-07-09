@@ -1104,6 +1104,79 @@
         "padding_bottom": 40
       }
     },
+    "slider_reviews_Kb3fqi": {
+      "type": "slider-reviews",
+      "blocks": {
+        "review_NP8Hxn": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Une vraie pépite !",
+            "text": "<p>J’ai découvert bohair par hasard, et c’est clairement l’une de mes meilleures trouvailles beauté de l’année. Les produits sont d’une qualité irréprochable, le service client est top ! Commande reçue rapidement, emballage soigné, et surtout… des résultats visibles.</p>",
+            "author": "Lucas Martin",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
+          }
+        },
+        "review_KD6hRh": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Au top je recommande",
+            "text": "<p>À 26 ans, j'ai une calvitie bien installée, mais avec Bohair, en 10 secondes chrono j'ai du volume, un rendu naturel, une tenue qui tient toute la journée ! (et un ego qui a repoussé plus vite que mes cheveux) je recommande ! </p>",
+            "author": "Antoine Tixedor",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
+          }
+        },
+        "review_Hg3XPC": {
+          "type": "review",
+          "settings": {
+            "product": "",
+            "title": "Excellent produit",
+            "text": "<p>C'est un super produit que je recommande.</p>",
+            "author": "Thomas Giraud",
+            "note": 5,
+            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
+            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
+            "show_border": false
+          }
+        }
+      },
+      "block_order": [
+        "review_NP8Hxn",
+        "review_KD6hRh",
+        "review_Hg3XPC"
+      ],
+      "name": "Slider d'avis",
+      "settings": {
+        "display_card_mode": true,
+        "title": "C'est vous qui le dites !",
+        "heading_size": "h1",
+        "center_title": true,
+        "note_generale": 5,
+        "note_generale_text": "4.5/5 Excellent",
+        "block_info_image_link": "",
+        "block_info_text": "",
+        "heading_card_size": "h4",
+        "slider_buttons_position": "bottom",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "column_alignment": "left",
+        "button_label": "Voir tous les avis",
+        "button_link": "https://www.trustpilot.com/review/bohair.co",
+        "color_scheme": "",
+        "color_scheme_buttons": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text_tHGn6d": {
       "type": "image-with-text",
       "blocks": {
@@ -1539,79 +1612,6 @@
         "section_text_color": "#364c84"
       }
     },
-    "slider_reviews_FNjDRQ": {
-      "type": "slider-reviews",
-      "blocks": {
-        "review_kWPJn4": {
-          "type": "review",
-          "settings": {
-            "product": "",
-            "title": "Une vraie pépite !",
-            "text": "<p>J’ai découvert bohair par hasard, et c’est clairement l’une de mes meilleures trouvailles beauté de l’année. Les produits sont d’une qualité irréprochable, le service client est top ! Commande reçue rapidement, emballage soigné, et surtout… des résultats visibles.</p>",
-            "author": "Lucas Martin",
-            "note": 5,
-            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
-            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-            "show_border": false
-          }
-        },
-        "review_qEcAiF": {
-          "type": "review",
-          "settings": {
-            "product": "",
-            "title": "Excellent produit",
-            "text": "<p>C'est un super produit que je recommande.</p>",
-            "author": "Thomas Giraud",
-            "note": 5,
-            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
-            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-            "show_border": false
-          }
-        },
-        "review_fdbE3T": {
-          "type": "review",
-          "settings": {
-            "product": "",
-            "title": "Excellent produit",
-            "text": "<p>C'est un super produit que je recommande.</p>",
-            "author": "Thomas Giraud",
-            "note": 5,
-            "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
-            "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
-            "show_border": false
-          }
-        }
-      },
-      "block_order": [
-        "review_kWPJn4",
-        "review_qEcAiF",
-        "review_fdbE3T"
-      ],
-      "name": "Slider d'avis",
-      "settings": {
-        "display_card_mode": true,
-        "title": "C'est vous qui le dites !",
-        "heading_size": "h1",
-        "center_title": true,
-        "note_generale": 5,
-        "note_generale_text": "4.5/5 Excellent",
-        "block_info_image_link": "",
-        "block_info_text": "",
-        "heading_card_size": "h4",
-        "slider_buttons_position": "bottom",
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "column_alignment": "left",
-        "button_label": "Voir tous les avis",
-        "button_link": "https://www.trustpilot.com/review/bohair.co",
-        "color_scheme": "scheme-1",
-        "color_scheme_buttons": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
-    },
     "slider_GRHmQy": {
       "type": "slider",
       "blocks": {
@@ -1743,11 +1743,11 @@
     "image_with_text_XrpEw6",
     "collapsible_tabs_qjigJj",
     "trustpilot_badge_8GdwPC",
+    "slider_reviews_Kb3fqi",
     "image_with_text_tHGn6d",
     "rich_text",
     "reviews_list_i4zNT3",
     "instagram_eyFpgD",
-    "slider_reviews_FNjDRQ",
     "slider_GRHmQy"
   ]
 }
