@@ -1603,7 +1603,7 @@
         "swipe_on_desktop": false,
         "column_alignment": "left",
         "button_label": "Voir tous les avis",
-        "button_link": "",
+        "button_link": "https://www.trustpilot.com/review/bohair.co",
         "color_scheme": "scheme-1",
         "color_scheme_buttons": "scheme-1",
         "columns_mobile": "1",
