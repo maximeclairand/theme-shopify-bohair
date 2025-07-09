@@ -132,7 +132,7 @@
             "show_master": true,
             "show_apple_pay": true,
             "show_google_pay": true,
-            "show_paypal": true,
+            "show_paypal": false,
             "show_american_express": false,
             "show_diners_club": false,
             "show_discover": false,
