@@ -1135,9 +1135,9 @@
           "type": "review",
           "settings": {
             "product": "",
-            "title": "Excellent produit",
-            "text": "<p>C'est un super produit que je recommande.</p>",
-            "author": "Thomas Giraud",
+            "title": "Au top je recommande",
+            "text": "<p>À 26 ans, j'ai une calvitie bien installée, mais avec Bohair, en 10 secondes chrono j'ai du volume, un rendu naturel, une tenue qui tient toute la journée ! (et un ego qui a repoussé plus vite que mes cheveux) je recommande ! </p>",
+            "author": "Antoine Tixedor",
             "note": 5,
             "note_image": "shopify://shop_images/Plan_de_travail_140_copie.svg",
             "color_scheme": "scheme-07bde872-798f-41ea-a99b-ea0babdc0680",
