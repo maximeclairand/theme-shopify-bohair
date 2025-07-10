@@ -102,7 +102,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Menu principal",
-            "menu": ""
+            "menu": "main-menu"
           }
         },
         "footer-1": {

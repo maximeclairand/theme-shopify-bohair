@@ -1258,6 +1258,8 @@
         "image_TTLHaM",
         "image_qPwahj"
       ],
+      "disabled": true,
+      "name": "Slider instagram",
       "settings": {
         "color_scheme": "",
         "title": "Retrouvez-nous sur Instagram",
