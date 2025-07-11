@@ -36,7 +36,11 @@
     endif
   %}
 
-  {{ price }}
+  price: {{ price }}
+  selected_or_first_available_variant.price: {{ product.selected_or_first_available_variant.price }}
+  saving: {{ saving }}
+  saving_percentage: {{ saving_percentage }}
+  saving_percentage_element: {{ saving_percentage_element }}
  
   <p class="subscription-widget__title">{{ block.settings.label }}</p>
  
