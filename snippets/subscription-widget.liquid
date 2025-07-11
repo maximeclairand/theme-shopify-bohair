@@ -31,8 +31,8 @@
     # calcul du % d'économie pour l'achat en abonnement
     if price != product.selected_or_first_available_variant.price
       assign saving = product.selected_or_first_available_variant.price | minus: price
-       assign test = product.selected_or_first_available_variant.price | times: 10
-      assign saving_percentage = saving | times: 1000 | divided_by: test | divided_by: 10
+       assign test = product.selected_or_first_available_variant.price | times: 100
+      assign saving_percentage = saving | times: 10000 | divided_by: test | divided_by: 100
       assign saving_percentage_element = '<span class="subscription-widget__dynamic-discount">' | append: saving_percentage | append: '%</span>'
     endif
   %}
