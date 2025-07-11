@@ -315,11 +315,6 @@
 
 /* Custom instances css */
 
-.template--product .multicolumn-list,
-.template--product .multicolumn-card {
-  background-color: rgb(var(--color-background-3)) !important;
-}
-
 @media screen and (max-width: 749px) {
   .multicolumn--reinsurances .multicolumn-card__image-wrapper {
     width: 25%;
