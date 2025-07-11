@@ -46,7 +46,7 @@ subscription-widget {
 }
 
 .subscription-widget__option--selected .subscription-widget__option-wrapper {
-  background-color: rgba(var(--deployer-primary-color), 0.1);
+  background-color: rgba(var(--deployer-primary-color), 0.05);
 }
 
 .subscription-widget__option--disabled {
