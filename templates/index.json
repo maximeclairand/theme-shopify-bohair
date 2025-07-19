@@ -203,22 +203,6 @@
     "temoignage_section_yM7XR8": {
       "type": "temoignage-section",
       "blocks": {
-        "slide_pLPj3N": {
-          "type": "slide",
-          "settings": {
-            "image_avant": "shopify://shop_images/avant__bohair.png",
-            "image_apres": "shopify://shop_images/apres_bohair.png",
-            "tag_apres": "APRÈS",
-            "testimonial_title": "Application rapide, tenue parfaite",
-            "testimonial_text": "L’application est simple et intuitive, même sans être expert. En quelques gestes, le résultat est net, et surtout, ça tient toute la journée sans retouche. Même en cas de pluie ou de transpiration, rien ne bouge. Le combo poudre + fixateur est redoutable.",
-            "name": "Hugo.F",
-            "stars": "★★★★★",
-            "subtitle": "Teinte brun noisette",
-            "bgproduit_color": "#e3f8c0",
-            "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
-            "linked_product": "le-spray-fixateur"
-          }
-        },
         "slide_KKbMWG": {
           "type": "slide",
           "settings": {
@@ -230,6 +214,22 @@
             "name": "Coralie.F",
             "stars": "★★★★★",
             "subtitle": "Teinte brun",
+            "bgproduit_color": "#e3f8c0",
+            "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
+            "linked_product": "poudre"
+          }
+        },
+        "slide_pLPj3N": {
+          "type": "slide",
+          "settings": {
+            "image_avant": "shopify://shop_images/avant__bohair.png",
+            "image_apres": "shopify://shop_images/apres_bohair.png",
+            "tag_apres": "APRÈS",
+            "testimonial_title": "Application rapide, tenue parfaite",
+            "testimonial_text": "L’application est simple et intuitive, même sans être expert. En quelques gestes, le résultat est net, et surtout, ça tient toute la journée sans retouche. Même en cas de pluie ou de transpiration, rien ne bouge. Le combo poudre + fixateur est redoutable.",
+            "name": "Hugo.F",
+            "stars": "★★★★★",
+            "subtitle": "Teinte brun noisette",
             "bgproduit_color": "#e3f8c0",
             "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
             "linked_product": "poudre"
@@ -253,8 +253,8 @@
         }
       },
       "block_order": [
-        "slide_pLPj3N",
         "slide_KKbMWG",
+        "slide_pLPj3N",
         "slide_FWjQHk"
       ],
       "custom_css": [
