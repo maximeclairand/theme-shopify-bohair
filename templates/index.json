@@ -222,8 +222,8 @@
         "slide_KKbMWG": {
           "type": "slide",
           "settings": {
-            "image_avant": "shopify://shop_images/avant.jpg",
-            "image_apres": "shopify://shop_images/apres.jpg",
+            "image_avant": "shopify://shop_images/Avant___Resultat_Capillaire.png",
+            "image_apres": "shopify://shop_images/Apres___Resultat_Capillaire.png",
             "tag_apres": "APRÈS",
             "testimonial_title": "Merci Bohair pour le booster de confiance !",
             "testimonial_text": "Avant Bohair, je passais mon temps à cacher mes cheveux sous une casquette. Maintenant, je me regarde enfin dans le miroir avec le sourire. Le produit est facile à utiliser, et le rendu est vraiment discret. C’est devenu un indispensable dans ma routine.",
@@ -388,7 +388,7 @@
           "type": "review_card",
           "settings": {
             "media_type": "video",
-            "video_poster": "shopify://shop_images/Capture_d_ecran_2025-07-19_a_16.08.54.png",
+            "video_poster": "shopify://shop_images/IMG_9551.png",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/261e3ff22ff54e189d4d9cf7f0d80d75.mov",
             "title": "Agréable sur la peau !",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
