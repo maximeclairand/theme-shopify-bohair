@@ -234,11 +234,28 @@
             "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
             "linked_product": "poudre"
           }
+        },
+        "slide_FWjQHk": {
+          "type": "slide",
+          "settings": {
+            "image_avant": "shopify://shop_images/Avant_et_apres___evolution_capillaire_00c65693-43ca-406d-8cb0-abe3d56fdf94.png",
+            "image_apres": "shopify://shop_images/apres___evolution_capillaire_6fb72fbf-1f32-4308-aa2b-d4ca3d219327.png",
+            "tag_apres": "APRÈS",
+            "testimonial_title": "Merci Bohair pour le booster de confiance !",
+            "testimonial_text": "Avant Bohair, je passais mon temps à cacher mes cheveux sous une casquette. Maintenant, je me regarde enfin dans le miroir avec le sourire. Le produit est facile à utiliser, et le rendu est vraiment discret. C’est devenu un indispensable dans ma routine.",
+            "name": "Coralie.F",
+            "stars": "★★★★★",
+            "subtitle": "Teinte brun",
+            "bgproduit_color": "#e3f8c0",
+            "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
+            "linked_product": "poudre"
+          }
         }
       },
       "block_order": [
         "slide_pLPj3N",
-        "slide_KKbMWG"
+        "slide_KKbMWG",
+        "slide_FWjQHk"
       ],
       "custom_css": [
         "h2 {color: #262626;}",
