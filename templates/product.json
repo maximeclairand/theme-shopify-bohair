@@ -68,6 +68,7 @@
         },
         "subscription_widget_TRM4hj": {
           "type": "subscription_widget",
+          "disabled": true,
           "settings": {
             "subscription_color_scheme": "scheme-1",
             "label": "Sélectionnez votre offre",
@@ -95,6 +96,10 @@
             "delivery_estimation_text": "Commandez maintenant & recevez votre colis le",
             "translation_between_dates": ""
           }
+        },
+        "quantity_selector_Dy63tk": {
+          "type": "quantity_selector",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -326,6 +331,7 @@
         "variant_picker",
         "subscription_widget_TRM4hj",
         "delivery_QFPCdY",
+        "quantity_selector_Dy63tk",
         "buy_buttons",
         "payment_secure_qaQmmQ",
         "payment_methods_mFtVy3",
