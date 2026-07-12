@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "description_Hw7Twb": {
+          "type": "description",
+          "settings": {}
+        },
         "inventory_T3WdU9": {
           "type": "inventory",
           "settings": {
@@ -64,26 +68,6 @@
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
-          }
-        },
-        "subscription_widget_TRM4hj": {
-          "type": "subscription_widget",
-          "disabled": true,
-          "settings": {
-            "subscription_color_scheme": "scheme-1",
-            "label": "Sélectionnez votre offre",
-            "description": "",
-            "default_selected": "subscription",
-            "one_time_label": "Achat unique",
-            "subscription_label": "Abonnez-vous & <strong>économisez</strong>",
-            "subscription_benefit_1": "Service client <strong>en moins de 5h</strong>",
-            "subscription_benefit_2": "<strong>Sans engagement</strong>, annulez en un clic",
-            "subscription_benefit_3": "Bénéficiez de <strong># sur chaque livraison</strong>",
-            "subscription_benefit_4": "",
-            "sellin_plan_name_1": "Livraison tous les mois",
-            "sellin_plan_name_2": "Livraison tous les 2 mois",
-            "sellin_plan_name_3": "Livraison tous les 3 mois",
-            "subscription_badge": "Meilleure offre"
           }
         },
         "delivery_QFPCdY": {
@@ -322,6 +306,7 @@
         }
       },
       "block_order": [
+        "description_Hw7Twb",
         "inventory_T3WdU9",
         "title",
         "separator_crE74y",
@@ -329,7 +314,6 @@
         "icon_with_text_qfjEkM",
         "separator_LXNDBX",
         "variant_picker",
-        "subscription_widget_TRM4hj",
         "delivery_QFPCdY",
         "quantity_selector_Dy63tk",
         "buy_buttons",
