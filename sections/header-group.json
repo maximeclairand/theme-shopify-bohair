@@ -67,7 +67,7 @@
       ],
       "settings": {
         "logo_position": "middle-center",
-        "button_text": "S'abonner",
+        "button_text": "",
         "button_link": "shopify://products/poudre",
         "menu": "main-menu",
         "menu2": "customer-account-main-menu",
