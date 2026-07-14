@@ -20,7 +20,7 @@
           "type": "inventory",
           "settings": {
             "inventory_color_scheme": "scheme-1",
-            "badge_texte": "<strong>+100</strong> chiens et chats satisfaits",
+            "badge_texte": "Bientot en rupture",
             "text_style": "body",
             "inventory_threshold": 30,
             "show_inventory_quantity": false
