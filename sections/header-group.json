@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_k3YbJi": {
+          "type": "announcement",
+          "settings": {
+            "text": "2 achetées = 1 offerte",
+            "link": ""
+          }
+        },
         "announcement_cDDbQX": {
           "type": "announcement",
           "settings": {
@@ -30,6 +37,7 @@
         }
       },
       "block_order": [
+        "announcement_k3YbJi",
         "announcement_cDDbQX",
         "announcement-bar-0"
       ],
