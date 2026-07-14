@@ -300,7 +300,7 @@
             "heading": "Livraison & Retours",
             "show_heading_font": true,
             "icon": "none",
-            "content": "",
+            "content": "<p>Livraison expédié </p>",
             "page": "livraison-retours"
           }
         }
