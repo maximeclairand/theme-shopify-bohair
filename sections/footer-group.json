@@ -114,6 +114,7 @@
         },
         "newsletter_7pBqn8": {
           "type": "newsletter",
+          "disabled": true,
           "settings": {
             "title": "10% offert !",
             "subtext": "Recevez immédiatement le code applicable sur votre première commande par e-mail !",
