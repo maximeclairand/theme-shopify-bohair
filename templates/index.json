@@ -216,7 +216,7 @@
             "subtitle": "Teinte brun",
             "bgproduit_color": "#e3f8c0",
             "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
-            "linked_product": "poudre"
+            "linked_product": "poudre-capillaire-camouflante"
           }
         },
         "slide_pLPj3N": {
@@ -232,7 +232,7 @@
             "subtitle": "Teinte brun noisette",
             "bgproduit_color": "#e3f8c0",
             "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
-            "linked_product": "poudre"
+            "linked_product": "poudre-capillaire-camouflante"
           }
         },
         "slide_FWjQHk": {
@@ -248,7 +248,7 @@
             "subtitle": "Teinte brun foncé",
             "bgproduit_color": "#e3f8c0",
             "icon": "shopify://shop_images/Plan_de_travail_14_1a144630-6d37-44c8-9680-941daf3787f8.svg",
-            "linked_product": "poudre"
+            "linked_product": "poudre-capillaire-camouflante"
           }
         }
       },
@@ -707,7 +707,7 @@
           "type": "button",
           "settings": {
             "button_label": "Je choisis Bohair !",
-            "button_link": "shopify://products/poudre",
+            "button_link": "shopify://products/poudre-capillaire-camouflante",
             "button_style_secondary": false
           }
         }
